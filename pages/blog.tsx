@@ -43,7 +43,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="bg-white-800 text-black-100">
+      <section className="bg-white-800 hidden lg:block text-black-100">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <h1 className="text-black-100 font-bold text-2xl">
             Featured Insight

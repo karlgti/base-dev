@@ -48,18 +48,18 @@ function Process() {
         <div className="py-16 flex">
           <Link className="text-slate-100	mr-1" href="/">
             {
-              <h1 className="text-[#E04403] font-bold text-2xl mr-1">
+              <h1 className="text-[#E04403] font-bold lg:text-2xl mr-1">
                 About /
               </h1>
             }
           </Link>
           {
-            <h1 className="text-black font-bold text-2xl">
+            <h1 className="text-black font-bold lg:text-2xl">
               Investment Process
             </h1>
           }
         </div>
-        <div className="max-w-[50%]">
+        <div className="lg:max-w-[50%]">
           We believe that the markets are efficient over the long term, but in
           the short term, they can be inefficient and provide opportunities for
           active management. Our investment process is designed to take
@@ -170,10 +170,10 @@ function Process() {
         </section>
       </div>
       <div className="flow-root">
-        <div className="mt-40">
+        <div className="hidden lg:block mt-40">
           <Button />
         </div>
-        <div className="mt-14">
+        <div className="hidden lg:block mt-14">
           <SeeOurTeam />
         </div>
       </div>

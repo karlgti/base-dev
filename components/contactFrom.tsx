@@ -312,14 +312,14 @@ export default function ContactForm() {
         </header>
         <div className="border-6 borderlack grid grid-cols-1 md:grid-cols-1 gap-4">
           <div className="mb-10 md:mt-20"></div>
-          <div>
+          <div className="py-10">
             Address <br />
             Rm 1904, Tung Che Commercial Centre, 246 Des Voeux Road West, Hong
             Kong
           </div>
         </div>
       </main>
-      <div className="my-10">
+      <div className="hidden lg:block my-10">
         <Button />
       </div>
       <Footer />

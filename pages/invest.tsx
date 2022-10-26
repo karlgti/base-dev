@@ -29,13 +29,13 @@ function Invest() {
         <div className="bg-[#CC9C4A]">
           <div className="lg:flex lg:items-center py-[11vh] justify-center">
             <div className="mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-5xl text-white font-inter">
+              <h1 className="text-xl lg:text-5xl text-white font-inter">
                 Discover the Undiscovered with <br />
                 Disciplined Investment Approach
               </h1>
             </div>
             <Image
-              className="object-cover w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
+              className="object-cover w-max lg:mx-6 lg:w-1/2 lg:pl-32 rounded-xl lg:h-96"
               src={invest}
               alt="TheDifferentiator"
               width={300}
@@ -48,18 +48,18 @@ function Invest() {
         <div className="py-16 flex">
           <Link className="text-slate-100	mr-1" href="/">
             {
-              <h1 className="text-[#CC9C4A] font-bold text-2xl mr-1">
+              <h1 className="text-[#CC9C4A] font-bold text-md lg:text-2xl mr-1">
                 About /
               </h1>
             }
           </Link>
           {
-            <h1 className="text-black font-bold text-2xl">
+            <h1 className="text-black font-bold text-md lg:text-2xl">
               Investment Philosophy
             </h1>
           }
         </div>
-        <div className="max-w-[50%]">
+        <div className="lg:max-w-[50%]">
           Our investment philosophy is built on the balance between achieving
           investment returns and managing portfolio risks. By taking a
           disciplined approach to investing, we can deliver consistent results
@@ -169,10 +169,10 @@ function Invest() {
         </section>
       </div>
       <div className="flow-root">
-        <div className="mt-40">
+        <div className="hidden lg:block mt-40">
           <Button />
         </div>
-        <div className="mt-14">
+        <div className="hidden lg:block mt-14">
           <SeeInvestmentProcess />
         </div>
       </div>

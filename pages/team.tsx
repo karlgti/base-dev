@@ -46,9 +46,9 @@ export default function Team() {
           {<h1 className="text-black font-bold text-2xl">Our Team</h1>}
         </div>
         <section className="text-gray-600 body-font overflow-hidden">
-          <div className="py-24 mx-auto">
+          <div className="lg:py-24 mx-auto">
             <div className="flex flex-wrap md:flex-nowrap">
-              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB]  md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB] pb-14 md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span className="font-semibold title-font text-[#E04403]">
                   Founder and Managing Partner
                 </span>
@@ -85,7 +85,7 @@ export default function Team() {
             </div>
 
             <div className="pt-14 flex flex-wrap md:flex-nowrap">
-              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB]  md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB] pb-14 md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span className="font-semibold title-font text-[#E04403]">
                   Managing Partner
                 </span>
@@ -122,7 +122,7 @@ export default function Team() {
             </div>
 
             <div className="pt-14 flex flex-wrap md:flex-nowrap">
-              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB]  md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <div className="relative mr-10 border-t-8 border-b-2 border-[#CBC3BB] pb-14 md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span className="font-semibold title-font text-[#E04403]">
                   Managing Partner
                 </span>
@@ -161,10 +161,10 @@ export default function Team() {
         </section>
       </div>
       <div className="flow-root">
-        <div>
+        <div className="hidden lg:block">
           <Button />
         </div>
-        <div className="mt-14">
+        <div className="hidden lg:block mt-14">
           <SeeTheDiff />
         </div>
       </div>

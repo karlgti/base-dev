@@ -3,6 +3,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
+import Dialog from "@mui/material/Dialog";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -10,7 +11,6 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
@@ -20,9 +20,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
 
-const drawerWidth = 330;
-const drawerHeight = 900;
+const drawerWidth = "20%";
+const drawerHeight = "100%";
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -71,10 +78,33 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function InvestHeader() {
+export default function MainHeader() {
+  const [open1, setOpen1] = React.useState(false);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [subOpen, subSetOpen] = React.useState(false);
+
+  const handleClickOpen1 = () => {
+    setOpen1(true);
+    setOpen(false);
+  };
+
+  const handleClose1 = () => {
+    setOpen1(false);
+  };
+
+  const theme1 = createTheme({
+    palette: {
+      primary: {
+        // Purple and green play nicely together.
+        main: "#021B71",
+      },
+      secondary: {
+        // This is green.A700 as hex.
+        main: "#11cb5f",
+      },
+    },
+  });
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -89,7 +119,7 @@ export default function InvestHeader() {
   };
 
   const headerStyle = {
-    background: "#CC9C4A",
+    background: "#cc9c4a",
     borderBottom: 3,
     position: "absolute",
     width: "100%",
@@ -101,6 +131,35 @@ export default function InvestHeader() {
     p: 12,
   };
 
+  const drawerWidth = {
+    flexShrink: 0,
+    "& .MuiDrawer-paper": {
+      width: "20%",
+      height: "100%",
+      boxSizing: "border-box",
+    },
+    "& .MuiListItemText-primary": {
+      fontSize: 30,
+      fontWeight: 800,
+    },
+    "& .MuiListItemText-secondary": {
+      fontSize: 17,
+    },
+    ["@media (max-width:780px)"]: {
+      "& .MuiDrawer-paper": {
+        width: "90%",
+      },
+    },
+  };
+
+  const loginBox = {
+    display: "flex",
+    flexDirection: "column",
+    width: "350px",
+    ["@media (max-width:780px)"]: {
+      width: "100vw",
+    },
+  };
   return (
     <Box
       sx={{
@@ -110,17 +169,19 @@ export default function InvestHeader() {
       <CssBaseline />
       <AppBar sx={headerStyle} open={open}>
         <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{ flexGrow: 1, pl: 6 }}
-            component="div"
-          >
-            <a href="/">
-              <Image src={mypic} alt="Base Asset Management" />
-            </a>
-          </Typography>
-          <div className="border-l-4 border-r-4 p-[2rem]">
+          <div className="mx-auto pl-6 lg:pr-0 lg:ml-6 py-5 lg:py-0">
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{ flexGrow: 1 }}
+              component="div"
+            >
+              <a href="/">
+                <Image src={mypic} alt="Base Asset Management" />
+              </a>
+            </Typography>
+          </div>
+          <div className="lg:border-l-4 lg:border-r-4 lg:p-[2rem]">
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -131,38 +192,17 @@ export default function InvestHeader() {
               <MenuIcon />
             </IconButton>
           </div>
-          <div className="p-4">
+          <div className="p-4 hidden lg:block">
             <LoginButton />
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            height: drawerHeight,
-            boxSizing: "border-box",
-          },
-          "& .MuiListItemText-primary": {
-            fontSize: 30,
-            fontWeight: 800,
-          },
-          "& .MuiListItemText-secondary": {
-            fontSize: 17,
-          },
-        }}
-        variant="persistent"
-        anchor="right"
-        open={open}
-      >
+      <Drawer sx={drawerWidth} variant="persistent" anchor="right" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? <CloseIcon /> : <CloseIcon />}
           </IconButton>
         </DrawerHeader>
-        <Divider />
         <List
           sx={{
             width: "100%",
@@ -171,6 +211,69 @@ export default function InvestHeader() {
           component="nav"
           aria-labelledby="nested-list-subheader"
         >
+          <Divider />
+          <Button
+            className="lg:hidden text-[#CC9C4A]"
+            onClick={handleClickOpen1}
+          >
+            <Typography
+              color="#CC9C4A"
+              sx={{ fontSize: "25px", fontWeight: 700 }}
+              className="py-3 px-[3.5rem]"
+            >
+              Login
+            </Typography>
+          </Button>
+          <Dialog
+            sx={{
+              "& .MuiDialog-paper": {
+                position: "absolute",
+                right: 0,
+                top: -30,
+                marginRight: 0,
+                paddingright: 0,
+                borderRadius: 0,
+              },
+            }}
+            open={open1}
+            onClose={handleClose1}
+          >
+            <DialogActions>
+              <p
+                onClick={handleClose1}
+                className={"cursor-pointer p-3 text-4xl font-extralight"}
+              >
+                x
+              </p>
+            </DialogActions>
+            <DialogContent>
+              <Box noValidate component="form" sx={loginBox}>
+                <FormControl sx={{ paddingLeft: 6 }}>
+                  <TextField
+                    id="demo-helper-text-aligned"
+                    label="Email address"
+                  />
+                  <br />
+                  <TextField
+                    id="demo-helper-text-aligned-no-helper"
+                    label="Password"
+                  />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="mt-10 bg-[#CC9C4A]"
+                  >
+                    Login
+                  </Button>
+                  <DialogContentText className=" p-6 text-[#CC9C4A] font-bold text-center">
+                    Forget passoword
+                  </DialogContentText>
+                </FormControl>
+              </Box>
+            </DialogContent>
+          </Dialog>
+
+          <Divider />
           <ListItemButton onClick={handleClick}>
             <ListItemText
               sx={{ fontSize: "100px" }}
@@ -186,50 +289,46 @@ export default function InvestHeader() {
             className="px-[3rem]"
           >
             <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }} href="/theDifferentiator">
+              <ListItemButton href="/theDifferentiator">
                 <ListItemText secondary="The Differentiator" />
               </ListItemButton>
               <br />
-              <ListItemButton sx={{ pl: 4 }} href="/invest">
+              <ListItemButton href="/invest">
                 <ListItemText secondary="Investment Philosophy" />
               </ListItemButton>
               <br />
 
-              <ListItemButton sx={{ pl: 4 }} href="/process">
+              <ListItemButton href="/process">
                 <ListItemText secondary="Investment Process" />
               </ListItemButton>
               <br />
 
-              <ListItemButton sx={{ pl: 4 }} href="/team">
+              <ListItemButton href="/team">
                 <ListItemText secondary="Our Team" />
               </ListItemButton>
             </List>
           </Collapse>
           <Divider />
-          <div className="px-[3rem]">
-            <ListItemButton href="/blog">
-              <ListItemText primary="Insight" />
-            </ListItemButton>
-          </div>
+          <ListItemButton href="/blog">
+            <ListItemText
+              sx={{ fontSize: "100px" }}
+              primary="Insight"
+              className="px-[3rem]"
+            />
+          </ListItemButton>
           <Divider />
-
-          <div className="px-[3rem]">
-            <ListItemButton href="/contactUs">
-              <ListItemText primary="Contacts" />
-            </ListItemButton>
-          </div>
+          <ListItemButton href="/contactUs">
+            <ListItemText
+              sx={{ fontSize: "100px" }}
+              primary="Contacts"
+              className="px-[3rem]"
+            />
+          </ListItemButton>
+          <Divider />
         </List>
 
-        <Divider />
-
-        <div className="fixed bottom-16 flex justify-center items-center pb-[2rem] font-bold px-[3rem]">
-          {["Disclaimers"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+        <div className="fixed bottom-16 flex justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold px-[3rem]">
+          <p>Disclaimers</p>
         </div>
       </Drawer>
 
