@@ -1,6 +1,6 @@
 import { Dialog, DialogActions } from "@material-ui/core";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -14,7 +14,11 @@ const style = {
   p: 4,
 };
 
-const Disclaimer = () => {
+type Props = {
+  setAgreedDisclaimer: Dispatch<SetStateAction<boolean>>;
+};
+
+const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
   const [open, setOpen] = useState(false);
   const [agree, setAgree] = useState<number>(0);
   const [reminder, setReminder] = useState(false);
@@ -23,6 +27,7 @@ const Disclaimer = () => {
       setReminder(true);
     } else if (agree == 1) {
       sessionStorage.setItem("disclaimer", "agreed");
+      setAgreedDisclaimer(true);
       setOpen(false);
     }
   };
@@ -35,15 +40,11 @@ const Disclaimer = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const agreed = sessionStorage.getItem("disclaimer");
-      console.log("agreed", agreed);
       if (!agreed) {
-        console.log("agreed", agreed);
         setOpen(true);
       }
     }
   }, []);
-
-  console.log("agree: ", agree);
 
   return (
     <>
@@ -54,26 +55,24 @@ const Disclaimer = () => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[72vh] w-[72vw] p-6 pb-6 bg-white flex flex-col">
+        <div className="h-[72vh] w-[72vw] p-12 pb-6 bg-white flex flex-col">
           <div className="w-full space-y-12 overflow-y-scroll pr-2 pb-6 h-[85%]">
             <h1 className="text-3xl ">WEBSITE DISCLAIMER – IMPORTANT NOTICE</h1>
 
             <div className="font-light ">
-              <p className="text-justify">
-                Please read this page carefully before proceeding further, as it
-                contains legal and regulatory information relevant to the
-                content of this website https://www.base-am.com (the“Website”).
-                Please select the “I have read and agreed to the above terms and
-                conditions” to acknowledge that you accept the terms of use and
-                that you agree to abide by them. If you do not agree to these
-                terms of use, please refrain from using the Website or select “I
-                decline” to leave the Website.
-              </p>
+              Please read this page carefully before proceeding further, as it
+              contains legal and regulatory information relevant to the content
+              of this website https://www.base-am.com (the“Website”). Please
+              select the “I have read and agreed to the above terms and
+              conditions” to acknowledge that you accept the terms of use and
+              that you agree to abide by them. If you do not agree to these
+              terms of use, please refrain from using the Website or select “I
+              decline” to leave the Website.
             </div>
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Recipients of Communication</h6>
-              <p className="text-justify">
+              <p>
                 This Website is established by Base Asset Management Limited
                 (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                 BMS500) regulated by the Hong Kong Securities and Futures
@@ -95,7 +94,7 @@ const Disclaimer = () => {
               <h6 className="font-semibold">
                 Accredited Investors in Hong Kong
               </h6>
-              <p className="text-justify">
+              <p>
                 In Hong Kong, this Website is directed only at persons who
                 qualify as “Professional Investor(s)” as defined under the
                 Securities and Futures Ordinance (the “SFO”) and the Securities
@@ -104,7 +103,7 @@ const Disclaimer = () => {
                 criteria and please go to our Definition of Professional
                 Investor page for full details.
               </p>
-              <p className="text-justify">
+              <p>
                 The information contained in this Website is not an
                 advertisement, invitation or document relating to any securities
                 or collective investment schemes or any other investment under
@@ -120,7 +119,7 @@ const Disclaimer = () => {
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Accessing the Website</h6>
-              <p className="text-justify">
+              <p>
                 This Website has not been reviewed by the SFC and is provided to
                 you on the basis that you are a Professional Investor. By
                 accessing this Website, you acknowledge and agree that this
@@ -128,7 +127,7 @@ const Disclaimer = () => {
                 distribute or otherwise make this material available to a person
                 who is not a Professional Investor.
               </p>
-              <p className="text-justify">
+              <p>
                 No unauthorised person should attempt to gain access to any
                 restricted area of the Website. We disclaim all liability for
                 any loss a user may suffer from access to the Website by an
@@ -138,7 +137,7 @@ const Disclaimer = () => {
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Risk Considerations</h6>
-              <p className="text-justify">
+              <p>
                 The value of investments and the income generated may go down as
                 well as up, and the investors may not get back the amount
                 originally invested. Past performance is not a reliable
@@ -151,7 +150,7 @@ const Disclaimer = () => {
                 suitablnly for investors who are in a position to take such
                 risk.
               </p>
-              <p className="text-justify">
+              <p>
                 The users of this Website should seek advice from independent
                 financial, legal, or tax professionals before making any
                 investment decisions. The information herein should not be
@@ -195,7 +194,7 @@ const Disclaimer = () => {
                 </div>
                 <label
                   className={
-                    "font-bold cursor-pointer text-justify " +
+                    "font-bold cursor-pointer " +
                     (agree == 1 ? "text-primary-blue " : "")
                   }
                 >
@@ -263,11 +262,11 @@ const Disclaimer = () => {
       >
         <div className="h-[24vh] w-[56vw] px-12 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
           <div className="text-white ">
-            <p className="text-justify">
+            <p>
               This website and its content can only be accessed if the
               disclaimer is accepted.
             </p>
-            <p className="text-justify">
+            <p>
               By entering the site, you agree to the terms and conditions set
               forth in the disclaimer.
             </p>

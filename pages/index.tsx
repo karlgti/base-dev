@@ -6,8 +6,17 @@ import Banners from "../components/banners";
 import Button from "../components/backToTop";
 import Insight from "../components/Insight";
 import Disclaimer from "components/Disclaimer";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window != "undefined") {
+      const disclaimer = sessionStorage.getItem("disclaimer");
+      if (disclaimer == "agreed") setAgreedDisclaimer(true);
+    }
+  }, []);
   return (
     <div>
       <Head>
