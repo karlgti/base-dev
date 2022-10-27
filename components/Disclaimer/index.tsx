@@ -55,11 +55,11 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[72vh] w-[72vw] p-12 pb-6 bg-white flex flex-col">
-          <div className="w-full space-y-12 overflow-y-scroll pr-2 pb-6 h-[85%]">
+        <div className="h-[72vh] max-w-[100%] pt-6 pb-6 bg-white flex flex-col">
+          <div className="max-w-[80%] mx-auto space-y-12 overflow-y-scroll pr-2 pb-6 h-[85%]">
             <h1 className="text-3xl ">WEBSITE DISCLAIMER – IMPORTANT NOTICE</h1>
 
-            <div className="font-light ">
+            <div className="font-light text-justify">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
               of this website https://www.base-am.com (the“Website”). Please
@@ -72,7 +72,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Recipients of Communication</h6>
-              <p>
+              <p className="text-justify">
                 This Website is established by Base Asset Management Limited
                 (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                 BMS500) regulated by the Hong Kong Securities and Futures
@@ -94,7 +94,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               <h6 className="font-semibold">
                 Accredited Investors in Hong Kong
               </h6>
-              <p>
+              <p className="text-justify">
                 In Hong Kong, this Website is directed only at persons who
                 qualify as “Professional Investor(s)” as defined under the
                 Securities and Futures Ordinance (the “SFO”) and the Securities
@@ -103,7 +103,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 criteria and please go to our Definition of Professional
                 Investor page for full details.
               </p>
-              <p>
+              <p className="text-justify">
                 The information contained in this Website is not an
                 advertisement, invitation or document relating to any securities
                 or collective investment schemes or any other investment under
@@ -119,7 +119,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Accessing the Website</h6>
-              <p>
+              <p className="text-justify">
                 This Website has not been reviewed by the SFC and is provided to
                 you on the basis that you are a Professional Investor. By
                 accessing this Website, you acknowledge and agree that this
@@ -127,7 +127,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 distribute or otherwise make this material available to a person
                 who is not a Professional Investor.
               </p>
-              <p>
+              <p className="text-justify">
                 No unauthorised person should attempt to gain access to any
                 restricted area of the Website. We disclaim all liability for
                 any loss a user may suffer from access to the Website by an
@@ -137,7 +137,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
 
             <div className="space-y-4 font-light">
               <h6 className="font-semibold">Risk Considerations</h6>
-              <p>
+              <p className="text-justify">
                 The value of investments and the income generated may go down as
                 well as up, and the investors may not get back the amount
                 originally invested. Past performance is not a reliable
@@ -150,7 +150,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 suitablnly for investors who are in a position to take such
                 risk.
               </p>
-              <p>
+              <p className="text-justify">
                 The users of this Website should seek advice from independent
                 financial, legal, or tax professionals before making any
                 investment decisions. The information herein should not be
@@ -260,7 +260,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[24vh] w-[56vw] px-12 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
+        <div className="h-[24vh] px-6 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
           <div className="text-white ">
             <p>
               This website and its content can only be accessed if the

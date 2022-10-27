@@ -72,7 +72,7 @@ const Home: NextPage = () => {
           <div className="hidden lg:block">
             <Button />
           </div>
-          <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />{" "}
+          <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
         </div>
       </div>
 

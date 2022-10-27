@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
@@ -28,8 +29,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-const drawerWidth = "20%";
-const drawerHeight = "100%";
+const drawerWidth = 330;
+const drawerHeight = 900;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -91,10 +92,8 @@ export default function MainHeader() {
   const handleClose1 = () => {
     setOpen1(false);
   };
-
   const handleDrawerOpen = () => {
     setOpen(true);
-    setOpen1(false);
   };
 
   const handleDrawerClose = () => {
@@ -105,28 +104,16 @@ export default function MainHeader() {
     subSetOpen(!subOpen);
   };
 
-  const theme1 = createTheme({
-    palette: {
-      primary: {
-        // Purple and green play nicely together.
-        main: "#021B71",
-      },
-      secondary: {
-        // This is green.A700 as hex.
-        main: "#11cb5f",
-      },
-    },
-  });
-
   const headerStyle = {
-    background: "#021E7B",
+    background: "#021E7B !important",
+    borderColor: "white !important",
     borderBottom: 3,
     position: "absolute",
     width: "100%",
   };
 
   const borderStyle = {
-    borderColor: "white",
+    borderColor: "white !important",
     border: 8,
     p: 12,
   };
@@ -150,7 +137,6 @@ export default function MainHeader() {
       "& .MuiDrawer-paper": {
         width: "70%",
         marginTop: 0,
-
       },
     },
   };
@@ -184,7 +170,7 @@ export default function MainHeader() {
               </a>
             </Typography>
           </div>
-          <div className="lg:border-l-4 lg:border-r-4 lg:p-[2rem]">
+          <div className="border-l-4 border-r-4 p-[2rem]">
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -192,7 +178,11 @@ export default function MainHeader() {
               onClick={handleDrawerOpen}
               sx={{ ...(open && {}), borderStyle }}
             >
-              <MenuIcon />
+              <MenuIcon
+                sx={{
+                  color: "white !important",
+                }}
+              />
             </IconButton>
           </div>
           <div className="p-4 hidden lg:block">
