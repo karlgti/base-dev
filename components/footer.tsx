@@ -6,7 +6,9 @@ export default function footer() {
     <footer className="text-center lg:text-left text-gray-600">
       <div className="flex justify-center items-center lg:justify-between border-separate border-spacing-4 border-b-4 border-t border-[#001B71]">
         <div className="lg:mr-12 lg:pl-16 flex font-black text-[#021B71]">
-          <span className="cursor-pointer	text-xs lg:text-xl">Base Asset Management Limited</span>
+          <span className="cursor-pointer	text-xs lg:text-xl">
+            Base Asset Management Limited
+          </span>
         </div>
         <div className="flex justify-center lg:border-l-4 border-[#001B71]">
           <div className="lg:pl-6 border-[#001B71] lg:mr-6 text-[#001B71] p-5">
@@ -18,7 +20,10 @@ export default function footer() {
             </a>
           </div>
 
-          <a href="#!" className="hidden lg:block pr-6 pt-6 text-gray-600">
+          <a
+            href="https://www.linkedin.com/company/base-am/"
+            className="hidden lg:block pr-6 pt-6 text-gray-600"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
@@ -35,7 +40,10 @@ export default function footer() {
               ></path>
             </svg>
           </a>
-          <a href="#!" className="hidden lg:block pr-6 pt-6 text-gray-600">
+          <a
+            href="https://twitter.com/BASE_AssetMgmt"
+            className="hidden lg:block pr-6 pt-6 text-gray-600"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
