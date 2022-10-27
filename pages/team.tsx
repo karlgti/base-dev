@@ -12,11 +12,11 @@ export default function Team() {
     <div>
       <Header />
 
-      <section className="bg-white">
+      <section className="bg-[#CBC3BB] pt-14">
         <div className="bg-[#CBC3BB]">
-          <div className="lg:flex lg:items-center py-[11vh] justify-center">
-            <div className="mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-5xl text-white font-inter">
+          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
+            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
+              <h1 className="text-3xl lg:text-5xl text-white font-inter">
                 Focused <br />
                 Encouraged
                 <br />

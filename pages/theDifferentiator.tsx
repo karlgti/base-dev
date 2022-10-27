@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "components/TheDifferentiatorHeader";
 import Image from "next/image";
-import mypic from "../public/img/Differentiator_icon_1.gif";
+import mypic from "../public/img/802204_BAM_Development_Website_V1_Artboard 39 1.png";
 import value from "../public/img/value.png";
 import vision from "../public/img/vision.png";
 import Button from "../components/backToTop";
@@ -17,18 +17,18 @@ export default function TheDifferentiator() {
   return (
     <div>
       <Header />
-      <section className="bg-white">
+      <section className="bg-[#00953b] pt-14">
         <div className="bg-[#00953b]">
-          <div className="lg:flex lg:items-center py-[11vh] justify-center">
+          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
             <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-xl lg:text-5xl text-white font-inter">
+              <h1 className="text-2xl lg:text-5xl text-white font-inter">
                 Not to Go Back is to Advance;
                 <br />
                 Here’s when Old meets New.
               </h1>
             </div>
             <Image
-              className="object-cover mx-auto w-max lg:mx-6 lg:w-1/2 lg:pl-32 rounded-xl lg:h-96"
+              className="object-cover w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
               src={mypic}
               alt="TheDifferentiator"
               width={300}
@@ -96,7 +96,7 @@ export default function TheDifferentiator() {
         <div className="mt-24 border-t-[6px] border-b-[3px] border-[#00953b] mb-6">
           <div className="lg:flex px-[2%] lg:py-14">
             <div className="relative lg:w-[50%] lg:pt-40 ml-14">
-              <h1 className=" lg:text-6xl text-[#00953B]">
+              <h1 className="lg:hidden lg:text-6xl text-[#00953B]">
                 Our
                 <div className="font-extrabold">Value</div>
               </h1>

@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         <Header />
       </div>
 
-      <div className="bg-[#001e7d] pt-10 pb-32 lg:pb-80">
+      <div className="bg-[#021E7B] pt-14 pb-32 lg:pb-80">
         <video
           autoPlay
           loop

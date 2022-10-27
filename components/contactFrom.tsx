@@ -114,7 +114,7 @@ export default function ContactForm() {
               possible.
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="flex flex-col">
+          <form onSubmit={handleSubmit} className="flex flex-col lg:max-w-[75%]">
             <h1 className="text-2xl text-red-500">(*Mandatory data)</h1>
             <div className="grid grid-cols-2 gap-4 mt-10">
               <div>

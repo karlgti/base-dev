@@ -29,6 +29,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
 const drawerWidth = "20%";
+const drawerHeight = "100%";
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -77,19 +78,31 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function MainHeader() {
-  const [open1, setOpen1] = React.useState(false);
+export default function theDiff() {
   const theme = useTheme();
+  const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [subOpen, subSetOpen] = React.useState(false);
 
   const handleClickOpen1 = () => {
     setOpen1(true);
-    setOpen(false);
   };
 
   const handleClose1 = () => {
     setOpen1(false);
+  };
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+    setOpen1(false);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  const handleClick = () => {
+    subSetOpen(!subOpen);
   };
 
   const theme1 = createTheme({
@@ -104,18 +117,6 @@ export default function MainHeader() {
       },
     },
   });
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  const handleClick = () => {
-    subSetOpen(!subOpen);
-  };
 
   const headerStyle = {
     background: "#00953b",
@@ -133,9 +134,10 @@ export default function MainHeader() {
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: "20%",
-      height: "100%",
+      width: 330,
+      height: 650,
       boxSizing: "border-box",
+      marginTop: 13.2,
     },
     "& .MuiListItemText-primary": {
       fontSize: 30,
@@ -146,7 +148,8 @@ export default function MainHeader() {
     },
     ["@media (max-width:780px)"]: {
       "& .MuiDrawer-paper": {
-        width: "90%",
+        width: "70%",
+        marginTop: 0
       },
     },
   };
@@ -168,7 +171,7 @@ export default function MainHeader() {
       <CssBaseline />
       <AppBar sx={headerStyle} open={open}>
         <Toolbar>
-          <div className="mx-auto pl-6 lg:pr-0 lg:ml-6 py-5 lg:py-0">
+          <div className="mx-auto pl-6 lg:pr-0 lg:ml-6 py-[1.8rem] lg:py-0">
             <Typography
               variant="h6"
               noWrap
@@ -186,7 +189,7 @@ export default function MainHeader() {
               aria-label="open drawer"
               edge="end"
               onClick={handleDrawerOpen}
-              sx={{ ...(open && { display: "none" }), borderStyle }}
+              sx={{ ...(open && {}), borderStyle }}
             >
               <MenuIcon />
             </IconButton>
@@ -196,7 +199,7 @@ export default function MainHeader() {
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer sx={drawerWidth} variant="persistent" anchor="right" open={open}>
+      <Drawer sx={drawerWidth} anchor="right" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? <CloseIcon /> : <CloseIcon />}
@@ -326,7 +329,7 @@ export default function MainHeader() {
           <Divider />
         </List>
 
-        <div className="fixed bottom-16 flex justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold px-[3rem]">
+        <div className="px-[3rem] justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold pt-44 lg:pt-60">
           <p>Disclaimers</p>
         </div>
       </Drawer>

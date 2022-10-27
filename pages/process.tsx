@@ -25,17 +25,17 @@ function Process() {
   return (
     <>
       <Header />
-      <section className="bg-white">
+      <section className="bg-[#E04403] pt-14">
         <div className="bg-[#E04403]">
-          <div className="lg:flex lg:items-center py-[11vh] justify-center">
-            <div className="mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-5xl text-white font-inter">
+          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
+            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
+              <h1 className="text-3xl lg:text-5xl text-white font-inter">
                 Turn Over Every Stone. <br />
                 Leave No Corner Unchecked.
               </h1>
             </div>
             <Image
-              className="object-cover w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
+              className="object-cover lg:w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
               src={logo}
               alt="TheDifferentiator"
               width={300}

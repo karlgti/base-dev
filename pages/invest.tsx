@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/backToTop";
-import invest from "../public/img/invest_page.png";
+import invest from "../public/img/banner_phil.png";
 import Footer from "components/footer";
 import Header from "../components/InvestHeader";
 import SeeInvestmentProcess from "components/SeeInvestmentProcess";
@@ -25,17 +25,17 @@ function Invest() {
   return (
     <>
       <Header />
-      <section className="bg-white">
+      <section className="bg-[#CC9C4A] pt-14">
         <div className="bg-[#CC9C4A]">
-          <div className="lg:flex lg:items-center py-[11vh] justify-center">
-            <div className="mr-[1.5rem] lg:w-1/2 white-txt">
+          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
+            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
               <h1 className="text-xl lg:text-5xl text-white font-inter">
                 Discover the Undiscovered with <br />
                 Disciplined Investment Approach
               </h1>
             </div>
             <Image
-              className="object-cover w-max lg:mx-6 lg:w-1/2 lg:pl-32 rounded-xl lg:h-96"
+              className="object-cover lg:w-max lg:mx-6 lg:w-1/2 lg:pl-32 rounded-xl lg:h-96"
               src={invest}
               alt="TheDifferentiator"
               width={300}
@@ -44,6 +44,7 @@ function Invest() {
           </div>
         </div>
       </section>
+
       <div className="px-[10%]">
         <div className="py-16 flex">
           <Link className="text-slate-100	mr-1" href="/">

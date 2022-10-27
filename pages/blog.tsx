@@ -23,11 +23,11 @@ export default function Blog() {
     <>
       <Header />
 
-      <section className="bg-white">
+      <section className="bg-[#4D008C] pt-14">
         <div className="bg-[#4D008C]">
-          <div className="lg:flex lg:items-center py-[11vh] justify-center">
-            <div className="mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-4xl text-white font-inter">
+          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
+            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
+              <h1 className="text-2xl lg:text-4xl text-white font-inter">
                 Trends. Views. Observations. <br />
                 And more.
               </h1>
