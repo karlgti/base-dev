@@ -105,7 +105,7 @@ export default function MainHeader() {
   };
 
   const headerStyle = {
-    background: "#021E7B !important",
+    background: "#001772 !important",
     borderColor: "white !important",
     borderBottom: 3,
     position: "absolute",
