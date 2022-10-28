@@ -112,19 +112,13 @@ export default function MainHeader() {
     width: "100%",
   };
 
-  const borderStyle = {
-    borderColor: "white !important",
-    border: 8,
-    p: 12,
-  };
-
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
       width: 330,
       height: 650,
       boxSizing: "border-box",
-      marginTop: 13.2,
+      marginTop: 13.3,
     },
     "& .MuiListItemText-primary": {
       fontSize: 30,
@@ -158,7 +152,7 @@ export default function MainHeader() {
       <CssBaseline />
       <AppBar sx={headerStyle} open={open}>
         <Toolbar>
-          <div className="mx-auto pl-6 lg:pr-0 lg:ml-6 py-[1.8rem] lg:py-0">
+          <div className="mx-auto lg:pr-0 lg:ml-6 py-[1.8rem] lg:py-0">
             <Typography
               variant="h6"
               noWrap
@@ -170,13 +164,12 @@ export default function MainHeader() {
               </a>
             </Typography>
           </div>
-          <div className="border-l-4 border-r-4 p-[2rem]">
+          <div className="lg:border-l-4 lg:border-r-4 lg:mr-8 lg:p-[2rem]">
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              edge="end"
               onClick={handleDrawerOpen}
-              sx={{ ...(open && {}), borderStyle }}
+              sx={{ ...(open && {}) }}
             >
               <MenuIcon
                 sx={{
@@ -212,9 +205,9 @@ export default function MainHeader() {
             <Typography
               color="#CC9C4A"
               sx={{ fontSize: "25px", fontWeight: 700 }}
-              className="py-3 px-[3.5rem]"
+              className="py-3 px-[1rem] lg:px-[3rem]"
             >
-              Login
+              Investor login
             </Typography>
           </Button>
           <Dialog
@@ -256,7 +249,7 @@ export default function MainHeader() {
                     color="primary"
                     className="mt-10 bg-[#CC9C4A]"
                   >
-                    Login
+                    login
                   </Button>
                   <DialogContentText className=" p-6 text-[#CC9C4A] font-bold text-center">
                     Forget passoword
@@ -271,7 +264,7 @@ export default function MainHeader() {
             <ListItemText
               sx={{ fontSize: "100px" }}
               primary="About"
-              className="px-[3rem]"
+              className="px-[0.5rem] lg:px-[3rem]"
             />
             {subOpen ? <ExpandMore /> : <ExpandLess />}
           </ListItemButton>
@@ -279,8 +272,8 @@ export default function MainHeader() {
             in={subOpen}
             timeout="auto"
             unmountOnExit
-            className="px-[3rem]"
-          >
+            className="px-[0.5rem] lg:px-[3rem]"
+            >
             <List component="div" disablePadding>
               <ListItemButton href="/theDifferentiator">
                 <ListItemText secondary="The Differentiator" />
@@ -306,7 +299,7 @@ export default function MainHeader() {
             <ListItemText
               sx={{ fontSize: "100px" }}
               primary="Insight"
-              className="px-[3rem]"
+              className="px-[0.5rem] lg:px-[3rem]"
             />
           </ListItemButton>
           <Divider />
@@ -314,13 +307,13 @@ export default function MainHeader() {
             <ListItemText
               sx={{ fontSize: "100px" }}
               primary="Contacts"
-              className="px-[3rem]"
+              className="px-[0.5rem] lg:px-[3rem]"
             />
           </ListItemButton>
           <Divider />
         </List>
 
-        <div className="px-[3rem] justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold pt-44 lg:pt-60">
+        <div className="px-[2rem] lg:px-[3.5rem] justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold pt-44 lg:pt-60">
           <p>Disclaimers</p>
         </div>
       </Drawer>

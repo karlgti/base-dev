@@ -4,7 +4,7 @@ import TermOfUse from "components/TermOfUse";
 export default function footer() {
   return (
     <footer className="text-center lg:text-left text-gray-600">
-      <div className="flex justify-center items-center lg:justify-between border-separate border-spacing-4 border-b-4 border-t border-[#001B71]">
+      <div className="flex justify-center items-center lg:justify-between border-separate border-spacing-4 border-b-4 border-[#001B71]">
         <div className="lg:mr-12 lg:pl-16 flex font-black text-[#021B71]">
           <span className="cursor-pointer	text-xs lg:text-xl">
             Base Asset Management Limited
@@ -84,11 +84,12 @@ export default function footer() {
           </div>
 
           <div className="lg:mr-6 text-sm p-6 lg:p-0 lg:text-xl lg:py-1 flex lg:justify-end ">
-            <p className="lg:border-r-2 border-[#001B71] text-[#001B71] cursor-pointer lg:pr-4">
+            <TermOfUse />
+            <p className="pr-4 text-[#001B71]"></p>
+
+            <p className="lg:border-l-2 border-[#001B71] text-[#001B71] cursor-pointer lg:pl-4">
               Privacy Policy
             </p>
-            <p className="pl-4 text-[#001B71]"></p>
-            <TermOfUse />
           </div>
         </div>
       </div>

@@ -27,9 +27,9 @@ const backToTop = () => {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="flex flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-3"
+          className="flex flex-end mr-0 mx-auto text-xl back-to-top text-white bg-[#505758] p-3"
         >
-          &#8679; Back to top
+          &#x2303; Back to top
         </button>
       )}
     </>

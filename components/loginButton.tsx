@@ -40,7 +40,7 @@ export default function MaxWidthDialog() {
         sx={{ p: 2, textTransform: "capitalize" }}
         onClick={handleClickOpen}
       >
-        <Typography color="common.white">Investor login</Typography>
+        <Typography color="common.white">Investor iogin</Typography>
       </Button>
       <Dialog
         sx={{

@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         <Header />
       </div>
 
-      <div className="bg-[#001772] pt-14 pb-32 lg:pb-80">
+      <div className="bg-[#011e7b] pt-14 pb-32 lg:pb-80">
         <video
           autoPlay
           loop
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
           Leave No Stone
           <br />
           Unturned.
-          <div className="font-thin pt-3 z-30 text-lg lg:text-2xl text-white rounded-xl bold">
+          <div className="font-light pt-7 z-30 text-base lg:text-xl text-white rounded-xl bold">
             <p className="mb-3">
               An investment strategy that is powered by automation and
               programmed signals that identify hidden gems and capitalise on
@@ -55,7 +55,6 @@ const Home: NextPage = () => {
             </p>
 
             <p>
-              {" "}
               Always on the lookout for new market trends and behaviours so our
               investors can stay ahead of the curve.
             </p>
@@ -63,12 +62,12 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="bg-[#f2f2f2] lg:pb-[12rem]">
+      <div className="lg:pb-[3rem]">
         <Banners />
-        <div className="px-[10%]">
+        <div className="px-[5%]">
           <Insight />
         </div>
-        <div className="pt-10">
+        <div className="pt-5 lg:pt-10">
           <div className="hidden lg:block">
             <Button />
           </div>

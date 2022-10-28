@@ -54,12 +54,15 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
+        PaperProps={{
+          style: { borderRadius: 0 },
+        }}
       >
-        <div className="h-[72vh] max-w-[100%] pt-6 pb-6 bg-white flex flex-col">
-          <div className="max-w-[80%] mx-auto space-y-12 overflow-y-scroll pr-2 pb-6 h-[85%]">
+        <div className="h-[72vh] max-w-[100%] mt-10 bg-white flex flex-col">
+          <div className="max-w-[92%] mx-auto space-y-12 overflow-y-scroll h-[85%]">
             <h1 className="text-3xl ">WEBSITE DISCLAIMER – IMPORTANT NOTICE</h1>
 
-            <div className="font-light text-justify">
+            <div className="font-normal	 text-justify">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
               of this website https://www.base-am.com (the“Website”). Please
@@ -70,7 +73,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               decline” to leave the Website.
             </div>
 
-            <div className="space-y-4 font-light">
+            <div className="space-y-4 font-normal	">
               <h6 className="font-semibold">Recipients of Communication</h6>
               <p className="text-justify">
                 This Website is established by Base Asset Management Limited
@@ -90,7 +93,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </p>
             </div>
 
-            <div className="space-y-4 font-light">
+            <div className="space-y-4 font-normal	">
               <h6 className="font-semibold">
                 Accredited Investors in Hong Kong
               </h6>
@@ -100,8 +103,11 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Securities and Futures Ordinance (the “SFO”) and the Securities
                 and Futures (Professional Investors) Rules. Professional
                 Investors are defined as persons who meet certain financial
-                criteria and please go to our Definition of Professional
-                Investor page for full details.
+                criteria and please go to
+                <span className="text-primary-blue font-semibold underline underline-offset-4 mx-1">
+                  our Definition of Professional Investor
+                </span>
+                page for full details.
               </p>
               <p className="text-justify">
                 The information contained in this Website is not an
@@ -117,7 +123,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </p>
             </div>
 
-            <div className="space-y-4 font-light">
+            <div className="space-y-4 font-normal	">
               <h6 className="font-semibold">Accessing the Website</h6>
               <p className="text-justify">
                 This Website has not been reviewed by the SFC and is provided to
@@ -135,7 +141,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </p>
             </div>
 
-            <div className="space-y-4 font-light">
+            <div className="space-y-4 font-normal	">
               <h6 className="font-semibold">Risk Considerations</h6>
               <p className="text-justify">
                 The value of investments and the income generated may go down as
@@ -166,9 +172,9 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </p>
             </div>
 
-            <div className="font-light ">
+            <div className="font-normal	 ">
               Please access to our
-              <span className="underline text-primary-blue underline-offset-2 ">
+              <span className="underline text-primary-blue mx-2 underline-offset-2 ">
                 <Link href="/">Terms of Use</Link>
               </span>
               page for full disclosures.
@@ -198,7 +204,8 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                     (agree == 1 ? "text-primary-blue " : "")
                   }
                 >
-                  I have read and agreed to the above terms and conditions
+                  I have read and agreed to the <br className="md:hidden" />{" "}
+                  above terms and conditions
                 </label>
               </button>
               <button
@@ -241,7 +248,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             <button
               disabled={agree == 0}
               className={
-                "flex items-center justify-center w-36 h-4/6 font-bold text-white transition-all duration-300 ease-in-out " +
+                "flex items-center justify-center mr-3 lg:mr-14 lg:mb-5 w-36 h-4/6 font-bold text-white transition-all duration-300 ease-in-out " +
                 (agree == 0 ? "bg-[#DDDDDD]" : "bg-primary-blue ")
               }
               onClick={handleClose}
@@ -260,7 +267,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[24vh] px-6 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
+        <div className="h-[25vh] px-6 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
           <div className="text-white ">
             <p>
               This website and its content can only be accessed if the
