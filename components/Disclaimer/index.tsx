@@ -1,6 +1,7 @@
 import { Dialog, DialogActions } from "@material-ui/core";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const style = {
   position: "absolute" as "absolute",
@@ -46,8 +47,13 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
     }
   }, []);
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -60,9 +66,11 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
       >
         <div className="h-[72vh] max-w-[100%] mt-10 bg-white flex flex-col">
           <div className="max-w-[92%] mx-auto space-y-12 overflow-y-scroll h-[85%]">
-            <h1 className="text-3xl ">WEBSITE DISCLAIMER – IMPORTANT NOTICE</h1>
+            <h1 className="font-normal	text-[26px] leading-[26px]">
+              WEBSITE DISCLAIMER – IMPORTANT NOTICE
+            </h1>
 
-            <div className="font-normal	 text-justify">
+            <div className="font-normal	text-[16px] leading-[26px] text-justify">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
               of this website https://www.base-am.com (the“Website”). Please
@@ -74,8 +82,10 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             </div>
 
             <div className="space-y-4 font-normal	">
-              <h6 className="font-semibold">Recipients of Communication</h6>
-              <p className="text-justify">
+              <div className="font-semibold text-[16px] leading-[26px]">
+                Recipients of Communication
+              </div>
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 This Website is established by Base Asset Management Limited
                 (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                 BMS500) regulated by the Hong Kong Securities and Futures
@@ -94,22 +104,23 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             </div>
 
             <div className="space-y-4 font-normal	">
-              <h6 className="font-semibold">
+              <div className="font-semibold text-[16px] leading-[26px]">
                 Accredited Investors in Hong Kong
-              </h6>
-              <p className="text-justify">
+              </div>
+
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 In Hong Kong, this Website is directed only at persons who
                 qualify as “Professional Investor(s)” as defined under the
                 Securities and Futures Ordinance (the “SFO”) and the Securities
                 and Futures (Professional Investors) Rules. Professional
                 Investors are defined as persons who meet certain financial
                 criteria and please go to
-                <span className="text-primary-blue font-semibold underline underline-offset-4 mx-1">
+                <span className="text-primary-blue font-normal	text-[16px] leading-[26px] underline underline-offset-4 mx-1">
                   our Definition of Professional Investor
                 </span>
                 page for full details.
               </p>
-              <p className="text-justify">
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 The information contained in this Website is not an
                 advertisement, invitation or document relating to any securities
                 or collective investment schemes or any other investment under
@@ -124,8 +135,11 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             </div>
 
             <div className="space-y-4 font-normal	">
-              <h6 className="font-semibold">Accessing the Website</h6>
-              <p className="text-justify">
+              <div className="font-semibold text-[16px] leading-[26px]">
+                Accessing the Website
+              </div>
+
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 This Website has not been reviewed by the SFC and is provided to
                 you on the basis that you are a Professional Investor. By
                 accessing this Website, you acknowledge and agree that this
@@ -133,7 +147,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 distribute or otherwise make this material available to a person
                 who is not a Professional Investor.
               </p>
-              <p className="text-justify">
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 No unauthorised person should attempt to gain access to any
                 restricted area of the Website. We disclaim all liability for
                 any loss a user may suffer from access to the Website by an
@@ -142,8 +156,11 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             </div>
 
             <div className="space-y-4 font-normal	">
-              <h6 className="font-semibold">Risk Considerations</h6>
-              <p className="text-justify">
+              <div className="font-semibold text-[16px] leading-[26px]">
+                Risk Considerations
+              </div>
+
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 The value of investments and the income generated may go down as
                 well as up, and the investors may not get back the amount
                 originally invested. Past performance is not a reliable
@@ -156,7 +173,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 suitablnly for investors who are in a position to take such
                 risk.
               </p>
-              <p className="text-justify">
+              <p className="font-normal	text-[16px] leading-[26px] text-justify">
                 The users of this Website should seek advice from independent
                 financial, legal, or tax professionals before making any
                 investment decisions. The information herein should not be
@@ -298,7 +315,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
           </DialogActions>
         </div>
       </Dialog>
-    </>
+    </ThemeProvider>
   );
 };
 

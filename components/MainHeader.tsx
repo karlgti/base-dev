@@ -179,7 +179,7 @@ export default function MainHeader() {
                 />
               </a>
             </div>
-            <div className="px-14 hidden lg:block">
+            <div className="px-10 hidden lg:block">
               <LoginButton />
             </div>
           </Toolbar>
