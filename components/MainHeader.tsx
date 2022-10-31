@@ -16,13 +16,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import mypic from "../public/img/headerLogo.png";
+import menuButton from "../public/img/icons8-menu-32.png";
 import LoginButton from "../components/loginButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
@@ -30,7 +31,6 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
 const drawerWidth = 330;
-const drawerHeight = 900;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -105,20 +105,26 @@ export default function MainHeader() {
   };
 
   const headerStyle = {
-    background: "#001772 !important",
+    background: "#011e7b !important",
     borderColor: "white !important",
-    borderBottom: 3,
+    borderBottom: 1,
     position: "absolute",
     width: "100%",
+    "& .css-hyum1k-MuiToolbar-root": {
+      paddingRight: 0,
+      paddingLeft: 0,
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
   };
 
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: 330,
+      width: 315,
       height: 650,
       boxSizing: "border-box",
-      marginTop: 13.3,
+      marginTop: 11.8,
     },
     "& .MuiListItemText-primary": {
       fontSize: 30,
@@ -143,184 +149,171 @@ export default function MainHeader() {
       width: "100vw",
     },
   };
+
+  const theme1 = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
   return (
-    <Box
-      sx={{
-        width: "100%",
-      }}
-    >
-      <CssBaseline />
-      <AppBar sx={headerStyle} open={open}>
-        <Toolbar>
-          <div className="mx-auto lg:pr-0 lg:ml-6 py-[1.8rem] lg:py-0">
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{ flexGrow: 1 }}
-              component="div"
-            >
+    <ThemeProvider theme={theme1}>
+      <Box
+        sx={{
+          width: "100%",
+        }}
+      >
+        {/* <CssBaseline />*/}
+        <AppBar sx={headerStyle} open={open}>
+          <Toolbar>
+            <div className="mx-auto lg:ml-[57px]">
               <a href="/">
                 <Image src={mypic} alt="Base Asset Management" />
               </a>
-            </Typography>
-          </div>
-          <div className="lg:border-l-4 lg:border-r-4 lg:mr-8 lg:p-[2rem]">
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              sx={{ ...(open && {}) }}
-            >
-              <MenuIcon
-                sx={{
-                  color: "white !important",
-                }}
-              />
+            </div>
+            <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[2rem]">
+              <a onClick={handleDrawerOpen}>
+                <Image
+                  src={menuButton}
+                  className="cursor-pointer"
+                  alt="Base Asset Management"
+                />
+              </a>
+            </div>
+            <div className="px-14 hidden lg:block">
+              <LoginButton />
+            </div>
+          </Toolbar>
+        </AppBar>
+        <Drawer sx={drawerWidth} anchor="right" open={open}>
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "rtl" ? <CloseIcon /> : <CloseIcon />}
             </IconButton>
-          </div>
-          <div className="p-4 hidden lg:block">
-            <LoginButton />
-          </div>
-        </Toolbar>
-      </AppBar>
-      <Drawer sx={drawerWidth} anchor="right" open={open}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? <CloseIcon /> : <CloseIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <List
-          sx={{
-            width: "100%",
-            bgcolor: "background.paper",
-          }}
-          component="nav"
-          aria-labelledby="nested-list-subheader"
-        >
-          <Divider />
-          <Button
-            className="lg:hidden text-[#CC9C4A]"
-            onClick={handleClickOpen1}
-          >
-            <Typography
-              color="#CC9C4A"
-              sx={{ fontSize: "25px", fontWeight: 700 }}
-              className="py-3 px-[1rem] lg:px-[3rem]"
-            >
-              Investor login
-            </Typography>
-          </Button>
-          <Dialog
+          </DrawerHeader>
+          <List
             sx={{
-              "& .MuiDialog-paper": {
-                position: "absolute",
-                right: 0,
-                top: -30,
-                marginRight: 0,
-                paddingright: 0,
-                borderRadius: 0,
-              },
+              width: "100%",
+              bgcolor: "background.paper",
             }}
-            open={open1}
-            onClose={handleClose1}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
           >
-            <DialogActions>
-              <p
-                onClick={handleClose1}
-                className={"cursor-pointer p-3 text-4xl font-extralight"}
-              >
-                x
-              </p>
-            </DialogActions>
-            <DialogContent>
-              <Box noValidate component="form" sx={loginBox}>
-                <FormControl sx={{ paddingLeft: 6 }}>
-                  <TextField
-                    id="demo-helper-text-aligned"
-                    label="Email address"
-                  />
-                  <br />
-                  <TextField
-                    id="demo-helper-text-aligned-no-helper"
-                    label="Password"
-                  />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className="mt-10 bg-[#CC9C4A]"
-                  >
-                    login
-                  </Button>
-                  <DialogContentText className=" p-6 text-[#CC9C4A] font-bold text-center">
-                    Forget passoword
-                  </DialogContentText>
-                </FormControl>
-              </Box>
-            </DialogContent>
-          </Dialog>
-
-          <Divider />
-          <ListItemButton onClick={handleClick}>
-            <ListItemText
-              sx={{ fontSize: "100px" }}
-              primary="About"
-              className="px-[0.5rem] lg:px-[3rem]"
-            />
-            {subOpen ? <ExpandMore /> : <ExpandLess />}
-          </ListItemButton>
-          <Collapse
-            in={subOpen}
-            timeout="auto"
-            unmountOnExit
-            className="px-[0.5rem] lg:px-[3rem]"
+            <Divider />
+            {/*<Button
+              className="text-[#CC9C4A]"
+              onClick={handleClickOpen1}
             >
-            <List component="div" disablePadding>
-              <ListItemButton href="/theDifferentiator">
-                <ListItemText secondary="The Differentiator" />
-              </ListItemButton>
-              <br />
-              <ListItemButton href="/invest">
-                <ListItemText secondary="Investment Philosophy" />
-              </ListItemButton>
-              <br />
+              <Typography
+                color="#CC9C4A"
+                sx={{ fontSize: "25px", fontWeight: 700 }}
+                className="py-3 px-[1rem] "
+              >
+                Investor login
+              </Typography>
+            </Button>*/}
+            <Dialog
+              sx={{
+                "& .MuiDialog-paper": {
+                  position: "absolute",
+                  right: 0,
+                  top: -30,
+                  marginRight: 0,
+                  paddingright: 0,
+                  borderRadius: 0,
+                },
+              }}
+              open={open1}
+              onClose={handleClose1}
+            >
+              <DialogActions>
+                <p
+                  onClick={handleClose1}
+                  className={"cursor-pointer p-3 text-4xl font-extralight"}
+                >
+                  x
+                </p>
+              </DialogActions>
+              <DialogContent>
+                <Box noValidate component="form" sx={loginBox}>
+                  <FormControl sx={{ paddingLeft: 6 }}>
+                    <TextField
+                      id="demo-helper-text-aligned"
+                      label="Email address"
+                    />
+                    <br />
+                    <TextField
+                      id="demo-helper-text-aligned-no-helper"
+                      label="Password"
+                    />
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className="mt-10 bg-[#CC9C4A]"
+                    >
+                      login
+                    </Button>
+                    <DialogContentText className=" p-6 text-[#CC9C4A] font-bold text-center">
+                      Forget passoword
+                    </DialogContentText>
+                  </FormControl>
+                </Box>
+              </DialogContent>
+            </Dialog>
 
-              <ListItemButton href="/process">
-                <ListItemText secondary="Investment Process" />
-              </ListItemButton>
-              <br />
+            <Divider />
+            <ListItemButton onClick={handleClick}>
+              <ListItemText
+                sx={{ fontSize: "100px" }}
+                primary="About"
+                className=""
+              />
+              {subOpen ? <ExpandMore /> : <ExpandLess />}
+            </ListItemButton>
+            <Collapse in={subOpen} timeout="auto" unmountOnExit className=" ">
+              <List component="div" disablePadding>
+                <ListItemButton href="/theDifferentiator">
+                  <ListItemText secondary="The Differentiator" />
+                </ListItemButton>
+                <ListItemButton href="/invest">
+                  <ListItemText secondary="Investment Philosophy" />
+                </ListItemButton>
+                <ListItemButton href="/process">
+                  <ListItemText secondary="Investment Process" />
+                </ListItemButton>
+                <ListItemButton href="/team">
+                  <ListItemText secondary="Our Team" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+            <Divider />
+            <ListItemButton href="/blog">
+              <ListItemText
+                sx={{ fontSize: "100px" }}
+                primary="Insight"
+                className=" "
+              />
+            </ListItemButton>
+            <Divider />
+            <ListItemButton href="/contactUs">
+              <ListItemText
+                sx={{ fontSize: "100px" }}
+                primary="Contacts"
+                className=" "
+              />
+            </ListItemButton>
+            <Divider />
+          </List>
+          <ThemeProvider theme={theme1}>
+            <div className="absolute bottom-0 px-[1rem] text-xl cursor-pointer pb-[2rem] font-bold">
+              <p>Disclaimers</p>
+            </div>
+          </ThemeProvider>
+        </Drawer>
 
-              <ListItemButton href="/team">
-                <ListItemText secondary="Our Team" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <Divider />
-          <ListItemButton href="/blog">
-            <ListItemText
-              sx={{ fontSize: "100px" }}
-              primary="Insight"
-              className="px-[0.5rem] lg:px-[3rem]"
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton href="/contactUs">
-            <ListItemText
-              sx={{ fontSize: "100px" }}
-              primary="Contacts"
-              className="px-[0.5rem] lg:px-[3rem]"
-            />
-          </ListItemButton>
-          <Divider />
-        </List>
-
-        <div className="px-[2rem] lg:px-[3.5rem] justify-center text-2xl cursor-pointer items-center pb-[2rem] font-bold pt-44 lg:pt-60">
-          <p>Disclaimers</p>
-        </div>
-      </Drawer>
-
-      <Main open={open}>
-        <DrawerHeader />
-      </Main>
-    </Box>
+        <Main open={open}>
+          <DrawerHeader />
+        </Main>
+      </Box>
+    </ThemeProvider>
   );
 }

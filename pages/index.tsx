@@ -7,6 +7,7 @@ import Button from "../components/backToTop";
 import Insight from "../components/Insight";
 import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
@@ -17,6 +18,13 @@ const Home: NextPage = () => {
       if (disclaimer == "agreed") setAgreedDisclaimer(true);
     }
   }, []);
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
+
   return (
     <div>
       <Head>
@@ -42,12 +50,14 @@ const Home: NextPage = () => {
         >
           <source src="homePage/base_stone.mov" type="video/mp4" />
         </video>
+        <ThemeProvider theme={theme}>
+          <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-black	text-[90px] leading-[100px]">
+            Leave No Stone
+            <br />
+            Unturned.
+          </div>
 
-        <div className="font-extrabold lg:max-w-[70%] px-[9%] z-30 text-5xl lg:text-8xl text-white rounded-xl bold">
-          Leave No Stone
-          <br />
-          Unturned.
-          <div className="font-light pt-7 z-30 text-base lg:text-xl text-white rounded-xl bold">
+          <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
             <p className="mb-3">
               An investment strategy that is powered by automation and
               programmed signals that identify hidden gems and capitalise on
@@ -59,18 +69,23 @@ const Home: NextPage = () => {
               investors can stay ahead of the curve.
             </p>
           </div>
-        </div>
+        </ThemeProvider>
       </div>
 
       <div className="lg:pb-[3rem]">
-        <Banners />
-        <div className="px-[5%]">
+        <div className="px-[10%]">
+          <Banners />
+        </div>
+
+        <div className="px-[10%]">
           <Insight />
         </div>
+
         <div className="pt-5 lg:pt-10">
           <div className="hidden lg:block">
             <Button />
           </div>
+
           <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
         </div>
       </div>

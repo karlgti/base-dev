@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Image from "next/image";
+import menuButton from "../public/img/icons8-collapse-arrow-64.png";
 
 const backToTop = () => {
   // The back-to-top button is hidden at the beginning
@@ -22,17 +25,33 @@ const backToTop = () => {
     });
   };
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
+
   return (
-    <>
-      {showButton && (
-        <button
-          onClick={scrollToTop}
-          className="flex flex-end mr-0 mx-auto text-xl back-to-top text-white bg-[#505758] p-3"
-        >
-          &#x2303; Back to top
-        </button>
-      )}
-    </>
+    <div>
+      <ThemeProvider theme={theme}>
+        {showButton && (
+          <button
+            onClick={scrollToTop}
+            className="flex flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-3"
+          >
+            <Image
+              src={menuButton}
+              width={50}
+              height={50}
+              className="cursor-pointer"
+              alt="Base Asset Management"
+            />
+
+            <p className="font-bold	text-[15px] leading-[50px]"> Back to top</p>
+          </button>
+        )}
+      </ThemeProvider>
+    </div>
   );
 };
 

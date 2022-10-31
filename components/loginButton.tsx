@@ -22,6 +22,10 @@ export default function MaxWidthDialog() {
   };
 
   const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+
     palette: {
       primary: {
         // Purple and green play nicely together.
@@ -36,18 +40,33 @@ export default function MaxWidthDialog() {
 
   return (
     <React.Fragment>
-      <Button
-        sx={{ p: 2, textTransform: "capitalize" }}
-        onClick={handleClickOpen}
-      >
-        <Typography color="common.white">Investor iogin</Typography>
-      </Button>
+      <ThemeProvider theme={theme}>
+        <Button onClick={handleClickOpen}>
+          <Typography
+            color="common.white"
+            sx={{
+              fontStyle: "Inter",
+              textTransform: "capitalize",
+              marginRight: "5px",
+            }}
+          >
+            Investor
+          </Typography>
+          <Typography
+            color="common.white"
+            sx={{ fontStyle: "Inter", textTransform: "lowercase" }}
+          >
+            login
+          </Typography>
+        </Button>
+      </ThemeProvider>
+
       <Dialog
         sx={{
           "& .MuiDialog-paper": {
             position: "absolute",
             right: 0,
-            top: 75,
+            top: 63,
             marginRight: 0,
             paddingright: 0,
             borderRadius: 0,
@@ -59,7 +78,7 @@ export default function MaxWidthDialog() {
         <DialogActions>
           <p
             onClick={handleClose}
-            className={"cursor-pointer p-3 text-4xl font-extralight"}
+            className={"cursor-pointer text-4xl font-extralight"}
           >
             x
           </p>
@@ -71,10 +90,10 @@ export default function MaxWidthDialog() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              width: "350px",
+              width: "267px",
             }}
           >
-            <FormControl sx={{ mt: 6, minWidth: 120 }}>
+            <FormControl sx={{mb: 6}}>
               <TextField id="demo-helper-text-aligned" label="Email address" />
               <br />
               <TextField
@@ -82,7 +101,6 @@ export default function MaxWidthDialog() {
                 label="Password"
               />
             </FormControl>
-            <br />
             <ThemeProvider theme={theme}>
               <Button
                 variant="contained"
