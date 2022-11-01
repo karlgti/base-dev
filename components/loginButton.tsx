@@ -90,7 +90,7 @@ export default function MaxWidthDialog() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              width: "231px",
+              width: "240px",
             }}
           >
             <FormControl sx={{mb: 6}}>

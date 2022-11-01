@@ -146,11 +146,13 @@ export default function MainHeader() {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
       width: 308,
-      height: 650,
+      height: 750,
       boxSizing: "border-box",
       marginTop: 11.8,
     },
     "& .MuiListItemText-primary": {
+      paddingTop: "21px",
+      paddingBottom: "21px",
       fontSize: 30,
       fontWeight: 800,
     },
