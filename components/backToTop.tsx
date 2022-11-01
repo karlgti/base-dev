@@ -37,7 +37,7 @@ const backToTop = () => {
         {showButton && (
           <button
             onClick={scrollToTop}
-            className="flex flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-3"
+            className="flex opacity-25 flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-3"
           >
             <Image
               src={menuButton}

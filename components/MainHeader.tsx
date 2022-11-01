@@ -29,8 +29,27 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Slide from "@mui/material/Slide";
 const drawerWidth = 330;
+
+interface Props {
+  window?: () => Window;
+  children: React.ReactElement;
+}
+
+function HideOnScroll(props: Props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -105,10 +124,9 @@ export default function MainHeader() {
   };
 
   const headerStyle = {
-    background: "#011e7b !important",
+    background: "#011c6f !important",
     borderColor: "white !important",
     borderBottom: 1,
-    position: "absolute",
     width: "100%",
     "& .css-hyum1k-MuiToolbar-root": {
       paddingRight: 0,
@@ -117,11 +135,17 @@ export default function MainHeader() {
       paddingBottom: 0,
     },
   };
+  const box = {
+    width: "100%",
+    "header.MuiPaper-root": {
+      boxShadow: "none",
+    },
+  };
 
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: 315,
+      width: 308,
       height: 650,
       boxSizing: "border-box",
       marginTop: 11.8,
@@ -157,33 +181,32 @@ export default function MainHeader() {
   });
   return (
     <ThemeProvider theme={theme1}>
-      <Box
-        sx={{
-          width: "100%",
-        }}
-      >
-        {/* <CssBaseline />*/}
-        <AppBar sx={headerStyle} open={open}>
-          <Toolbar>
-            <div className="mx-auto lg:ml-[57px]">
-              <a href="/">
-                <Image src={mypic} alt="Base Asset Management" />
-              </a>
-            </div>
-            <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[2rem]">
-              <a onClick={handleDrawerOpen}>
-                <Image
-                  src={menuButton}
-                  className="cursor-pointer"
-                  alt="Base Asset Management"
-                />
-              </a>
-            </div>
-            <div className="px-10 hidden lg:block">
-              <LoginButton />
-            </div>
-          </Toolbar>
-        </AppBar>
+      <Box sx={box}>
+        <CssBaseline />
+        <HideOnScroll>
+          <AppBar sx={headerStyle} open={open}>
+            <Toolbar>
+              <div className="mx-auto lg:ml-[57px]">
+                <a href="/">
+                  <Image src={mypic} alt="Base Asset Management" />
+                </a>
+              </div>
+              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[2rem]">
+                <a onClick={handleDrawerOpen}>
+                  <Image
+                    src={menuButton}
+                    className="cursor-pointer"
+                    alt="Base Asset Management"
+                  />
+                </a>
+              </div>
+              <div className="px-10 hidden lg:block">
+                <LoginButton />
+              </div>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
+
         <Drawer sx={drawerWidth} anchor="right" open={open}>
           <DrawerHeader>
             <IconButton onClick={handleDrawerClose}>

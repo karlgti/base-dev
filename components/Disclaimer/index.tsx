@@ -258,14 +258,15 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               display: "flex",
               alignItems: "end",
               justifyContent: "flex-end",
-              width: "100%",
-              height: "15%",
+              paddingTop: 32,
+              paddingRight: 46,
+              paddingBottom: 40,
             }}
           >
             <button
               disabled={agree == 0}
               className={
-                "flex items-center justify-center mr-3 lg:mr-14 lg:mb-5 w-36 h-4/6 font-bold text-white transition-all duration-300 ease-in-out " +
+                "flex items-center justify-center w-[170px] h-[58px] text-[17px] leading-[17px] font-bold text-white transition-all duration-300 ease-in-out " +
                 (agree == 0 ? "bg-[#DDDDDD]" : "bg-primary-blue ")
               }
               onClick={handleClose}

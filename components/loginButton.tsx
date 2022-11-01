@@ -83,14 +83,14 @@ export default function MaxWidthDialog() {
             x
           </p>
         </DialogActions>
-        <DialogContent>
+        <DialogContent> 
           <Box
             noValidate
             component="form"
             sx={{
               display: "flex",
               flexDirection: "column",
-              width: "267px",
+              width: "231px",
             }}
           >
             <FormControl sx={{mb: 6}}>
