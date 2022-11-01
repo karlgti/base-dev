@@ -146,7 +146,7 @@ export default function MainHeader() {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
       width: 308,
-      height: 750,
+      height: 680,
       boxSizing: "border-box",
       marginTop: 11.8,
     },
