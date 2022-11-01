@@ -292,7 +292,7 @@ export default function MainHeader() {
                 primary="About"
                 className=""
               />
-              {subOpen ? <ExpandMore /> : <ExpandLess />}
+              {subOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <Collapse in={subOpen} timeout="auto" unmountOnExit className=" ">
               <List component="div" disablePadding>
