@@ -128,13 +128,22 @@ export default function MainHeader() {
     borderColor: "white !important",
     borderBottom: 1,
     width: "100%",
-    "& .css-hyum1k-MuiToolbar-root": {
+    "& .MuiToolbar-root ": {
       paddingRight: 0,
       paddingLeft: 0,
       paddingTop: 0,
       paddingBottom: 0,
     },
+    ["@media (min-width: 600px)"]: {
+      "& .MuiToolbar-root ": {
+        paddingRight: 0,
+        paddingLeft: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+      },
+    },
   };
+
   const box = {
     width: "100%",
     "header.MuiPaper-root": {
@@ -145,7 +154,7 @@ export default function MainHeader() {
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: 308,
+      width: 283,
       height: 680,
       boxSizing: "border-box",
       marginTop: 11.8,
