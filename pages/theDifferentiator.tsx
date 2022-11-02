@@ -1,149 +1,150 @@
 import React from "react";
 import Header from "components/TheDifferentiatorHeader";
 import Image from "next/image";
-import mypic from "../public/img/802204_BAM_Development_Website_V1_Artboard 39 1.png";
+import mypic from "../public/img/Differentiator_icon_1.gif";
 import value from "../public/img/value.png";
 import vision from "../public/img/vision.png";
 import Button from "../components/backToTop";
 import SeeInvestmentPhilosophy from "components/SeeInvestmentPhilosophy";
 import Footer from "components/footer";
 import Link from "next/link";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function TheDifferentiator() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   });
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
   return (
     <div>
-      <Header />
-      <section className="bg-[#00953b] pt-14">
-        <div className="bg-[#00953b]">
-          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
-            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-2xl lg:text-5xl text-white font-inter">
-                Not to Go Back is to Advance;
-                <br />
-                Here’s when Old meets New.
-              </h1>
-            </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="max-w-[1440px]">
+        <Header />
+        <div className="bg-[#00953b] pt-[5rem]">
+          <div className="flex items-center pl-[146px] pr-[70px] justify-between">
+            <h1 className="font-light	text-[48px] leading-[60px] text-white">
+              Not to Go Back is to Advance;
+              <br />
+              Here’s when Old meets New.
+            </h1>
             <Image
-              className="object-cover w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
               src={mypic}
               alt="TheDifferentiator"
-              width={300}
-              height={300}
+              width={500}
+              height={500}
             />
           </div>
         </div>
-      </section>
 
-      <div className="px-[10%]">
-        <div className="py-16 flex">
-          <Link className="text-slate-100	mr-1" href="/">
+        <div className="px-[144px]">
+          <div className="pt-[17px] pb-[100px] flex">
+            <Link className="text-slate-100	mr-1" href="/">
+              {
+                <h1 className="text-[#00953B] font-semibold	text-[18px] leading-[30px] mr-1">
+                  About /
+                </h1>
+              }
+            </Link>
             {
-              <h1 className="text-[#00953B] font-bold text-md lg:text-2xl mr-1">
-                About /
+              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+                The Differentiator
               </h1>
             }
-          </Link>
-          {
-            <h1 className="text-black font-bold text-md lg:text-2xl">
-              The Differentiator
-            </h1>
-          }
-        </div>
-        <div className="border-t-[6px] border-b-[3px] border-[#00953b] mb-6">
-          <div className="lg:flex px-[2%] lg:py-14">
-            <div className=" relative lg:w-[50%] lg:py-10 ml-14">
-              <h1 className="lg:hidden lg:text-6xl text-[#00953B]">
+          </div>
+          <div className="border-t-[6px] border-b-[3px] border-[#00953b]">
+            <div className="flex py-[35px]">
+              <div className="relative w-[45%]">
+                <Image src={vision} alt="TheDifferentiator" />
+              </div>
+              <h1 className="absolute font-light	text-[45px] leading-[56px] text-[#00953B]">
                 Our
-                <div className="font-extrabold">Value</div>
+                <div className="font-extrabold	text-[45px] leading-[56px]">
+                  Vision
+                </div>
               </h1>
-              <Image src={vision} alt="TheDifferentiator" />
-            </div>
-            <h1 className="hidden lg:block absolute lg:text-6xl text-[#00953B]">
-              Our
-              <div className="font-extrabold">Value</div>
-            </h1>
-            <div className="lg:w-[50%]">
-              <p className="lg:text-4xl text-justify">
-                We are passionate about discovering all possible investing
-                opportunities that offer the potential risk-adjusted returns in
-                an efficient and effective manner.
-              </p>
-              <div className="flex mt-14 grid grid-cols-2 gap-14">
-                <p className="lg:text-xl text-left">
-                  We are committed to using the
-                  <span className=" mx-2 text-[#00953B] italic lg:text-2xl">
-                    latest technology
-                  </span>
-                  to identify market trends and behaviour and benefit from these
-                  anomalies before they become the norm.
+              <div className="w-[55%]">
+                <p className="font-light	text-[28px] leading-[38px] text-justify">
+                  We are passionate about discovering all possible investing
+                  opportunities that offer the potential risk-adjusted returns
+                  in an efficient and effective manner.
                 </p>
-                <p className="lg:text-xl text-left">
-                  We strive to strike an utmost appropriate balance between
-                  <span className=" mx-2 text-[#00953B] italic lg:text-2xl">
-                    human source intelligence and signal intelligence
-                  </span>
-                  without sacrificing potential upside.
-                </p>
+                <div className="flex mt-14 grid grid-cols-2 gap-14">
+                  <p className="font-light	text-[18px] leading-[28px] text-left">
+                    We are committed to using the
+                    <span className="font-normal mx-2 text-[#00953B] italic text-[18px]">
+                      latest technology
+                    </span>
+                    to identify market trends and behaviour and benefit from
+                    these anomalies before they become the norm.
+                  </p>
+                  <p className="font-light	text-[18px] leading-[28px] text-left">
+                    We strive to strike an utmost appropriate balance between
+                    <span className="font-normal mx-2 text-[#00953B] italic text-[18px]">
+                      human source intelligence and signal intelligence
+                    </span>
+                    without sacrificing potential upside.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-24 border-t-[6px] border-b-[3px] border-[#00953b] mb-6">
-          <div className="lg:flex px-[2%] lg:py-14">
-            <div className="relative lg:w-[50%] lg:pt-40 ml-14">
-              <h1 className="lg:hidden lg:text-6xl text-[#00953B]">
+          <div className="border-t-[6px] mt-[94px] border-b-[3px] border-[#00953b]">
+            <div className="flex py-[35px]">
+              <div className="pt-[110px] relative w-[45%]">
+                <Image src={value} alt="TheDifferentiator" />
+              </div>
+              <h1 className="absolute font-light	text-[45px] leading-[56px] text-[#00953B]">
                 Our
-                <div className="font-extrabold">Value</div>
+                <div className="font-extrabold	text-[45px] leading-[56px]">
+                  Value
+                </div>
               </h1>
-              <Image src={value} alt="TheDifferentiator" />
-            </div>
-            <h1 className="hidden lg:block absolute lg:text-6xl text-[#00953B]">
-              Our
-              <div className="font-extrabold">Value</div>
-            </h1>
-            <div className="lg:w-[50%]">
-              <p className="lg:text-4xl text-justify">
-                We are passionate about discovering all possible investing
-                opportunities that offer the potential risk-adjusted returns in
-                an efficient and effective manner.
-              </p>
-              <div className="flex mt-14 grid grid-cols-2 gap-14">
-                <p className="lg:text-xl text-left">
-                  We are committed to using the
-                  <span className=" mx-2 text-[#00953B] italic lg:text-2xl">
-                    latest technology
-                  </span>
-                  to identify market trends and behaviour and benefit from these
-                  anomalies before they become the norm.
+              <div className="w-[55%]">
+                <p className="font-light	text-[28px] leading-[38px] text-justify">
+                  We are passionate about discovering all possible investing
+                  opportunities that offer the potential risk-adjusted returns
+                  in an efficient and effective manner.
                 </p>
-                <p className="lg:text-xl text-left">
-                  We strive to strike an utmost appropriate balance between
-                  <span className=" mx-2 text-[#00953B] italic lg:text-2xl">
-                    human source intelligence and signal intelligence
-                  </span>
-                  without sacrificing potential upside.
-                </p>
+                <div className="flex mt-14 grid grid-cols-2 gap-14">
+                  <p className="font-light	text-[18px] leading-[28px] text-left">
+                    We are committed to using the
+                    <span className="font-normal mx-2 text-[#00953B] italic text-[18px]">
+                      latest technology
+                    </span>
+                    to identify market trends and behaviour and benefit from
+                    these anomalies before they become the norm.
+                  </p>
+                  <p className="font-light	text-[18px] leading-[28px] text-left">
+                    We strive to strike an utmost appropriate balance between
+                    <span className="font-normal mx-2 text-[#00953B] italic text-[18px]">
+                      human source intelligence and signal intelligence
+                    </span>
+                    without sacrificing potential upside.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flow-root">
-        <div className="hidden lg:block mt-40">
-          <Button />
+        <div className="flow-root">
+          <div className="mt-[153px]">
+            <Button />
+          </div>
+          <div className="mt-[50px]">
+            <SeeInvestmentPhilosophy />
+          </div>
         </div>
-        <div className="hidden lg:block mt-14">
-          <SeeInvestmentPhilosophy />
-        </div>
+        <div className="mt-[68px]"></div>
       </div>
-      <div className="mt-14">
-        <Footer />
-      </div>
+    </div>
+    <Footer />
+
     </div>
   );
 }

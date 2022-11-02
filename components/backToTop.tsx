@@ -37,17 +37,17 @@ const backToTop = () => {
         {showButton && (
           <button
             onClick={scrollToTop}
-            className="flex opacity-25 flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-3"
+            className="flex opacity-25 w-[144px] h-[50px] flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-2"
           >
             <Image
               src={menuButton}
-              width={50}
-              height={50}
+              width={30}
+              height={30}
               className="cursor-pointer"
               alt="Base Asset Management"
             />
 
-            <p className="font-bold	text-[15px] leading-[50px]"> Back to top</p>
+            <p className="font-bold	text-[15px] my-auto"> Back to top</p>
           </button>
         )}
       </ThemeProvider>

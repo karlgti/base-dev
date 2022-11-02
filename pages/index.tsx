@@ -26,72 +26,67 @@ const Home: NextPage = () => {
   });
 
   return (
-    <div>
-      <Head>
-        <title>Base Asset Management Limited </title>
-        <meta name="description" content="Base Asset Management Limited" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <>
+      <div className="w-full flex flex-col justify-center items-center pt-[5rem]">
+        <Head>
+          <title>Base Asset Management Limited </title>
+          <meta name="description" content="Base Asset Management Limited" />
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <div className="max-w-[1440px]">
+          <Header />
 
-      <div>
-        <Header />
-      </div>
+          <div className="bg-[#021E7B] pb-80">
+            <video autoPlay loop muted>
+              <source src="homePage/base_stone.mov" type="video/mp4" />
+            </video>
+            <ThemeProvider theme={theme}>
+              <div className="lg:max-w-[70%] px-[144px] z-30 text-white font-black	text-[90px] leading-[100px]">
+                Leave No Stone
+                <br />
+                Unturned.
+              </div>
 
-      <div className="bg-[#021E7B] pb-80">
-        <video
-          autoPlay
-          loop
-          muted
-          className="block bottom-[-10rem] object-cover w-full"
-        >
-          <source src="homePage/base_stone.mov" type="video/mp4" />
-        </video>
-        <ThemeProvider theme={theme}>
-          <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-black	text-[90px] leading-[100px]">
-            Leave No Stone
-            <br />
-            Unturned.
+              <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
+                <p className="mb-3">
+                  An investment strategy that is powered by automation and
+                  programmed signals that identify hidden gems and capitalise on
+                  trading opportunities.
+                </p>
+
+                <p>
+                  Always on the lookout for new market trends and behaviours so
+                  our investors can stay ahead of the curve.
+                </p>
+              </div>
+            </ThemeProvider>
           </div>
 
-          <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
-            <p className="mb-3">
-              An investment strategy that is powered by automation and
-              programmed signals that identify hidden gems and capitalise on
-              trading opportunities.
-            </p>
+          <div className="lg:pb-[3rem]">
+            <div className="px-[10%]">
+              <Banners />
+            </div>
 
-            <p>
-              Always on the lookout for new market trends and behaviours so our
-              investors can stay ahead of the curve.
-            </p>
+            <div className="px-[10%]">
+              <Insight />
+            </div>
+
+            <div className="pt-5 lg:pt-10">
+              <div className="hidden lg:block">
+                <Button />
+              </div>
+
+              <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
+            </div>
           </div>
-        </ThemeProvider>
-      </div>
-
-      <div className="lg:pb-[3rem]">
-        <div className="px-[10%]">
-          <Banners />
-        </div>
-
-        <div className="px-[10%]">
-          <Insight />
-        </div>
-
-        <div className="pt-5 lg:pt-10">
-          <div className="hidden lg:block">
-            <Button />
-          </div>
-
-          <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
         </div>
       </div>
-
       <Footer />
-    </div>
+    </>
   );
 };
 

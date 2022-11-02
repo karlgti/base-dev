@@ -127,7 +127,6 @@ export default function MainHeader() {
     background: "#011c6f !important",
     borderColor: "white !important",
     borderBottom: 1,
-    width: "100%",
     "& .MuiToolbar-root ": {
       paddingRight: 0,
       paddingLeft: 0,
@@ -145,7 +144,6 @@ export default function MainHeader() {
   };
 
   const box = {
-    width: "100%",
     "header.MuiPaper-root": {
       boxShadow: "none",
     },
@@ -155,13 +153,13 @@ export default function MainHeader() {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
       width: 283,
-      height: 680,
+      height: 650,
       boxSizing: "border-box",
       marginTop: 11.8,
     },
     "& .MuiListItemText-primary": {
-      paddingTop: "21px",
-      paddingBottom: "21px",
+      paddingTop: "12px",
+      paddingBottom: "12px",
       fontSize: 30,
       fontWeight: 800,
     },
@@ -193,7 +191,6 @@ export default function MainHeader() {
   return (
     <ThemeProvider theme={theme1}>
       <Box sx={box}>
-        <CssBaseline />
         <HideOnScroll>
           <AppBar sx={headerStyle} open={open}>
             <Toolbar>
@@ -343,10 +340,6 @@ export default function MainHeader() {
             </div>
           </ThemeProvider>
         </Drawer>
-
-        <Main open={open}>
-          <DrawerHeader />
-        </Main>
       </Box>
     </ThemeProvider>
   );
