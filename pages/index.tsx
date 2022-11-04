@@ -8,6 +8,8 @@ import Insight from "../components/Insight";
 import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Image from "next/image";
+import invest from "../public/homePage/base_videogit_blue.gif";
 
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col justify-center items-center pt-[5rem]">
+      <div className="w-full bg-[#021E7B] flex flex-col justify-center items-center pt-[5rem]">
         <Head>
           <title>Base Asset Management Limited </title>
           <meta name="description" content="Base Asset Management Limited" />
@@ -40,50 +42,51 @@ const Home: NextPage = () => {
         <div className="max-w-[1440px]">
           <Header />
 
-          <div className="bg-[#021E7B] pb-80">
-            <video autoPlay loop muted>
-              <source src="homePage/base_stone.mov" type="video/mp4" />
-            </video>
+          <div className="pb-80">
+            <div className="w-full flex flex-col items-center">
+              <Image src={invest} width={1224} height={747} />
+            </div>
+
             <ThemeProvider theme={theme}>
-              <div className="lg:max-w-[70%] px-[144px] z-30 text-white font-black	text-[90px] leading-[100px]">
-                Leave No Stone
-                <br />
-                Unturned.
-              </div>
+              <div className="px-[146px]">
+                <div className="lg:max-w-[70%] z-30 text-white font-black	text-[90px] leading-[100px]">
+                  Leave No Stone
+                  <br />
+                  Unturned.
+                </div>
 
-              <div className="lg:max-w-[70%] px-[10%] z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
-                <p className="mb-3">
-                  An investment strategy that is powered by automation and
-                  programmed signals that identify hidden gems and capitalise on
-                  trading opportunities.
-                </p>
+                <div className="lg:max-w-[70%]  z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
+                  <p className="mb-3">
+                    An investment strategy that is powered by automation and
+                    programmed signals that identify hidden gems and capitalise
+                    on trading opportunities.
+                  </p>
 
-                <p>
-                  Always on the lookout for new market trends and behaviours so
-                  our investors can stay ahead of the curve.
-                </p>
+                  <p>
+                    Always on the lookout for new market trends and behaviours
+                    so our investors can stay ahead of the curve.
+                  </p>
+                </div>
               </div>
             </ThemeProvider>
           </div>
-
-          <div className="lg:pb-[3rem]">
-            <div className="px-[10%]">
-              <Banners />
-            </div>
-
-            <div className="px-[10%]">
-              <Insight />
-            </div>
-
-            <div className="pt-5 lg:pt-10">
-              <div className="hidden lg:block">
-                <Button />
-              </div>
-
-              <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center">
+        <div className="max-w-[1440px]">
+          <Banners />
+
+          <Insight />
+        </div>
+      </div>
+
+      <div className="bg-[#F5F5F5] py-[66px] lg:pt-10">
+        <div className="hidden lg:block">
+          <Button />
+        </div>
+
+        <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
       </div>
       <Footer />
     </>

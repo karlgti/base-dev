@@ -1,30 +1,29 @@
 import React from "react";
+import Arrow from "../public/img/Arrow.png";
+import Image from "next/image";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-const seeTheDiff = () => {
+const SeeTheDiff = () => {
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
   return (
-    <>
-      <button className="bg-[#00953B] text-xl text-white font-bold p-5  flex float-right">
-        <div>
-          <p>
-            See The
-            <br />
-            Differentiator
-          </p>
-        </div>
-
-        <svg
-          width="24"
-          height="24"
-          xmlns="http://www.w3.org/2000/svg"
-          fillRule="evenodd"
-          clipRule="evenodd"
-          className="my-auto ml-7"
-        >
-          <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
-        </svg>
-      </button>
-    </>
+    <ThemeProvider theme={theme}>
+      <a href="/theDifferentiator">
+        <button className="bg-[#00953B] w-[384px] p-[42px] h-[168px] text-white flex float-right">
+          <div className=" font-black text-left text-[30px] leading-[38px]">
+            <p> See The</p>
+            <p>Differentiator</p>
+          </div>
+          <div className=" my-auto pl-[40px]">
+            <Image src={Arrow} />
+          </div>
+        </button>
+      </a>
+    </ThemeProvider>
   );
 };
 
-export default seeTheDiff;
+export default SeeTheDiff;

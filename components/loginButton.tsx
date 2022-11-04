@@ -66,7 +66,7 @@ export default function MaxWidthDialog() {
           "& .MuiDialog-paper": {
             position: "absolute",
             right: 0,
-            top: 63,
+            top: 70,
             marginRight: 0,
             paddingright: 0,
             borderRadius: 0,

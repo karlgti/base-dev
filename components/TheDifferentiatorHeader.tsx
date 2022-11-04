@@ -16,7 +16,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import mypic from "../public/img/headerLogo.png";
-import menuButton from "../public/img/icons8-menu-32.png";
+import menuButton from "../public/img/BAM_Website_Testing_Artboard 12@2x 1.png";
 import LoginButton from "../components/loginButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -98,7 +98,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function theDiff() {
+export default function MainHeader() {
   const theme = useTheme();
   const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -155,7 +155,7 @@ export default function theDiff() {
       width: 283,
       height: 650,
       boxSizing: "border-box",
-      marginTop: 11.8,
+      marginTop: 12.8,
     },
     "& .MuiListItemText-primary": {
       paddingTop: "12px",
@@ -199,7 +199,7 @@ export default function theDiff() {
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[2rem]">
+              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[30px]">
                 <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}

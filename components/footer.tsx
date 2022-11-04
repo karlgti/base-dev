@@ -14,14 +14,14 @@ export default function footer() {
   return (
     <ThemeProvider theme={theme}>
       <footer className="">
-        <div className="flex items-center justify-between border-b-2 border-[#001B71]">
+        <div className="flex items-center justify-between border-b-[1px] border-[#001B71]">
           <div className="pl-[63px] flex font-black text-[#021B71]">
             <span className="cursor-pointer	font-bold	text-[18px] leading-[26px] text-[#001B71]">
               Base Asset Management Limited
             </span>
           </div>
 
-          <div className="flex lg:border-l-2 py-[14px] px-[63px] border-[#001B71]">
+          <div className="flex lg:border-l-[1px] py-[14px] px-[63px] border-[#001B71]">
             <div className="border-[#001B71] text-[#001B71] pr-[35px]">
               <a
                 href="mailto:info@base-am.com"

@@ -99,10 +99,10 @@ const CookieConsentForm = ({ showModal, setShowModal }: Props) => {
               continually improve this website. By clicking the “Save Settings”
               button, you agree to the use of the below types of cookies.
               However, blocking some types of cookies may impact your experience
-              of the site. Please go to our{" "}
+              of the site. Please go to our
               <Link passHref href='/' className='text-[#001B71] '>
                 Cookie Policy
-              </Link>{" "}
+              </Link>
               page for full disclosures on how we use cookies.
             </div>
 

@@ -13,7 +13,7 @@ function banners() {
     },
   });
   return (
-    <div className="relative justify-between flex top-[-15rem]">
+    <div className="relative flex top-[-15rem]">
       <div className="relative w-[368px] h-[480px] bg-[#00953B]">
         <div className="flex pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
@@ -33,7 +33,7 @@ function banners() {
         </div>
       </div>
 
-      <div className="relative  w-[368px] h-[480px] bg-[#CC9C4A]">
+      <div className="relative  w-[368px] mx-[24px] h-[480px] bg-[#CC9C4A]">
         <div className="flex pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
             <div className="font-light	text-white	text-[38px] leading-[45px]">
@@ -46,7 +46,7 @@ function banners() {
           </div>
         </div>
         <div className="absolute bottom-[19px] right-[19px]">
-          <a href="/theDifferentiator">
+          <a href="/invest">
             <Image src={invest} alt="Base Asset Management" />
           </a>
         </div>
@@ -65,7 +65,7 @@ function banners() {
           </div>
         </div>
         <div className="absolute bottom-[19px] right-[19px]">
-          <a href="/theDifferentiator">
+          <a href="/process">
             <Image src={process} alt="Base Asset Management" />
           </a>
         </div>

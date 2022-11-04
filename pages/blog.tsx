@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import mypic from "../public/img/blog_img.png";
+import mypic from "../public/img/banner/BAM_Pic4.gif";
 import Button from "../components/backToTop";
 import Footer from "components/footer";
 import Header from "../components/BlogHeader";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Link from "next/link";
+import linkedin from "../public/img/icons8-linkedin.svg";
+import twitter from "../public/img/twitter-square-icon.svg";
 
 export default function Blog() {
   const [animateHeader, setAnimateHeader] = useState(false);
@@ -19,306 +23,464 @@ export default function Blog() {
       window.removeEventListener("scroll", listener);
     };
   }, []);
-  return (
-    <>
-      <Header />
 
-      <section className="bg-[#4D008C] pt-14">
-        <div className="bg-[#4D008C]">
-          <div className="flex px-5 lg:items-center py-[11vh] justify-center">
-            <div className="lg:mr-[1.5rem] lg:w-1/2 white-txt">
-              <h1 className="text-2xl lg:text-4xl text-white font-inter">
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="bg-[#4D008C] w-full flex flex-col justify-center items-center">
+        <div className="max-w-[1440px] justify-center items-center">
+          <Header />
+          <div className=" pt-[8rem] pb-9">
+            <div className="flex items-center">
+              <h1 className="font-light	text-[48px] leading-[60px] text-white">
                 Trends. Views. Observations. <br />
                 And more.
               </h1>
+              <div className="ml-[220px]">
+              <Image
+                src={mypic}
+                alt="TheDifferentiator"
+                width={300}
+                height={300}
+              />
+              </div>
+
             </div>
-            <Image
-              className="object-cover w-max lg:mx-6 lg:w-1/2 pl-32 rounded-xl h-72 lg:h-96"
-              src={mypic}
-              alt="TheDifferentiator"
-              width={300}
-              height={300}
-            />
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="bg-white-800 hidden lg:block text-black-100">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          <h1 className="text-black-100 font-bold text-2xl">
-            Featured Insight
-          </h1>
+      <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
+        <div className="px-[144px] max-w-[1440px] ">
+          <div className="pt-[80px] pb-[12px] flex">
+            {
+              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+                Featured Insight
+              </h1>
+            }
+          </div>
           <div className="flex">
-            <div className="relative w-[72%] mr-14 border-b-2 border-[#4D008C]">
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="block sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
-              >
-                <img
-                  src="https://source.unsplash.com/random/480x360"
-                  alt=""
-                  className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-white-500"
-                />
-                <div className="p-6 space-y-2 lg:col-span-5">
-                  <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
-                    Noster tincidunt reprimique ad pro
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    February 19, 2021
-                  </span>
-                  <p>
-                    Ei delenit sensibus liberavisse pri. Quod suscipit no nam.
-                    Est in graece fuisset, eos affert putent doctus id.
+            <div className="w-[760px] mr-[16px] border-t-[8px] border-b-[1px] border-[#4D008C]">
+              <div className="block mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img src="https://source.unsplash.com/random/760x434" />
+                <div className="">
+                  <p className="font-semibold	text-[18px] leading-[30px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold	text-[45px] leading-[56px] group-hover:underline group-focus:underline">
+                    Is now a good time to buy shares amid the coronavirus
+                    pandemic?
+                  </p>
+
+                  <p className="font-normal mt-[20px]	text-[18px] leading-[28px]">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <br />
+                  <p className="font-normal	text-[18px] leading-[28px]">
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                    ullamcorper suscipit lobortis nisl ut aliquip. Ewea commodo
+                    consequat. Duis autem vel eum iriure dolor in hendrerit in
+                    vulputate veli.
                   </p>
                 </div>
-              </a>
+              </div>
+              <div className="flex mt-[175px] justify-between">
+                <div>
+                  <a
+                    href="https://www.linkedin.com/company/base-am/"
+                    className="text-gray-600"
+                  >
+                    <Image
+                      src={linkedin}
+                      width={32}
+                      height={32}
+                      className="cursor-pointer"
+                      alt="Base Asset Management"
+                    />
+                  </a>
+                </div>
+                <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                  2022-10-17
+                </div>
+              </div>
             </div>
-            <div className="relative w-[28%]">
-              <div className="border-b-2 border-[#4D008C]">
-                <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900"
-                >
-                  <img
-                    role="presentation"
-                    className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                    src="https://source.unsplash.com/random/480x360?1"
-                  />
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                      In usu laoreet repudiare legendos
-                    </h3>
-                    <span className="text-xs dark:text-gray-400">
-                      January 21, 2021
-                    </span>
-                  </div>
-                </a>
+            <div className=" w-[360px] ml-[16px] border-b-[1px] border-t-[8px] border-[#4D008C]">
+              <div className="block mt-[13px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img src="https://source.unsplash.com/random/360x250" />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
+                    Theme / Topic
+                  </p>
 
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900"
-                >
-                  <img
-                    role="presentation"
-                    className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                    src="https://source.unsplash.com/random/480x360?1"
-                  />
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                      In usu laoreet repudiare legendos
-                    </h3>
-                    <span className="text-xs dark:text-gray-400">
-                      January 21, 2021
-                    </span>
+                  <p className="font-extrabold	mt-[10px] text-[25px] leading-[30px] group-hover:underline group-focus:underline">
+                    Zipmex joins growing list of crypto exchanges to block
+                    withdrawals
+                  </p>
+                </div>
+                <div className="flex mt-[41px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={twitter}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
                   </div>
-                </a>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+              <div className="block mt-[27px] border-t-[8px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/360x250"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[25px] leading-[30px] group-hover:underline group-focus:underline">
+                    Zipmex joins growing list of crypto exchanges to block
+                    withdrawals
+                  </p>
+                </div>
+                <div className="flex mt-[41px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
 
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900"
-              >
+          <div className="container mt-[38px]">
+            <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                 <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?1"
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
                 />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 21, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
                   </p>
                 </div>
-              </a>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={twitter}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={twitter}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={twitter}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
+
+              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img
+                  src="https://source.unsplash.com/random/264x180"
+                  className="mt-[13px]"
+                />
+                <div className="">
+                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
+                    Theme / Topic
+                  </p>
+
+                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
+                    Oil money pumps up luxury property
+                  </p>
+                </div>
+                <div className="flex mt-[21px] justify-between">
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/base-am/"
+                      className="text-gray-600"
+                    >
+                      <Image
+                        src={linkedin}
+                        width={32}
+                        height={32}
+                        className="cursor-pointer"
+                        alt="Base Asset Management"
+                      />
+                    </a>
+                  </div>
+                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                    2022-10-17
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
 
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900"
+            <div className="flex mt-[150px] justify-center">
+              <button
+                type="button"
+                className="hover:underline font-bold	text-[24px] leading-[28px]"
               >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?2"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 22, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900"
-              >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?3"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 23, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900 hidden sm:block"
-              >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?4"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 24, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900 hidden sm:block"
-              >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?5"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 25, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div>
-              <div className=" border-b-4 border-[#4D008C] mb-3"></div>
-
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-white-900 hidden sm:block"
-              >
-                <img
-                  role="presentation"
-                  className="object-cover w-full rounded h-44 dark:bg-gray-500"
-                  src="https://source.unsplash.com/random/480x360?6"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                    In usu laoreet repudiare legendos
-                  </h3>
-                  <span className="text-xs dark:text-gray-400">
-                    January 26, 2021
-                  </span>
-                  <p>
-                    Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                    neglegentur, ex has tantas percipit perfecto. At per tempor
-                    albucius perfecto, ei probatus consulatu patrioque mea, ei
-                    vocent delicata indoctum pri.
-                  </p>
-                </div>
-              </a>
+                Load more
+              </button>
             </div>
           </div>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="px-6 py-3 text-sm rounded-md hover:underline bg-white-900 text-black-400 font-bold"
-            >
-              Load more
-            </button>
-          </div>
         </div>
-      </section>
-      <div className="mb-14">
+      </div>
+      <div className="bg-[#F5F5F5] pb-14">
         <Button />
       </div>
 
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }

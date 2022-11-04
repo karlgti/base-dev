@@ -16,7 +16,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import mypic from "../public/img/headerLogo.png";
-import menuButton from "../public/img/icons8-menu-32.png";
+import menuButton from "../public/img/BAM_Website_Testing_Artboard 12@2x 1.png";
 import LoginButton from "../components/loginButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -124,7 +124,7 @@ export default function MainHeader() {
   };
 
   const headerStyle = {
-    background: "#011c6f !important",
+    background: "#021E7B !important",
     borderColor: "white !important",
     borderBottom: 1,
     "& .MuiToolbar-root ": {
@@ -155,7 +155,7 @@ export default function MainHeader() {
       width: 283,
       height: 650,
       boxSizing: "border-box",
-      marginTop: 11.8,
+      marginTop: 12.8,
     },
     "& .MuiListItemText-primary": {
       paddingTop: "12px",
@@ -199,7 +199,7 @@ export default function MainHeader() {
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[2rem]">
+              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[30px]">
                 <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}

@@ -61,7 +61,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
         PaperProps={{
-          style: { borderRadius: 0 },
+          style: { borderRadius: 5 },
         }}
       >
         <div className="h-[72vh] max-w-[100%] mt-10 bg-white flex flex-col">
@@ -221,7 +221,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                     (agree == 1 ? "text-primary-blue " : "")
                   }
                 >
-                  I have read and agreed to the <br className="md:hidden" />{" "}
+                  I have read and agreed to the <br className="md:hidden" />
                   above terms and conditions
                 </label>
               </button>
