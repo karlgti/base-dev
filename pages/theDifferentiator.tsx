@@ -44,20 +44,26 @@ export default function TheDifferentiator() {
           </div>
         </div>
       </div>
-      <div className="bg-white px-[144px] py-[17px] flex">
-        <Link className="text-slate-100	mr-1" href="/">
-          {
-            <h1 className="text-[#00953B] font-semibold	text-[18px] leading-[30px] mr-1">
-              About /
-            </h1>
-          }
-        </Link>
-        {
-          <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+
+      <div className="w-full flex flex-col justify-center items-center ">
+        <div className="pr-[930px] max-w-[1440px] ">
+          <div className="py-[17px] flex ">
+            <Link className="text-slate-100	mr-1" href="/">
+              {
+                <h1 className="text-[#00953B] font-semibold	text-[18px] leading-[30px] mr-1">
+                  About /
+                </h1>
+              }
+            </Link>
+            {
+              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
             The Differentiator
-          </h1>
-        }
+              </h1>
+            }
+          </div>
+        </div>
       </div>
+
       <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
         <div className="px-[144px] max-w-[1440px] ">
           <div className="pb-[100px]"></div>

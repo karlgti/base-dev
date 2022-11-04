@@ -39,19 +39,24 @@ export default function Team() {
           </div>
         </div>
       </div>
-      <div className="py-[17px] px-[144px] flex">
-        <Link className="text-slate-100	mr-1" href="/">
-          {
-            <h1 className="text-[#CBC3BB] font-semibold	text-[18px] leading-[30px] mr-1">
-              About /
-            </h1>
-          }
-        </Link>
-        {
-          <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
-            Our Team
-          </h1>
-        }
+
+      <div className="w-full flex flex-col justify-center items-center ">
+        <div className="pr-[1000px] max-w-[1440px] ">
+          <div className="py-[17px] flex ">
+            <Link className="text-slate-100	mr-1" href="/">
+              {
+                <h1 className="text-[#CBC3BB] font-semibold	text-[18px] leading-[30px] mr-1">
+                  About /
+                </h1>
+              }
+            </Link>
+            {
+              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+                Our Team
+              </h1>
+            }
+          </div>
+        </div>
       </div>
 
       <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
