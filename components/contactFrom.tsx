@@ -108,7 +108,7 @@ export default function ContactForm() {
   };
   return (
     <ThemeProvider theme={theme}>
-      <div className="w-full flex flex-col justify-left items-left">
+      <div className="w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
         <div className="max-w-[1440px]">
           <main className="pt-[5rem] border-grey border-t-4 mx-[10%]">
             <header className="">
@@ -332,18 +332,19 @@ export default function ContactForm() {
                 </span>
                 <br />
                 <p className="font-medium text-[18px]">
-                  
                   Rm 1904, Tung Che Commercial Centre, 246 Des Voeux Road West,
                   Hong Kong
                 </p>
               </div>
             </div>
           </main>
-          <div className="mb-[50px]">
-            <Button />
-          </div>
         </div>
       </div>
+      <div className="bg-[#F5F5F5] pb-[50px]">
+        <Button />
+      </div>
+      <Footer />
+
     </ThemeProvider>
   );
 }

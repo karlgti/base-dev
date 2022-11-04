@@ -7,11 +7,9 @@ function contactUs() {
   return (
     <div>
       <Header />
-      <div className="bg-[#F5F5F5]">
+      <div className="">
         <Form />
       </div>
-      <Footer />
-
     </div>
   );
 }
