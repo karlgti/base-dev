@@ -152,7 +152,7 @@ export default function MainHeader() {
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: 283,
+      width: 300,
       height: 650,
       boxSizing: "border-box",
       marginTop: 12.8,
