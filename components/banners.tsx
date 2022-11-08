@@ -17,8 +17,9 @@ function banners() {
       <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#00953B]">
         <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <p className="font-light	text-white	lg:text-[38px] text-[24px] leading-[27px] lg:leading-[45px]">
-              The Differentiator
+            <p className="font-light	text-white	lg:text-[38px] text-[23px] leading-[27px] lg:leading-[45px]">
+              The <br />
+              Differentiator
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
@@ -35,8 +36,9 @@ function banners() {
       <div className="flex lg:block relative lg:w-[368px] lg:mx-[24px] my-[7px] lg:my-[0px] lg:h-[480px] bg-[#CC9C4A]">
         <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <p className="font-light	text-white	lg:text-[38px] text-[24px] leading-[27px] lg:leading-[45px]">
-              Investment Philosophy
+            <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
+              Investment <br />
+              Philosophy
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
@@ -53,8 +55,9 @@ function banners() {
       <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#E04403]">
         <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <p className="font-light	text-white	lg:text-[38px] text-[26px] leading-[27px] lg:leading-[45px]">
-              Investment Process
+            <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
+              Investment <br />
+              Process
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
