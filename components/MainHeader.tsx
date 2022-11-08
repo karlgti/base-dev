@@ -361,7 +361,7 @@ export default function MainHeader() {
             <Divider />
           </List>
           <ThemeProvider theme={theme1}>
-            <div className="absolute bottom-0 px-[1rem] text-xl cursor-pointer pb-[2rem] font-bold">
+            <div className="absolute bottom-0 px-[1rem] lg:text-[20px] text-[14px] cursor-pointer pb-[2rem] font-normal">
               <p>Disclaimers</p>
             </div>
           </ThemeProvider>
