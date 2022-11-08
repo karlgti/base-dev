@@ -15,14 +15,14 @@ function Insight() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <div className="flex">
-          <div className="w-[50%]">
+        <div className="lg:flex">
+          <div className="lg:w-[50%]">
             <div className="flex flex-col justify-between h-full">
               <div className="mb-8">
-                <h2 className="mb-5 text-white font-normal	text-[58px] leading-[76px] text-[#4D008C] pb-[30px]">
+                <h2 className="text-white font-normal lg:text-[58px] lg:leading-[76px] text-[44px] leading-[44px] text-[#4D008C] pb-[30px]">
                   Insights
                 </h2>
-                <div className="max-w-sm  font-normal	text-[18px] leading-[28px] text-[#000000]">
+                <div className="max-w-sm  font-normal	lg:text-[18px] lg:leading-[28px] text-[14px] leading-[24px] text-[#000000]">
                   <p>
                     At BASE, we pride ourselves on being open and transparent
                     with our investors. This means not only providing informed
@@ -40,26 +40,26 @@ function Insight() {
                 className="inline-flex items-center text-indigo-600 hover:text-indigo-700 leading-normal"
                 href="#"
               >
-                <button className="hidden lg:block mr-2 font-bold	text-[14px] leading-[17px] text-[#ffffff] bg-[#4D008C] text-white p-6 pr-16 pl-16">
+                <button className="hidden lg:block mr-2 font-bold text-[13px] leading-[17px] text-[#ffffff] bg-[#4D008C] text-white p-6 pr-16 pl-16">
                   View more
                 </button>
               </a>
             </div>
           </div>
-          <div className="w-[50%]">
+          <div className="lg:w-[50%]">
             <div className="flex">
-              <div className="mx-auto pt-2 border-t-[6px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 border-t-[6px] mr-[5px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogone} alt="Base Asset Management" />
                 </div>
-                <p className="mb-4 font-semibold	text-[14px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
                   Theme / Topic
                 </p>
                 <a
-                  className="max-w-[16rem]  mb-2 inline-block hover:text-gray-800 hover:underline"
+                  className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
                   href="#"
                 >
-                  <h3 className="font-extrabold	text-[20px] leading-[28px] text-[#000000]">
+                  <h3 className="font-extrabold	lg:text-[20px] lg:leading-[28px] text-[14px] leading-[15px] text-[#000000]">
                     Oil money pumps up luxury property
                   </h3>
                 </a>
@@ -85,18 +85,18 @@ function Insight() {
                 </div>
               </div>
 
-              <div className="mx-auto pt-2 border-t-[6px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 border-t-[6px] ml-[5px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogtwo} alt="Base Asset Management" />
                 </div>
-                <p className="mb-4 font-semibold	text-[14px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
                   Theme / Topic
                 </p>
                 <a
-                  className="max-w-[16rem]  mb-2 inline-block hover:text-gray-800 hover:underline"
+                  className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
                   href="#"
                 >
-                  <h3 className="font-extrabold	text-[20px] leading-[28px] text-[#000000]">
+                  <h3 className="font-extrabold	lg:text-[20px] lg:leading-[28px] text-[14px] leading-[15px] text-[#000000]">
                     Oil money pumps up luxury property
                   </h3>
                 </a>

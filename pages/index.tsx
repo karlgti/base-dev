@@ -42,20 +42,20 @@ const Home: NextPage = () => {
         <div className="max-w-[1440px]">
           <Header />
 
-          <div className="pb-80">
+          <div className="lg:pb-80 pb-[130px]">
             <div className="w-full flex flex-col items-center">
               <Image src={invest} width={1224} height={747} />
             </div>
 
             <ThemeProvider theme={theme}>
-              <div className="px-[146px]">
-                <div className="lg:max-w-[70%] z-30 text-white font-black	text-[90px] leading-[100px]">
+              <div className="lg:px-[100px] px-[7%]">
+                <div className="lg:max-w-[70%] z-30 text-white font-black lg:text-[90px] lg:leading-[100px]	text-[50px] leading-[50px]">
                   Leave No Stone
                   <br />
                   Unturned.
                 </div>
 
-                <div className="lg:max-w-[70%]  z-30 text-white font-normal pt-[50px]	text-[18px] leading-[28px]">
+                <div className="lg:max-w-[70%]  z-30 text-white font-normal pt-[50px] text-[16px]	lg:text-[18px] leading-[28px]">
                   <p className="mb-3">
                     An investment strategy that is powered by automation and
                     programmed signals that identify hidden gems and capitalise
@@ -73,7 +73,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center">
+      <div className="w-full bg-[#F5F5F5] px-[7%] lg:px-[0px] flex flex-col justify-center items-center">
         <div className="max-w-[1440px]">
           <Banners />
 
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="bg-[#F5F5F5] py-[66px] lg:pt-10">
+      <div className="bg-[#F5F5F5] py-[66px] pt-[0px] lg:pt-10">
         <div className="hidden lg:block">
           <Button />
         </div>

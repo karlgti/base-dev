@@ -13,59 +13,59 @@ function banners() {
     },
   });
   return (
-    <div className="relative flex top-[-15rem]">
-      <div className="relative w-[368px] h-[480px] bg-[#00953B]">
-        <div className="flex pt-[37px] justify-between px-[25px]">
+    <div className="relative lg:flex top-[-5rem] lg:top-[-15rem]">
+      <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#00953B]">
+        <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <div className="font-light	text-white	text-[38px] leading-[45px]">
+            <div className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
               The <br />
               Differentiator
             </div>
           </ThemeProvider>
-          <div className="pt-[50px]">
+          <div className="lg:pt-[50px]">
             <Image src={rightArrow} width={34} height={34} />
           </div>
         </div>
-        <div className="absolute bottom-[19px] right-[19px]">
+        <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
           <a href="/theDifferentiator">
             <Image src={logo} alt="Base Asset Management" />
           </a>
         </div>
       </div>
 
-      <div className="relative  w-[368px] mx-[24px] h-[480px] bg-[#CC9C4A]">
-        <div className="flex pt-[37px] justify-between px-[25px]">
+      <div className="flex lg:block relative lg:w-[368px] lg:mx-[24px] my-[7px] lg:my-[0px] lg:h-[480px] bg-[#CC9C4A]">
+        <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <div className="font-light	text-white	text-[38px] leading-[45px]">
-              Investment <br />
-              Philosophy
+            <div className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
+              The <br />
+              Differentiator
             </div>
           </ThemeProvider>
-          <div className="pt-[50px]">
+          <div className="lg:pt-[50px]">
             <Image src={rightArrow} width={34} height={34} />
           </div>
         </div>
-        <div className="absolute bottom-[19px] right-[19px]">
-          <a href="/invest">
+        <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
+          <a href="/theDifferentiator">
             <Image src={invest} alt="Base Asset Management" />
           </a>
         </div>
       </div>
 
-      <div className="relative  w-[368px] h-[480px] bg-[#E04403]">
-        <div className="flex pt-[37px] justify-between px-[25px]">
+      <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#E04403]">
+        <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
-            <div className="font-light	text-white	text-[38px] leading-[45px]">
-              Investment <br />
-              Process
+            <div className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
+              The <br />
+              Differentiator
             </div>
           </ThemeProvider>
-          <div className="pt-[50px]">
+          <div className="lg:pt-[50px]">
             <Image src={rightArrow} width={34} height={34} />
           </div>
         </div>
-        <div className="absolute bottom-[19px] right-[19px]">
-          <a href="/process">
+        <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
+          <a href="/theDifferentiator">
             <Image src={process} alt="Base Asset Management" />
           </a>
         </div>

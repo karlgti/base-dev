@@ -80,7 +80,7 @@ const TermOfUse = () => {
 
   return (
     <div>
-      <h1 onClick={handleOpen} className={"text-[#001B71] cursor-pointer font-medium pr-2 border-r-[2px] border-[#001B71]	text-[13px] leading-[17px]"}>
+      <h1 onClick={handleOpen} className={"text-[#001B71] cursor-pointer font-medium pr-4 lg:pr-2 border-r-[2px] border-[#001B71]	text-[13px] leading-[17px]"}>
         Terms of Use
       </h1>
       <Dialog
