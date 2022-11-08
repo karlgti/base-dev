@@ -300,10 +300,13 @@ export default function MainHeader() {
                       id="demo-helper-text-aligned-no-helper"
                       label="Password"
                     />
+                    <br />
+                    <br />
+
                     <Button
                       variant="contained"
                       color="primary"
-                      className="mt-10 bg-[#CC9C4A]"
+                      className=" bg-[#CC9C4A]"
                     >
                       login
                     </Button>
