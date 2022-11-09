@@ -46,7 +46,7 @@ function banners() {
           </div>
         </div>
         <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-          <a href="/theDifferentiator">
+          <a href="/invest">
             <Image src={invest} alt="Base Asset Management" />
           </a>
         </div>
@@ -65,7 +65,7 @@ function banners() {
           </div>
         </div>
         <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-          <a href="/theDifferentiator">
+          <a href="/process">
             <Image src={process} alt="Base Asset Management" />
           </a>
         </div>

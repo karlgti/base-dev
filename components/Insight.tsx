@@ -48,7 +48,7 @@ function Insight() {
           </div>
           <div className="lg:w-[50%]">
             <div className="flex">
-              <div className="mx-auto pt-2 border-t-[6px] mr-[5px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] mr-[5px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogone} alt="Base Asset Management" />
                 </div>
@@ -85,7 +85,7 @@ function Insight() {
                 </div>
               </div>
 
-              <div className="mx-auto pt-2 border-t-[6px] ml-[5px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] ml-[5px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogtwo} alt="Base Asset Management" />
                 </div>

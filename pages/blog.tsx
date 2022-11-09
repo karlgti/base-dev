@@ -32,58 +32,61 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <div className="bg-[#4D008C] w-full flex flex-col justify-center items-center">
-        <div className="max-w-[1440px] justify-center items-center">
+        <div className="lg:max-w-[1440px] justify-center items-center">
           <Header />
-          <div className=" pt-[8rem] pb-9">
-            <div className="flex items-center">
-              <h1 className="font-light	text-[48px] leading-[60px] text-white">
+          <div className="pt-[8rem] lg:pb-9">
+            <div className="flex flex-col lg:flex-row items-center">
+              <h1 className="font-light hidden lg:block	text-[48px] leading-[60px] text-white">
                 Trends. Views. Observations. <br />
                 And more.
               </h1>
-              <div className="ml-[220px]">
-              <Image
-                src={mypic}
-                alt="TheDifferentiator"
-                width={300}
-                height={300}
-              />
+              <div className="lg:ml-[200px]">
+                <Image
+                  src={mypic}
+                  alt="TheDifferentiator"
+                  width={300}
+                  height={300}
+                />
               </div>
-
+              <h1 className="font-light pb-[15px] lg:hidden text-[26px] leading-[36px] text-white">
+                Trends. Views. Observations. <br />
+                And more.
+              </h1>
             </div>
           </div>
         </div>
       </div>
 
       <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
-        <div className="px-[144px] max-w-[1440px] ">
-          <div className="pt-[80px] pb-[12px] flex">
+        <div className="lg:px-[144px] px-[7%] lg:max-w-[1440px] ">
+          <div className="pt-[42px] lg:pt-[80px] lg:pb-[12px] flex">
             {
-              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+              <h1 className="text-black font-semibold	lg:text-[26px] text-[20px] leading-[30px]">
                 Featured Insight
               </h1>
             }
           </div>
           <div className="flex">
-            <div className="w-[760px] mr-[16px] border-t-[8px] border-b-[1px] border-[#4D008C]">
+            <div className="lg:w-[760px] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
               <div className="block mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                 <img src="https://source.unsplash.com/random/760x434" />
                 <div className="">
-                  <p className="font-semibold	text-[18px] leading-[30px]">
+                  <p className="font-semibold	lg:text-[18px] text-[16px] mt-1 leading-[30px]">
                     Theme / Topic
                   </p>
 
-                  <p className="font-extrabold	text-[45px] leading-[56px] group-hover:underline group-focus:underline">
+                  <p className="font-extrabold	lg:text-[45px] lg:leading-[56px] text-[22px] leading-[32px] group-hover:underline group-focus:underline">
                     Is now a good time to buy shares amid the coronavirus
                     pandemic?
                   </p>
 
-                  <p className="font-normal mt-[20px]	text-[18px] leading-[28px]">
+                  <p className="font-normal mt-[20px]	lg:text-[18px] text-[16px] leading-[24px] lg:leading-[28px]">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
                     magna aliquam erat volutpat.
                   </p>
                   <br />
-                  <p className="font-normal	text-[18px] leading-[28px]">
+                  <p className="font-normal	hidden lg:block text-[18px] leading-[28px]">
                     Ut wisi enim ad minim veniam, quis nostrud exerci tation
                     ullamcorper suscipit lobortis nisl ut aliquip. Ewea commodo
                     consequat. Duis autem vel eum iriure dolor in hendrerit in
@@ -91,7 +94,7 @@ export default function Blog() {
                   </p>
                 </div>
               </div>
-              <div className="flex mt-[175px] justify-between">
+              <div className="flex lg:mt-[175px] justify-between">
                 <div>
                   <a
                     href="https://www.linkedin.com/company/base-am/"
@@ -106,12 +109,12 @@ export default function Blog() {
                     />
                   </a>
                 </div>
-                <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                <div className="font-medium	text-[12px] pt-3 leading-[22px] text-[#000000]">
                   2022-10-17
                 </div>
               </div>
             </div>
-            <div className=" w-[360px] ml-[16px] border-b-[1px] border-t-[8px] border-[#4D008C]">
+            <div className=" w-[360px] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
               <div className="block mt-[13px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                 <img src="https://source.unsplash.com/random/360x250" />
                 <div className="">
@@ -139,7 +142,7 @@ export default function Blog() {
                       />
                     </a>
                   </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                  <div className="font-medium	text-[12px] pt-3 leading-[22px] text-[#000000]">
                     2022-10-17
                   </div>
                 </div>
@@ -174,7 +177,7 @@ export default function Blog() {
                       />
                     </a>
                   </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
+                  <div className="font-medium	text-[12px] pt-3 leading-[22px] text-[#000000]">
                     2022-10-17
                   </div>
                 </div>
@@ -183,292 +186,70 @@ export default function Blog() {
           </div>
 
           <div className="container mt-[38px]">
-            <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
+            <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[...Array(8)].map((e, i) => {
+                return (
+                  <div
+                    key={i}
+                    className="block border-t-[4px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
+                  >
+                    <img
+                      src="https://source.unsplash.com/random/264x180"
+                      className="mt-[13px]"
+                    />
+                    <div className="">
+                      <p className="font-semibold	text-[11px] lg:text-[14px] mt-[14px] leading-[14px]">
+                        Theme / Topic
+                      </p>
 
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
+                      <p className="font-extrabold mt-[10px] text-[14px] leading-[15px] lg:text-[20px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                        Oil money pumps up luxury property
+                      </p>
+                    </div>
+                    <div className="flex mt-[21px] lg:hiddden justify-between">
+                      <div className="lg:hidden">
+                        <a
+                          href="https://www.linkedin.com/company/base-am/"
+                          className="text-gray-600"
+                        >
+                          <Image
+                            src={linkedin}
+                            width={21}
+                            height={21}
+                            className="cursor-pointer"
+                            alt="Base Asset Management"
+                          />
+                        </a>
+                      </div>
 
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
+                      <div className="hidden lg:block">
+                        <a
+                          href="https://www.linkedin.com/company/base-am/"
+                          className="text-gray-600"
+                        >
+                          <Image
+                            src={linkedin}
+                            width={32}
+                            height={32}
+                            className="cursor-pointer"
+                            alt="Base Asset Management"
+                          />
+                        </a>
+                      </div>
 
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={twitter}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
+                      <div className="font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
+                        2022-10-17
+                      </div>
+                    </div>
                   </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={twitter}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={twitter}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
-
-              <div className="block border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img
-                  src="https://source.unsplash.com/random/264x180"
-                  className="mt-[13px]"
-                />
-                <div className="">
-                  <p className="font-semibold	text-[14px] mt-[14px] leading-[14px]">
-                    Theme / Topic
-                  </p>
-
-                  <p className="font-extrabold mt-[10px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                    Oil money pumps up luxury property
-                  </p>
-                </div>
-                <div className="flex mt-[21px] justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={32}
-                        height={32}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
 
-            <div className="flex mt-[150px] justify-center">
+            <div className="flex mb-[50px] lg:mb-[0px] mt-[71px] lg:mt-[150px] justify-center">
               <button
                 type="button"
-                className="hover:underline font-bold	text-[24px] leading-[28px]"
+                className="hover:underline font-bold	text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
               >
                 Load more
               </button>
@@ -476,11 +257,12 @@ export default function Blog() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F5F5F5] pb-14">
+      <div className="bg-[#F5F5F5] hidden lg:block pb-14">
         <Button />
       </div>
-
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
