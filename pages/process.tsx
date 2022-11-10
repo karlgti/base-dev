@@ -31,16 +31,16 @@ function Process() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <div className="bg-[#E04403] w-full flex flex-col justify-center items-center">
-        <div className="max-w-[1440px] justify-center items-center">
+      <div className="bg-[#E04403] w-full flex flex-col  items-center">
+        <div className="lg:max-w-[1440px] lg:px-[144px]">
           <Header />
-          <div className=" pt-[8rem] pb-9">
-            <div className="flex items-center">
-              <h1 className="font-light	text-[48px] leading-[60px] text-white">
+          <div className="pt-[8rem] lg:pb-9">
+            <div className="flex flex-col lg:flex-row items-center">
+              <h1 className="font-light hidden lg:block	text-[48px] leading-[60px] text-white">
                 Turn Over Every Stone. <br />
                 Leave No Corner Unchecked.
               </h1>
-              <div className="ml-[200px]">
+              <div className="lg:ml-[200px]">
                 <Image
                   src={logo}
                   alt="TheDifferentiator"
@@ -48,33 +48,33 @@ function Process() {
                   height={300}
                 />
               </div>
+              <h1 className="font-light pb-[15px] lg:hidden text-[24px] leading-[36px] text-white">
+                Turn Over Every Stone. <br />
+                Leave No Corner Unchecked.
+              </h1>
             </div>
           </div>
         </div>
       </div>
 
-
       <div className="w-full flex flex-col justify-center items-center ">
-        <div className="pr-[920px] max-w-[1440px] ">
+        <div className="pr-[920px] hidden lg:block max-w-[1440px] ">
           <div className="py-[17px] flex ">
-            <Link className="text-slate-100	mr-1" href="/">
-              {
-                <h1 className="text-[#E04403] font-semibold	text-[18px] leading-[30px] mr-1">
-                  About /
-                </h1>
-              }
-            </Link>
-            {
-              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
-            Investment Process
-              </h1>
-            }
+            <h1 className="text-[#E04403] font-semibold	text-[18px] leading-[30px] mr-1">
+              About /
+              <span className="text-black ml-1 font-semibold	text-[18px] leading-[30px]">
+              Investment Process
+              </span>
+            </h1>
+            
           </div>
         </div>
       </div>
 
+
+
       <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
-        <div className="px-[144px] max-w-[1440px] ">
+        <div className="lg:px-[144px] px-[7%] max-w-[1440px] ">
           <div className="pb-[65px]"></div>
 
           <div className="lg:max-w-[70%] font-normal	text-[18px] leading-[28px]">
@@ -87,8 +87,8 @@ function Process() {
 
           <section className="">
             <div className="pt-[63px] mx-auto max-w-screen-xl">
-              <div className="flex">
-                <div className="mr-[24px]">
+              <div className="lg:flex">
+                <div className="lg:mr-[24px]">
                   <p className="text-[#E04403] font-normal	text-[30px] leading-[40px]">
                     Opportunity Generations
                   </p>
@@ -144,7 +144,7 @@ function Process() {
                   </article>
                 </div>
 
-                <div className="ml-[24px]">
+                <div className="lg:ml-[24px] mt-10 lg:mt-0">
                   <p className="text-[#E04403] font-normal	text-[30px] leading-[40px]">
                     Opportunity Generations
                   </p>
@@ -210,7 +210,7 @@ function Process() {
       </div>
 
       <div className="bg-[#F5F5F5] flow-root pb-[68px]">
-        <div className="mt-[153px]">
+        <div className="hidden lg:block mt-[153px]">
           <Button />
         </div>
         <div className="mt-[53px]">

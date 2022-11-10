@@ -10,8 +10,6 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
@@ -31,6 +29,8 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
+import Hidden from "@mui/material/Hidden";
+
 const drawerWidth = 330;
 
 interface Props {
@@ -103,12 +103,14 @@ export default function MainHeader() {
   const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [subOpen, subSetOpen] = React.useState(false);
+
   const handleClickOpen1 = () => {
     setOpen1(true);
   };
 
   const handleClose1 = () => {
     setOpen1(false);
+    setOpen(false);
   };
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -151,7 +153,7 @@ export default function MainHeader() {
   const drawerWidth = {
     flexShrink: 0,
     "& .MuiDrawer-paper": {
-      width: 283,
+      width: 300,
       height: 650,
       boxSizing: "border-box",
       marginTop: 12.8,
@@ -165,10 +167,19 @@ export default function MainHeader() {
     "& .MuiListItemText-secondary": {
       fontSize: 17,
     },
-    ["@media (max-width:780px)"]: {
+    ["@media (max-width:1024px)"]: {
       "& .MuiDrawer-paper": {
         width: "70%",
         marginTop: 0,
+      },
+      ".MuiListItemText-primary": {
+        paddingTop: "12px",
+        paddingBottom: "12px",
+        fontSize: 20,
+        fontWeight: 800,
+      },
+      "& .MuiListItemText-secondary": {
+        fontSize: 12,
       },
     },
   };
@@ -193,12 +204,12 @@ export default function MainHeader() {
         <HideOnScroll>
           <AppBar sx={headerStyle} open={open}>
             <Toolbar>
-              <div className="mx-auto lg:ml-[57px]">
+              <div className="mx-auto lg:ml-[57px] py-[20px] lg:py-[0px]">
                 <a href="/">
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] lg:border-r-[1px] lg:p-[30px]">
+              <div className="lg:border-l-[1px] absolute lg:relative right-[15px] lg:border-r-[1px] lg:p-[30px]">
                 <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}
@@ -228,62 +239,81 @@ export default function MainHeader() {
             component="nav"
             aria-labelledby="nested-list-subheader"
           >
-            <Divider />
-            {/*<Button
-              className="text-[#CC9C4A]"
-              onClick={handleClickOpen1}
-            >
-              <Typography
-                color="#CC9C4A"
-                sx={{ fontSize: "25px", fontWeight: 700 }}
-                className="py-3 px-[1rem] "
+            <div className="lg:hidden">
+              <Divider />
+
+              <Button
+                className="text-[#CC9C4A] px-[12px] py-[8px]"
+                onClick={handleClickOpen1}
               >
-                Investor login
-              </Typography>
-            </Button>*/}
+                <Typography
+                  color="#CC9C4A"
+                  sx={{ fontSize: "20px", fontWeight: 800 }}
+                  className="py-[18px] px-[5px]"
+                >
+                  Investor login
+                </Typography>
+              </Button>
+            </div>
+
             <Dialog
               sx={{
                 "& .MuiDialog-paper": {
                   position: "absolute",
-                  right: 0,
-                  top: -30,
-                  marginRight: 0,
-                  paddingright: 0,
-                  borderRadius: 0,
+                  top: -33,
                 },
               }}
               open={open1}
-              onClose={handleClose1}
             >
-              <DialogActions>
-                <p
+              <DialogActions
+                sx={{
+                  position: "relative",
+                  borderBottom: 1,
+                  borderColor: "#021E7B",
+                }}
+              >
+                <div className="mx-auto my-[15px]">
+                  <img src="img/blue_Header_Logo.png" />
+                </div>
+                <div
                   onClick={handleClose1}
-                  className={"cursor-pointer p-3 text-4xl font-extralight"}
+                  className="absolute right-[15px] top-[15px]"
                 >
-                  x
-                </p>
+                  <img src="img/Cancel.png" />
+                </div>
               </DialogActions>
-              <DialogContent>
-                <Box noValidate component="form" sx={loginBox}>
-                  <FormControl sx={{ paddingLeft: 6 }}>
+              <DialogContent
+                sx={{
+                  width: "100vw",
+                }}
+              >
+                <Box>
+                  <FormControl fullWidth={true}>
                     <TextField
+                      fullWidth
                       id="demo-helper-text-aligned"
                       label="Email address"
                     />
                     <br />
                     <TextField
+                      fullWidth
                       id="demo-helper-text-aligned-no-helper"
                       label="Password"
                     />
+                    <br />
+                    <br />
+
                     <Button
                       variant="contained"
                       color="primary"
-                      className="mt-10 bg-[#CC9C4A]"
+                      className=" bg-[#CC9C4A]"
                     >
                       login
                     </Button>
-                    <DialogContentText className=" p-6 text-[#CC9C4A] font-bold text-center">
-                      Forget passoword
+                    <DialogContentText>
+                      <p className=" p-6 text-[#CC9C4A] font-bold text-center">
+                        Forget passoword
+                      </p>
                     </DialogContentText>
                   </FormControl>
                 </Box>
@@ -334,7 +364,7 @@ export default function MainHeader() {
             <Divider />
           </List>
           <ThemeProvider theme={theme1}>
-            <div className="absolute bottom-0 px-[1rem] text-xl cursor-pointer pb-[2rem] font-bold">
+            <div className="absolute bottom-0 px-[1rem] lg:text-[20px] text-[14px] cursor-pointer pb-[2rem] font-normal">
               <p>Disclaimers</p>
             </div>
           </ThemeProvider>

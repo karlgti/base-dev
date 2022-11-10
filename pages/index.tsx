@@ -29,16 +29,16 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Base Asset Management Limited </title>
+        <meta name="description" content="Base Asset Management Limited" />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <div className="w-full bg-[#021E7B] flex flex-col justify-center items-center pt-[5rem]">
-        <Head>
-          <title>Base Asset Management Limited </title>
-          <meta name="description" content="Base Asset Management Limited" />
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
         <div className="max-w-[1440px]">
           <Header />
 

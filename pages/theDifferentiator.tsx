@@ -22,8 +22,8 @@ export default function TheDifferentiator() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <div className="bg-[#00953b] w-full flex flex-col justify-center items-center">
-        <div className="lg:max-w-[1440px] justify-center items-center">
+      <div className="bg-[#00953b] w-full flex flex-col  items-center">
+        <div className="lg:max-w-[1440px] lg:px-[144px]">
           <Header />
           <div className="pt-[8rem] lg:pb-9">
             <div className="flex flex-col lg:flex-row items-center">
@@ -53,18 +53,12 @@ export default function TheDifferentiator() {
       <div className="w-full flex flex-col justify-center items-center ">
         <div className="pr-[930px] hidden lg:block max-w-[1440px] ">
           <div className="py-[17px] flex ">
-            <Link className="text-slate-100	mr-1" href="/">
-              {
-                <h1 className="text-[#00953B] font-semibold	text-[18px] leading-[30px] mr-1">
-                  About /
-                </h1>
-              }
-            </Link>
-            {
-              <h1 className="text-black font-semibold	text-[18px] leading-[30px]">
+            <h1 className="text-[#00953B] font-semibold	text-[18px] leading-[30px] mr-1">
+              About /
+              <span className="text-black ml-1 font-semibold	text-[18px] leading-[30px]">
                 The Differentiator
-              </h1>
-            }
+              </span>
+            </h1>
           </div>
         </div>
       </div>

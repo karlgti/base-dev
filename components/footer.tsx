@@ -21,8 +21,8 @@ export default function footer() {
             </span>
           </div>
 
-          <div className="flex justify-between pt-[1%] lg:pt-[0%] lg:border-l-[1px] lg:py-[14px] lg:px-[63px] border-[#001B71]">
-            <div className="border-[#001B71] text-[#001B71] lg:pr-[35px]">
+          <div className="flex justify-between pt-[1%] lg:border-l-[1px] lg:py-[14px] lg:px-[63px] border-[#001B71]">
+            <div className="border-[#001B71] my-auto text-[#001B71] lg:pr-[35px]">
               <a
                 href="mailto:info@base-am.com"
                 className="cursor-pointer	font-medium	text-[13px] lg:text-[13px] text-[#001B71]"

@@ -31,8 +31,8 @@ export default function Blog() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <div className="bg-[#4D008C] w-full flex flex-col justify-center items-center">
-        <div className="lg:max-w-[1440px] justify-center items-center">
+      <div className="bg-[#4D008C] w-full flex flex-col items-center">
+        <div className="lg:max-w-[1440px] lg:px-[144px]">
           <Header />
           <div className="pt-[8rem] lg:pb-9">
             <div className="flex flex-col lg:flex-row items-center">
@@ -57,8 +57,8 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center ">
-        <div className="lg:px-[144px] px-[7%] lg:max-w-[1440px] ">
+      <div className="w-full bg-[#F5F5F5] flex flex-col items-center ">
+        <div className="lg:px-[144px] px-[7%] max-w-[1440px] ">
           <div className="pt-[42px] lg:pt-[80px] lg:pb-[12px] flex">
             {
               <h1 className="text-black font-semibold	lg:text-[26px] text-[20px] leading-[30px]">
@@ -66,10 +66,10 @@ export default function Blog() {
               </h1>
             }
           </div>
-          <div className="flex">
-            <div className="lg:w-[760px] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
-              <div className="block mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img src="https://source.unsplash.com/random/760x434" />
+          <div className="lg:flex">
+            <div className="lg:w-[65%] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
+              <div className="mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
+                <img src="https://source.unsplash.com/random" />
                 <div className="">
                   <p className="font-semibold	lg:text-[18px] text-[16px] mt-1 leading-[30px]">
                     Theme / Topic
@@ -114,9 +114,9 @@ export default function Blog() {
                 </div>
               </div>
             </div>
-            <div className=" w-[360px] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
+            <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
               <div className="block mt-[13px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                <img src="https://source.unsplash.com/random/360x250" />
+                <img src="https://source.unsplash.com/random" />
                 <div className="">
                   <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
                     Theme / Topic
@@ -149,7 +149,7 @@ export default function Blog() {
               </div>
               <div className="block mt-[27px] border-t-[8px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                 <img
-                  src="https://source.unsplash.com/random/360x250"
+                  src="https://source.unsplash.com/random"
                   className="mt-[13px]"
                 />
                 <div className="">
@@ -194,7 +194,7 @@ export default function Blog() {
                     className="block border-t-[4px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
                   >
                     <img
-                      src="https://source.unsplash.com/random/264x180"
+                      src="https://source.unsplash.com/random"
                       className="mt-[13px]"
                     />
                     <div className="">
