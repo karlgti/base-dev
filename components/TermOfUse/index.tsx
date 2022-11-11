@@ -80,7 +80,12 @@ const TermOfUse = () => {
 
   return (
     <div>
-      <h1 onClick={handleOpen} className={"text-[#001B71] cursor-pointer font-medium pr-4 lg:pr-2 border-r-[2px] border-[#001B71]	text-[13px] leading-[17px]"}>
+      <h1
+        onClick={handleOpen}
+        className={
+          "text-[#001B71] cursor-pointer font-medium pr-4 lg:pr-2 border-r-[2px] border-[#001B71]	text-[13px] leading-[17px]"
+        }
+      >
         Terms of Use
       </h1>
       <Dialog
@@ -98,19 +103,21 @@ const TermOfUse = () => {
                 onChange={handleChange}
                 aria-label="basic tabs example"
               >
-                <Tab label="Terms of Use | " {...a11yProps(0)} />
-                <Tab label=" | Privacy Policy | " {...a11yProps(1)} />
-                <Tab label=" | Cookie Policy | " {...a11yProps(2)} />
+                <Tab label="Terms of Use " {...a11yProps(0)} />
+                <Tab label="  Privacy Policy  " {...a11yProps(1)} />
+                <Tab label="  Cookie Policy  " {...a11yProps(2)} />
                 <Tab
-                  label=" | Definition of Professional Investor"
+                  label="  Definition of Professional Investor"
                   {...a11yProps(3)}
                 />
               </Tabs>
             </div>
             <TabPanel value={value} index={0}>
-              <h1 className="text-3xl my-3">Terms of use</h1>
+              <h1 className="font-normal text-[26px] leading-[30px] my-3">
+                Terms of use
+              </h1>
               <div className="font-light ">
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Please read these Terms of Use carefully as it contains legal
                   and regulatory information relevant to the content of this
                   website https://www.base-am.com (the “Website”). By proceeding
@@ -124,7 +131,7 @@ const TermOfUse = () => {
                 <h6 className="font-semibold my-6">
                   Recipients of Communication
                 </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Website is established by Base Asset Management Limited
                   (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                   BMS500) regulated by the Hong Kong Securities and Futures
@@ -146,7 +153,7 @@ const TermOfUse = () => {
                 <h6 className="font-semibold my-6">
                   Accredited Investors in Hong Kong
                 </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   In Hong Kong, this Website is directed only at persons who
                   qualify as “Professional Investor(s)” as defined under the
                   Securities and Futures Ordinance (the “SFO”) and the
@@ -168,7 +175,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Accessing the Website</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Website has not been reviewed by the SFC and is provided
                   to you on the basis that you are a Professional Investor. By
                   accessing this Website, you acknowledge and agree that this
@@ -183,7 +190,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Risk Considerations</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   The value of investments and the income generated may go down
                   as well as up, and the investors may not get back the amount
                   originally invested. Past performance is not a reliable
@@ -196,7 +203,7 @@ const TermOfUse = () => {
                   suitable only for investors who are in a position to take such
                   risk.
                 </p>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Some of the statements on this Website may be considered
                   forward-looking statements, which provide expectations or
                   forecasts of future events. However, these statements are not
@@ -209,7 +216,7 @@ const TermOfUse = () => {
                   results could differ from those projected in the
                   forward-looking statements.
                 </p>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   The users of this Website should seek advice from independent
                   financial, legal, or tax professionals before making any
                   investment decisions. The information herein should not be
@@ -227,7 +234,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Accuracy of Information</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Please do not make any investment decisions by solely relying
                   on the information in this document. The contents of this
                   Website are believed to be based on reliable sources, but we
@@ -250,7 +257,7 @@ const TermOfUse = () => {
                 <h6 className="font-semibold my-6">
                   Stock Exchange Prices and Exchange Rates
                 </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   BASE does not verify any of the stock exchange or other
                   information contained on this Website and it should be
                   verified separately before relying on it. Prices and values
@@ -262,7 +269,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">No Offer or Advice</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Website does not constitute any public offers, soliciting
                   or recommendations to buy or sell any securities or financial
                   instruments, effect any transactions, or conclude any legal
@@ -271,7 +278,7 @@ const TermOfUse = () => {
                   public offer under the legislation of the jurisdiction from
                   which you wish to access it, you must not access the Website.
                 </p>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   The information contained on this Website are for general
                   Information purposes only. They do not constitute and should
                   not be constructed as an invitation, inducement or offer to
@@ -288,7 +295,7 @@ const TermOfUse = () => {
                 <h6 className="font-semibold my-6">
                   Copyright, Trademarks and Other Rights
                 </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We own the copyright in the content of this Website, unless
                   otherwise stated. The information on this Website may not be
                   reproduced, distributed or transmitted to any other person or
@@ -302,7 +309,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Hyperlinks</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Any addresses or hyperlinks leading you out of this website
                   that do not refer to our own website material, they are not
                   run and have not reviewed by us. We take no responsibility for
@@ -319,7 +326,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Privacy and Cookies</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We take the privacy of any personal information you may
                   provided to us through this Website seriously. A “cookie” is a
                   piece of information stored on your computer’s hard disk by
@@ -338,7 +345,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Data Protection</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   The personal information we collect from you on this website,
                   such as your name, address, phone number and email address
                   details submitted during our customer registration procedures.
@@ -356,7 +363,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Jurisdiction </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Website is subject to the laws of the Hong Kong Special
                   Administrative Region, and any disputes arising from your use
                   of this website will be handled exclusively by courts in that
@@ -366,7 +373,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 font-light">
                 <h6 className="font-semibold my-6">Changes to the Website</h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   The information on this Website, including these terms and
                   conditions, is subject to change without notice. We have the
                   right to discontinue the provision of all or any of the
@@ -381,7 +388,7 @@ const TermOfUse = () => {
                 <h6 className="font-semibold my-6">
                   Severability of Provisions
                 </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   If any part of these terms and conditions is forbidden or
                   unenforceable in a specific jurisdiction, that provision will
                   only be ineffective in that jurisdiction to the extent of the
@@ -394,7 +401,7 @@ const TermOfUse = () => {
 
               <div className="space-y-4 mb-7 font-light">
                 <h6 className="font-semibold my-6">Indemnity </h6>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   You shall be liable to us for any loss, liability or cost we
                   suffer as a result of your use of the Website or any breach of
                   these terms. You agree to indemnify, defend and hold harmless
@@ -409,9 +416,11 @@ const TermOfUse = () => {
               </div>
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <h1 className="text-3xl my-3">Privacy Policy</h1>
+              <h1 className="font-normal text-[26px] leading-[30px] my-3">
+                Privacy Policy
+              </h1>
               <div className="font-light ">
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Privacy Notice covers the personal data we collect from
                   you, how we collect it, with whom we share it and how we
                   process it in connection with your use of this website
@@ -420,7 +429,7 @@ const TermOfUse = () => {
                   Asset Management Limited.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   “Personal data” refers to any information that can be used to
                   identify you, such as your name, contact details,
                   identification number, account number and balance, transaction
@@ -429,7 +438,7 @@ const TermOfUse = () => {
                   longer be identified such as anonymised aggregate data.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We are responsible for how we collect and use personal data
                   about you. If you have questions related to this Privacy
                   Notice or how we handle your personal data, please contact us
@@ -501,7 +510,7 @@ const TermOfUse = () => {
                   </li>
                 </ul>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We also collect and share generalised data, such as
                   statistical or demographic information, for any purpose. This
                   type of data is originated from your personal but cannot be
@@ -513,7 +522,7 @@ const TermOfUse = () => {
                   consider the combined data to be personal data under this
                   Privacy Notice and will use it in accordance with this notice.
                 </p>
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   If we are required by law to do so, or if we believe that it
                   is necessary to protect our rights and/or comply with judicial
                   or regulatory proceedings, a court order or other legal
@@ -549,7 +558,7 @@ const TermOfUse = () => {
                   <li className="text-justify">when we send you emails.</li>
                 </ul>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We may also collect certain information when you interact with
                   our Website, such as your device type and browsing actions and
                   patterns. We collect this personal data through using cookies,
@@ -624,7 +633,7 @@ const TermOfUse = () => {
                   Retention of Your Personal Data
                 </h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Personal data will be kept for as long as necessary to
                   complete the purposes for which you gave it to us, such as
                   satisfying any legal, regulatory, accounting, or reporting
@@ -636,7 +645,7 @@ const TermOfUse = () => {
                   appropriate retention period for personal data.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We may anonymise your personal data in some cases to prevent
                   it from being linked to you, in which case it no longer
                   constitutes personal data. We will securely erase your
@@ -651,7 +660,7 @@ const TermOfUse = () => {
                   Your Rights to Withdraw Your Consent
                 </h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   If you have given your consent for us to collect, process, and
                   transfer your personal data for a specific purpose, you can
                   withdraw that consent at any time. To withdraw your consent,
@@ -661,7 +670,7 @@ const TermOfUse = () => {
                   basis for doing so.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   In order to protect your information and ensure that only you
                   have access to it, we may request specific details from you.
                   This is a security measure to guarantee that personal data is
@@ -677,13 +686,13 @@ const TermOfUse = () => {
                   Changes to the Privacy Notice
                 </h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We have the right to update this Privacy Notice without prior
                   notice at any time, and we will make an updated copy of such
                   Privacy Notice available on our Website.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Privacy Notice was intentionally written to be succinct
                   and transparent. It is not a comprehensive description of all
                   aspects of our data collection and usage. Please do not
@@ -693,9 +702,11 @@ const TermOfUse = () => {
               </div>
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <h1 className="text-3xl my-3">Cookie Policy</h1>
+              <h1 className="font-normal text-[26px] leading-[30px] my-3">
+                Cookie Policy
+              </h1>
               <div className="font-light ">
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   When you visit this website https://www.base-am.com (the
                   “Website”), we collect and process information about your
                   usage of the Website using cookies and other similar
@@ -710,7 +721,7 @@ const TermOfUse = () => {
               <div className="space-y-4 mb-7 font-light">
                 <h6 className="font-semibold my-6">What are Cookies?</h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Cookies are small text files containing small amounts of
                   information which are downloaded and may be stored on any of
                   your internet enabled devices e.g. your computer, smartphone
@@ -742,7 +753,7 @@ const TermOfUse = () => {
                   </li>
                 </ul>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Please go to our Privacy Policy page for full details of the
                   information we collect and how we use your personal
                   information.
@@ -790,7 +801,7 @@ const TermOfUse = () => {
                   </p>
                 </ul>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Some cookies on the Website and other parts of the Services
                   are controlled by third parties, such as social media APIs and
                   external website providers. These cookies are frequently
@@ -836,7 +847,7 @@ const TermOfUse = () => {
                   Manage Your Cookie Settings
                 </h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   By enabling your browser's preference to refuse all or some
                   cookies, you can prevent cookies from being stored. Please
                   keep in mind that if you use your browser's settings to block
@@ -845,7 +856,7 @@ const TermOfUse = () => {
                   cookie settings.
                 </p>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   You can delete cookies that our Website sets on your browser
                   in the future if you want. The instructions for removing
                   cookies from your device depend on which operating system and
@@ -860,7 +871,7 @@ const TermOfUse = () => {
                   Changes to the Cookie Policy
                 </h6>
 
-                <p className="my-2 text-justify">
+                <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We have the right to update this Cookie Policy without prior
                   notice at any time, and we will make an updated copy of such
                   Cookie Policy available on our Website. If you require any
@@ -870,7 +881,7 @@ const TermOfUse = () => {
               </div>
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <h6 className="font-semibold my-6">
+              <h6 className="font-normal text-[26px] leading-[30px] my-3">
                 Securities of Futures Commissions Ordinance (Cap. 571) (the
                 “SFO”)
               </h6>
