@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import blogone from "../public/img/blogone.png";
 import blogtwo from "../public/img/blogtwo.png";
@@ -16,12 +16,11 @@ function Insight() {
   
   const divOnShow1 = useRef(null);
   const refValue = useOnScreen(divOnShow1)
-  useEffect(()=>{
+  const showDiv1 = useMemo(() => {
     const divOnShow1_100:any = divOnShow1.current
-    refValue?divOnShow1_100.className ="lg:flex transition-opacity ease-in duration-700  opacity-100":""
-
-  },[refValue])
-  
+    refValue?divOnShow1_100.className ="lg:flex transition-opacity ease-in duration-1000 opacity-100":""
+  }, [refValue])
+ 
   return (
     <div>
       <ThemeProvider theme={theme}>
