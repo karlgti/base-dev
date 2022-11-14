@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import blogone from "../public/img/blogone.png";
 import blogtwo from "../public/img/blogtwo.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import linkedin from "../public/img/icons8-linkedin.svg";
 import twitter from "../public/img/twitter-square-icon.svg";
+import useOnScreen from "hook/useOnScreen";
 
 function Insight() {
   const theme = createTheme({
@@ -12,10 +13,19 @@ function Insight() {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
+  
+  const divOnShow1 = useRef(null);
+  const refValue = useOnScreen(divOnShow1)
+  useEffect(()=>{
+    const divOnShow1_100:any = divOnShow1.current
+    refValue?divOnShow1_100.className ="lg:flex transition-opacity ease-in duration-700  opacity-100":""
+
+  },[refValue])
+  
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <div className="lg:flex">
+        <div ref={divOnShow1} className="lg:flex opacity-0 ">
           <div className="lg:w-[50%]">
             <div className="flex flex-col justify-between h-full">
               <div className="mb-8">
