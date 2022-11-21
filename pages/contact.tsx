@@ -10,6 +10,9 @@ function contactUs() {
       <div className="">
         <Form />
       </div>
+      <div className="">
+        <Footer />
+      </div>
     </div>
   );
 }

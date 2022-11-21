@@ -340,9 +340,6 @@ export default function ContactForm() {
         </div>
       </ThemeProvider>
       <Button />
-      <div className="">
-        <Footer />
-      </div>
     </div>
   );
 }
