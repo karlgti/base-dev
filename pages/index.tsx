@@ -1,3 +1,4 @@
+import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/MainHeader";
@@ -26,71 +27,62 @@ const Home: NextPage = () => {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
-
+  <Head>
+    <title>Base Asset Management Limited </title>
+    <meta name="description" content="Base Asset Management Limited" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </Head>;
   return (
-    <>
-      <Head>
-        <title>Base Asset Management Limited </title>
-        <meta name="description" content="Base Asset Management Limited" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <div className="w-full bg-[#021E7B] flex flex-col justify-center items-center pt-[5rem]">
-        <div className="max-w-[1440px]">
-          <Header />
+    <div className="relative w-full">
+      <ThemeProvider theme={theme}>
+        <Header />
 
-          <div className="lg:pb-80 pb-[130px]">
-            <div className="w-full flex flex-col items-center">
-              <Image src={invest} width={1224} height={747} />
-            </div>
-
-            <ThemeProvider theme={theme}>
-              <div className="lg:px-[100px] px-[7%]">
-                <div className="lg:max-w-[70%] z-30 text-white font-black lg:text-[90px] lg:leading-[100px]	text-[50px] leading-[50px]">
-                  Leave No Stone
-                  <br />
-                  Unturned.
-                </div>
-
-                <div className="lg:max-w-[70%]  z-30 text-white font-normal pt-[50px] text-[16px]	lg:text-[18px] leading-[28px]">
-                  <p className="mb-3">
-                    An investment strategy that is powered by automation and
-                    programmed signals that identify hidden gems and capitalise
-                    on trading opportunities.
-                  </p>
-
-                  <p>
-                    Always on the lookout for new market trends and behaviours
-                    so our investors can stay ahead of the curve.
-                  </p>
-                </div>
+        <div className="bg-[#021E7B] px-[144px] pb-[330px]">
+          <div className="max-w-[1100px] m-0 m-auto pt-[110px] flex justify-between">
+            <div>
+              <div className="w-full mx-auto  self-center items-center flex justify-center">
+                <Image src={invest} width={1224} height={747} />
               </div>
-            </ThemeProvider>
+              <p className="font-black text-[90px] leading-[100px] text-white">
+                Leave No Stone
+                <br />
+                Unturned
+              </p>
+              <p className="text-[16px] leading-[28px] text-white font-normal mt-[20px]">
+                An investment firm powered by automation and programmed signals
+                that <br /> identify hidden gems and capitalise on trading
+                opportunities.
+              </p>
+              <p className="text-[16px] leading-[28px] text-white font-normal mt-[28px]">
+                Always on the lookout for new market trends and behaviours{" "}
+                <br /> so our investors can stay ahead of the curve.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full bg-[#F5F5F5] px-[7%] lg:px-[0px] flex flex-col justify-center items-center">
-        <div className="max-w-[1440px]">
-          <Banners />
-
-          <Insight />
-        </div>
-      </div>
-
-      <div className="bg-[#F5F5F5] py-[66px] pt-[0px] lg:pt-10">
-        <div className="hidden lg:block">
-          <Button />
+        <div className="bg-[#F5F5F5] px-[144px]">
+          <div className="max-w-[1100px] m-0 m-auto flex flex-col justify-between">
+            <div>
+              <Banners />
+            </div>
+            <div className="relative lg:top-[-116px] pb-[30px]">
+              <Insight />
+            </div>
+          </div>
         </div>
 
-        <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
-      </div>
-      <Footer />
-    </>
+        <div className="bg-[#F5F5F5]">
+          <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
+        </div>
+        <Footer />
+      </ThemeProvider>
+      <Button />
+    </div>
   );
 };
-
 export default Home;

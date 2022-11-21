@@ -38,6 +38,12 @@ export default function MaxWidthDialog() {
     },
   });
 
+  const radius = {
+    ".MuiOutlinedInput-root": {
+      borderRadius: 0,
+    },
+  };
+
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
@@ -48,13 +54,20 @@ export default function MaxWidthDialog() {
               fontStyle: "Inter",
               textTransform: "capitalize",
               marginRight: "5px",
+              fontSize: 16,
+              fontWeight: 500,
             }}
           >
             Investor
           </Typography>
           <Typography
             color="common.white"
-            sx={{ fontStyle: "Inter", textTransform: "lowercase" }}
+            sx={{
+              fontStyle: "Inter",
+              textTransform: "lowercase",
+              fontSize: 16,
+              fontWeight: 500,
+            }}
           >
             login
           </Typography>
@@ -66,7 +79,7 @@ export default function MaxWidthDialog() {
           "& .MuiDialog-paper": {
             position: "absolute",
             right: 0,
-            top: 70,
+            top: 62,
             marginRight: 0,
             paddingright: 0,
             borderRadius: 0,
@@ -76,14 +89,11 @@ export default function MaxWidthDialog() {
         onClose={handleClose}
       >
         <DialogActions>
-          <p
-            onClick={handleClose}
-            className={"cursor-pointer text-4xl font-extralight"}
-          >
-            x
-          </p>
+          <div onClick={handleClose} className={"cursor-pointer"}>
+            <img src="img/Cancel.png" width={22} height={22} />
+          </div>
         </DialogActions>
-        <DialogContent> 
+        <DialogContent>
           <Box
             noValidate
             component="form"
@@ -93,7 +103,7 @@ export default function MaxWidthDialog() {
               width: "251px",
             }}
           >
-            <FormControl sx={{mb: 6}}>
+            <FormControl sx={radius}>
               <TextField id="demo-helper-text-aligned" label="Email address" />
               <br />
               <TextField
@@ -101,20 +111,31 @@ export default function MaxWidthDialog() {
                 label="Password"
               />
             </FormControl>
+            <br />
+
             <ThemeProvider theme={theme}>
               <Button
                 variant="contained"
                 color="primary"
                 className="bg-[#021B71]"
+                style={{
+                  textTransform: "none",
+                  borderRadius: 0,
+                  paddingTop: 13,
+                  paddingBottom: 13,
+                  fontWeight: 700,
+                  fontSize: 14,
+                }}
               >
                 Login
               </Button>
             </ThemeProvider>
           </Box>
         </DialogContent>
-        <DialogContentText className="p-6 text-black font-bold text-center">
+        <DialogContentText className="text-black text-[13px] leading-[17px] text-center">
           Forget passoword
         </DialogContentText>
+        <br />
       </Dialog>
     </React.Fragment>
   );

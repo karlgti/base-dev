@@ -13,13 +13,13 @@ function banners() {
     },
   });
   return (
-    <div className="relative lg:flex top-[-5rem] lg:top-[-15rem]">
+    <div className="relative lg:flex top-[-5rem] lg:top-[-14.5rem] lg:justify-between">
       <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#00953B]">
         <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
             <p className="font-light	text-white	lg:text-[38px] text-[23px] leading-[27px] lg:leading-[45px]">
-              The <br />
-              Differentiator
+              Our <br />
+              Philosophy
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
@@ -27,7 +27,7 @@ function banners() {
           </div>
         </div>
         <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-          <a href="/theDifferentiator">
+          <a href="/our-philosophy">
             <Image src={logo} alt="Base Asset Management" />
           </a>
         </div>
@@ -38,7 +38,7 @@ function banners() {
           <ThemeProvider theme={theme}>
             <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
               Investment <br />
-              Philosophy
+              Approach
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
@@ -46,7 +46,7 @@ function banners() {
           </div>
         </div>
         <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-          <a href="/invest">
+          <a href="/investment-approach">
             <Image src={invest} alt="Base Asset Management" />
           </a>
         </div>
@@ -56,8 +56,8 @@ function banners() {
         <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
           <ThemeProvider theme={theme}>
             <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
-              Investment <br />
-              Process
+              The <br />
+              Solutions
             </p>
           </ThemeProvider>
           <div className="lg:pt-[50px] pb-[15px]">
@@ -65,7 +65,7 @@ function banners() {
           </div>
         </div>
         <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-          <a href="/process">
+          <a href="/the-solutions">
             <Image src={process} alt="Base Asset Management" />
           </a>
         </div>

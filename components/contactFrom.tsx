@@ -107,18 +107,20 @@ export default function ContactForm() {
     console.log(firstname, email, subject, message);
   };
   return (
-    <ThemeProvider theme={theme}>
-      <div className="w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
-        <div className="max-w-[1440px]">
+    <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
+      <ThemeProvider theme={theme}>
+        <div className="max-w-[1440px] pb-[97px]">
           <main className="pt-[5rem] border-grey border-t-4 mx-[10%]">
             <header className="">
               <div className="mb-[56px]">
                 <h1 className="font-normal mt-[101px]	text-[82px] leading-[96px] text-[#001673]">
                   Contact
                 </h1>
-                <p className="font-normal mt-[49px]	text-[18px] leading-[28px]">
+                <p className="font-normal mt-[49px]	text-[16px] leading-[28px]">
                   Thank you for your interest!
-                  <br />
+                </p>
+
+                <p className="font-normal mt-[20px]	text-[16px] leading-[28px]">
                   Please complete the form below and we’ll be in touch as soon
                   as possible.
                 </p>
@@ -134,7 +136,7 @@ export default function ContactForm() {
                   <div>
                     <label
                       htmlFor="fullname"
-                      className="text-black-500 font-light dark:text-black"
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
                     >
                       First Name
                       <span className="text-red-500">*</span>
@@ -148,14 +150,11 @@ export default function ContactForm() {
                       name="fullname"
                       className="bg-white border w-[100%] py-2 pl-4 text-black-500"
                     />
-                    {/* {errors?.fullname && (
-              <p className="text-red-500">Fullname cannot be empty.</p>
-            )} */}
                   </div>
                   <div>
                     <label
                       htmlFor="fullname"
-                      className="text-black-500 font-light mt-8 dark:text-black"
+                      className="text-black-500 text-[16px] leading-[30px] font-normal mt-8 dark:text-black"
                     >
                       Last Name
                       <span className="text-red-500">*</span>
@@ -176,7 +175,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="subject"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Company Title<span className="text-red-500">*</span>
                 </label>
@@ -194,7 +193,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="email"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Company Email<span className="text-red-500">*</span>
                 </label>
@@ -213,7 +212,7 @@ export default function ContactForm() {
 
                 <label
                   htmlFor="subject"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Company Name<span className="text-red-500">*</span>
                 </label>
@@ -231,7 +230,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="subject"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Country Region<span className="text-red-500">*</span>
                 </label>
@@ -249,7 +248,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="subject"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   How would you describe yourself?
                   <span className="text-red-500">*</span>
@@ -268,7 +267,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="subject"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Which services are you interested in?
                   <span className="text-red-500">*</span>
@@ -287,7 +286,7 @@ export default function ContactForm() {
             )} */}
                 <label
                   htmlFor="message"
-                  className="text-black-500 font-light mt-4 dark:text-black"
+                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
                 >
                   Message<span className="text-red-500">*</span>
                 </label>
@@ -327,11 +326,11 @@ export default function ContactForm() {
             <div>
               <div className="border-t-[1px] border-[#CBC3BB] mt-[78px]"></div>
               <div className="mt-[53px]">
-                <span className="text-[#CBC3BB] font-medium text-[18px]">
+                <span className="text-[#CBC3BB] font-medium text-[16px] leading-[28px]">
                   Address
                 </span>
                 <br />
-                <p className="font-medium text-[18px]">
+                <p className="font-medium text-[18px] mt-[17px] leading-[28px]">
                   Rm 1904, Tung Che Commercial Centre, 246 Des Voeux Road West,
                   Hong Kong
                 </p>
@@ -339,12 +338,11 @@ export default function ContactForm() {
             </div>
           </main>
         </div>
+      </ThemeProvider>
+      <Button />
+      <div className="">
+        <Footer />
       </div>
-      <div className="bg-[#F5F5F5] pb-[50px]">
-        <Button />
-      </div>
-      <Footer />
-
-    </ThemeProvider>
+    </div>
   );
 }

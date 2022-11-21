@@ -125,7 +125,7 @@ export default function MainHeader() {
   };
 
   const headerStyle = {
-    background: "#00953b !important",
+    background: "#00953B !important",
     borderColor: "white !important",
     borderBottom: 1,
     "& .MuiToolbar-root ": {
@@ -152,20 +152,27 @@ export default function MainHeader() {
 
   const drawerWidth = {
     flexShrink: 0,
+    ".MuiListItemButton-root": {
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
     "& .MuiDrawer-paper": {
       width: 300,
-      height: 650,
+      height: 680,
       boxSizing: "border-box",
-      marginTop: 12.8,
+      marginTop: 11.9,
     },
     "& .MuiListItemText-primary": {
       paddingTop: "12px",
       paddingBottom: "12px",
       fontSize: 30,
       fontWeight: 800,
+      color: "black",
     },
     "& .MuiListItemText-secondary": {
-      fontSize: 17,
+      fontSize: "18px",
+      fontWeight: 300,
+      color: "black",
     },
     ["@media (max-width:1024px)"]: {
       "& .MuiDrawer-paper": {
@@ -209,8 +216,7 @@ export default function MainHeader() {
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] absolute lg:relative right-[15px] lg:border-r-[1px] lg:p-[30px]">
-                <a onClick={handleDrawerOpen}>
+              <div className="lg:border-l-[1px] absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">                <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}
                     className="cursor-pointer"
@@ -227,9 +233,9 @@ export default function MainHeader() {
 
         <Drawer sx={drawerWidth} anchor="right" open={open}>
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? <CloseIcon /> : <CloseIcon />}
-            </IconButton>
+            <div onClick={handleDrawerClose} className="cursor-pointer">
+              <img src="img/Cancel.png" width={25} height={25} />
+            </div>
           </DrawerHeader>
           <List
             sx={{
@@ -240,7 +246,7 @@ export default function MainHeader() {
             aria-labelledby="nested-list-subheader"
           >
             <div className="lg:hidden">
-              <Divider />
+              <Divider style={{ background: "#001b71" }} />
 
               <Button
                 className="text-[#CC9C4A] px-[12px] py-[8px]"
@@ -320,51 +326,49 @@ export default function MainHeader() {
               </DialogContent>
             </Dialog>
 
-            <Divider />
+            <Divider style={{ background: "#001b71" }} />
             <ListItemButton onClick={handleClick}>
-              <ListItemText
-                sx={{ fontSize: "100px" }}
-                primary="About"
-                className=""
-              />
-              {subOpen ? <ExpandLess /> : <ExpandMore />}
+              <ListItemText primary="About" className="" />
+              {subOpen ? <ExpandLess sx={{ width: 40, height: 40, color: "#001b71" }} /> : <ExpandMore sx={{ width: 40, height: 40, color: "#001b71" }} />
+}
             </ListItemButton>
-            <Collapse in={subOpen} timeout="auto" unmountOnExit className=" ">
-              <List component="div" disablePadding>
-                <ListItemButton href="/theDifferentiator">
-                  <ListItemText secondary="The Differentiator" />
-                </ListItemButton>
-                <ListItemButton href="/invest">
-                  <ListItemText secondary="Investment Philosophy" />
-                </ListItemButton>
-                <ListItemButton href="/process">
-                  <ListItemText secondary="Investment Process" />
-                </ListItemButton>
-                <ListItemButton href="/team">
-                  <ListItemText secondary="Our Team" />
-                </ListItemButton>
-              </List>
+
+            <Collapse in={subOpen}>
+              <ListItemButton href="/our-philosophy">
+                <ListItemText secondary="Our Philosophy" />
+              </ListItemButton>
+              <ListItemButton href="/investment-approach">
+                <ListItemText secondary="Investment Approach" />
+              </ListItemButton>
+              <ListItemButton href="/the-solutions">
+                <ListItemText secondary="The Solutions" />
+              </ListItemButton>
+              <ListItemButton href="/our-team">
+                <ListItemText secondary="Our Team" />
+              </ListItemButton>
             </Collapse>
-            <Divider />
-            <ListItemButton href="/blog">
+            <Divider style={{ background: "#001b71" }} />
+
+            <ListItemButton href="/insights">
               <ListItemText
                 sx={{ fontSize: "100px" }}
                 primary="Insight"
                 className=" "
               />
             </ListItemButton>
-            <Divider />
-            <ListItemButton href="/contactUs">
+            <Divider style={{ background: "#001b71" }} />
+
+            <ListItemButton href="/contact">
               <ListItemText
                 sx={{ fontSize: "100px" }}
                 primary="Contacts"
                 className=" "
               />
             </ListItemButton>
-            <Divider />
+            <Divider style={{ background: "#001b71" }} />
           </List>
           <ThemeProvider theme={theme1}>
-            <div className="absolute bottom-0 px-[1rem] lg:text-[20px] text-[14px] cursor-pointer pb-[2rem] font-normal">
+            <div className="absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold">
               <p>Disclaimers</p>
             </div>
           </ThemeProvider>

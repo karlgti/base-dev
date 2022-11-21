@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
-import menuButton from "../public/img/icons8-collapse-arrow-64.png";
+import React from "react";
+import Arrowup from "../public/img/Artboard 69@2x 1 copy.png";
 
 const backToTop = () => {
   // The back-to-top button is hidden at the beginning
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    });
-  }, []);
 
   // This function will scroll the window to the top
   const scrollToTop = () => {
@@ -25,32 +13,16 @@ const backToTop = () => {
     });
   };
 
-  const theme = createTheme({
-    typography: {
-      fontFamily: ["Inter", "sans-serif"].join(","),
-    },
-  });
-
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        {showButton && (
-          <button
-            onClick={scrollToTop}
-            className="flex opacity-25 w-[144px] h-[50px] flex-end mr-0 mx-auto back-to-top text-white bg-[#505758] p-2"
-          >
-            <Image
-              src={menuButton}
-              width={30}
-              height={30}
-              className="cursor-pointer"
-              alt="Base Asset Management"
-            />
-
-            <p className="font-bold	text-[15px] my-auto"> Back to top</p>
-          </button>
-        )}
-      </ThemeProvider>
+      <div
+        onClick={scrollToTop}
+        className="fixed cursor-pointer z-50 transition delay-300 duration-300 ease-in-out w-[72px] opacity-20 hover:opacity-100 h-[72px] top-auto bottom-0 right-0 bg-black flex"
+      >
+        <div className="flex items-center">
+          <Image src={Arrowup} />
+        </div>
+      </div>
     </div>
   );
 };
