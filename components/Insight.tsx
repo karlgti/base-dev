@@ -3,8 +3,8 @@ import Image from "next/image";
 import blogone from "../public/img/blogone.png";
 import blogtwo from "../public/img/blogtwo.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import linkedin from "../public/img/icons8-linkedin.svg";
-import twitter from "../public/img/twitter-square-icon.svg";
+import linkedin from "../public/img/linkedin.svg";
+import twitter from "../public/img/square-twitter.svg";
 import useOnScreen from "hook/useOnScreen";
 
 function Insight() {
@@ -51,7 +51,7 @@ function Insight() {
                 </div>
               </div>
               <button className="hidden mt-[40px] lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]">
-                Contact us
+                View more
               </button>
             </div>
           </div>
@@ -81,8 +81,8 @@ function Insight() {
                     >
                       <Image
                         src={linkedin}
-                        width={35}
-                        height={35}
+                        width={31}
+                        height={31}
                         className="cursor-pointer"
                         alt="Base Asset Management"
                       />

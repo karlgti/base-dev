@@ -5,8 +5,10 @@ import Button from "../components/backToTop";
 import Footer from "components/footer";
 import Header from "../components/BlogHeader";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import linkedin from "../public/img/icons8-linkedin.svg";
-import twitter from "../public/img/twitter-square-icon.svg";
+import linkedin from "../public/img/linkedin.svg";
+import twitter from "../public/img/square-twitter.svg";
+import blogone from "../public/img/blogone.png";
+import blogtwo from "../public/img/blogtwo.png";
 
 const data = [
   {
@@ -15,6 +17,7 @@ const data = [
     subject: "Pattern Recognition, follow up.",
     date: "2022-04-11",
     linktwt: twitter,
+    src: "https://media.istockphoto.com/id/1348229414/photo/business-and-finance-concept-of-a-bull-market-trend-high-quality.jpg?b=1&s=170667a&w=0&k=20&c=-tqtWLQnEr2cbneZR8adGi86IaLFetP60pDFQkQrwC4=",
   },
   {
     theme: "Strategy",
@@ -22,6 +25,7 @@ const data = [
     subject: "Pattern Recognition",
     date: "2022-21-10",
     linktwt: twitter,
+    src: "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJhZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
     theme: "Strategy",
@@ -29,6 +33,7 @@ const data = [
     subject: "Gold, follow up.",
     date: "2022-05-10",
     linktwt: twitter,
+    src: "https://images.unsplash.com/photo-1624365168785-c65be9114821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z29sZCUyMGNvaW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
   },
   {
     theme: "Investment",
@@ -36,6 +41,7 @@ const data = [
     subject: "Tapping into October 2022",
     date: "2022-29-09",
     linktwt: linkedin,
+    src: "https://plus.unsplash.com/premium_photo-1663931932688-306b0197d388?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dHJhZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
     theme: "Trend",
@@ -43,6 +49,7 @@ const data = [
     subject: "What if DXY is bullish longer term than you expected?!",
     date: "2022-28-09",
     linktwt: twitter,
+    src: "https://media.istockphoto.com/id/1412210524/photo/dxy-dollar-currency-index-neon-sign-with-red-down-arrows.jpg?b=1&s=170667a&w=0&k=20&c=Kr2zjxB6WEU12kOOCtyCmn9S7w2m_k2T6xhlIFGwLzw=",
   },
   {
     theme: "Strategy",
@@ -50,6 +57,7 @@ const data = [
     subject: "Important Time Upcoming for Gold!",
     date: "2022-20-09",
     linktwt: twitter,
+    src: "https://images.unsplash.com/photo-1641353104559-4c070b03282b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRyYWlkbmclMjBnb2xkJTIwY29pbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
     theme: "Strategy",
@@ -58,6 +66,7 @@ const data = [
       "Are we about to repeat the 2008 crisis? Or more reference points?",
     date: "2022-20-09",
     linktwt: twitter,
+    src: "https://images.unsplash.com/photo-1621378864046-0122e4a415a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhZGluZyUyMGNyaXNpc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
     theme: "Trend",
@@ -65,6 +74,7 @@ const data = [
     subject: "Crypto Bottomed? Not yet, but soon!?!",
     date: "2022-19-09",
     linktwt: twitter,
+    src: "https://images.unsplash.com/photo-1641784830336-a2064fc65bcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dHJhZGluZyUyMHRhcHBpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
   },
 ];
 
@@ -124,7 +134,7 @@ export default function Blog() {
             <div className="lg:flex mt-[16px]">
               <div className="relative lg:w-[65%] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
                 <div className="mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                  <img src="https://source.unsplash.com/random/760x434" />
+                  <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
                   <div className="">
                     <p className="font-semibold	lg:text-[18px] text-[16px] mt-1 leading-[30px]">
                       Strategy / Model Study
@@ -155,8 +165,8 @@ export default function Blog() {
                       >
                         <Image
                           src={linkedin}
-                          width={32}
-                          height={32}
+                          width={31}
+                          height={31}
                           className="cursor-pointer"
                           alt="Base Asset Management"
                         />
@@ -170,7 +180,13 @@ export default function Blog() {
               </div>
               <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
                 <div className="block mt-[13px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                  <img src="https://source.unsplash.com/random/430x280" />
+                  <Image
+                    src={blogone}
+                    width={430}
+                    height={280}
+                    className="cursor-pointer"
+                    alt="Base Asset Management"
+                  />
                   <div className="">
                     <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
                       Investment / Outlook Brief
@@ -188,8 +204,8 @@ export default function Blog() {
                       >
                         <Image
                           src={twitter}
-                          width={32}
-                          height={32}
+                          width={31}
+                          height={31}
                           className="cursor-pointer"
                           alt="Base Asset Management"
                         />
@@ -201,9 +217,13 @@ export default function Blog() {
                   </div>
                 </div>
                 <div className="block mt-[27px] border-t-[8px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
-                  <img
-                    src="https://source.unsplash.com/random/430x280"
-                    className="mt-[13px]"
+                  <div className="mt-[13px]"></div>
+                  <Image
+                    src={blogtwo}
+                    width={430}
+                    height={280}
+                    className="cursor-pointer"
+                    alt="Base Asset Management"
                   />
                   <div className="">
                     <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
@@ -222,8 +242,8 @@ export default function Blog() {
                       >
                         <Image
                           src={linkedin}
-                          width={32}
-                          height={32}
+                          width={31}
+                          height={31}
                           className="cursor-pointer"
                           alt="Base Asset Management"
                         />
@@ -244,9 +264,11 @@ export default function Blog() {
                     key={i}
                     className="block border-t-[4px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
                   >
+                    <div className="mt-[13px]"></div>
                     <img
-                      src="https://source.unsplash.com/random/300x200"
-                      className="mt-[13px]"
+                      src={content.src}
+                      alt=""
+                      className="w-[300px] h-[180px]"
                     />
                     <div className="">
                       <p className="font-semibold	text-[11px] lg:text-[14px] mt-[14px] leading-[14px]">
@@ -265,8 +287,8 @@ export default function Blog() {
                         >
                           <Image
                             src={content.linktwt}
-                            width={21}
-                            height={21}
+                            width={31}
+                            height={31}
                             className="cursor-pointer"
                             alt="Base Asset Management"
                           />
@@ -280,8 +302,8 @@ export default function Blog() {
                         >
                           <Image
                             src={content.linktwt}
-                            width={32}
-                            height={32}
+                            width={31}
+                            height={31}
                             className="cursor-pointer"
                             alt="Base Asset Management"
                           />

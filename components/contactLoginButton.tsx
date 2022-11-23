@@ -82,11 +82,11 @@ export default function MaxWidthDialog() {
         onClose={handleClose}
       >
         <DialogActions>
-        <div onClick={handleClose} className={"cursor-pointer"}>
+          <div onClick={handleClose} className={"cursor-pointer"}>
             <img src="img/Cancel.png" width={22} height={22} />
           </div>
         </DialogActions>
-        <DialogContent> 
+        <DialogContent>
           <Box
             noValidate
             component="form"
@@ -107,7 +107,7 @@ export default function MaxWidthDialog() {
             <br />
 
             <ThemeProvider theme={theme}>
-            <Button
+              <Button
                 variant="contained"
                 color="primary"
                 className="bg-[#021B71]"
@@ -125,10 +125,17 @@ export default function MaxWidthDialog() {
             </ThemeProvider>
           </Box>
         </DialogContent>
-        <DialogContentText className="text-black text-[13px] leading-[17px] text-center">
+        <DialogContentText
+          align="center"
+          sx={{
+            color: "black",
+            fontSize: "13px",
+            lineHeight: "17px",
+          }}
+        >
           Forget passoword
         </DialogContentText>
-        <br/>
+        <br />
       </Dialog>
     </React.Fragment>
   );

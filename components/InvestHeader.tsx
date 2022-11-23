@@ -17,8 +17,8 @@ import mypic from "../public/img/headerLogo.png";
 import menuButton from "../public/img/BAM_Website_Testing_Artboard 12@2x 1.png";
 import LoginButton from "../components/loginButton";
 import CloseIcon from "@mui/icons-material/Close";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
+import ExpandLess from "../public/img/Arrow3.png";
+import ExpandMore from "../public/img/Arrow2.png";
 import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -98,7 +98,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function MainHeader() {
+export default function InvestHeader() {
   const theme = useTheme();
   const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -163,13 +163,15 @@ export default function MainHeader() {
       marginTop: 11.9,
     },
     "& .MuiListItemText-primary": {
-      paddingTop: "12px",
-      paddingBottom: "12px",
+      paddingTop: "20px",
+      paddingBottom: "20px",
       fontSize: 30,
       fontWeight: 800,
       color: "black",
     },
     "& .MuiListItemText-secondary": {
+      paddingTop: "1px",
+      paddingBottom: "1px",
       fontSize: "18px",
       fontWeight: 300,
       color: "black",
@@ -217,6 +219,7 @@ export default function MainHeader() {
                 </a>
               </div>
               <div className="lg:border-l-[1px] absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+                {" "}
                 <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}
@@ -225,7 +228,7 @@ export default function MainHeader() {
                   />
                 </a>
               </div>
-              <div className="px-10 hidden lg:block">
+              <div className="pl-[31.5px] pr-[48.5px] hidden lg:block">
                 <LoginButton />
               </div>
             </Toolbar>
@@ -331,9 +334,9 @@ export default function MainHeader() {
             <ListItemButton onClick={handleClick}>
               <ListItemText primary="About" className="" />
               {subOpen ? (
-                <ExpandLess sx={{ width: 40, height: 40, color: "#001b71" }} />
+                <Image src={ExpandMore} className="cursor-pointer" />
               ) : (
-                <ExpandMore sx={{ width: 40, height: 40, color: "#001b71" }} />
+                <Image src={ExpandLess} className="cursor-pointer" />
               )}
             </ListItemButton>
 
@@ -348,7 +351,7 @@ export default function MainHeader() {
                 <ListItemText secondary="The Solutions" />
               </ListItemButton>
               <ListItemButton href="/our-team">
-                <ListItemText secondary="Our Team" />
+                <ListItemText sx={{ marginBottom: "26px" }} secondary="Our Team" />
               </ListItemButton>
             </Collapse>
             <Divider style={{ background: "#001b71" }} />

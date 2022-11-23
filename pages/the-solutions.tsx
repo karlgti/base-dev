@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/ProcessHeader";
 import Footer from "components/footer";
 import Image from "next/image";
 import invest from "../public/img/banner/BAM_Pic3.gif";
 import value from "../public/img/Artboard 72@2x 1.png";
 import Arrow from "../public/img/Artboard 69@2x 1.png";
+import bull from "../public/img/Market info.png";
+import bear from "../public/img/Market info 3.png";
+import rightArrow from "../public/img/Arrow1.png";
 import ProductTypes from "components/productTypes";
 import Button from "../components/backToTop";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -15,15 +18,10 @@ const theme = createTheme({
   },
 });
 
-function hover(element) {
-  element.setAttribute("src", "http://dummyimage.com/100x100/eb00eb/fff");
-}
-
-function unhover(element) {
-  element.setAttribute("src", "http://dummyimage.com/100x100/000/fff");
-}
-
 function theSolutions() {
+  const [isShown, setIsShown] = useState(false);
+  const [isShown1, setIsShown1] = useState(false);
+
   return (
     <div className="w-full">
       <ThemeProvider theme={theme}>
@@ -74,6 +72,24 @@ function theSolutions() {
                   width={300}
                   height={238}
                 />
+                <p className="mt-[105px] font-light text-[28px] text-[#E04403] leading-[38px]">
+                  5 Asset Classes
+                </p>
+                <p className="mt-[25px] text-[16px] leading-[28px] text-black">
+                  01 Equity Indices
+                </p>
+                <p className="mt-[3px] font-normal text-[16px] leading-[28px] text-black">
+                  03 Commodities
+                </p>
+                <p className="mt-[3px] font-normal text-[16px] leading-[28px] text-black">
+                  02 Treasures
+                </p>
+                <p className="mt-[3px] font-normal text-[16px] leading-[28px] text-black">
+                  04 Gold
+                </p>
+                <p className="mt-[3px] font-normal text-[16px] leading-[28px] text-black">
+                  05 Digital Assets (Cryptocurrency)
+                </p>
               </div>
               <div className="w-[60%]  text-left">
                 <h1 className="font-light text-[28px] leading-[38px] text-[#E04403]">
@@ -87,6 +103,32 @@ function theSolutions() {
                   asset classes experiencing bull and bear markets in different
                   global economic cycles.
                 </p>
+
+                <div className="mt-[84px]">
+                  <div className="">
+                    {isShown1 && (
+                      <Image
+                        src={bull}
+                        width={"550px"}
+                        height={"567px"}
+                        onMouseEnter={() => setIsShown1(true)}
+                        onMouseLeave={() => setIsShown1(false)}
+                      />
+                    )}
+                  </div>
+
+                  <div className="">
+                    {!isShown1 && (
+                      <Image
+                        src={bear}
+                        width={"550px"}
+                        height={"567px"}
+                        onMouseEnter={() => setIsShown1(true)}
+                        onMouseLeave={() => setIsShown1(false)}
+                      />
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -104,8 +146,23 @@ function theSolutions() {
                 For more details, <br />
                 Please contact our professional advisors.
               </h1>
-              <button className="mt-[26px] w-[170px] h-[58px] bg-[#E04403] text-white font-bold text-[14px] leading-[17px]">
-                Contact us
+
+              <button
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+                className="mt-[26px] w-[170px] h-[58px] bg-[#E04403] text-white font-bold text-[14px] leading-[17px]"
+              >
+                {!isShown && <p>Contact us</p>}
+                {isShown && (
+                  <div className="flex justify-between mx-[31.5px]">
+                    <div className="self-center">
+                      <p>Contact us</p>
+                    </div>
+                    <div className="pt-1">
+                      <Image src={rightArrow} />
+                    </div>
+                  </div>
+                )}
               </button>
             </div>
           </div>

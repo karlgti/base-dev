@@ -132,7 +132,14 @@ export default function MaxWidthDialog() {
             </ThemeProvider>
           </Box>
         </DialogContent>
-        <DialogContentText className="text-black text-[13px] leading-[17px] text-center">
+        <DialogContentText
+          align="center"
+          sx={{
+            color: "black",
+            fontSize: "13px",
+            lineHeight: "17px",
+          }}
+        >
           Forget passoword
         </DialogContentText>
         <br />

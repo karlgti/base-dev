@@ -1,9 +1,10 @@
 import React from "react";
 import TermOfUse from "components/TermOfUse";
+import PrivacyPolicy from "components/PrivacyPolicy";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
-import linkedin from "../public/img/icons8-linkedin.svg";
-import twitter from "../public/img/twitter-square-icon.svg";
+import linkedin from "../public/img/linkedin.svg";
+import twitter from "../public/img/square-twitter.svg";
 
 export default function footer() {
   const theme = createTheme({
@@ -48,7 +49,7 @@ export default function footer() {
                   <Image
                     src={twitter}
                     width={31}
-                    height={28}
+                    height={30}
                     className="cursor-pointer"
                     alt="Base Asset Management"
                   />
@@ -67,9 +68,7 @@ export default function footer() {
 
             <div className="flex pt-[2%] lg:pt-[0%]">
               <TermOfUse />
-              <p className="border-[#001B71] font-medium	text-[13px] lg:text-[13px] leading-[17px] text-[#001B71]  text-[#001B71] cursor-pointer pl-4 lg:pl-2">
-                Privacy Policy
-              </p>
+              <PrivacyPolicy />
             </div>
           </div>
         </div>
