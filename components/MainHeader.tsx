@@ -157,7 +157,7 @@ export default function MainHeader() {
       paddingBottom: 0,
     },
     "& .MuiDrawer-paper": {
-      width: 300,
+      width: "18.7%",
       height: 680,
       boxSizing: "border-box",
       marginTop: 11.9,
