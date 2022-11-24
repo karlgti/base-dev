@@ -353,8 +353,9 @@ export default function contactHeader() {
                 <ListItemText secondary="The Solutions" />
               </ListItemButton>
               <ListItemButton href="/our-team">
-                <ListItemText sx={{ marginBottom: "26px" }} secondary="Our Team" />
+                <ListItemText secondary="Our Team" />
               </ListItemButton>
+              <div className="mb-[30px]"></div>
             </Collapse>
             <Divider style={{ background: "#001b71" }} />
 

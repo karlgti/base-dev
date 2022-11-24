@@ -157,7 +157,7 @@ export default function MainHeader() {
       paddingBottom: 0,
     },
     "& .MuiDrawer-paper": {
-      width: "18.7%",
+      width: 300,
       height: 680,
       boxSizing: "border-box",
       marginTop: 11.9,
@@ -351,11 +351,9 @@ export default function MainHeader() {
                 <ListItemText secondary="The Solutions" />
               </ListItemButton>
               <ListItemButton href="/our-team">
-                <ListItemText
-                  sx={{ marginBottom: "26px" }}
-                  secondary="Our Team"
-                />
+                <ListItemText secondary="Our Team" />
               </ListItemButton>
+              <div className="pb-[30px]"></div>
             </Collapse>
             <Divider style={{ background: "#001b71" }} />
 
