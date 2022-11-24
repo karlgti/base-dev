@@ -13,64 +13,66 @@ function banners() {
     },
   });
   return (
-    <div className="relative lg:flex top-[-5rem] lg:top-[-14.5rem] lg:justify-between">
-      <a href="/our-philosophy">
-        <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#00953B]">
-          <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
-            <ThemeProvider theme={theme}>
-              <p className="font-light	text-white	lg:text-[38px] text-[23px] leading-[27px] lg:leading-[45px]">
-                Our <br />
-                Philosophy
-              </p>
-            </ThemeProvider>
-            <div className="lg:pt-[50px] pb-[15px]">
-              <Image src={rightArrow} />
+    <>
+      <div className="relative lg:flex top-[-4.5rem] lg:top-[-14.5rem] lg:justify-between">
+        <a href="/our-philosophy">
+          <div className="flex lg:block relative lg:w-[355px] lg:h-[480px] bg-[#00953B]">
+            <div className="flex lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+              <ThemeProvider theme={theme}>
+                <p className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
+                  Our <br />
+                  Philosophy
+                </p>
+              </ThemeProvider>
+              <div className="lg:pt-[50px] pb-[15px]">
+                <Image src={rightArrow} />
+              </div>
+            </div>
+            <div className="lg:absolute  lg:w-[60%] w-[45%] lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
+              <Image src={logo} alt="Base Asset Management" />
             </div>
           </div>
-          <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-            <Image src={logo} alt="Base Asset Management" />
-          </div>
-        </div>
-      </a>
+        </a>
 
-      <a href="/investment-approach">
-        <div className="flex lg:block relative lg:w-[368px] lg:mx-[24px] my-[7px] lg:my-[0px] lg:h-[480px] bg-[#CC9C4A]">
-          <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
-            <ThemeProvider theme={theme}>
-              <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
-                Investment <br />
-                Approach
-              </p>
-            </ThemeProvider>
-            <div className="lg:pt-[50px] pb-[15px]">
-              <Image src={rightArrow} />
+        <a href="/investment-approach">
+          <div className="flex lg:block relative lg:w-[355px] my-[7px] lg:my-[0px] lg:h-[480px] bg-[#CC9C4A]">
+            <div className="flex lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+              <ThemeProvider theme={theme}>
+                <p className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
+                  Investment <br />
+                  Approach
+                </p>
+              </ThemeProvider>
+              <div className="lg:pt-[50px] pb-[15px]">
+                <Image src={rightArrow} />
+              </div>
+            </div>
+            <div className="lg:absolute  lg:w-[60%] w-[45%] lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
+              <Image src={invest} alt="Base Asset Management" />
             </div>
           </div>
-          <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-            <Image src={invest} alt="Base Asset Management" />
-          </div>
-        </div>
-      </a>
+        </a>
 
-      <a href="/the-solutions">
-        <div className="flex lg:block relative lg:w-[368px] lg:h-[480px] bg-[#E04403]">
-          <div className="flex flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
-            <ThemeProvider theme={theme}>
-              <p className="font-light	text-white	lg:text-[38px] text-[27px] leading-[27px] lg:leading-[45px]">
-                The <br />
-                Solutions
-              </p>
-            </ThemeProvider>
-            <div className="lg:pt-[50px] pb-[15px]">
-              <Image src={rightArrow} />
+        <a href="/the-solutions">
+          <div className="flex lg:block relative lg:w-[355px] lg:h-[480px] bg-[#E04403]">
+            <div className="flex  lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+              <ThemeProvider theme={theme}>
+                <p className="font-light	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
+                  The <br />
+                  Solutions
+                </p>
+              </ThemeProvider>
+              <div className="lg:pt-[50px] pb-[15px]">
+                <Image src={rightArrow} />
+              </div>
+            </div>
+            <div className="lg:absolute lg:w-[60%] w-[45%] lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
+              <Image src={process} alt="Base Asset Management" />
             </div>
           </div>
-          <div className="lg:absolute lg:bottom-[19px] p-[10px] lg:p-[0px] lg:right-[19px]">
-            <Image src={process} alt="Base Asset Management" />
-          </div>
-        </div>
-      </a>
-    </div>
+        </a>
+      </div>
+    </>
   );
 }
 

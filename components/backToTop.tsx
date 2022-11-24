@@ -14,10 +14,10 @@ const backToTop = () => {
   };
 
   return (
-    <div>
+    <div className="hidden lg:block"> 
       <div
         onClick={scrollToTop}
-        className="fixed cursor-pointer z-50 transition delay-300 duration-300 ease-out w-[72px] opacity-20 hover:opacity-100 h-[72px] top-auto bottom-0 right-0 bg-black flex"
+        className="fixed cursor-pointer z-50 transition delay-300 duration-300 ease-out w-[45px] lg:w-[72px] opacity-20 hover:opacity-100 h-[45px] lg:h-[72px] top-auto bottom-0 right-0 bg-black flex"
       >
         <div className="flex items-center">
           <Image src={Arrowup} />

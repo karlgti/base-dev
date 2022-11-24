@@ -34,7 +34,7 @@ function Insight() {
                 <h2 className="text-white font-normal lg:text-[58px] lg:leading-[76px] text-[44px] leading-[44px] text-[#4D008C] pb-[30px]">
                   Insights
                 </h2>
-                <div className="font-normal	lg:text-[16px] lg:leading-[28px] text-[14px] leading-[24px] text-[#000000]">
+                <div className="font-normal hidden lg:block	lg:text-[16px] lg:leading-[28px] text-[14px] leading-[24px] text-[#000000]">
                   <p>
                     We pride ourselves on being open and transparent with <br />
                     our investors. This means not only providing informed
@@ -49,15 +49,29 @@ function Insight() {
                     feedback and suggestions.
                   </p>
                 </div>
+
+                <div className="font-normal lg:hidden	lg:text-[16px] lg:leading-[28px] text-[14px] leading-[24px] text-[#000000]">
+                  <p>
+                    We pride ourselves on being open and transparent with our
+                    investors. This means not only providing informed decisions
+                    about their portfolios but also sharing our views on market
+                    trends and investment opportunities.
+                  </p>
+                  <p className="mt-[20px]">
+                    To that end, we publish online articles to highlight both
+                    the risks and the rewards of investing, and we welcome
+                    feedback and suggestions.
+                  </p>
+                </div>
               </div>
               <button className="hidden mt-[40px] lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]">
                 View more
               </button>
             </div>
           </div>
-          <div className="lg:w-[50%]">
+          <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] mr-[5px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogone} alt="Base Asset Management" />
                 </div>
@@ -94,7 +108,7 @@ function Insight() {
                 </div>
               </div>
 
-              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] ml-[32px] border-b border-[#4D008C]">
+              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
                 <div className="">
                   <Image src={blogtwo} alt="Base Asset Management" />
                 </div>
@@ -136,7 +150,7 @@ function Insight() {
               className="lg:hidden mt-7 inline-flex items-center text-indigo-600 hover:text-indigo-700 leading-normal"
               href="#"
             >
-              <button className="mr-2 font-semibold bg-[#4D008C] text-white p-2 pr-5 pl-5">
+              <button className="mr-2 text-[13px] font-[700] bg-[#4D008C] text-white py-[12px] px-[27px]">
                 View more
               </button>
             </a>

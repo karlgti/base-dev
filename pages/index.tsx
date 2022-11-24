@@ -41,36 +41,52 @@ const Home: NextPage = () => {
       <ThemeProvider theme={theme}>
         <Header />
 
-        <div className="bg-[#021E7B] px-[144px] pb-[330px]">
-          <div className="max-w-[1100px] m-0 m-auto pt-[110px] flex justify-between">
+        <div className="bg-[#021E7B] lg:px-[144px] px-[5%] pb-[100px] lg:pb-[330px]">
+          <div className="lg:max-w-[1100px] m-0 m-auto pt-[110px] flex justify-between">
             <div>
-              <div className="w-full mx-auto  self-center items-center flex justify-center">
+              <div className="lg:w-full lg:mx-auto self-center items-center flex justify-center">
                 <Image src={invest} width={1224} height={747} />
               </div>
-              <p className="font-black text-[90px] leading-[100px] text-white">
+              <p className="lg:font-black lg:block hidden font-[900] text-[50px] lg:text-[90px] leading-[50px] lg:leading-[100px] text-white">
                 Leave No Stone
                 <br />
                 Unturned
               </p>
-              <p className="text-[16px] leading-[28px] text-white font-normal mt-[20px]">
+              <p className="lg:font-black lg:hidden font-[900] text-[50px] lg:text-[90px] leading-[50px] lg:leading-[100px] text-white">
+                Leave <br /> No Stone
+                <br />
+                Unturned
+              </p>
+              <p className="lg:text-[16px] hidden lg:block lg:leading-[28px] text-white lg:font-normal text-[15px] leading-[25px] font-[400] mt-[20px]">
                 An investment firm powered by automation and programmed signals
                 that <br /> identify hidden gems and capitalise on trading
                 opportunities.
               </p>
-              <p className="text-[16px] leading-[28px] text-white font-normal mt-[28px]">
+              <p className="lg:text-[16px] hidden lg:block lg:leading-[28px] text-white lg:font-normal text-[15px] leading-[25px] font-[400] mt-[20px]">
                 Always on the lookout for new market trends and behaviours{" "}
                 <br /> so our investors can stay ahead of the curve.
+              </p>
+
+              <p className="lg:text-[16px] lg:hidden lg:leading-[28px] text-white lg:font-normal text-[15px] leading-[25px] font-[400] mt-[25px]">
+                An investment firm powered by automation <br /> and programmed
+                signals that identify hidden <br /> gems and capitalise on
+                trading opportunities.
+              </p>
+              <p className="lg:text-[16px] lg:hidden lg:leading-[28px] text-white lg:font-normal text-[15px] leading-[25px] font-[400] mt-[25px]">
+                Always on the lookout for new market trends
+                <br /> and behaviours so our investors can stay <br /> ahead of
+                the curve.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-[#F5F5F5] px-[144px]">
-          <div className="max-w-[1100px] m-0 m-auto flex flex-col justify-between">
+        <div className="bg-[#F5F5F5] lg:px-[144px] px-[5%]">
+          <div className="lg:max-w-[1100px] m-0 m-auto flex flex-col justify-between">
             <div>
               <Banners />
             </div>
-            <div className="relative lg:top-[-116px] pb-[30px]">
+            <div className="relative lg:top-[-116px]  pb-[65px] lg:pb-[30px]">
               <Insight />
             </div>
           </div>
