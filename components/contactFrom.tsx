@@ -230,7 +230,7 @@ export default function ContactForm() {
               <h1 className="font-normal text-[18px] mb-[24px] leading-[28px] text-[#E04403]">
                 (*Mandatory data)
               </h1>
-              <form action="" className="w-[80%]">
+              <form action="" className="w-[90%]">
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
