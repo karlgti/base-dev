@@ -254,9 +254,9 @@ export default function Team() {
                 <p className="font-normal	lg:text-[16px] lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Joe has covered diverse functions, including bonds and
                   equities issuance, secondary market business development and
-                  institutional sales in Asia including Japan, in the last 30
+                  institutional sales in Asia, in the last 30
                   years. Joe also provided property investment advisory and
-                  financial planning services for professional clients.
+                  financial planning services for professional and individual clients.
                 </p>
                 <p className="font-normal	lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Joe received a Bachelor of Commerce and Management (major in

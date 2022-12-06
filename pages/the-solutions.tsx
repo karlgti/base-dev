@@ -27,8 +27,8 @@ function theSolutions() {
       <ThemeProvider theme={theme}>
         <Header />
 
-        <div className="bg-[#E04403] px-[144px]">
-          <div className="max-w-[1200px] m-0 m-auto pt-[110px] flex justify-between">
+        <div className="bg-[#E04403] lg:px-[144px] px-[5%]">
+          <div className="lg:max-w-[1200px] m-0 m-auto pt-[110px] flex justify-between">
             <div className="self-center">
               <h1 className="font-light text-[48px] leading-[60px] text-white">
                 Discover the Undiscovered,
@@ -49,8 +49,8 @@ function theSolutions() {
           </div>
         </div>
 
-        <div className="bg-white px-[144px]">
-          <div className="max-w-[1200px] m-0 m-auto py-[17px]">
+        <div className="bg-white lg:px-[144px] px-[5%]">
+          <div className="lg:max-w-[1200px] m-0 m-auto py-[17px]">
             <h1 className="font-bold text-[18px] leading-[30px] text-[#E04403]">
               About /
               <span className="font-semibold text-black"> The Solutions</span>
@@ -58,8 +58,8 @@ function theSolutions() {
           </div>
         </div>
 
-        <div className="bg-[#F0F0F0] px-[144px]">
-          <div className="max-w-[1200px] border-b-[6px] border-[#E04403] opacity-[100%] pt-[77px] pb-[70px] m-0 m-auto py-20">
+        <div className="bg-[#F0F0F0] lg:px-[144px] px-[5%]">
+          <div className="lg:max-w-[1200px] border-b-[6px] border-[#E04403] opacity-[100%] pt-[77px] pb-[70px] m-0 m-auto py-20">
             <h1 className="font-extrabold text-[52px] leading-[62px] text-[#E04403]">
               <span className="font-light">Investment</span> Strategy?
             </h1>
@@ -132,7 +132,7 @@ function theSolutions() {
               </div>
             </div>
           </div>
-          <div className="max-w-[1200px] border-b-[6px] border-[#E04403] opacity-[100%] pt-[71px] pb-[60px] m-0 m-auto py-20">
+          <div className="lg:max-w-[1200px] border-b-[6px] border-[#E04403] opacity-[100%] pt-[71px] pb-[60px] m-0 m-auto py-20">
             <h1 className="font-extrabold text-[52px] leading-[62px] text-[#E04403]">
               <span className="font-light">Product</span> Types
             </h1>

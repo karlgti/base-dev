@@ -80,14 +80,16 @@ const TermOfUse = () => {
 
   return (
     <div>
-      <h1
-        onClick={handleOpen}
-        className={
-          "border-[#001B71] font-medium	text-[13px] lg:text-[13px] leading-[17px] text-[#001B71]  text-[#001B71] cursor-pointer pl-4 lg:pl-2"
-        }
-      >
-        Privacy Policy
-      </h1>
+      <div className="font-normal	 ">
+        Please access to our
+        <span
+          onClick={handleOpen}
+          className="underline text-primary-blue mx-2 underline-offset-2 cursor-pointer"
+        >
+          Terms of Use
+        </span>
+        page for full disclosures.
+      </div>
       <Dialog
         open={open}
         onClose={handleClose}

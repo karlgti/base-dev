@@ -1,7 +1,194 @@
 import React, { useState } from "react";
-import Footer from "./footer";
 import Button from "../components/backToTop";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Select from "react-select";
+
+const Country = [
+  { label: "Albania", value: "1" },
+  { label: "Algeria", value: "2" },
+  { label: "Angola", value: "3" },
+  { label: "Anguilla", value: "4" },
+  { label: "Argentina", value: "5" },
+  { label: "Armenia", value: "6" },
+  { label: "Aruba", value: "7" },
+  { label: "Australia", value: "8" },
+  { label: "Austria", value: "9" },
+  { label: "Azerbaijan", value: "10" },
+  { label: "Bahamas", value: "11" },
+  { label: "Bahrain", value: "12" },
+  { label: "Bangladesh", value: "13" },
+  { label: "Barbados", value: "14" },
+  { label: "Belarus", value: "15" },
+  { label: "Belgium", value: "16" },
+  { label: "Belize", value: "17" },
+  { label: "Benin", value: "18" },
+  { label: "Bermuda", value: "19" },
+  { label: "Bhutan", value: "20" },
+  { label: "Bolivia", value: "21" },
+  { label: "Bosnia and Herzegovina", value: "22" },
+  { label: "Botswana", value: "23" },
+  { label: "Brazil", value: "24" },
+  { label: "Brunei Darussalam", value: "25" },
+  { label: "Bulgaria", value: "26" },
+  { label: "Burkina Faso", value: "27" },
+  { label: "Burundi", value: "28" },
+  { label: "Cambodia", value: "29" },
+  { label: "Cameroon", value: "30" },
+  { label: "Canada", value: "31" },
+  { label: "Cape Verde", value: "32" },
+  { label: "Cayman Islands", value: "33" },
+  { label: "Central African Rep", value: "34" },
+  { label: "Chad", value: "35" },
+  { label: "Chile", value: "36" },
+  { label: "China (People's Rep)", value: "37" },
+  { label: "Colombia", value: "38" },
+  { label: "Congo(Rep)", value: "39" },
+  { label: "Cook Islands", value: "40" },
+  { label: "Costa Rica", value: "41" },
+  { label: "Cote d'Ivoire (Rep)", value: "42" },
+  { label: "Croatia", value: "43" },
+  { label: "Cyprus", value: "44" },
+  { label: "Czech (Rep)", value: "45" },
+  { label: "Luxembourg", value: "46" },
+  { label: "Macao", value: "47" },
+  { label: "Macedonia", value: "48" },
+  { label: "Madagascar", value: "49" },
+  { label: "Malawi", value: "50" },
+  { label: "Malaysia", value: "51" },
+  { label: "Maldives", value: "52" },
+  { label: "Mali", value: "53" },
+  { label: "Malta", value: "54" },
+  { label: "Mauritius", value: "55" },
+  { label: "Mauritania", value: "56" },
+  { label: "Mexico", value: "57" },
+  { label: "Moldova", value: "58" },
+  { label: "Mongolia", value: "59" },
+  { label: "Morocco", value: "60" },
+  { label: "Myanmar", value: "61" },
+  { label: "Namibia", value: "62" },
+  { label: "Nauru", value: "63" },
+  { label: "Nepal", value: "64" },
+  { label: "Netherlands", value: "65" },
+  { label: "New Caledonia", value: "66" },
+  { label: "New Zealand", value: "67" },
+  { label: "Niger", value: "68" },
+  { label: "Nigeria", value: "69" },
+  { label: "Norway", value: "70" },
+  { label: "Oman", value: "71" },
+  { label: "Pakistan", value: "72" },
+  { label: "Panama", value: "73" },
+  { label: "Papua New Guinea", value: "74" },
+  { label: "Paraguay", value: "75" },
+  { label: "Peru", value: "76" },
+  { label: "Philippines", value: "77" },
+  { label: "Poland", value: "78" },
+  { label: "Portugal", value: "79" },
+  { label: "Qatar", value: "80" },
+  { label: "Romania", value: "81" },
+  { label: "Russian Federation", value: "82" },
+  { label: "Rwanda", value: "83" },
+  { label: "Saint Christopher (St. Kitts) and Nevis", value: "84" },
+  { label: "Dem Rep of Congo", value: "85" },
+  { label: "Denmark", value: "86" },
+  { label: "Dominican Rep.", value: "87" },
+  { label: "Dominica (Commonwealth of)", value: "88" },
+  { label: "Ecuador", value: "89" },
+  { label: "Egypt", value: "90" },
+  { label: "El Salvador", value: "91" },
+  { label: "Eritrea", value: "92" },
+  { label: "Estonia", value: "93" },
+  { label: "Ethiopia", value: "94" },
+  { label: "Fiji", value: "95" },
+  { label: "Finland", value: "96" },
+  { label: "French Polynesia", value: "97" },
+  { label: "France", value: "98" },
+  { label: "Gabon", value: "99" },
+  { label: "Georgia", value: "100" },
+  { label: "Germany", value: "101" },
+  { label: "Ghana", value: "102" },
+  { label: "Gibraltar", value: "103" },
+  {
+    label: "United Kingdom of Great Britain and Northern Ireland",
+    value: "104",
+  },
+  { label: "Greece", value: "105" },
+  { label: "Grenada", value: "106" },
+  { label: "Guatemala", value: "107" },
+  { label: "Guinea", value: "108" },
+  { label: "Guyana", value: "109" },
+  { label: "Haiti", value: "110" },
+  { label: "Honduras", value: "111" },
+  { label: "Hong Kong", value: "112" },
+  { label: "Hungary", value: "113" },
+  { label: "Iceland", value: "114" },
+  { label: "India", value: "115" },
+  { label: "Indonesia", value: "116" },
+  { label: "Iran", value: "117" },
+  { label: "Iraq", value: "118" },
+  { label: "Ireland", value: "119" },
+  { label: "Israel", value: "120" },
+  { label: "Italy", value: "121" },
+  { label: "Jamaica", value: "122" },
+  { label: "Japan", value: "123" },
+  { label: "Jordan", value: "124" },
+  { label: "Kenya", value: "125" },
+  { label: "Korea (Rep)", value: "126" },
+  { label: "Kuwait", value: "127" },
+  { label: "Lao People's Dem Rep", value: "128" },
+  { label: "Latvia", value: "129" },
+  { label: "Lesotho", value: "130" },
+  { label: "Saint Lucia", value: "131" },
+  { label: "Saint Vincent and the Grenadines", value: "132" },
+  { label: "Sao Tome and Principe", value: "133" },
+  { label: "Saudi Arabia", value: "134" },
+  { label: "Senegal", value: "135" },
+  { label: "Seychelles", value: "136" },
+  { label: "Sierra Leone", value: "137" },
+  { label: "Singapore", value: "138" },
+  { label: "Slovakia", value: "139" },
+  { label: "Slovenia", value: "140" },
+  { label: "Solomon Islands", value: "141" },
+  { label: "Somalia", value: "142" },
+  { label: "South Africa", value: "143" },
+  { label: "Spain", value: "144" },
+  { label: "Sri Lanka", value: "145" },
+  { label: "Sudan", value: "146" },
+  { label: "Suriname", value: "147" },
+  { label: "Swaziland", value: "148" },
+  { label: "Sweden", value: "149" },
+  { label: "Switzerland", value: "150" },
+  { label: "Syrian Arab Rep", value: "151" },
+  { label: "Tanzania", value: "152" },
+  { label: "Thailand", value: "153" },
+  { label: "Togo", value: "154" },
+  { label: "Trinidad and Tobago", value: "155" },
+  { label: "Tunisia", value: "156" },
+  { label: "Turkey", value: "157" },
+  { label: "Uganda", value: "158" },
+  { label: "Ukraine", value: "159" },
+  { label: "United Arab Emirates", value: "160" },
+  { label: "United States of America", value: "161" },
+  { label: "Uruguay", value: "162" },
+  { label: "Venezuela", value: "163" },
+  { label: "Viet Nam", value: "164" },
+  { label: "Western Samoa", value: "165" },
+  { label: "Yemen", value: "166" },
+  { label: "Yugoslavia", value: "167" },
+  { label: "Zambia", value: "168" },
+  { label: "Zimbabwe", value: "169" },
+];
+
+const interest = [
+  { value: 1, label: "Advisory Service" },
+  { value: 2, label: "Discretionary Account" },
+  { value: 3, label: "Investment Fund" },
+];
+
+const describe = [
+  { value: 1, label: "Investment Advisor" },
+  { value: 2, label: "Asset Owner / Institutional Investor" },
+  { value: 3, label: "Individual / Corporate Investor" },
+];
 
 export default function ContactForm() {
   const theme = createTheme({
@@ -9,104 +196,19 @@ export default function ContactForm() {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [companyTitle, setCompanyTitle] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [countryRegion, setCountryRegion] = useState("");
-  const [yourself, setYourself] = useState("");
-  const [interested, setInterested] = useState("");
-  const [message, setMessage] = useState("");
 
-  //   Form validation
-  const [errors, setErrors] = useState({});
-
-  //   Setting button text
-  const [buttonText, setButtonText] = useState("Submit");
-
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showFailureMessage, setShowFailureMessage] = useState(false);
-
-  const handleValidation = () => {
-    let tempErrors = {};
-    let isValid = true;
-
-    if (firstname.length <= 0) {
-      tempErrors["fullname"] = true;
-      isValid = false;
-    }
-    if (lastName.length <= 0) {
-      tempErrors["fullname"] = true;
-      isValid = false;
-    }
-    if (email.length <= 0) {
-      tempErrors["email"] = true;
-      isValid = false;
-    }
-    if (subject.length <= 0) {
-      tempErrors["subject"] = true;
-      isValid = false;
-    }
-    if (message.length <= 0) {
-      tempErrors["message"] = true;
-      isValid = false;
-    }
-
-    setErrors({ ...tempErrors });
-    console.log("errors", errors);
-    return isValid;
-  };
-
-  //   const [form, setForm] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    let isValidForm = handleValidation();
-
-    if (isValidForm) {
-      setButtonText("Sending");
-      const res = await fetch("/api/sendgrid", {
-        body: JSON.stringify({
-          email: email,
-          firstname: firstname,
-          subject: subject,
-          message: message,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      });
-
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
-        setShowSuccessMessage(false);
-        setShowFailureMessage(true);
-        setButtonText("Send");
-
-        // Reset form fields
-        setFirstname("");
-        setEmail("");
-        setMessage("");
-        setSubject("");
-        return;
+  const style = {
+    control: (base, state) => ({
+      ...base,
+      border: '1px solid #BFC6C3',
+      boxShadow: 'none',
+      '&:hover': {
+          border: '1px solid #BFC6C3',
       }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
-      setButtonText("Send");
-      // Reset form fields
-      setFirstname("");
-      setEmail("");
-      setMessage("");
-      setSubject("");
-    }
-    console.log(firstname, email, subject, message);
+  })
   };
   return (
+    //2882F6
     <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
       <ThemeProvider theme={theme}>
         <div className="max-w-[1440px] pb-[97px]">
@@ -114,7 +216,7 @@ export default function ContactForm() {
             <header className="">
               <div className="mb-[56px]">
                 <h1 className="font-normal mt-[101px]	text-[82px] leading-[96px] text-[#001673]">
-                  Contact
+                  Contact Us
                 </h1>
                 <p className="font-normal mt-[49px]	text-[16px] leading-[28px]">
                   Thank you for your interest!
@@ -125,201 +227,173 @@ export default function ContactForm() {
                   as possible.
                 </p>
               </div>
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col lg:max-w-[75%]"
-              >
-                <h1 className="font-normal text-[18px] leading-[28px] text-[#E04403]">
-                  (*Mandatory data)
-                </h1>
-                <div className="grid grid-cols-2 gap-4 mt-[16px]">
-                  <div>
+              <h1 className="font-normal text-[18px] mb-[24px] leading-[28px] text-[#E04403]">
+                (*Mandatory data)
+              </h1>
+              <form action="" className="w-[80%]">
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      htmlFor="fullname"
                       className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-first-name"
                     >
-                      First Name
-                      <span className="text-red-500">*</span>
+                      First Name <span className="text-[#CBC3BB]">*</span>
                     </label>
                     <input
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-first-name"
                       type="text"
-                      value={firstname}
-                      onChange={(e) => {
-                        setFirstname(e.target.value);
-                      }}
-                      name="fullname"
-                      className="bg-white border w-[100%] py-2 pl-4 text-black-500"
                     />
                   </div>
-                  <div>
+                  <div className="w-full md:w-1/2 px-3">
                     <label
-                      htmlFor="fullname"
-                      className="text-black-500 text-[16px] leading-[30px] font-normal mt-8 dark:text-black"
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-last-name"
                     >
-                      Last Name
-                      <span className="text-red-500">*</span>
+                      Last Name <span className="text-[#CBC3BB]">*</span>
                     </label>
                     <input
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-last-name"
                       type="text"
-                      value={lastName}
-                      onChange={(e) => {
-                        setLastName(e.target.value);
-                      }}
-                      name="fullname"
-                      className="bg-white border w-[100%] py-2 pl-4 text-black-500"
                     />
                   </div>
                 </div>
-                {/* {errors?.fullname && (
-              <p className="text-red-500">Fullname cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="subject"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Company Title<span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={companyTitle}
-                  onChange={(e) => {
-                    setCompanyTitle(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.subject && (
-              <p className="text-red-500">Subject cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="email"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Company Email<span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.email && (
-              <p className="text-red-500">Email cannot be empty.</p>
-            )} */}
-
-                <label
-                  htmlFor="subject"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Company Name<span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={companyName}
-                  onChange={(e) => {
-                    setCompanyName(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.subject && (
-              <p className="text-red-500">Subject cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="subject"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Country Region<span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={countryRegion}
-                  onChange={(e) => {
-                    setCountryRegion(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.subject && (
-              <p className="text-red-500">Subject cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="subject"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  How would you describe yourself?
-                  <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={yourself}
-                  onChange={(e) => {
-                    setYourself(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.subject && (
-              <p className="text-red-500">Subject cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="subject"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Which services are you interested in?
-                  <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={interested}
-                  onChange={(e) => {
-                    setInterested(e.target.value);
-                  }}
-                  className="bg-white border py-2 pl-4  text-black-500"
-                />
-                {/* {errors?.subject && (
-              <p className="text-red-500">Subject cannot be empty.</p>
-            )} */}
-                <label
-                  htmlFor="message"
-                  className="text-black-500 text-[16px] leading-[30px] font-normal mt-4 dark:text-black"
-                >
-                  Message<span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  name="message"
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                  className="bg-white border py-10 pl-4  text-black-500"
-                ></textarea>
-                {/* {errors?.message && (
-              <p className="text-red-500">Message body cannot be empty.</p>
-            )} */}
-                <div className="flex flex-row items-center justify-start">
-                  <button
-                    type="submit"
-                    className="px-10 mt-8 py-2 bg-[#130F49] text-white font-light text-lg flex flex-row items-center"
-                  >
-                    {buttonText}
-                  </button>
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3">
+                    <label
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-company-title"
+                    >
+                      Company Title <span className="text-[#CBC3BB]">*</span>
+                    </label>
+                    <input
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-company-title"
+                      type="text"
+                    />
+                  </div>
                 </div>
-                <div className="text-left">
-                  {showSuccessMessage && (
-                    <p className="text-green-500 font-semibold text-sm my-2">
-                      Thankyou! Your Message has been delivered.
-                    </p>
-                  )}
-                  {showFailureMessage && (
-                    <p className="text-red-500">
-                      Oops! Something went wrong, please try again.
-                    </p>
-                  )}
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3">
+                    <label
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-company-Email"
+                    >
+                      Company Email <span className="text-[#CBC3BB]">*</span>
+                    </label>
+                    <input
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-company-Email"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3">
+                    <label
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-company-Name"
+                    >
+                      Company Name <span className="text-[#CBC3BB]">*</span>
+                    </label>
+                    <input
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-company-Name"
+                      type="text"
+                    />
+                  </div>
+                </div>
+
+                <div className="w-full mb-6">
+                  <label
+                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                    htmlFor="grid-describe"
+                  >
+                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                  </label>
+                  <Select
+                    options={Country}
+                    theme={(theme) => ({
+                      ...theme,
+                      borderRadius: 0,
+                      colors: {
+                        ...theme.colors,
+                      },
+                    })}
+                    styles={style}
+                    id="grid-interested"
+                    placeholder={<div>-- Please Select --</div>}
+                  />
+                </div>
+
+                <div className="w-full mb-6">
+                  <label
+                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                    htmlFor="grid-describe"
+                  >
+                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                  </label>
+                  <Select
+                    options={describe}
+                    theme={(theme) => ({
+                      ...theme,
+                      borderRadius: 0,
+                      colors: {
+                        ...theme.colors,
+                      },
+                    })}
+                    styles={style}
+                    id="grid-interested"
+                    placeholder={<div>-- Please Select --</div>}
+                  />
+                </div>
+
+                <div className="w-full mb-6">
+                  <label
+                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                    htmlFor="grid-describe"
+                  >
+                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                  </label>
+                  <Select
+                    options={interest}
+                    theme={(theme) => ({
+                      ...theme,
+                      borderRadius: 0,
+                      boxShadow: "none",
+                      border: "10px solid lightgray",
+                      colors: {
+                        ...theme.colors,
+                      },
+                    })}
+                    styles={style}
+                    id="grid-interested"
+                    isMulti
+                    placeholder={<div>-- Please Select --</div>}
+                  />
+                </div>
+
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3">
+                    <label
+                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
+                      htmlFor="grid-Message"
+                    >
+                      Message <span className="text-[#CBC3BB]">*</span>
+                    </label>
+                    <textarea
+                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
+                      id="grid-Message"
+                      rows={4}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button className=" mt-[40px] w-[170px] h-[58px] bg-[#001B71] text-white font-bold text-[14px] leading-[17px]">
+                    Submit
+                  </button>
                 </div>
               </form>
             </header>

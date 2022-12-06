@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import linkedin from "../public/img/linkedin.svg";
 import twitter from "../public/img/square-twitter.svg";
 import useOnScreen from "hook/useOnScreen";
+import Link from "next/link";
 
 function Insight() {
   const theme = createTheme({
@@ -64,85 +65,91 @@ function Insight() {
                   </p>
                 </div>
               </div>
-              <button className="hidden mt-[40px] lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]">
-                View more
-              </button>
+              <a href="/insights">
+                <button className="hidden mt-[40px] lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]">
+                  View more
+                </button>
+              </a>
             </div>
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
-                <div className="">
-                  <Image src={blogone} alt="Base Asset Management" />
-                </div>
-                <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
-                  Theme / Topic
-                </p>
-                <a
-                  className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
-                  href="#"
-                >
-                  <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Oil money pumps up luxury property
-                  </h3>
-                </a>
+              <Link href="https://twitter.com/BASE_AssetMgmt/status/1592008843491692544">
+                <div className="mx-auto cursor-pointer pt-2 lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
+                  <div className="">
+                    <Image src={blogone} alt="Base Asset Management" />
+                  </div>
+                  <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                    Strategy / Model Study
+                  </p>
+                  <a
+                    className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
+                    href="#"
+                  >
+                    <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                      Follow up.
+                    </h3>
+                  </a>
 
-                <div className="flex justify-between">
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/company/base-am/"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={linkedin}
-                        width={31}
-                        height={31}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
-                  </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
+                  <div className="flex justify-between">
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/company/base-am/"
+                        className="text-gray-600"
+                      >
+                        <Image
+                          src={twitter}
+                          width={31}
+                          height={31}
+                          className="cursor-pointer"
+                          alt="Base Asset Management"
+                        />
+                      </a>
+                    </div>
+                    <div className="font-medium pt-3	text-[12px] leading-[22px] text-[#000000]">
+                      14/11/2022 (Mon)
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
-              <div className="mx-auto pt-2 lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
-                <div className="">
-                  <Image src={blogtwo} alt="Base Asset Management" />
-                </div>
-                <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
-                  Theme / Topic
-                </p>
-                <a
-                  className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
-                  href="#"
-                >
-                  <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Oil money pumps up luxury property
-                  </h3>
-                </a>
-                <div className="flex justify-between">
+              <Link href="https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6?utm_source=share&utm_medium=member_desktop">
+                <div className="mx-auto cursor-pointer pt-2 lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
                   <div>
-                    <a
-                      href="https://twitter.com/BASE_AssetMgmt"
-                      className="text-gray-600"
-                    >
-                      <Image
-                        src={twitter}
-                        width={31}
-                        height={31}
-                        className="cursor-pointer"
-                        alt="Base Asset Management"
-                      />
-                    </a>
+                    <Image src={blogtwo} alt="Base Asset Management" />
                   </div>
-                  <div className="font-medium	text-[12px] leading-[22px] text-[#000000]">
-                    2022-10-17
+                  <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                    Investment / Outlook Brief
+                  </p>
+                  <a
+                    className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
+                    href="#"
+                  >
+                    <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                      Tapping into November 2022
+                    </h3>
+                  </a>
+                  <div className="flex justify-between">
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/company/base-am/"
+                        className="text-gray-600"
+                      >
+                        <Image
+                          src={linkedin}
+                          width={31}
+                          height={31}
+                          className="cursor-pointer"
+                          alt="Base Asset Management"
+                        />
+                      </a>
+                    </div>
+                    <div className="font-medium	pt-3 text-[12px] leading-[22px] text-[#000000]">
+                      28/10/2022 (Fir)
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div>

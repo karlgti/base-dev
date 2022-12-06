@@ -29,7 +29,8 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-import Hidden from "@mui/material/Hidden";
+
+import Disclaimers from "components/Disclaimers";
 
 const drawerWidth = 330;
 
@@ -112,6 +113,9 @@ export default function MainHeader() {
     setOpen1(false);
     setOpen(false);
   };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -157,7 +161,7 @@ export default function MainHeader() {
       paddingBottom: 0,
     },
     "& .MuiDrawer-paper": {
-      width: 300,
+      width: 303.5,
       height: 680,
       boxSizing: "border-box",
       marginTop: 11.9,
@@ -228,14 +232,19 @@ export default function MainHeader() {
                   />
                 </a>
               </div>
-              <div className="pl-[31.5px] pr-[48.5px] hidden lg:block">
+              <div className="pl-[34px] pr-[46px] hidden lg:block">
                 <LoginButton />
               </div>
             </Toolbar>
           </AppBar>
         </HideOnScroll>
 
-        <Drawer sx={drawerWidth} anchor="right" open={open}>
+        <Drawer
+          sx={drawerWidth}
+          anchor="right"
+          open={open}
+          onClose={handleClose}
+        >
           <DrawerHeader>
             <div onClick={handleDrawerClose} className="cursor-pointer">
               <img src="img/Cancel.png" width={25} height={25} />
@@ -360,7 +369,7 @@ export default function MainHeader() {
             <ListItemButton href="/insights">
               <ListItemText
                 sx={{ fontSize: "100px" }}
-                primary="Insight"
+                primary="Insights"
                 className=" "
               />
             </ListItemButton>
@@ -369,17 +378,15 @@ export default function MainHeader() {
             <ListItemButton href="/contact">
               <ListItemText
                 sx={{ fontSize: "100px" }}
-                primary="Contacts"
+                primary="Contact"
                 className=" "
               />
             </ListItemButton>
             <Divider style={{ background: "#001b71" }} />
           </List>
-          <ThemeProvider theme={theme1}>
-            <div className="absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold">
-              <div>Disclaimers</div>
-            </div>
-          </ThemeProvider>
+          <div>
+            <Disclaimers />
+          </div>
         </Drawer>
       </Box>
     </ThemeProvider>

@@ -80,14 +80,20 @@ const TermOfUse = () => {
 
   return (
     <div>
-      <h1
-        onClick={handleOpen}
-        className={
-          "border-[#001B71] font-medium	text-[13px] lg:text-[13px] leading-[17px] text-[#001B71]  text-[#001B71] cursor-pointer pl-4 lg:pl-2"
-        }
-      >
-        Privacy Policy
-      </h1>
+      <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+        In Hong Kong, this Website is directed only at persons who qualify as
+        “Professional Investor(s)” as defined under the Securities and Futures
+        Ordinance (the “SFO”) and the Securities and Futures (Professional
+        Investors) Rules. Professional Investors are defined as persons who meet
+        certain financial criteria and please go to our
+        <span
+          onClick={handleOpen}
+          className="cursor-pointer text-primary-blue font-normal	whitespace-nowrap	text-[16px] leading-[26px] underline underline-offset-4 mx-1"
+        >
+          Definition of Professional Investor
+        </span>
+        page for full details.
+      </p>
       <Dialog
         open={open}
         onClose={handleClose}

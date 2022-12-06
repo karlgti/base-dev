@@ -2,6 +2,8 @@ import { Dialog, DialogActions } from "@material-ui/core";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Definition from "components/Definition";
+import DisclamerTermOfUse from "components/DisclamerTermOfUse";
 
 const style = {
   position: "absolute" as "absolute",
@@ -60,12 +62,9 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
-        PaperProps={{
-          style: { borderRadius: 5 },
-        }}
       >
-        <div className="h-[72vh] max-w-[100%] mt-10 bg-white flex flex-col">
-          <div className="max-w-[92%] mx-auto space-y-12 overflow-y-scroll h-[85%]">
+        <div className="relative h-[72vh] p-[58px] bg-white flex flex-col scrollbar-hide">
+          <div className="w-full mx-auto space-y-12 pb-[58px] overflow-y-scroll h-[85%] scrollbar-hide">
             <h1 className="font-normal	text-[26px] leading-[26px]">
               WEBSITE DISCLAIMER – IMPORTANT NOTICE
             </h1>
@@ -73,7 +72,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             <div className="font-normal	text-[16px] leading-[26px] text-justify">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
-              of this website https://www.base-am.com (the“Website”). Please
+              of this website https://www.base-am.com (the “Website”). Please
               select the “I have read and agreed to the above terms and
               conditions” to acknowledge that you accept the terms of use and
               that you agree to abide by them. If you do not agree to these
@@ -85,7 +84,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               <div className="font-semibold text-[16px] leading-[26px]">
                 Recipients of Communication
               </div>
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 This Website is established by Base Asset Management Limited
                 (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                 BMS500) regulated by the Hong Kong Securities and Futures
@@ -108,19 +107,10 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Accredited Investors in Hong Kong
               </div>
 
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
-                In Hong Kong, this Website is directed only at persons who
-                qualify as “Professional Investor(s)” as defined under the
-                Securities and Futures Ordinance (the “SFO”) and the Securities
-                and Futures (Professional Investors) Rules. Professional
-                Investors are defined as persons who meet certain financial
-                criteria and please go to
-                <span className="text-primary-blue font-normal	text-[16px] leading-[26px] underline underline-offset-4 mx-1">
-                  our Definition of Professional Investor
-                </span>
-                page for full details.
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+                <Definition />
               </p>
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 The information contained in this Website is not an
                 advertisement, invitation or document relating to any securities
                 or collective investment schemes or any other investment under
@@ -139,7 +129,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Accessing the Website
               </div>
 
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 This Website has not been reviewed by the SFC and is provided to
                 you on the basis that you are a Professional Investor. By
                 accessing this Website, you acknowledge and agree that this
@@ -147,7 +137,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 distribute or otherwise make this material available to a person
                 who is not a Professional Investor.
               </p>
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 No unauthorised person should attempt to gain access to any
                 restricted area of the Website. We disclaim all liability for
                 any loss a user may suffer from access to the Website by an
@@ -160,7 +150,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Risk Considerations
               </div>
 
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 The value of investments and the income generated may go down as
                 well as up, and the investors may not get back the amount
                 originally invested. Past performance is not a reliable
@@ -173,7 +163,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 suitablnly for investors who are in a position to take such
                 risk.
               </p>
-              <p className="font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 The users of this Website should seek advice from independent
                 financial, legal, or tax professionals before making any
                 investment decisions. The information herein should not be
@@ -189,12 +179,8 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </p>
             </div>
 
-            <div className="font-normal	 ">
-              Please access to our
-              <span className="underline text-primary-blue mx-2 underline-offset-2 ">
-                <Link href="/">Terms of Use</Link>
-              </span>
-              page for full disclosures.
+            <div>
+              <DisclamerTermOfUse />
             </div>
 
             <div className="space-y-2">
@@ -253,27 +239,20 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </button>
             </div>
           </div>
-          <DialogActions
-            style={{
-              display: "flex",
-              alignItems: "end",
-              justifyContent: "flex-end",
-              paddingTop: 32,
-              paddingRight: 46,
-              paddingBottom: 40,
-            }}
-          >
-            <button
-              disabled={agree == 0}
-              className={
-                "flex items-center justify-center w-[170px] h-[58px] text-[17px] leading-[17px] font-bold text-white transition-all duration-300 ease-in-out " +
-                (agree == 0 ? "bg-[#DDDDDD]" : "bg-primary-blue ")
-              }
-              onClick={handleClose}
-            >
-              Submit
-            </button>
-          </DialogActions>
+          <div className="absolute bottom-[40px] right-[48px]">
+            <DialogActions>
+              <button
+                disabled={agree == 0}
+                className={
+                  "flex items-center justify-center w-[170px] h-[58px] text-[17px] leading-[17px] font-bold text-white transition-all duration-300 ease-in-out " +
+                  (agree == 0 ? "bg-[#DDDDDD]" : "bg-primary-blue ")
+                }
+                onClick={handleClose}
+              >
+                Submit
+              </button>
+            </DialogActions>
+          </div>
         </div>
       </Dialog>
 
@@ -311,7 +290,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 setReminder(false);
               }}
             >
-              Okay
+              OK
             </button>
           </DialogActions>
         </div>

@@ -58,18 +58,7 @@ export default function MaxWidthDialog() {
               fontWeight: 500,
             }}
           >
-            Investor
-          </Typography>
-          <Typography
-            color="common.white"
-            sx={{
-              fontStyle: "Inter",
-              textTransform: "lowercase",
-              fontSize: 16,
-              fontWeight: 500,
-            }}
-          >
-            login
+            Investor Iogin
           </Typography>
         </Button>
       </ThemeProvider>
@@ -79,7 +68,7 @@ export default function MaxWidthDialog() {
           "& .MuiDialog-paper": {
             position: "absolute",
             right: 0,
-            top: 62,
+            top: 63.5,
             marginRight: 0,
             paddingright: 0,
             borderRadius: 0,
@@ -100,7 +89,7 @@ export default function MaxWidthDialog() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              width: "251px",
+              width: "255px",
             }}
           >
             <FormControl sx={radius}>
@@ -132,7 +121,7 @@ export default function MaxWidthDialog() {
             </ThemeProvider>
           </Box>
         </DialogContent>
-        <DialogContentText
+        {/*<DialogContentText
           align="center"
           sx={{
             color: "black",
@@ -141,7 +130,7 @@ export default function MaxWidthDialog() {
           }}
         >
           Forget passoword
-        </DialogContentText>
+        </DialogContentText>*/}
         <br />
       </Dialog>
     </React.Fragment>
