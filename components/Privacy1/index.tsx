@@ -80,9 +80,16 @@ const TermOfUse = () => {
 
   return (
     <div>
-      <div className="absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold">
-        <div onClick={handleOpen}>Disclaimers</div>
-      </div>
+      <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+      Please go to our
+        <span
+          onClick={handleOpen}
+          className="cursor-pointer text-primary-blue font-normal	whitespace-nowrap	text-[16px] leading-[26px] underline underline-offset-4 mx-1"
+        >
+          Privacy Policy
+        </span>
+        page for full details of the information we collect and how we use your personal information.
+      </p>
       <Dialog
         open={open}
         onClose={handleClose}

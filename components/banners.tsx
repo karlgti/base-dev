@@ -14,7 +14,7 @@ function banners() {
   });
   return (
     <>
-      <div className="relative lg:flex top-[-4.5rem] lg:top-[-14.5rem] lg:justify-between">
+      <div className="relative lg:flex lg:justify-between">
         <a href="/our-philosophy">
           <div className="flex lg:block relative lg:w-[355px] lg:h-[480px] bg-[#00953B]">
             <div className="flex lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">

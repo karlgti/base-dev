@@ -32,10 +32,10 @@ function Insight() {
           <div className="lg:w-[50%]">
             <div className="flex flex-col justify-between h-full">
               <div className="">
-                <h2 className="text-white font-normal lg:text-[58px] lg:leading-[76px] text-[44px] leading-[44px] text-[#4D008C] pb-[30px]">
+                <h2 className="text-white font-[400] lg:text-[58px] lg:leading-[76px] text-[44px] leading-[44px] text-[#4D008C] pb-[30px]">
                   Insights
                 </h2>
-                <div className="font-normal hidden lg:block	lg:text-[16px] lg:leading-[28px] text-[14px] leading-[24px] text-[#000000]">
+                <div className="font-[400] hidden lg:block	text-[16px] leading-[28px] text-[#000000]">
                   <p>
                     We pride ourselves on being open and transparent with <br />
                     our investors. This means not only providing informed
@@ -74,22 +74,18 @@ function Insight() {
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              <Link href="https://twitter.com/BASE_AssetMgmt/status/1592008843491692544">
-                <div className="mx-auto cursor-pointer pt-2 lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
+              <Link href="https://twitter.com/BASE_AssetMgmt/status/1592008449524928513">
+                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
                   <div className="">
-                    <Image src={blogone} alt="Base Asset Management" />
+                    <Image src={blogtwo} alt="Base Asset Management" />
                   </div>
-                  <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                  <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
                     Strategy / Model Study
                   </p>
-                  <a
-                    className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
-                    href="#"
-                  >
-                    <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                      Follow up.
-                    </h3>
-                  </a>
+                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+
+                  Follow up.
+                  </h3>
 
                   <div className="flex justify-between">
                     <div>
@@ -106,29 +102,24 @@ function Insight() {
                         />
                       </a>
                     </div>
-                    <div className="font-medium pt-3	text-[12px] leading-[22px] text-[#000000]">
-                      14/11/2022 (Mon)
+                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
+                      2022-11-14
                     </div>
                   </div>
                 </div>
               </Link>
 
-              <Link href="https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6?utm_source=share&utm_medium=member_desktop">
-                <div className="mx-auto cursor-pointer pt-2 lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
+              <Link href="https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6/?utm_source=share&utm_medium=member_desktop">
+                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
                   <div>
-                    <Image src={blogtwo} alt="Base Asset Management" />
+                    <Image src={blogone} alt="Base Asset Management" />
                   </div>
-                  <p className="lg:mb-4 mb-[7px] font-semibold	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] max-w-max text-sm uppercase ">
+                  <p className="font-[600] mt-[7px] lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000]">
                     Investment / Outlook Brief
                   </p>
-                  <a
-                    className="max-w-[16rem] lg:mb-2 mb-[27px] inline-block hover:text-gray-800 hover:underline"
-                    href="#"
-                  >
-                    <h3 className="font-extrabold	lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                      Tapping into November 2022
-                    </h3>
-                  </a>
+                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                    Tapping into November 2022
+                  </h3>
                   <div className="flex justify-between">
                     <div>
                       <a
@@ -144,8 +135,8 @@ function Insight() {
                         />
                       </a>
                     </div>
-                    <div className="font-medium	pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      28/10/2022 (Fir)
+                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
+                      2022-10-28
                     </div>
                   </div>
                 </div>
@@ -155,7 +146,7 @@ function Insight() {
           <div>
             <a
               className="lg:hidden mt-7 inline-flex items-center text-indigo-600 hover:text-indigo-700 leading-normal"
-              href="#"
+              href="/insights"
             >
               <button className="mr-2 text-[13px] font-[700] bg-[#4D008C] text-white py-[12px] px-[27px]">
                 View more

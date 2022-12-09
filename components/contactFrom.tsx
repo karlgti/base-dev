@@ -200,29 +200,29 @@ export default function ContactForm() {
   const style = {
     control: (base, state) => ({
       ...base,
-      border: '1px solid #BFC6C3',
-      boxShadow: 'none',
-      '&:hover': {
-          border: '1px solid #BFC6C3',
-      }
-  })
+      border: "1px solid #BFC6C3",
+      boxShadow: "none",
+      "&:hover": {
+        border: "1px solid #BFC6C3",
+      },
+    }),
   };
   return (
     //2882F6
     <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
       <ThemeProvider theme={theme}>
-        <div className="max-w-[1440px] pb-[97px]">
+        <div className="max-w-[1440px] lg:pb-[97px] pb-[70px]">
           <main className="pt-[5rem] border-grey border-t-4 mx-[10%]">
             <header className="">
-              <div className="mb-[56px]">
-                <h1 className="font-normal mt-[101px]	text-[82px] leading-[96px] text-[#001673]">
-                  Contact Us
+              <div className="lg:mb-[56px] mb-[12px]">
+                <h1 className="font-normal lg:mt-[101px]	lg:text-[82px] lg:leading-[96px] mt-[86px] text-[46px] leading-[32px] text-[#001673]">
+                  Contact
                 </h1>
-                <p className="font-normal mt-[49px]	text-[16px] leading-[28px]">
+                <p className="font-normal lg:mt-[49px]	lg:text-[16px]  lg:leading-[28px] mt-[49px]	text-[15px]  leading-[25px]">
                   Thank you for your interest!
                 </p>
 
-                <p className="font-normal mt-[20px]	text-[16px] leading-[28px]">
+                <p className="font-normal lg:mt-[20px]	lg:text-[16px]  lg:leading-[28px] mt-[20px]	text-[15px]  leading-[25px]">
                   Please complete the form below and we’ll be in touch as soon
                   as possible.
                 </p>
@@ -310,7 +310,8 @@ export default function ContactForm() {
                     className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
                     htmlFor="grid-describe"
                   >
-                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                    Which services are you interested in?{" "}
+                    <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
                     options={Country}
@@ -332,7 +333,8 @@ export default function ContactForm() {
                     className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
                     htmlFor="grid-describe"
                   >
-                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                    Which services are you interested in?{" "}
+                    <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
                     options={describe}
@@ -354,7 +356,8 @@ export default function ContactForm() {
                     className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
                     htmlFor="grid-describe"
                   >
-                    Which services are you interested in? <span className="text-[#CBC3BB]">*</span>
+                    Which services are you interested in?{" "}
+                    <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
                     options={interest}
@@ -391,20 +394,20 @@ export default function ContactForm() {
                 </div>
 
                 <div>
-                  <button className=" mt-[40px] w-[170px] h-[58px] bg-[#001B71] text-white font-bold text-[14px] leading-[17px]">
+                  <button className="lg:mt-[40px] mt-[10px] w-[170px] h-[58px] bg-[#001B71] text-white font-bold text-[14px] leading-[17px]">
                     Submit
                   </button>
                 </div>
               </form>
             </header>
             <div>
-              <div className="border-t-[1px] border-[#CBC3BB] mt-[78px]"></div>
-              <div className="mt-[53px]">
+              <div className="border-t-[1px] border-[#CBC3BB] lg:mt-[78px] mt-[36px]"></div>
+              <div className="lg:mt-[53px] mt-[23px]">
                 <span className="text-[#CBC3BB] font-medium text-[16px] leading-[28px]">
                   Address
                 </span>
                 <br />
-                <p className="font-medium text-[18px] mt-[17px] leading-[28px]">
+                <p className="font-medium lg:text-[18px] mt-[17px] lg:leading-[28px] text-[15px] leading-[25px]">
                   Rm 1904, Tung Che Commercial Centre, 246 Des Voeux Road West,
                   Hong Kong
                 </p>

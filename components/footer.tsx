@@ -31,7 +31,7 @@ export default function footer() {
                 info@base-am.com
               </a>
             </div>
-            <div className="flex">
+            <div className="flex pt-2">
               <div className="pr-[18px]">
                 <a href="https://www.linkedin.com/company/base-am/">
                   <Image
@@ -58,7 +58,7 @@ export default function footer() {
             </div>
           </div>
         </div>
-        <div className="px-[7%] lg:px-[0%] py-[17px] lg:py-[0px]">
+        <div className="px-[7%] lg:px-[0%] py-[17px] lg:py-[1px]">
           <div className="lg:flex lg:py-[23px] lg:justify-between lg:px-[63px]">
             <div>
               <h6 className=" cursor-default cursor-pointer font-medium	lg:text-[13px] text-[12px] leading-[17px] text-[#001B71] ">

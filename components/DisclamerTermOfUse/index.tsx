@@ -97,7 +97,7 @@ const TermOfUse = () => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[72vh] p-12 pb-6 bg-white flex flex-col">
+        <div className="h-[72vh] lg:p-12 p-5 pb-6 bg-white flex flex-col">
           <div className="w-full">
             <div>
               <Tabs

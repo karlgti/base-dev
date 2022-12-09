@@ -63,7 +63,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="relative h-[72vh] p-[58px] bg-white flex flex-col scrollbar-hide">
+        <div className="relative h-[72vh] p-[20px] lg:p-[58px] bg-white flex flex-col scrollbar-hide">
           <div className="w-full mx-auto space-y-12 pb-[58px] overflow-y-scroll h-[85%] scrollbar-hide">
             <h1 className="font-normal	text-[26px] leading-[26px]">
               WEBSITE DISCLAIMER – IMPORTANT NOTICE
