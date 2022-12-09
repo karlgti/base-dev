@@ -20,7 +20,7 @@ export default function productTypes() {
   return (
     <ThemeProvider theme={theme}>
       <div className="mt-[36px]">
-        <div className="border-[1px] border-[#E04403] p-[8px] bg-white flex">
+        <div className="border-[1px] border-[#E04403] p-[8px] flex">
           <div className="h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
@@ -51,7 +51,7 @@ export default function productTypes() {
           </div>
         </div>
 
-        <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] bg-white flex">
+        <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] flex">
           <div className="h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
@@ -82,7 +82,7 @@ export default function productTypes() {
           </div>
         </div>
 
-        <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] bg-white flex">
+        <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] flex">
           <div className="h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
