@@ -330,9 +330,7 @@ export default function MainHeader() {
                       login
                     </Button>
                     <DialogContentText>
-                      <p className=" p-6 text-[#CC9C4A] font-bold text-center">
-                        Forget passoword
-                      </p>
+
                     </DialogContentText>
                   </FormControl>
                 </Box>
