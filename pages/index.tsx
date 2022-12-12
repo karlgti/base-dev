@@ -10,6 +10,7 @@ import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
@@ -41,7 +42,14 @@ const Home: NextPage = () => {
         <Header />
 
         <div className="mt-14">
-          <video autoPlay loop muted className="block object-cover w-full">
+          <video
+            autoPlay={true}
+            loop={true}
+            controls={false}
+            playsInline
+            muted
+            className="block object-cover w-full"
+          >
             <source src="homePage/BASE.mp4" type="video/mp4" />
           </video>
         </div>
@@ -50,18 +58,22 @@ const Home: NextPage = () => {
           <div className="lg:max-w-[1100px] m-0 m-auto pt-[42px] lg:pt-[60px] flex justify-between">
             <div>
               <p className="lg:font-black font-[900] text-[50px] leading-[50px] lg:text-[80px] lg:leading-[90px] text-[#001B71]">
-                Leave <br className="lg:hidden"/> No Stone
+                Leave <br className="lg:hidden" /> No Stone
                 <br />
                 Unturned
               </p>
               <p className=" text-[#001B71] text-[15px] leading-[25px] lg:text-[16px] lg:leading-[28px] font-[400] mt-[30px]">
-                An investment firm powered by automation <br className="lg:hidden"/> and programmed signals
-                that <br className="hidden lg:block"/> identify hidden <br className="lg:hidden"/> gems and capitalise on trading
+                An investment firm powered by automation{" "}
+                <br className="lg:hidden" /> and programmed signals that{" "}
+                <br className="hidden lg:block" /> identify hidden{" "}
+                <br className="lg:hidden" /> gems and capitalise on trading
                 opportunities.
               </p>
               <p className=" text-[#001B71] text-[15px] leading-[25px] lg:text-[16px] lg:leading-[28px] font-[400] mt-[30px]">
-                Always on the lookout for new market trends <br className="lg:hidden"/> and behaviours
-                <br className="hidden lg:block"/> so our investors can stay <br className="lg:hidden"/> ahead of the curve.
+                Always on the lookout for new market trends{" "}
+                <br className="lg:hidden" /> and behaviours
+                <br className="hidden lg:block" /> so our investors can stay{" "}
+                <br className="lg:hidden" /> ahead of the curve.
               </p>
             </div>
           </div>
