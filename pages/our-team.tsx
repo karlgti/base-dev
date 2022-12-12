@@ -385,7 +385,7 @@ export default function Team() {
         </div>
 
         <div className="lg:pt-[80px] pt-[50px] pb-[123px] lg:pb-[175px] bg-[#F0F0F0]">
-          <a href="/the-solutions">
+          <a href="/our-philosophy">
             <div className="w-[204px] h-[68px] lg:w-[278px] lg:h-[90px] bg-[#00953B] flex justify-center float-right">
               <div className="self-center">
                 <p className="lg:font-bold lg:text-[22px] lg:leading-[28px] font-[700] text-[16px] leading-[20px] text-white">
