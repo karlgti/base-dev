@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/TheDifferentiatorHeader";
+import Header from "../components/Header";
 import Footer from "components/footer";
 import Image from "next/image";
 import mypic from "../public/img/banner/BAM_Pic1.gif";
@@ -18,7 +18,7 @@ function ourPhilosophy() {
   return (
     <div className="relative w-full">
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header bg={"#00953B !important"} />
         <div className="bg-[#00953B] lg:px-[144px] px-[5%]">
           <div className="max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
             <div className="self-center">

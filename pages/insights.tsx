@@ -3,22 +3,13 @@ import Image from "next/image";
 import mypic from "../public/img/banner/BAM_Pic4.gif";
 import Button from "../components/backToTop";
 import Footer from "components/footer";
-import Header from "../components/BlogHeader";
+import Header from "../components/Header";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import linkedin from "../public/img/linkedin.svg";
 import twitter from "../public/img/square-twitter.svg";
 import blogone from "../public/img/blogone.png";
-import blogtwo from "../public/img/blogtwo.png";
 import one from "../public/img/1.png";
 import two from "../public/img/2.png";
-import three from "../public/img/3.png";
-import four from "../public/img/4.png";
-import five from "../public/img/5.png";
-import six from "../public/img/6.png";
-import seven from "../public/img/7.png";
-import eight from "../public/img/8.png";
-import nine from "../public/img/9.png";
-import ten from "../public/img/10.png";
 
 import Link from "next/link";
 
@@ -122,8 +113,7 @@ export default function Blog() {
     <>
       <div className="w-full">
         <ThemeProvider theme={theme}>
-          <Header />
-
+          <Header bg={"#4D008C !important"} />
           <div className="bg-[#4D008C] lg:px-[144px] px-[5%]">
             <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
               <div className="self-center">

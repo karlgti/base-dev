@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/ProcessHeader";
+import Header from "../components/Header";
 import Footer from "components/footer";
 import Image from "next/image";
 import invest from "../public/img/banner/BAM_Pic3.gif";
@@ -26,7 +26,7 @@ function theSolutions() {
   return (
     <div className="w-full">
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header bg={"#e04403 !important"} />
 
         <div className="bg-[#E04403] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">

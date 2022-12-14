@@ -1,9 +1,7 @@
 import { Dialog, DialogActions } from "@material-ui/core";
-import Link from "next/link";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Definition from "components/Definition";
-import DisclamerTermOfUse from "components/DisclamerTermOfUse";
+import TnC from "components/TnC";
 
 const style = {
   position: "absolute" as "absolute",
@@ -68,7 +66,6 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             <h1 className="font-normal	text-[26px] leading-[26px]">
               WEBSITE DISCLAIMER – IMPORTANT NOTICE
             </h1>
-
             <div className="font-normal	text-[16px] leading-[26px] text-justify">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
@@ -79,7 +76,6 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               terms of use, please refrain from using the Website or select “I
               decline” to leave the Website.
             </div>
-
             <div className="space-y-4 font-normal	">
               <div className="font-semibold text-[16px] leading-[26px]">
                 Recipients of Communication
@@ -101,14 +97,26 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 access this Website.
               </p>
             </div>
-
             <div className="space-y-4 font-normal	">
               <div className="font-semibold text-[16px] leading-[26px]">
                 Accredited Investors in Hong Kong
               </div>
 
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
-                <Definition />
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px]">
+                In Hong Kong, this Website is directed only at persons who
+                qualify as “Professional Investor(s)” as defined under the
+                Securities and Futures Ordinance (the “SFO”) and the Securities
+                and Futures (Professional Investor) Rules. Professional
+                Investors are defined as persons who meet certain financial
+                criteria, and please go to our
+                <TnC
+                  nameprop={"Definition of Professional Investor"}
+                  idx={3}
+                  css={
+                    "text-[#001B71] cursor-pointer underline underline-offset-3 block whitespace-normal	mx-1 w-full"
+                  }
+                />
+                page for full details.
               </p>
               <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 The information contained in this Website is not an
@@ -123,7 +131,6 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 content.
               </p>
             </div>
-
             <div className="space-y-4 font-normal	">
               <div className="font-semibold text-[16px] leading-[26px]">
                 Accessing the Website
@@ -144,7 +151,6 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 unauthorised person.
               </p>
             </div>
-
             <div className="space-y-4 font-normal	">
               <div className="font-semibold text-[16px] leading-[26px]">
                 Risk Considerations
@@ -178,9 +184,16 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 could incur a substantial or complete loss.
               </p>
             </div>
-
-            <div>
-              <DisclamerTermOfUse />
+            <div className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify flex">
+              Please access to our
+              <TnC
+                nameprop={"Terms of Use"}
+                idx={0}
+                css={
+                  "text-[#001B71] cursor-pointer underline underline-offset-3 block whitespace-normal mx-1"
+                }
+              />
+              page for full disclosures.
             </div>
 
             <div className="space-y-2">

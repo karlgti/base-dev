@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Header from "../components/MainHeader";
+import Header from "../components/Header";
 import Footer from "components/footer";
 import Banners from "../components/banners";
 import Button from "../components/backToTop";
@@ -9,8 +9,7 @@ import Insight from "../components/Insight";
 import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Image from "next/image";
-import ReactPlayer from "react-player";
+
 
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
   return (
     <div className="relative w-full">
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header bg={"#001B71 !important"}/>
 
         <div className="mt-14">
           <video

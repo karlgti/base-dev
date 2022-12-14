@@ -1,6 +1,5 @@
 import React from "react";
-import TermOfUse from "components/TermOfUse";
-import PrivacyPolicy from "components/PrivacyPolicy";
+import TermOfUse from "components/TnC";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
 import linkedin from "../public/img/linkedin.svg";
@@ -67,8 +66,23 @@ export default function footer() {
             </div>
 
             <div className="flex pt-[2%] lg:pt-[0%]">
-              <TermOfUse />
-              <PrivacyPolicy />
+              <TermOfUse
+                nameprop={"Terms of Use"}
+                idx={0}
+                css={
+                  "text-[#001B71] cursor-pointer font-medium  text-[13px] leading-[17px]"
+                }
+              />
+
+              <div className="border-r-[1px] border-[#001B71] mx-2"></div>
+
+              <TermOfUse
+                nameprop={"Privacy Policy"}
+                idx={1}
+                css={
+                  "text-[#001B71] cursor-pointer font-medium text-[13px] leading-[17px]"
+                }
+              />
             </div>
           </div>
         </div>

@@ -32,7 +32,6 @@ import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 
-import Disclaimers from "components/Disclaimers";
 import Hidden from "@mui/material/Hidden";
 
 const drawerWidth = 330;
@@ -385,9 +384,9 @@ export default function contactHeader() {
             </ListItemButton>
             <Divider style={{ background: "#001b71" }} />
           </List>
-          <div>
-            <Disclaimers />
-          </div>
+          <div className="absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold">
+              <div>Disclaimers</div>
+            </div>
         </Drawer>
       </Box>
     </ThemeProvider>

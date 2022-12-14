@@ -2,21 +2,18 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
 import Dialog from "@mui/material/Dialog";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import mypic from "../public/img/headerLogo.png";
 import menuButton from "../public/img/BAM_Website_Testing_Artboard 12@2x 1.png";
-import LoginButton from "../components/loginButton";
-import CloseIcon from "@mui/icons-material/Close";
+import LoginButton from "./loginButton";
 import ExpandLess from "../public/img/Arrow3.png";
 import ExpandMore from "../public/img/Arrow2.png";
 import Collapse from "@mui/material/Collapse";
@@ -29,9 +26,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-
-import Disclaimers from "components/Disclaimers";
-import Hidden from "@mui/material/Hidden";
+import Dis from "components/TnC";
 
 const drawerWidth = 330;
 
@@ -100,12 +95,11 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function TeamHeader() {
+export default function MainHeader({ bg }) {
   const theme = useTheme();
   const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [subOpen, subSetOpen] = React.useState(false);
-
   const handleClickOpen1 = () => {
     setOpen1(true);
   };
@@ -130,7 +124,7 @@ export default function TeamHeader() {
   };
 
   const headerStyle = {
-    background: "#cbc3bb !important",
+    background: `${bg}`,
     borderColor: "white !important",
     borderBottom: 1,
     "& .MuiToolbar-root ": {
@@ -330,9 +324,7 @@ export default function TeamHeader() {
                     >
                       login
                     </Button>
-                    <DialogContentText>
-
-                    </DialogContentText>
+                    <DialogContentText></DialogContentText>
                   </FormControl>
                 </Box>
               </DialogContent>
@@ -361,7 +353,7 @@ export default function TeamHeader() {
               <ListItemButton href="/our-team">
                 <ListItemText secondary="Our Team" />
               </ListItemButton>
-              <div className="mb-[30px]"></div>
+              <div className="pb-[30px]"></div>
             </Collapse>
             <Divider style={{ background: "#001b71" }} />
 
@@ -384,7 +376,13 @@ export default function TeamHeader() {
             <Divider style={{ background: "#001b71" }} />
           </List>
           <div>
-            <Disclaimers />
+            <Dis
+              nameprop={"Disclaimers"}
+              idx={3}
+              css={
+                "absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
+              }
+            />
           </div>
         </Drawer>
       </Box>

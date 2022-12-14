@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/InvestHeader";
+import Header from "../components/Header";
 import Footer from "components/footer";
 import Image from "next/image";
 import invest from "../public/img/banner/BAM_Pic2.gif";
@@ -27,7 +27,7 @@ function investmentApproach() {
   return (
     <div className="w-full">
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header bg={"#cc9c4a !important"} />
 
         <div className="bg-[#CC9C4A] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">

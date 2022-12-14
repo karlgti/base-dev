@@ -1,12 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import mypic from "../public/img/banner/BAM_Pic5.gif";
 import linkedin from "../public/img/SocialMedia_Icon_07.png";
 import Footer from "../components/footer";
 import Button from "../components/backToTop";
-import Header from "../components/TeamHeader";
-import SeeTheDiff from "components/seeTheDiff";
+import Header from "../components/Header";
 import Arrow from "../public/img/Artboard 69@2x 1.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -19,7 +17,7 @@ export default function Team() {
   return (
     <div className="w-full">
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header bg={"#cbc3bb !important"} />
 
         <div className="bg-[#CBC3BB] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
