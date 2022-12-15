@@ -2,6 +2,7 @@ import { Dialog, Typography } from "@material-ui/core";
 import React, { useEffect } from "react";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -42,7 +43,7 @@ function a11yProps(index: number) {
   };
 }
 
-const TermOfUse = ({ nameprop, idx, css }) => {
+const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
   const [value, setValue] = React.useState(idx);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -60,9 +61,11 @@ const TermOfUse = ({ nameprop, idx, css }) => {
 
   return (
     <div>
+      {upper}
       <span onClick={handleOpen} className={`${css}`}>
         {nameprop}
       </span>
+      {lower}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -70,12 +73,18 @@ const TermOfUse = ({ nameprop, idx, css }) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[72vh] lg:p-12 p-5 pb-6 bg-white flex flex-col">
+        <div className="h-[82vh] lg:p-12 p-5 pb-6 bg-white flex flex-col">
           <div className=" h-[20%] ">
             <Tabs
               value={value}
               onChange={handleChange}
               aria-label="basic tabs example"
+              textColor = "inherit"
+              TabIndicatorProps={{
+                style: {
+                  display: "none",
+                },
+              }}
             >
               <Tab label="Terms of Use" {...a11yProps(0)} />
               <Tab label="Privacy Policy" {...a11yProps(1)} />
@@ -86,7 +95,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
               />
             </Tabs>
           </div>
-          <div className="mt-7 overflow-auto scrollbar-hide">
+          <div className="mt-7 mx-4 overflow-auto scrollbar-hide">
             <TabPanel value={value} index={0}>
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 TERMS OF USE
@@ -128,7 +137,19 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   Accredited Investors in Hong Kong
                 </h6>
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
-                  Definition
+                  In Hong Kong, this Website is directed only at persons who
+                  qualify as “Professional Investor(s)” as defined under the
+                  Securities and Futures Ordinance (the “SFO”) and the
+                  Securities and Futures (Professional Investor) Rules.
+                  Professional Investors are defined as persons who meet certain
+                  financial criteria, and please go to our
+                  <span
+                    onClick={() => setValue(3)}
+                    className="text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
+                  >
+                    Definition of Professional Investor
+                  </span>
+                  page for full details.
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
@@ -317,7 +338,14 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
-                  For full disclosures, please go to our Privacy Policy page.
+                  For full disclosures, please go to our
+                  <span
+                    onClick={() => setValue(1)}
+                    className="text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
+                  >
+                    Privacy Policy
+                  </span>
+                  page.
                 </p>
               </div>
 
@@ -551,7 +579,13 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   our Website, such as your device type and browsing actions and
                   patterns. We collect this personal data through using cookies,
                   server logs and other similar technologies. Please see our
-                  Cookie Policy for further details.
+                  <span
+                    onClick={() => setValue(2)}
+                    className="text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
+                  >
+                    Cookie Policy
+                  </span>
+                  for further details.
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
@@ -742,9 +776,15 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                 </ul>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
-                  Please go to our Privacy Policy page for full details of the
-                  information we collect and how we use your personal
-                  information.
+                  Please go to our
+                  <span
+                    onClick={() => setValue(1)}
+                    className="text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
+                  >
+                    Privacy Policy
+                  </span>
+                  page for full details of the information we collect and how we
+                  use your personal information.
                 </p>
               </div>
 
@@ -813,7 +853,9 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     experience and analytics purposes. For details of Google
                     cookies usage, please click{" "}
                     <a href="https://policies.google.com/technologies/cookies">
-                      <span className="text-blue">here</span>
+                      <span className="text-blue underline underline-offset-3">
+                        here
+                      </span>
                     </a>
                     .
                   </li>
@@ -825,7 +867,9 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     social media sharing purpose. For details of Twitter cookies
                     usage, please click{" "}
                     <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies">
-                      <span className="text-blue">here</span>
+                      <span className="text-blue underline underline-offset-3">
+                        here
+                      </span>
                     </a>
                     .
                   </li>
@@ -837,7 +881,9 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     social media sharing purpose. For details of Twitter cookies
                     usage, please click{" "}
                     <a href="https://www.linkedin.com/legal/cookie-policy">
-                      <span className="text-blue">here</span>
+                      <span className="text-blue underline underline-offset-3">
+                        here
+                      </span>
                     </a>
                     .
                   </li>
@@ -854,8 +900,13 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   cookies, you can prevent cookies from being stored. Please
                   keep in mind that if you use your browser's settings to block
                   all cookies (including essential cookies), you may not be able
-                  to access some or all of our Services. Click here to view your
-                  cookie settings.
+                  to access some or all of our Services. Click{" "}
+                  <a href="">
+                    <span className="text-blue underline underline-offset-3">
+                      here
+                    </span>
+                  </a>{" "}
+                  to view your cookie settings.
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
@@ -896,6 +947,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   Under Section 1 of Part I of Schedule 1 of the SFO,
                   “professional investor” means :—
                 </p>
+
                 <ul className="list-disc ml-5 list-[Lower-alpha]">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     Any recognized exchange company, recognized clearing house,
@@ -1047,7 +1099,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   the meaning of that definition for the purposes of any
                   provision of the Ordinance other than Schedule 5—
                 </p>
-                <ul className="list-disc ml-5">
+                <ul className="list-[lower-alpha] ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     a trust corporation specified in section 4;
                   </li>
@@ -1079,7 +1131,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
 
               <div className="font-light ">
                 <p className="font-semibold py-3">Section 5. Individuals</p>
-                <ul className="list-disc ml-5">
+                <ul className="list-[number] ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     An individual specified for the purposes of section 3(b) is
                     an individual having a portfolio of not less than $8 million
@@ -1087,7 +1139,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     section 8, when any one or more of the following are taken
                     into account—
                   </li>
-                  <ul className="list-disc ml-5">
+                  <ul className="list-[lower-alpha] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
                       a portfolio on the individual’s own account;
                     </li>
@@ -1111,7 +1163,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     of a portfolio on a joint account with one or more persons
                     other than the individual’s associate is—
                   </li>
-                  <ul className="list-disc ml-5">
+                  <ul className="list-[lower-alpha] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
                       the individual’s share of the portfolio as specified in a
                       written agreement among the account holders; or
@@ -1131,9 +1183,11 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   A corporation specified for the purposes of section 3(c) is—
                 </p>
 
-                <ul className="list-disc ml-5">
-                  <li className="text-justify">a corporation having—</li>
-                  <ul className="list-disc ml-5">
+                <ul className="list-[lower-alpha] ml-5">
+                  <li className="text-justify font-normal text-[16px] leading-[26px]">
+                    a corporation having—
+                  </li>
+                  <ul className="list-[lower-roman] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
                       a portfolio of not less than $8 million; or
                     </li>
@@ -1141,14 +1195,16 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                       total assets of not less than $40 million, at the relevant
                       date or as ascertained in accordance with
                     </li>
-                    <li className="text-justify">section 8;</li>
+                    <li className="text-justify font-normal text-[16px] leading-[26px]">
+                      section 8;
+                    </li>
                   </ul>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     a corporation which, at the relevant date, has as its
                     principal business the holding of investments and is wholly
                     owned by any one or more of the following persons—
                   </li>
-                  <ul className="list-disc ml-5">
+                  <ul className="list-[lower-roman] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
                       a trust corporation specified in section 4;
                     </li>
@@ -1184,7 +1240,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   partnership having—
                 </p>
 
-                <ul className="list-disc ml-5">
+                <ul className="list-[lower-alpha] ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     a portfolio of not less than $8 million; or
                   </li>
@@ -1211,7 +1267,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                   or more of the following—
                 </p>
 
-                <ul className="list-disc ml-5">
+                <ul className="list-[lower-alpha] ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     for a trust corporation, corporation or partnership, the
                     most recent audited financial statement prepared within 16
@@ -1225,7 +1281,7 @@ const TermOfUse = ({ nameprop, idx, css }) => {
                     issued or submitted within 12 months before the relevant
                     date—
                   </li>
-                  <ul className="list-disc ml-5">
+                  <ul className="list-[lower-roman] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
                       a statement of account or a certificate issued by a
                       custodian;

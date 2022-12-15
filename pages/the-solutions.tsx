@@ -74,7 +74,7 @@ function theSolutions() {
         <div className="bg-[#F0F0F0] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1200px] lg:border-b-[6px] border-b-[1px] border-[#E04403] opacity-[100%] pt-[22px] lg:pt-[77px] pb-[70px] m-0 m-auto py-20">
             <h1 className="font-extrabold text-[26px] leading-[35px] lg:text-[52px] lg:leading-[62px] text-[#E04403]">
-              <span className="font-light">Investment</span> Strategy?
+              <span className="font-light">Investment</span> Strategy
             </h1>
 
             <div className=" pt-[34px] lg:pt-[77px] flex lg:flex-row flex-col justify-between">
@@ -115,7 +115,7 @@ function theSolutions() {
                 <div className="">
                   {isShown1 && (
                     <Image
-                      src={bull}
+                      src={bear}
                       width={"550px"}
                       height={"567px"}
                       onMouseEnter={() => setIsShown1(true)}
@@ -127,7 +127,7 @@ function theSolutions() {
                 <div className="">
                   {!isShown1 && (
                     <Image
-                      src={bear}
+                      src={bull}
                       width={"550px"}
                       height={"567px"}
                       onMouseEnter={() => setIsShown1(true)}
@@ -185,7 +185,7 @@ function theSolutions() {
             <div className="w-[204px] h-[68px] lg:w-[278px] lg:h-[90px] bg-[#CBC3BB] flex justify-center float-right">
               <div className="self-center">
                 <p className="lg:font-bold lg:text-[22px] lg:leading-[28px] font-[700] text-[16px] leading-[20px] text-white">
-                See Our Team
+                  See Our Team
                 </p>
               </div>
               <div className="ml-2 lg:ml-[40px] self-center">
@@ -194,7 +194,6 @@ function theSolutions() {
             </div>
           </a>
         </div>
-
       </ThemeProvider>
       <Button />
       <div>

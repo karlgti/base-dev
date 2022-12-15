@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import blogone from "../public/img/blogone.png";
 import blogtwo from "../public/img/blogtwo.png";
@@ -7,6 +7,7 @@ import linkedin from "../public/img/linkedin.svg";
 import twitter from "../public/img/square-twitter.svg";
 import useOnScreen from "hook/useOnScreen";
 import Link from "next/link";
+import rightArrow from "../public/img/Arrow1.png";
 
 function Insight() {
   const theme = createTheme({
@@ -24,6 +25,8 @@ function Insight() {
           "lg:flex transition-opacity ease-in duration-1000 opacity-100")
       : "";
   }, [refValue]);
+
+  const [isShown, setIsShown] = useState(false);
 
   return (
     <div>
@@ -66,8 +69,22 @@ function Insight() {
                 </div>
               </div>
               <a href="/insights">
-                <button className="hidden mt-[40px] lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]">
-                  View more
+                <button
+                  onMouseEnter={() => setIsShown(true)}
+                  onMouseLeave={() => setIsShown(false)}
+                  className="mt-[40px] hidden lg:block w-[170px] h-[58px] bg-[#4D008C] text-white font-bold text-[14px] leading-[17px]"
+                >
+                  {!isShown && <p> View more</p>}
+                  {isShown && (
+                    <div className="flex justify-between mx-[31.5px]">
+                      <div className="self-center">
+                        <p>View more</p>
+                      </div>
+                      <div className="pt-1">
+                        <Image src={rightArrow} />
+                      </div>
+                    </div>
+                  )}
                 </button>
               </a>
             </div>
@@ -83,8 +100,7 @@ function Insight() {
                     Strategy / Model Study
                   </p>
                   <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-
-                  Follow up.
+                    Follow up.
                   </h3>
 
                   <div className="flex justify-between">

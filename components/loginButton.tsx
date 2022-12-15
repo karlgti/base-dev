@@ -8,9 +8,14 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import rightArrow from "../public/img/Arrow1.png";
+import { useState } from "react";
+import Image from "next/image";
 
-export default function MaxWidthDialog() {
+export default function MaxWidthDialog({ text }) {
   const [open, setOpen] = React.useState(false);
+  const [isShown, setIsShown] = useState(false);
+  const [isShown1, setIsShown1] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -48,7 +53,7 @@ export default function MaxWidthDialog() {
       <ThemeProvider theme={theme}>
         <Button onClick={handleClickOpen}>
           <Typography
-            color="common.white"
+            color={text}
             sx={{
               fontStyle: "Inter",
               textTransform: "capitalize",
@@ -102,35 +107,34 @@ export default function MaxWidthDialog() {
             <br />
 
             <ThemeProvider theme={theme}>
-              <Button
-                variant="contained"
-                color="primary"
-                className="bg-[#021B71]"
-                style={{
-                  textTransform: "none",
-                  borderRadius: 0,
-                  paddingTop: 13,
-                  paddingBottom: 13,
-                  fontWeight: 700,
-                  fontSize: 14,
-                }}
+              <button
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+                className="w-full h-[50px] bg-[#021B71] text-white font-[700] text-[14px] leading-[17px]"
+                onClick={() => setIsShown1(true)}
               >
-                Login
-              </Button>
+                {!isShown && <p>Login</p>}
+                {isShown && (
+                  <div className="flex justify-around mx-[31.5px]">
+                    <div className="self-center">
+                      <p>Login</p>
+                    </div>
+                    <div className="pt-1">
+                      <Image src={rightArrow} />
+                    </div>
+                  </div>
+                )}
+              </button>
+
+              {!isShown1 && <div className="h-2 mt-[10px]"> </div>}
+              {isShown1 && (
+                <div className="h-2 font-[400] text-[13px] leading-[17px] mt-[10px] mx-auto text-[#E04403]">
+                  Incorrect Email address / Password
+                </div>
+              )}
             </ThemeProvider>
           </Box>
         </DialogContent>
-        {/*<DialogContentText
-          align="center"
-          sx={{
-            color: "black",
-            fontSize: "13px",
-            lineHeight: "17px",
-          }}
-        >
-          Forget passoword
-        </DialogContentText>*/}
-        <br />
       </Dialog>
     </React.Fragment>
   );

@@ -2,23 +2,18 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
 import Dialog from "@mui/material/Dialog";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import mypic from "../public/img/color_logo.png";
 import menuButton from "../public/img/BAM_Website_Testing_Artboard 12@2x.png";
-import LoginButton from "../components/contactLoginButton";
-import CloseIcon from "@mui/icons-material/Close";
+import LoginButton from "./loginButton";
 import ExpandLess from "../public/img/Arrow3.png";
 import ExpandMore from "../public/img/Arrow2.png";
 import Collapse from "@mui/material/Collapse";
@@ -31,8 +26,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-
-import Hidden from "@mui/material/Hidden";
+import Dis from "components/TnC";
 
 const drawerWidth = 330;
 
@@ -169,8 +163,8 @@ export default function contactHeader() {
       marginTop: 11.9,
     },
     "& .MuiListItemText-primary": {
-      paddingTop: "20px",
-      paddingBottom: "20px",
+      paddingTop: "25px",
+      paddingBottom: "25px",
       fontSize: 30,
       fontWeight: 800,
       color: "black",
@@ -235,7 +229,7 @@ export default function contactHeader() {
                 </a>
               </div>
               <div className="pl-[34px] pr-[46px] hidden lg:block">
-                <LoginButton />
+                <LoginButton text={"#001673"} />
               </div>
             </Toolbar>
           </AppBar>
@@ -248,7 +242,7 @@ export default function contactHeader() {
           onClose={handleClose}
         >
           <DrawerHeader>
-            <div onClick={handleDrawerClose} className="cursor-pointer">
+            <div onClick={handleDrawerClose} className="cursor-pointer mr-2">
               <img src="img/Cancel.png" width={25} height={25} />
             </div>
           </DrawerHeader>
@@ -331,9 +325,7 @@ export default function contactHeader() {
                     >
                       login
                     </Button>
-                    <DialogContentText>
-
-                    </DialogContentText>
+                    <DialogContentText></DialogContentText>
                   </FormControl>
                 </Box>
               </DialogContent>
@@ -373,7 +365,7 @@ export default function contactHeader() {
                 className=" "
               />
             </ListItemButton>
-            <Divider style={{ background: "#001b71" }} />
+            <Divider style={{ background: "#001B71" }} />
 
             <ListItemButton href="/contact">
               <ListItemText
@@ -384,9 +376,12 @@ export default function contactHeader() {
             </ListItemButton>
             <Divider style={{ background: "#001b71" }} />
           </List>
-          <div className="absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold">
-              <div>Disclaimers</div>
-            </div>
+          <div>
+            <Dis
+              nameprop={"Disclaimers"}
+              idx={3}
+              css={"absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"} upper={undefined} lower={undefined}            />
+          </div>
         </Drawer>
       </Box>
     </ThemeProvider>

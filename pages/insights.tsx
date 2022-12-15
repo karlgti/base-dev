@@ -10,6 +10,7 @@ import twitter from "../public/img/square-twitter.svg";
 import blogone from "../public/img/blogone.png";
 import one from "../public/img/1.png";
 import two from "../public/img/2.png";
+import arrow from "../public/img/Arrow 2.png";
 
 import Link from "next/link";
 
@@ -119,7 +120,6 @@ export default function Blog() {
               <div className="self-center">
                 <h1 className="lg:font-light lg:text-[48px] lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
                   Trends. Views. Observations. <br />
-                  And more.{" "}
                 </h1>
               </div>
 
@@ -164,7 +164,7 @@ export default function Blog() {
                         alt="Base Asset Management"
                       />
                       <div className="">
-                        <div className="font-[600]	lg:text-[14px] text-[16px] lg:mt-[20px] mt-[10px] leading-[14px]">
+                        <div className="font-[600]	lg:text-[12px] text-[16px] lg:mt-[20px] mt-[10px] leading-[14px]">
                           Strategy / Model Study
                         </div>
 
@@ -173,13 +173,13 @@ export default function Blog() {
                         </div>
 
                         <div className="font-normal ml-[17px] lg:ml-0 mt-[15px] lg:mt-[32px] lg:text-[16px] text-[13px] leading-[21px] lg:leading-[28px]">
-                          <ul className="list-disc lg:list-inside">
+                          <ol className="list-disc lg:list-inside">
                             <li>
                               We were similar to the previous pattern {"->"}{" "}
                               choppy then meaningful down leg - Checked!
                             </li>
                             <li>Bottom around end-Oct/early-Nov - Checked!</li>
-                          </ul>
+                          </ol>
                         </div>
 
                         <br />
@@ -225,11 +225,11 @@ export default function Blog() {
                         alt="Base Asset Management"
                       />
                       <div className="">
-                        <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
+                        <p className="font-semibold	text-[12px] mt-[16px] leading-[14px]">
                           Investment / Outlook Brief
                         </p>
 
-                        <p className="font-extrabold	mt-[5px] text-[22px] leading-[28px] group-hover:underline group-focus:underline">
+                        <p className="font-extrabold	mt-[5px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
                           Tapping into November 2022
                         </p>
                       </div>
@@ -266,11 +266,11 @@ export default function Blog() {
                         alt="Base Asset Management"
                       />
                       <div className="">
-                        <p className="font-semibold	text-[14px] mt-[16px] leading-[14px]">
+                        <p className="font-semibold	text-[12px] mt-[16px] leading-[14px]">
                           Strategy / U.S. Market
                         </p>
 
-                        <p className="font-extrabold mt-[5px] text-[22px] leading-[28px] group-hover:underline group-focus:underline">
+                        <p className="font-extrabold mt-[5px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
                           Pattern Recognition, follow up.
                         </p>
                       </div>
@@ -313,11 +313,11 @@ export default function Blog() {
                           />
                         </div>
                         <div className="">
-                          <p className="font-[600]	text-[11px] lg:text-[14px] lg:mt-[14px] mt-[5px] leading-[14px]">
+                          <p className="font-[600]	text-[11px] lg:text-[12px] lg:mt-[14px] mt-[5px] leading-[14px]">
                             {content.theme} / {content.topic}
                           </p>
 
-                          <p className="font-extrabold h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[15px] lg:text-[20px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                          <p className="font-extrabold h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[12px] leading-[15px] lg:text-[20px] lg:leading-[28px] group-hover:underline group-focus:underline">
                             {content.subject}
                           </p>
                         </div>
@@ -361,12 +361,16 @@ export default function Blog() {
                   ))}
                 </div>
 
-                <div className="flex mb-[50px] lg:mb-[0px] mt-[71px] lg:mt-[150px] justify-center">
+                <div className="cursor-pointer flex justify-center lg:mt-[150px]">
+                  <Image src={arrow} width={56} height={29} />
+                </div>
+
+                <div className="flex mb-[50px] lg:mb-[0px] mt-[71px] lg:mt-[23px] justify-center">
                   <button
                     type="button"
-                    className="hover:underline font-bold	text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
+                    className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
                   >
-                    Load more
+                    <p>Load more</p>
                   </button>
                 </div>
               </div>

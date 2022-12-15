@@ -23,8 +23,8 @@ export default function Team() {
           <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
             <div className="self-center">
               <h1 className="lg:font-light lg:text-[48px] lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
-                Focused <br />
-                Encouraged
+                Focused. <br />
+                Encouraged.
                 <br />
                 Broad-minded.{" "}
               </h1>
@@ -385,7 +385,7 @@ export default function Team() {
         <div className="lg:pt-[80px] pt-[50px] pb-[123px] lg:pb-[175px] bg-[#F0F0F0]">
           <a href="/our-philosophy">
             <div className="w-[204px] h-[68px] lg:w-[278px] lg:h-[90px] bg-[#00953B] flex justify-center float-right">
-              <div className="self-center">
+              <div className="self-center pl-4">
                 <p className="lg:font-bold lg:text-[22px] lg:leading-[28px] font-[700] text-[16px] leading-[20px] text-white">
                   See
                 </p>

@@ -2,6 +2,8 @@ import { Dialog, DialogActions } from "@material-ui/core";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TnC from "components/TnC";
+import Image from "next/image";
+import rightArrow from "../../public/img/Arrow1.png";
 
 const style = {
   position: "absolute" as "absolute",
@@ -20,6 +22,8 @@ type Props = {
 };
 
 const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
+  const [isShown, setIsShown] = useState(false);
+
   const [open, setOpen] = useState(false);
   const [agree, setAgree] = useState<number>(0);
   const [reminder, setReminder] = useState(false);
@@ -103,20 +107,17 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               </div>
 
               <p className="cursor-default	font-normal	text-[16px] leading-[26px]">
-                In Hong Kong, this Website is directed only at persons who
-                qualify as “Professional Investor(s)” as defined under the
-                Securities and Futures Ordinance (the “SFO”) and the Securities
-                and Futures (Professional Investor) Rules. Professional
-                Investors are defined as persons who meet certain financial
-                criteria, and please go to our
                 <TnC
                   nameprop={"Definition of Professional Investor"}
                   idx={3}
                   css={
-                    "text-[#001B71] cursor-pointer underline underline-offset-3 block whitespace-normal	mx-1 w-full"
+                    "text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
                   }
+                  upper={
+                    "In Hong Kong, this Website is directed only at persons who qualify as “Professional Investor(s)” as defined under the Securities and Futures Ordinance (the “SFO”) and the Securities and Futures (Professional Investor) Rules. Professional Investors are defined as persons who meet certain financial criteria, and please go to our"
+                  }
+                  lower={"page for full details."}
                 />
-                page for full details.
               </p>
               <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
                 The information contained in this Website is not an
@@ -192,6 +193,8 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 css={
                   "text-[#001B71] cursor-pointer underline underline-offset-3 block whitespace-normal mx-1"
                 }
+                upper={undefined}
+                lower={undefined}
               />
               page for full disclosures.
             </div>
@@ -255,14 +258,26 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
           <div className="absolute bottom-[40px] right-[48px]">
             <DialogActions>
               <button
-                disabled={agree == 0}
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
                 className={
                   "flex items-center justify-center w-[170px] h-[58px] text-[17px] leading-[17px] font-bold text-white transition-all duration-300 ease-in-out " +
                   (agree == 0 ? "bg-[#DDDDDD]" : "bg-primary-blue ")
                 }
                 onClick={handleClose}
+                disabled={agree == 0}
               >
-                Submit
+                {!isShown && <p>Submit</p>}
+                {isShown && (
+                  <div className="flex justify-between mx-[31.5px]">
+                    <div className="self-center mr-3">
+                      <p>Submit</p>
+                    </div>
+                    <div className="pt-1 ml-3">
+                      <Image src={rightArrow} />
+                    </div>
+                  </div>
+                )}
               </button>
             </DialogActions>
           </div>

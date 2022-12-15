@@ -69,20 +69,14 @@ export default function footer() {
               <TermOfUse
                 nameprop={"Terms of Use"}
                 idx={0}
-                css={
-                  "text-[#001B71] cursor-pointer font-medium  text-[13px] leading-[17px]"
-                }
-              />
+                css={"text-[#001B71] cursor-pointer font-medium  text-[13px] leading-[17px]"} upper={undefined} lower={undefined}              />
 
               <div className="border-r-[1px] border-[#001B71] mx-2"></div>
 
               <TermOfUse
                 nameprop={"Privacy Policy"}
                 idx={1}
-                css={
-                  "text-[#001B71] cursor-pointer font-medium text-[13px] leading-[17px]"
-                }
-              />
+                css={"text-[#001B71] cursor-pointer font-medium text-[13px] leading-[17px]"} upper={undefined} lower={undefined}              />
             </div>
           </div>
         </div>

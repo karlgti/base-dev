@@ -10,7 +10,6 @@ import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
 
@@ -37,22 +36,21 @@ const Home: NextPage = () => {
   </Head>;
   return (
     <div className="relative w-full">
+      <Header bg={"#001B71 !important"} />
+
+      <div className="mt-14">
+        <video
+          autoPlay={true}
+          loop={true}
+          controls={false}
+          playsInline
+          muted
+          className="block object-cover w-full"
+        >
+          <source src="homePage/BASE.mp4" type="video/mp4" />
+        </video>
+      </div>
       <ThemeProvider theme={theme}>
-        <Header bg={"#001B71 !important"}/>
-
-        <div className="mt-14">
-          <video
-            autoPlay={true}
-            loop={true}
-            controls={false}
-            playsInline
-            muted
-            className="block object-cover w-full"
-          >
-            <source src="homePage/BASE.mp4" type="video/mp4" />
-          </video>
-        </div>
-
         <div className="bg-[#F5F5F5] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1100px] m-0 m-auto pt-[42px] lg:pt-[60px] flex justify-between">
             <div>
@@ -77,23 +75,23 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+      </ThemeProvider>
 
-        <div className="bg-[#F5F5F5] lg:px-[144px] px-[5%] pt-[60px] pb-[84px]">
-          <div className="lg:max-w-[1100px] m-0 m-auto flex flex-col justify-between">
-            <div>
-              <Banners />
-            </div>
-            <div className="relative pt-[68px]">
-              <Insight />
-            </div>
+      <div className="bg-[#F5F5F5] lg:px-[144px] px-[5%] pt-[60px] pb-[84px]">
+        <div className="lg:max-w-[1100px] m-0 m-auto flex flex-col justify-between">
+          <div>
+            <Banners />
+          </div>
+          <div className="relative pt-[68px]">
+            <Insight />
           </div>
         </div>
+      </div>
 
-        <div className="bg-[#F5F5F5]">
-          <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
-        </div>
-        <Footer />
-      </ThemeProvider>
+      <div className="bg-[#F5F5F5]">
+        <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
+      </div>
+      <Footer />
       <Button />
     </div>
   );

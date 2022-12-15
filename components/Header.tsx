@@ -162,8 +162,8 @@ export default function MainHeader({ bg }) {
       marginTop: 11.9,
     },
     "& .MuiListItemText-primary": {
-      paddingTop: "20px",
-      paddingBottom: "20px",
+      paddingTop: "25px",
+      paddingBottom: "25px",
       fontSize: 30,
       fontWeight: 800,
       color: "black",
@@ -189,15 +189,6 @@ export default function MainHeader({ bg }) {
       "& .MuiListItemText-secondary": {
         fontSize: 12,
       },
-    },
-  };
-
-  const loginBox = {
-    display: "flex",
-    flexDirection: "column",
-    width: "350px",
-    ["@media (max-width:780px)"]: {
-      width: "100vw",
     },
   };
 
@@ -228,7 +219,7 @@ export default function MainHeader({ bg }) {
                 </a>
               </div>
               <div className="pl-[34px] pr-[46px] hidden lg:block">
-                <LoginButton />
+                <LoginButton text={"common.white"}  />
               </div>
             </Toolbar>
           </AppBar>
@@ -241,7 +232,7 @@ export default function MainHeader({ bg }) {
           onClose={handleClose}
         >
           <DrawerHeader>
-            <div onClick={handleDrawerClose} className="cursor-pointer">
+            <div onClick={handleDrawerClose} className="cursor-pointer mr-2">
               <img src="img/Cancel.png" width={25} height={25} />
             </div>
           </DrawerHeader>
@@ -379,10 +370,7 @@ export default function MainHeader({ bg }) {
             <Dis
               nameprop={"Disclaimers"}
               idx={3}
-              css={
-                "absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
-              }
-            />
+              css={"absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"} upper={undefined} lower={undefined}            />
           </div>
         </Drawer>
       </Box>

@@ -135,7 +135,7 @@ function ourPhilosophy() {
         <div className="lg:pt-[80px] pt-[50px] pb-[123px] lg:pb-[175px] bg-[#F0F0F0]">
           <a href="/investment-approach">
             <div className="w-[204px] h-[68px] lg:w-[278px] lg:h-[90px] bg-[#CC9C4A] flex justify-center float-right">
-              <div className="self-center">
+              <div className="self-center pl-3">
                 <p className="lg:font-bold lg:text-[22px] lg:leading-[28px] font-[700] text-[16px] leading-[20px] text-white">
                   See Investment
                 </p>
