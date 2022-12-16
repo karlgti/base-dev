@@ -28,7 +28,7 @@ const CookiePopup = ({ agreedDisclaimer }: Props) => {
     setCookie("consent", consentForm, {
       path: "/",
       secure: true,
-      maxAge: 0,
+      maxAge: 31536000,
 
     });
     setShowPopup(false);
