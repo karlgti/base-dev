@@ -9,16 +9,20 @@ import Insight from "../components/Insight";
 import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Cookies from "components/Cookie/Popup";
 
 const Home: NextPage = () => {
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
+  const [agreedCookies, setAgreedCookies] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window != "undefined") {
       const disclaimer = sessionStorage.getItem("disclaimer");
-      if (disclaimer == "agreed") setAgreedDisclaimer(true);
+      if (disclaimer == "agreed") {
+        setAgreedDisclaimer(true), setAgreedCookies(true);
+      }
     }
-  }, []);
+  }, [agreedCookies, agreedDisclaimer]);
 
   const theme = createTheme({
     typography: {
@@ -91,6 +95,11 @@ const Home: NextPage = () => {
       <div className="bg-[#F5F5F5]">
         <Disclaimer setAgreedDisclaimer={setAgreedDisclaimer} />
       </div>
+
+      <div className="bg-[#F5F5F5]">
+        {agreedCookies && <Cookies agreedDisclaimer={agreedCookies} />}
+      </div>
+
       <Footer />
       <Button />
     </div>

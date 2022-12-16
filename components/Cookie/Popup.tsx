@@ -15,6 +15,7 @@ const CookiePopup = ({ agreedDisclaimer }: Props) => {
     if (agreedDisclaimer && !cookie.consent) {
       setShowPopup(true);
     }
+    console.log(cookie.consent)
   }, [agreedDisclaimer]);
 
   const handleAccept = () => {
@@ -27,7 +28,8 @@ const CookiePopup = ({ agreedDisclaimer }: Props) => {
     setCookie("consent", consentForm, {
       path: "/",
       secure: true,
-      maxAge: 31536000,
+      maxAge: 0,
+
     });
     setShowPopup(false);
   };
