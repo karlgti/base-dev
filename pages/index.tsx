@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         setAgreedDisclaimer(true), setAgreedCookies(true);
       }
     }
-  }, [agreedCookies, agreedDisclaimer]);
+  }, [agreedDisclaimer]);
 
   const theme = createTheme({
     typography: {
