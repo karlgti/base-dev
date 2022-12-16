@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Dialog, DialogActions } from "@material-ui/core";
 import useWindowSize from "../../hook/useWindowSize";
 import { useCookies } from "react-cookie";
+import TnC from "components/TnC";
 
 const cookieConsent = [
   {
@@ -84,43 +85,44 @@ const CookieConsentForm = ({ showModal, setShowModal }: Props) => {
       <Dialog
         open={showModal}
         onClose={() => {}}
-        aria-labelledby='cookie-modal-title'
-        aria-describedby='cookie-modal-description'
+        aria-labelledby="cookie-modal-title"
+        aria-describedby="cookie-modal-description"
         maxWidth={"xl"}
         fullScreen={onMobile ? true : false}
       >
-        <div className='h-full w-full lg:h-[72vh] lg:w-[72vw] lg:p-12 lg:pb-6 pb-6 bg-white flex justify-between flex-col'>
-          <div className='w-full space-y-8 overflow-y-scroll px-4 lg:pr-2 py-6 lg:pt-0 lg:pb-6 h-[80%]'>
-            <h1 className='text-3xl '>COOKIES SETTINGS</h1>
+        <div className="h-full w-full lg:h-[82vh] lg:w-[82vw] lg:p-12 lg:pb-6 pb-6 bg-white flex justify-between flex-col">
+          <div className="w-full space-y-8 overflow-y-scroll px-4 lg:pr-2 py-6 lg:pt-0 lg:pb-6 h-[80%]">
+            <h1 className="text-3xl ">COOKIES SETTINGS</h1>
 
-            <div className='font-light '>
-              We use cookies to collect information about how visitors use this
-              website. They help us give you the best possible experience and
-              continually improve this website. By clicking the “Save Settings”
-              button, you agree to the use of the below types of cookies.
-              However, blocking some types of cookies may impact your experience
-              of the site. Please go to our
-              <Link passHref href='/' className='text-[#001B71] '>
-                Cookie Policy
-              </Link>
-              page for full disclosures on how we use cookies.
+            <div className="font-[400] ">
+              <TnC
+                nameprop={"Cookie Policy"}
+                idx={2}
+                css={
+                  "text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
+                }
+                upper={
+                  "We use cookies to collect information about how visitors use this website. They help us give you the best possible experience and continually improve this website. By clicking the “Save Settings” button, you agree to the use of the below types of cookies. However, blocking some types of cookies may impact your experience of the site. Please go to our"
+                }
+                lower={"page for full disclosures on how we use cookies."}
+              />
             </div>
 
             {cookieConsent.map((content, idx) => (
               <div
                 key={`cookie-consent-${idx}`}
-                className='flex justify-between w-full '
+                className="flex justify-between w-full "
               >
-                <div className='w-10/12 space-y-3 '>
-                  <h2 className='font-bold'>{content.title}</h2>
+                <div className="w-10/12 space-y-3 ">
+                  <h2 className="font-bold">{content.title}</h2>
                   <p>{content.body}</p>
                 </div>
 
-                <label className='flex items-center mr-2 cursor-pointer'>
-                  <div className='relative'>
+                <label className="flex items-center mr-2 cursor-pointer">
+                  <div className="relative">
                     <input
-                      type='checkbox'
-                      className='sr-only'
+                      type="checkbox"
+                      className="sr-only"
                       onClick={() => {
                         setClickedConsent(
                           clickedConsent.map((boo, i) =>
@@ -149,10 +151,10 @@ const CookieConsentForm = ({ showModal, setShowModal }: Props) => {
             ))}
           </div>
 
-          <div className='flex justify-center w-full space-x-4 lg:justify-end '>
+          <div className="flex justify-center w-full space-x-4 lg:justify-end ">
             <DialogActions>
               <button
-                className='flex items-center justify-center w-32 h-16 font-bold text-white transition-all duration-300 ease-in-out bg-primary-blue lg:w-44 '
+                className="flex items-center justify-center w-32 h-16 font-bold text-white transition-all duration-300 ease-in-out bg-primary-blue lg:w-44 "
                 onClick={handleSubmit}
               >
                 Save Settings
@@ -160,7 +162,7 @@ const CookieConsentForm = ({ showModal, setShowModal }: Props) => {
             </DialogActions>
             <DialogActions>
               <button
-                className='flex items-center justify-center w-32 h-16 font-bold text-white transition-all duration-300 ease-in-out bg-primary-blue lg:w-44 '
+                className="flex items-center justify-center w-32 h-16 font-bold text-white transition-all duration-300 ease-in-out bg-primary-blue lg:w-44 "
                 onClick={handleReject}
               >
                 Reject All
