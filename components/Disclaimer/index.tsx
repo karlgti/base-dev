@@ -70,7 +70,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
             <h1 className="font-normal	text-[26px] leading-[26px]">
               WEBSITE DISCLAIMER – IMPORTANT NOTICE
             </h1>
-            <div className="font-normal	text-[16px] leading-[26px] text-justify">
+            <div className="font-normal	text-[16px] leading-[26px] text-left">
               Please read this page carefully before proceeding further, as it
               contains legal and regulatory information relevant to the content
               of this website https://www.base-am.com (the “Website”). Please
@@ -84,7 +84,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
               <div className="font-semibold text-[16px] leading-[26px]">
                 Recipients of Communication
               </div>
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 This Website is established by Base Asset Management Limited
                 (“BASE”, “we” or “us”), a Licensed Corporation (CE Number:
                 BMS500) regulated by the Hong Kong Securities and Futures
@@ -119,7 +119,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                   lower={"page for full details."}
                 />
               </p>
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 The information contained in this Website is not an
                 advertisement, invitation or document relating to any securities
                 or collective investment schemes or any other investment under
@@ -137,7 +137,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Accessing the Website
               </div>
 
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 This Website has not been reviewed by the SFC and is provided to
                 you on the basis that you are a Professional Investor. By
                 accessing this Website, you acknowledge and agree that this
@@ -145,7 +145,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 distribute or otherwise make this material available to a person
                 who is not a Professional Investor.
               </p>
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 No unauthorised person should attempt to gain access to any
                 restricted area of the Website. We disclaim all liability for
                 any loss a user may suffer from access to the Website by an
@@ -157,7 +157,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 Risk Considerations
               </div>
 
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 The value of investments and the income generated may go down as
                 well as up, and the investors may not get back the amount
                 originally invested. Past performance is not a reliable
@@ -170,7 +170,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 suitablnly for investors who are in a position to take such
                 risk.
               </p>
-              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+              <p className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
                 The users of this Website should seek advice from independent
                 financial, legal, or tax professionals before making any
                 investment decisions. The information herein should not be
@@ -185,7 +185,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 could incur a substantial or complete loss.
               </p>
             </div>
-            <div className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
+            <div className="cursor-default	font-normal	text-[16px] leading-[26px] text-left">
               <TnC
                 nameprop={"Terms of Use"}
                 idx={0}
