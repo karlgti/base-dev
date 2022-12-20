@@ -185,49 +185,44 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 could incur a substantial or complete loss.
               </p>
             </div>
-            <div className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify flex">
-              Please access to our
+            <div className="cursor-default	font-normal	text-[16px] leading-[26px] text-justify">
               <TnC
                 nameprop={"Terms of Use"}
                 idx={0}
                 css={
-                  "text-[#001B71] cursor-pointer underline underline-offset-3 block whitespace-normal mx-1"
+                  "text-[#001B71] cursor-pointer underline underline-offset-3 whitespace-normal mx-1"
                 }
-                upper={undefined}
-                lower={undefined}
+                upper={"Please access to our"}
+                lower={"page for full disclosures."}
               />
-              page for full disclosures.
             </div>
 
             <div className="space-y-2">
-              <button
-                className="flex items-center cursor-pointer "
-                onClick={() => setAgree(1)}
-              >
+              <div className="flex cursor-pointer " onClick={() => setAgree(1)}>
                 <div
                   className={
-                    "flex items-center justify-center w-4 h-4 mr-2 transition-all duration-300 ease-in-out border rounded-full " +
+                    "flex items-center justify-center w-4 mt-1 h-4 mr-2 transition-all duration-300 ease-in-out border rounded-full " +
                     (agree == 1 ? "border-primary-blue " : "border-gray-400")
                   }
                 >
                   <div
                     className={
-                      "w-2.5 h-2.5 rounded-full transition-all duration-300 ease-in-out " +
+                      "w-3.5 h-3.5 rounded-full transition-all duration-300 ease-in-out " +
                       (agree == 1 ? "bg-primary-blue " : "bg-white")
                     }
                   />
                 </div>
                 <label
                   className={
-                    "font-bold cursor-pointer " +
+                    "font-bold cursor-pointer" +
                     (agree == 1 ? "text-primary-blue " : "")
                   }
                 >
-                  I have read and agreed to the <br className="md:hidden" />
-                  above terms and conditions
+                  I have read and agreed to the above terms and conditions
                 </label>
-              </button>
-              <button
+              </div>
+
+              <div
                 className="flex items-center cursor-pointer "
                 onClick={() => setAgree(-1)}
               >
@@ -239,7 +234,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 >
                   <div
                     className={
-                      "w-2.5 h-2.5 rounded-full transition-all duration-300 ease-in-out " +
+                      "w-3 h-3 rounded-full transition-all duration-300 ease-in-out " +
                       (agree == -1 ? "bg-primary-blue " : "bg-white")
                     }
                   />
@@ -252,10 +247,10 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
                 >
                   I decline
                 </label>
-              </button>
+              </div>
             </div>
           </div>
-          <div className="absolute bottom-[40px] right-[48px]">
+          <div className="absolute lg:bottom-[40px] lg:right-[48px] bottom-[20px] right-[20px]">
             <DialogActions>
               <button
                 onMouseEnter={() => setIsShown(true)}
@@ -292,7 +287,7 @@ const Disclaimer = ({ setAgreedDisclaimer }: Props) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[25vh] px-6 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
+        <div className="h-[35vh] lg:h-[25vh] px-6 justify-between pt-16 pb-6 bg-primary-blue flex flex-col">
           <div className="text-white ">
             <p>
               This website and its content can only be accessed if the

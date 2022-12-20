@@ -26,7 +26,7 @@ export default function productTypes() {
               <div>
                 <Image
                   src={zeroonewhite}
-                  width={48}
+                  width={52}
                   height={38}
                   alt={"picture"}
                 />
@@ -38,13 +38,13 @@ export default function productTypes() {
               </div>
             </div>
 
-            <div className="flex">
-              <div className="w-[55%] font-[400] text-[13px] mt-[15px] ml-[18px] text-white leading-[22px]">
+            <div className="flex mt-[15px]">
+              <div className="w-[55%] font-[400] text-[13px]  ml-[18px] text-white leading-[22px]">
                 BASE provides investment advice to clients on asset allocation
                 and investment strategy that fits within the clients’ investment
                 objectives and risk appetites.
               </div>
-              <div className="mx-auto my-auto">
+              <div className="mx-auto ">
                 <Image src={one} width={100} height={100} alt={"picture"} />
               </div>
             </div>
@@ -57,7 +57,7 @@ export default function productTypes() {
               <div>
                 <Image
                   src={zerotwowhite}
-                  width={48}
+                  width={52}
                   height={38}
                   alt={"picture"}
                 />
@@ -69,13 +69,13 @@ export default function productTypes() {
               </div>
             </div>
 
-            <div className="flex">
-              <div className="w-[55%] font-[400] text-[13px] mt-[15px] ml-[18px] text-white leading-[22px]">
+            <div className="flex mt-[15px]">
+              <div className="w-[55%] font-[400] text-[13px]  ml-[18px] text-white leading-[22px]">
                 BASE manages the client’s investment portfolio in accordance
                 with the clients’ investment guidelines, policies and
                 restrictions.
               </div>
-              <div className="mx-auto my-auto">
+              <div className="mx-auto ">
                 <Image src={two} width={100} height={100} alt={"picture"} />
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function productTypes() {
               <div>
                 <Image
                   src={zerothreewhite}
-                  width={48}
+                  width={52}
                   height={38}
                   alt={"picture"}
                 />
@@ -100,13 +100,13 @@ export default function productTypes() {
               </div>
             </div>
 
-            <div className="flex">
-              <div className="w-[55%] font-[400] text-[13px] mt-[15px] ml-[18px] text-white leading-[22px]">
+            <div className="flex mt-[15px]">
+              <div className="w-[55%] font-[400] text-[13px]  ml-[18px] text-white leading-[22px]">
                 BASE provides discretionary investment management services to
                 the Fund based on the investment strategies and mandates of the
                 Fund as set out in its offering memorandum.
               </div>
-              <div className="mx-auto my-auto">
+              <div className="mx-auto ">
                 <Image src={three} width={100} height={100} alt={"picture"} />
               </div>
             </div>

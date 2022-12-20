@@ -30,7 +30,7 @@ function theSolutions() {
 
         <div className="bg-[#E04403] lg:px-[144px] px-[5%]">
           <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
-            <div className="self-center">
+            <div className="self-center mb-1">
               <h1 className="lg:font-light lg:text-[48px] lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
                 Discover the Undiscovered,
               </h1>

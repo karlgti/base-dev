@@ -74,7 +74,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
         maxWidth={"lg"}
       >
         <div className="h-[82vh] lg:p-12 p-5 pb-6 bg-white flex flex-col">
-          <div className=" h-[20%] ">
+          <div className=" h-[20%]">
             <Tabs
               value={value}
               onChange={handleChange}

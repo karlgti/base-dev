@@ -115,7 +115,7 @@ function investmentApproach() {
                   psychology factors, such as human emotions of greed and fears.
                 </p>
 
-                <div className="border-[3px] p-[16px] lg:p-[29px] border-[#CC9C4A] mt-[36px] lg:mt-[70px] ">
+                <div className="lg:border-[2px] border-[1px] p-[16px] lg:p-[29px] border-[#CC9C4A] mt-[36px] lg:mt-[70px] ">
                   <div className="font-[600] italic lg:text-[18px] text-[15px] leading-[25px] font-[600] lg:leading-[28px]  text-[#CC9C4A]">
                     The growing influences of the behavioural factors resulted
                     from the rising of the unpredictable economic, social and
@@ -123,7 +123,7 @@ function investmentApproach() {
                   </div>
                   <br />
 
-                  <div className="text-[#CC9C4A] font-[400] text-[18px] tracking-[7%] leading-[28px] pl-[29px]">
+                  <div className="text-[#CC9C4A] font-[400] lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px] pl-[29px]">
                     <ol>
                       <li>
                         geopolitical conflicts between U.S., Europe, China,
@@ -253,14 +253,14 @@ function investmentApproach() {
               </div>
             </div>
 
-            <div className="lg:flex text-[#CC9C4A] border-[3px] lg:px-0 px-[16px] py-[16px] lg:py-[32px] border-[#CC9C4A] mt-[70px] text-[#CC9C4A]">
+            <div className="lg:flex text-[#CC9C4A] lg:border-[2px] border-[1px] lg:px-0 px-[16px] py-[16px] lg:py-[32px] border-[#CC9C4A] mt-[70px] text-[#CC9C4A]">
               <div className="lg:w-[50%] lg:pr-[32px] lg:pl-[32px] lg:pb-0 pb-[19px]">
-                <p className="font-[600] italic text-[18px] leading-[28px]">
+                <p className="font-[600] italic lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px]">
                   By using different kinds of systems or modules, the objectives
                   of the observatory systems are to track the hurricane’s
                 </p>
                 <br />
-                <div className="pl-[30px] font-[400] text-[18px] leading-[28px] ">
+                <div className="lg:pl-[30px] pl-[25px] font-[400] lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px] ">
                   <ol>
                     <li>pathway</li>
                     <li>landfall location</li>
@@ -288,12 +288,12 @@ function investmentApproach() {
               </div>
               <div className=" border-t-[3px] lg:border-t-[0px] lg:pt-[0px] pt-[19px] lg:border-l-[3px] border-[#CC9C4A]">
                 <div className="lg:pr-[32px] lg:pl-[32px]">
-                <p className="font-[600] italic text-[18px] leading-[28px]">
+                <p className="font-[600] italic lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px]">
                     while our technical model’s <br /> objectives are to track
                   </p>
                   <br />
-                  <br />
-                  <div className="pl-[30px] font-[400] text-[18px] leading-[28px]">
+                  <br className="hidden lg:block"/>
+                  <div className="lg:pl-[30px] pl-[25px] font-[400] lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px]">
                     <ol>
                       <li>the price trend and pattern</li>
                       <li>target price level</li>

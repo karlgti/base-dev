@@ -22,7 +22,7 @@ function ourPhilosophy() {
         <div className="bg-[#00953B] lg:px-[144px] px-[5%]">
           <div className="max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
             <div className="self-center">
-              <h1 className="lg:font-light lg:text-[48px] lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
+              <h1 className="lg:font-light lg:text-[48px] pb-1 lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
                 Keep Inspired and Innovative,
                 <br />
                 Here is when Old meets New.
@@ -121,7 +121,7 @@ function ourPhilosophy() {
                   measured through technical analysis.
                 </p>
 
-                <p className="lg:mt-[56px] mt-[36px] border-[2px] italic lg:font-semibold lg:text-[21px] text-[15px] leading-[25px] font-[600] lg:leading-[32px] border-[#00953B] text-[#00953B] p-[15px] lg:p-[29px]">
+                <p className="lg:mt-[56px] mt-[36px] lg:border-[2px] border-[1px] italic lg:font-semibold lg:text-[21px] text-[15px] leading-[25px] font-[600] lg:leading-[32px] border-[#00953B] text-[#00953B] p-[15px] lg:p-[29px]">
                   We believe our proprietary technical model, combined with
                   technology and automation, can monitor different asset classes
                   more closely than humans on a timely basis without subjective

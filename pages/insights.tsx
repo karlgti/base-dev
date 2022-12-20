@@ -14,6 +14,28 @@ import arrow from "../public/img/Arrow 2.png";
 
 import Link from "next/link";
 
+const data1 = [
+  {
+    theme: "Investment",
+    topic: "Outlook Brief",
+    subject: "Tapping into November 2022",
+    date: "2022-11-04",
+    linktwt: linkedin,
+    link: "https://twitter.com/BASE_AssetMgmt/status/1592008449524928513",
+    src: "img/blogone.png",
+  },
+
+  {
+    theme: "Strategy",
+    topic: "U.S. Market",
+    subject: "Pattern Recognition, follow up.",
+    date: "2022-11-04",
+    linktwt: twitter,
+    link: "https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6/?utm_source=share&utm_medium=member_desktop",
+    src: "img/2.png",
+  },
+];
+
 const data = [
   {
     theme: "Strategy",
@@ -164,7 +186,7 @@ export default function Blog() {
                         alt="Base Asset Management"
                       />
                       <div className="">
-                        <div className="font-[600]	lg:text-[12px] text-[16px] lg:mt-[20px] mt-[10px] leading-[14px]">
+                        <div className="font-[600]	lg:text-[14px] text-[14px] lg:mt-[20px] mt-[px] leading-[30px] lg:leading-[30px]">
                           Strategy / Model Study
                         </div>
 
@@ -298,6 +320,70 @@ export default function Blog() {
                 </div>
               </div>
 
+              <div className="container lg:hidden mt-[38px]">
+                <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {data1.map((content, i) => (
+                    <Link href={content.link}>
+                      <div
+                        key={i}
+                        className="block cursor-pointer border-t-[4px] pt-[14px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
+                      >
+                        <div>
+                          <img
+                            src={content.src}
+                            className="lg:w-[300px] lg:h-[180px]"
+                          />
+                        </div>
+                        <div className="">
+                          <p className="font-[600]	text-[10px] lg:text-[13px]  mt-[5px] leading-[14px]">
+                            {content.theme} / {content.topic}
+                          </p>
+
+                          <p className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                            {content.subject}
+                          </p>
+                        </div>
+                        <div className="relative flex lg:mt-[60px] mt-[30px] lg:hiddden justify-between">
+                          <div className="lg:hidden">
+                            <a
+                              href="https://www.linkedin.com/company/base-am/"
+                              className="text-gray-600"
+                            >
+                              <Image
+                                src={content.linktwt}
+                                width={31}
+                                height={31}
+                                className="cursor-pointer"
+                                alt="Base Asset Management"
+                              />
+                            </a>
+                          </div>
+
+                          <div className="hidden lg:block absolute bottom-0 left-0">
+                            <a
+                              href="https://www.linkedin.com/company/base-am/"
+                              className="text-gray-600"
+                            >
+                              <Image
+                                src={content.linktwt}
+                                width={31}
+                                height={31}
+                                className="cursor-pointer"
+                                alt="Base Asset Management"
+                              />
+                            </a>
+                          </div>
+
+                          <div className="absolute bottom-0 right-0 font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
+                            {content.date}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <div className="container mt-[38px]">
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                   {data.map((content, i) => (
@@ -313,11 +399,11 @@ export default function Blog() {
                           />
                         </div>
                         <div className="">
-                          <p className="font-[600]	text-[11px] lg:text-[12px] lg:mt-[14px] mt-[5px] leading-[14px]">
+                          <p className="font-[600]	text-[10px] lg:text-[13px]  mt-[5px] leading-[14px]">
                             {content.theme} / {content.topic}
                           </p>
 
-                          <p className="font-extrabold h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[12px] leading-[15px] lg:text-[20px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                          <p className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
                             {content.subject}
                           </p>
                         </div>
@@ -361,11 +447,14 @@ export default function Blog() {
                   ))}
                 </div>
 
-                <div className="cursor-pointer flex justify-center lg:mt-[150px]">
+                <div className="cursor-pointer lg:hidden flex justify-center mt-[42px] lg:mt-[150px]">
+                  <Image src={arrow} width={22} height={11} />
+                </div>
+                <div className="cursor-pointer hidden lg:flex flex justify-center mt-[42px] lg:mt-[150px]">
                   <Image src={arrow} width={56} height={29} />
                 </div>
 
-                <div className="flex mb-[50px] lg:mb-[0px] mt-[71px] lg:mt-[23px] justify-center">
+                <div className="flex mb-[50px] lg:mb-[0px] mt-5 lg:mt-[23px] justify-center">
                   <button
                     type="button"
                     className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"

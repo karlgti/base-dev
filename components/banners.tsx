@@ -17,7 +17,7 @@ function banners() {
       <div className="relative lg:flex lg:justify-between">
         <a href="/our-philosophy">
           <div className="flex lg:block relative lg:w-[355px] lg:h-[480px] bg-[#00953B]">
-            <div className="flex lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+            <div className="flex lg:w-[100%] w-[70%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
               <ThemeProvider theme={theme}>
                 <p className="font-light lg:font-[300]	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
                   Our <br />
@@ -36,7 +36,7 @@ function banners() {
 
         <a href="/investment-approach">
           <div className="flex lg:block relative lg:w-[355px] my-[7px] lg:my-[0px] lg:h-[480px] bg-[#CC9C4A]">
-            <div className="flex lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+            <div className="flex lg:w-[100%] w-[70%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
               <ThemeProvider theme={theme}>
                 <p className="font-light lg:font-[300]	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
                   Investment <br />
@@ -55,7 +55,7 @@ function banners() {
 
         <a href="/the-solutions">
           <div className="flex lg:block relative lg:w-[355px] lg:h-[480px] bg-[#E04403]">
-            <div className="flex  lg:w-[100%] w-[55%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
+            <div className="flex  lg:w-[100%] w-[70%] flex-col lg:flex-row pt-[18px] lg:pt-[37px] justify-between px-[25px]">
               <ThemeProvider theme={theme}>
                 <p className="font-light lg:font-[300]	text-white	lg:text-[38px] text-[25px] leading-[27px] lg:leading-[45px]">
                   The <br />

@@ -218,11 +218,24 @@ export default function contactHeader() {
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] border-[#001B71] absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+              <div className="lg:border-l-[1px] hidden lg:block absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
                 {" "}
                 <a onClick={handleDrawerOpen}>
                   <Image
                     src={menuButton}
+                    className="cursor-pointer"
+                    alt="Base Asset Management"
+                  />
+                </a>
+              </div>
+
+              <div className="lg:border-l-[1px] lg:hidden absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+                {" "}
+                <a onClick={handleDrawerOpen}>
+                  <Image
+                    src={menuButton}
+                    width={15}
+                    height={18}
                     className="cursor-pointer"
                     alt="Base Asset Management"
                   />
@@ -380,7 +393,12 @@ export default function contactHeader() {
             <Dis
               nameprop={"Disclaimers"}
               idx={3}
-              css={"absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"} upper={undefined} lower={undefined}            />
+              css={
+                "absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
+              }
+              upper={undefined}
+              lower={undefined}
+            />
           </div>
         </Drawer>
       </Box>

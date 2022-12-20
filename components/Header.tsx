@@ -143,6 +143,12 @@ export default function MainHeader({ bg }) {
     },
   };
 
+  const radius = {
+    ".MuiOutlinedInput-root": {
+      borderRadius: 0,
+    },
+  };
+
   const box = {
     "header.MuiPaper-root": {
       boxShadow: "none",
@@ -203,12 +209,12 @@ export default function MainHeader({ bg }) {
         <HideOnScroll>
           <AppBar sx={headerStyle} open={open}>
             <Toolbar>
-              <div className="mx-auto lg:ml-[57px] py-[20px] lg:py-[0px]">
+              <div className="mx-auto mt-1.5 lg:ml-[57px] py-[20px] lg:py-[0px]">
                 <a href="/">
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+              <div className="lg:border-l-[1px] hidden lg:block absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
                 {" "}
                 <a onClick={handleDrawerOpen}>
                   <Image
@@ -218,8 +224,22 @@ export default function MainHeader({ bg }) {
                   />
                 </a>
               </div>
+
+              <div className="lg:border-l-[1px] lg:hidden absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+                {" "}
+                <a onClick={handleDrawerOpen}>
+                  <Image
+                    src={menuButton}
+                    width={15}
+                    height={18}
+                    className="cursor-pointer"
+                    alt="Base Asset Management"
+                  />
+                </a>
+              </div>
+
               <div className="pl-[34px] pr-[46px] hidden lg:block">
-                <LoginButton text={"common.white"}  />
+                <LoginButton text={"common.white"} />
               </div>
             </Toolbar>
           </AppBar>
@@ -247,7 +267,7 @@ export default function MainHeader({ bg }) {
             <div className="lg:hidden">
               <Divider style={{ background: "#001b71" }} />
 
-              <Button
+              <div
                 className="text-[#CC9C4A] px-[12px] py-[8px]"
                 onClick={handleClickOpen1}
               >
@@ -258,7 +278,7 @@ export default function MainHeader({ bg }) {
                 >
                   Investor login
                 </Typography>
-              </Button>
+              </div>
             </div>
 
             <Dialog
@@ -293,7 +313,11 @@ export default function MainHeader({ bg }) {
                 }}
               >
                 <Box>
-                  <FormControl fullWidth={true}>
+                  <FormControl fullWidth={true} sx={radius}>
+                    <div className="text-[20px] text-[#CC9C4A] leading-[30px] font-[800] m-auto mb-[18px]">
+                      Investor login
+                    </div>
+
                     <TextField
                       fullWidth
                       id="demo-helper-text-aligned"
@@ -306,16 +330,15 @@ export default function MainHeader({ bg }) {
                       label="Password"
                     />
                     <br />
-                    <br />
 
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      className=" bg-[#CC9C4A]"
-                    >
-                      login
-                    </Button>
-                    <DialogContentText></DialogContentText>
+                    <button className="w-full h-[50px] bg-[#021B71] text-white font-[700] text-[14px] leading-[17px]">
+                      <div className="justify-around mx-[31.5px]">
+                        <div className="self-center">
+                          <p>Login</p>
+                        </div>
+                      </div>
+                    </button>
+                    <br />
                   </FormControl>
                 </Box>
               </DialogContent>
@@ -370,7 +393,12 @@ export default function MainHeader({ bg }) {
             <Dis
               nameprop={"Disclaimers"}
               idx={3}
-              css={"absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"} upper={undefined} lower={undefined}            />
+              css={
+                "absolute bottom-[0px] pl-4 lg:pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
+              }
+              upper={undefined}
+              lower={undefined}
+            />
           </div>
         </Drawer>
       </Box>

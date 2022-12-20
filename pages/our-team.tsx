@@ -39,12 +39,12 @@ export default function Team() {
               />
             </div>
 
-            <div className="self-center lg:hidden py-[27px]">
+            <div className="self-center lg:hidden py-[22px]">
               <Image
                 src={mypic}
                 alt="TheDifferentiator"
-                width={200}
-                height={200}
+                width={150}
+                height={150}
               />
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function Team() {
                   investment committee member in the acquisition of an asset
                   management business.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Chris received a Bachelor of Arts (Honours) in Finance from
                   the Idaho State University.
                 </p>
@@ -165,7 +165,7 @@ export default function Team() {
                   Director positions in the last 13 years, directing its APAC
                   business from front to back processes.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Askin received a Bachelor of Arts (Honours) in Computing from
                   the Hong Kong Polytechnic University and a Master in Finance
                   (major in Risk Management) from the University of Hong Kong.
@@ -222,7 +222,7 @@ export default function Team() {
                   development, business process optimisation and investment
                   administration.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Selina received a Bachelor of Commerce from the University of
                   Melbourne and a Master of Business Administration from the EU
                   Business School.
@@ -279,7 +279,7 @@ export default function Team() {
                   specialising in investment strategy and quantitative analysis
                   in the last 22 years.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Pavina received a Bachelor of Arts in Applied Mathematics
                   (major in Physics) and a Master of Science in Applied
                   Mathematics and Engineering Sciences from the Northwestern
@@ -336,7 +336,7 @@ export default function Team() {
                   provided property investment advisory and financial planning
                   services for professional and individual clients.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Joe received a Bachelor of Commerce and Management (major in
                   Macroeconomics) from the Hitotsubashi University, Tokyo.
                 </p>
@@ -371,7 +371,7 @@ export default function Team() {
                   Triskele Capital Management and a research analyst at Daiwa SB
                   Investments.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mb-[36px] lg:mb-0 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mt-[16px] mb-[36px] lg:mb-0 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
                   Hill received a Bachelor of Arts in Economics and Finance from
                   the University of Hong Kong and a Master of Arts in Economics
                   with distinction from the Hong Kong University of Science and
