@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         "press-start": ['"Press Start 2P"', "cursive"],
       },
+      screens: {
+        'xsm': {'min': '390px'},
+      }
     },
   },
   variants: {

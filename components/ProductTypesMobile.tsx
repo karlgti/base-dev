@@ -21,7 +21,7 @@ export default function productTypes() {
     <ThemeProvider theme={theme}>
       <div className="mt-[36px]">
         <div className="border-[1px] border-[#E04403] p-[8px] flex">
-          <div className="h-[232px] w-full bg-[#E04403]">
+          <div className="h-[250px] xsm:h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
                 <Image
@@ -52,7 +52,7 @@ export default function productTypes() {
         </div>
 
         <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] flex">
-          <div className="h-[232px] w-full bg-[#E04403]">
+          <div className="h-[250px] xsm:h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
                 <Image
@@ -83,7 +83,7 @@ export default function productTypes() {
         </div>
 
         <div className="border-[1px] mt-[12px] border-[#E04403] p-[8px] flex">
-          <div className="h-[232px] w-full bg-[#E04403]">
+          <div className="h-[250px] xsm:h-[232px] w-full bg-[#E04403]">
             <div className="mt-[23px] ml-[18px] flex">
               <div>
                 <Image
@@ -100,7 +100,7 @@ export default function productTypes() {
               </div>
             </div>
 
-            <div className="flex mt-[12px]">
+            <div className="flex mt-[12px] ">
               <div className="w-[55%] font-[400] text-[13px]  ml-[18px] text-white leading-[22px]">
                 BASE provides discretionary investment management services to
                 the Fund based on the investment strategies and mandates of the
