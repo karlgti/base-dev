@@ -220,7 +220,7 @@ export default function ContactForm() {
             <header className="">
               <div className="lg:mb-[56px] mb-[12px]">
                 <h1 className="font-normal lg:mt-[101px]	lg:text-[82px] lg:leading-[96px] mt-[86px] text-[46px] leading-[32px] text-[#001673]">
-                  Contact
+                  Contact Us
                 </h1>
                 <p className="font-normal lg:mt-[49px]	lg:text-[16px]  lg:leading-[28px] mt-[49px]	text-[15px]  leading-[25px]">
                   Thank you for your interest!

@@ -100,7 +100,7 @@ export default function productTypes() {
               </div>
             </div>
 
-            <div className="flex mt-[15px]">
+            <div className="flex mt-[12px]">
               <div className="w-[55%] font-[400] text-[13px]  ml-[18px] text-white leading-[22px]">
                 BASE provides discretionary investment management services to
                 the Fund based on the investment strategies and mandates of the

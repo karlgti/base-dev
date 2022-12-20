@@ -218,7 +218,7 @@ export default function contactHeader() {
                   <Image src={mypic} alt="Base Asset Management" />
                 </a>
               </div>
-              <div className="lg:border-l-[1px] hidden lg:block absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+              <div className="lg:border-l-[1px] hidden border-[#001B71] lg:block absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
                 {" "}
                 <a onClick={handleDrawerOpen}>
                   <Image
@@ -229,7 +229,7 @@ export default function contactHeader() {
                 </a>
               </div>
 
-              <div className="lg:border-l-[1px] lg:hidden absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
+              <div className="lg:border-l-[1px] border-[#001B71] lg:hidden absolute lg:relative right-[15px] lg:border-r-[1px] lg:px-[30.5px] lg:pt-[29.5px] lg:pb-[22.5px]">
                 {" "}
                 <a onClick={handleDrawerOpen}>
                   <Image
@@ -386,7 +386,7 @@ export default function contactHeader() {
             <ListItemButton href="/contact">
               <ListItemText
                 sx={{ fontSize: "100px" }}
-                primary="Contact"
+                primary="Contact Us"
                 className=" "
               />
             </ListItemButton>

@@ -348,7 +348,7 @@ function investmentApproach() {
                   the accuracy of tracking on the 3 dimensions.
                 </p>
 
-                <p className="lg:font-normal lg:text-[16px] lg:leading-[28px] lg:mt-0 mt-[6px] lg:mt-[25px] text-[#000000] text-[15px] leading-[25px] font-[400]">
+                <p className="lg:font-normal lg:text-[16px] lg:leading-[28px] lg:mt-0 mt-[26px] lg:mt-[25px] text-[#000000] text-[15px] leading-[25px] font-[400]">
                   With so many indicators & dimensions flying around, monitoring
                   by human can be error prone and introduce personal bias. Our
                   Hurricane model leverages technology and automation to ensure
@@ -359,7 +359,7 @@ function investmentApproach() {
                   risk actively to minimize downside risk.
                 </p>
 
-                <p className="lg:font-normal lg:text-[16px] lg:leading-[28px] lg:mt-0 mt-[6px] lg:mt-[25px] text-[#000000] text-[15px] leading-[25px] font-[400]">
+                <p className="lg:font-normal lg:text-[16px] lg:leading-[28px] lg:mt-0 mt-[26px] lg:mt-[25px] text-[#000000] text-[15px] leading-[25px] font-[400]">
                   With such a systematic active monitoring process which can
                   capture the investment opportunities more timely and
                   accurately, our Hurricane model is able to increase our

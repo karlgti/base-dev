@@ -383,7 +383,7 @@ export default function MainHeader({ bg }) {
             <ListItemButton href="/contact">
               <ListItemText
                 sx={{ fontSize: "100px" }}
-                primary="Contact"
+                primary="Contact Us"
                 className=" "
               />
             </ListItemButton>
