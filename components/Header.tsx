@@ -394,7 +394,7 @@ export default function MainHeader({ bg }) {
               nameprop={"Disclaimers"}
               idx={3}
               css={
-                "absolute bottom-[0px] pl-4 lg:pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
+                "absolute bottom-[0px] pl-4 lg:pl-[15px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
               }
               upper={undefined}
               lower={undefined}

@@ -397,7 +397,7 @@ export default function contactHeader() {
               nameprop={"Disclaimers"}
               idx={3}
               css={
-                "absolute bottom-[0px] pl-[30px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
+                "absolute bottom-[0px] pl-[15px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
               }
               upper={undefined}
               lower={undefined}
