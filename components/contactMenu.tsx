@@ -317,6 +317,10 @@ export default function contactHeader() {
               >
                 <Box>
                   <FormControl fullWidth={true}>
+                    <div className="text-[20px] text-[#CC9C4A] leading-[30px] font-[800] m-auto mb-[18px]">
+                      Investor login
+                    </div>
+
                     <TextField
                       fullWidth
                       id="demo-helper-text-aligned"
@@ -329,16 +333,15 @@ export default function contactHeader() {
                       label="Password"
                     />
                     <br />
-                    <br />
 
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      className=" bg-[#CC9C4A]"
-                    >
-                      login
-                    </Button>
-                    <DialogContentText></DialogContentText>
+                    <button className="w-full h-[50px] bg-[#021B71] text-white font-[700] text-[14px] leading-[17px]">
+                      <div className="justify-around mx-[31.5px]">
+                        <div className="self-center">
+                          <p>Login</p>
+                        </div>
+                      </div>
+                    </button>
+                    <br />
                   </FormControl>
                 </Box>
               </DialogContent>

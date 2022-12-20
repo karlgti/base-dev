@@ -313,7 +313,7 @@ export default function MainHeader({ bg }) {
                 }}
               >
                 <Box>
-                  <FormControl fullWidth={true} sx={radius}>
+                  <FormControl fullWidth={true}>
                     <div className="text-[20px] text-[#CC9C4A] leading-[30px] font-[800] m-auto mb-[18px]">
                       Investor login
                     </div>
