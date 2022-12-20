@@ -15,7 +15,7 @@ export default function footer() {
     <ThemeProvider theme={theme}>
       <footer>
         <div className="lg:flex px-[7%] py-[10px] lg:py-[0px] lg:px-[0%] lg:items-center lg:justify-between border-b-[1px] border-[#001B71]">
-          <div className="lg:pl-[63px] flex font-black text-[#021B71] mt-3">
+          <div className="lg:pl-[63px] flex font-black text-[#021B71] lg:mt-0 mt-3">
             <span className="cursor-pointer	font-bold	lg:text-[18px] text-[15px] leading-[26px] text-[#001B71]">
               Base Asset Management Limited
             </span>
