@@ -11,9 +11,15 @@ import blogone from "../public/img/blogone.png";
 import one from "../public/img/1.png";
 import two from "../public/img/2.png";
 import arrow from "../public/img/Arrow 2.png";
-
+import { AxiosResponse } from 'axios';
+import type { GetServerSideProps, NextPage } from 'next';
+import {
+  IArticle,
+  ICollectionResponse,
+  IPagination
+} from '../types';
 import Link from "next/link";
-
+import { fetchArticles } from '../http';
 const data1 = [
   {
     theme: "Investment",
@@ -36,7 +42,7 @@ const data1 = [
   },
 ];
 
-const data = [
+/**const data = [
   {
     theme: "Strategy",
     topic: "U.S. Market",
@@ -110,9 +116,17 @@ const data = [
     link: "https://twitter.com/BASE_AssetMgmt/status/1571876394392748033",
     src: "img/10.png",
   },
-];
+];*/
+interface IPropTypes {
 
-export default function Blog() {
+  insights: {
+    items: IArticle[];
+    pagination: IPagination;
+  };
+}
+
+const Blog: NextPage<IPropTypes> = ({ insights }) => {
+
   const [animateHeader, setAnimateHeader] = useState(false);
   useEffect(() => {
     const listener = () => {
@@ -386,25 +400,25 @@ export default function Blog() {
 
               <div className="container mt-[38px]">
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {data.map((content, i) => (
-                    <Link href={content.link}>
+                  {insights.items?.map((content, i) => (
+                    <Link key={i} href={content.attributes.blog_link}>
                       <div
                         key={i}
                         className="block cursor-pointer border-t-[4px] pt-[14px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
                       >
                         <div>
                           <img
-                            src={content.src}
+                            src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`}
                             className="lg:w-[300px] lg:h-[180px]"
                           />
                         </div>
                         <div className="">
                           <p className="font-[600]	text-[10px] lg:text-[13px]  mt-[5px] leading-[14px]">
-                            {content.theme} / {content.topic}
+                            {content.attributes.blog_theme} / {content.attributes.blog_topic}
                           </p>
 
                           <p className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
-                            {content.subject}
+                            {content.attributes.blog_subject}
                           </p>
                         </div>
                         <div className="relative flex lg:mt-[60px] mt-[30px] lg:hiddden justify-between">
@@ -413,13 +427,13 @@ export default function Blog() {
                               href="https://www.linkedin.com/company/base-am/"
                               className="text-gray-600"
                             >
-                              <Image
-                                src={content.linktwt}
+                              <img
+                                src={`http://localhost:1337${content.attributes.blog_link_app.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
                                 alt="Base Asset Management"
-                              />
+                              /> *
                             </a>
                           </div>
 
@@ -428,8 +442,8 @@ export default function Blog() {
                               href="https://www.linkedin.com/company/base-am/"
                               className="text-gray-600"
                             >
-                              <Image
-                                src={content.linktwt}
+                              <img
+                                src={`http://localhost:1337${content.attributes.blog_link_app.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -439,7 +453,7 @@ export default function Blog() {
                           </div>
 
                           <div className="absolute bottom-0 right-0 font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
-                            {content.date}
+                            {content.attributes.blog_date}
                           </div>
                         </div>
                       </div>
@@ -474,3 +488,22 @@ export default function Blog() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+
+
+
+  const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> =
+    await fetchArticles();
+
+  return {
+    props: {
+
+      insights: {
+        items: articles.data,
+        pagination: articles.meta.pagination,
+      },
+    },
+  };
+};
+export default Blog
