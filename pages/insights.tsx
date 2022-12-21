@@ -433,7 +433,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                                 height={31}
                                 className="cursor-pointer"
                                 alt="Base Asset Management"
-                              /> *
+                              />
                             </a>
                           </div>
 
