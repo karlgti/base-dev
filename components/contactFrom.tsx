@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Button from "../components/backToTop";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Select from "react-select";
 import rightArrow from "../public/img/Arrow1.png";
 import Image from "next/image";
+import { sendContactForm } from "../components/Services";
 
 const Country = [
   { label: "Albania", value: "1" },
@@ -198,8 +199,31 @@ export default function ContactForm() {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
+  const [message, setMessage] = useState("");
+  const formRef = useRef();
 
   const [isShown, setIsShown] = useState(false);
+  const submitContact = async (e) => {
+    e.preventDefault();
+    console.log(e);
+    const res = await sendContactForm({
+      firstName: e.target[0].value,
+      lastName: e.target[1].value,
+      companyTitle: e.target[2].value,
+      companyEmail: e.target[3].value,
+      country: e.target[4].value,
+      describe: e.target[5].value,
+      services: e.target[6].value,
+      message: e.target[7].value,
+
+    });
+    if (res == 0) {
+      setMessage("Thank you for your valuable comment!");
+      formRef.current.reset();
+    } else {
+      setMessage("Something went wrong! Please try again");
+    }
+  };
 
   const style = {
     control: (base, state) => ({
@@ -224,6 +248,8 @@ export default function ContactForm() {
                 </h1>
                 <p className="font-normal lg:mt-[49px]	lg:text-[16px]  lg:leading-[28px] mt-[49px]	text-[15px]  leading-[25px]">
                   Thank you for your interest!
+                  {message}
+                  <span onClick={() => setMessage("")}>&times; </span>
                 </p>
 
                 <p className="font-normal lg:mt-[20px]	lg:text-[16px]  lg:leading-[28px] mt-[20px]	text-[15px]  leading-[25px]">
@@ -234,7 +260,12 @@ export default function ContactForm() {
               <h1 className="font-normal text-[18px] mb-[24px] leading-[28px] text-[#E04403]">
                 (*Mandatory data)
               </h1>
-              <form action="" className="w-[90%]">
+              <form
+                action=""
+                className="w-[90%]"
+                ref={formRef}
+                onSubmit={submitContact}
+              >
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
@@ -282,14 +313,15 @@ export default function ContactForm() {
                   <div className="w-full px-3">
                     <label
                       className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-company-Email"
+                      htmlFor="email"
                     >
                       Company Email <span className="text-[#CBC3BB]">*</span>
                     </label>
                     <input
+                    required
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-company-Email"
-                      type="text"
+                      id="email"
+                      type="email"
                     />
                   </div>
                 </div>
