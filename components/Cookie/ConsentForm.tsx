@@ -90,7 +90,7 @@ const CookieConsentForm = ({ showModal, setShowModal }: Props) => {
         maxWidth={"xl"}
         fullScreen={onMobile ? true : false}
       >
-        <div className="h-full w-full lg:h-[82vh] lg:w-[82vw] lg:p-12 lg:pb-6 pb-6 bg-white flex justify-between flex-col">
+        <div className="h-full w-full lg:h-[82vh] lg:w-[89vw] lg:p-12 lg:pb-6 pb-6 bg-white flex justify-between flex-col">
           <div className="w-full space-y-8 overflow-y-scroll px-4 lg:pr-2 py-6 lg:pt-0 lg:pb-6 h-[80%]">
             <h1 className="text-3xl ">COOKIES SETTINGS</h1>
 

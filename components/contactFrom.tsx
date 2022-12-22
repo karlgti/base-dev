@@ -215,7 +215,6 @@ export default function ContactForm() {
       describe: e.target[5].value,
       services: e.target[6].value,
       message: e.target[7].value,
-
     });
     if (res == 0) {
       setMessage("Thank you for your valuable comment!");
@@ -235,6 +234,8 @@ export default function ContactForm() {
       },
     }),
   };
+
+  
   return (
     //2882F6
     <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
@@ -278,6 +279,7 @@ export default function ContactForm() {
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="grid-first-name"
                       type="text"
+                      required
                     />
                   </div>
                   <div className="w-full md:w-1/2 px-3">
@@ -291,6 +293,7 @@ export default function ContactForm() {
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="grid-last-name"
                       type="text"
+                      required
                     />
                   </div>
                 </div>
@@ -306,6 +309,7 @@ export default function ContactForm() {
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="grid-company-title"
                       type="text"
+                      required
                     />
                   </div>
                 </div>
@@ -318,7 +322,7 @@ export default function ContactForm() {
                       Company Email <span className="text-[#CBC3BB]">*</span>
                     </label>
                     <input
-                    required
+                      required
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="email"
                       type="email"
@@ -337,6 +341,7 @@ export default function ContactForm() {
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="grid-company-Name"
                       type="text"
+                      required
                     />
                   </div>
                 </div>
@@ -350,6 +355,7 @@ export default function ContactForm() {
                   </label>
                   <Select
                     options={Country}
+                    required
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
@@ -360,7 +366,9 @@ export default function ContactForm() {
                     styles={style}
                     id="grid-interested"
                     placeholder={<div>-- Please Select --</div>}
-                  />
+                    
+                    />
+                  
                 </div>
 
                 <div className="w-full mb-6">
@@ -383,6 +391,7 @@ export default function ContactForm() {
                     styles={style}
                     id="grid-interested"
                     placeholder={<div>-- Please Select --</div>}
+                    required
                   />
                 </div>
 
@@ -409,6 +418,7 @@ export default function ContactForm() {
                     id="grid-interested"
                     isMulti
                     placeholder={<div>-- Please Select --</div>}
+                    required
                   />
                 </div>
 
@@ -424,6 +434,7 @@ export default function ContactForm() {
                       className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
                       id="grid-Message"
                       rows={4}
+                      required
                     />
                   </div>
                 </div>

@@ -135,7 +135,7 @@ function investmentApproach() {
                       <li>regulatory risk in China</li>
                       <li>
                         increasing influencing power from social networking
-                        platforms like Gameshop event.
+                        platforms like GameStop event.
                       </li>
                     </ol>
                     <style jsx>{`
@@ -205,7 +205,7 @@ function investmentApproach() {
                 <p className="lg:font-normal lg:text-[16px] mt-[23px] lg:mt-[46px] lg:leading-[28px] text-[#000000] text-[15px] leading-[25px] font-[400]">
                   In view of rising tide of irrationality, BASE have
                   self-developed a proprietary technical analysis model called
-                  Hurricane Model.
+                  "Hurricane Model".
                 </p>
                 <br />
                 <p className="lg:font-normal lg:text-[16px] lg:leading-[28px] text-[#000000] text-[15px] leading-[25px] font-[400]">
@@ -286,7 +286,7 @@ function investmentApproach() {
                   `}</style>
                 </div>
               </div>
-              <div className=" border-t-[3px] lg:border-t-[0px] lg:pt-[0px] pt-[19px] lg:border-l-[3px] border-[#CC9C4A]">
+              <div className=" border-t-[3px] lg:border-t-[0px] lg:pt-[0px] pt-[19px] lg:border-l-[2px] border-[#CC9C4A]">
                 <div className="lg:pr-[32px] lg:pl-[32px]">
                 <p className="font-[600] italic lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px]">
                     while our technical model’s <br /> objectives are to track

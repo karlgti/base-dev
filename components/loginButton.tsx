@@ -62,7 +62,7 @@ export default function MaxWidthDialog({ text }) {
               fontWeight: 500,
             }}
           >
-            Investor Iogin
+            Investor Login
           </Typography>
         </Button>
       </ThemeProvider>

@@ -238,7 +238,7 @@ export default function MainHeader({ bg }) {
                 </a>
               </div>
 
-              <div className="pl-[34px] pr-[46px] hidden lg:block">
+              <div className="pl-[31.5px] pr-[43.5px] hidden lg:block">
                 <LoginButton text={"common.white"} />
               </div>
             </Toolbar>
@@ -392,7 +392,7 @@ export default function MainHeader({ bg }) {
           <div>
             <Dis
               nameprop={"Disclaimers"}
-              idx={3}
+              idx={0}
               css={
                 "absolute bottom-[0px] pl-4 lg:pl-[15px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
               }
