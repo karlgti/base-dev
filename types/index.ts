@@ -26,7 +26,8 @@ export interface IArticlesAttribute {
     blog_subject: string;
     blog_link: string;
     slug: string;
-    blog_link_app: any;
+    blog_platform: any;
+    platform_link: string;
     blog_image: any;
     blog_date: string;
 }
