@@ -1,5 +1,5 @@
 import { Dialog, Typography } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import CookieConsentForm from "components/Cookie/ConsentForm";
@@ -51,6 +51,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
   const handleClose = () => setOpen(false);
   const [showConsent, setShowConsent] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const topAnchor = useRef<any>(null);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -61,6 +62,9 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
       console.log("agree: ", agreed);
     }
   }, []);
+  const goTop = useMemo(() => {
+    topAnchor.current&&topAnchor.current.scroll({top:0});
+  }, [value])
 
   return (
     <div>
@@ -101,7 +105,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               />
             </Tabs>
           </div>
-          <div className="mt-7 mx-4 overflow-auto scrollbar-hide">
+          <div className="mt-7 mx-4 overflow-auto scrollbar-hide" ref={topAnchor}> 
             <TabPanel value={value} index={0}>
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 TERMS OF USE
