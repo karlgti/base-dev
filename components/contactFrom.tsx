@@ -1,211 +1,212 @@
-import React, { useState, useRef } from "react";
-import Button from "../components/backToTop";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Select from "react-select";
-import rightArrow from "../public/img/Arrow1.png";
-import Image from "next/image";
-import { sendContactForm } from "../components/Services";
+import React, { useState, useRef } from 'react';
+import Button from '../components/backToTop';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Select from 'react-select';
+import rightArrow from '../public/img/Arrow1.png';
+import Image from 'next/image';
+import { sendContactForm } from '../components/Services';
 
 const Country = [
-  { label: "Albania", value: "1" },
-  { label: "Algeria", value: "2" },
-  { label: "Angola", value: "3" },
-  { label: "Anguilla", value: "4" },
-  { label: "Argentina", value: "5" },
-  { label: "Armenia", value: "6" },
-  { label: "Aruba", value: "7" },
-  { label: "Australia", value: "8" },
-  { label: "Austria", value: "9" },
-  { label: "Azerbaijan", value: "10" },
-  { label: "Bahamas", value: "11" },
-  { label: "Bahrain", value: "12" },
-  { label: "Bangladesh", value: "13" },
-  { label: "Barbados", value: "14" },
-  { label: "Belarus", value: "15" },
-  { label: "Belgium", value: "16" },
-  { label: "Belize", value: "17" },
-  { label: "Benin", value: "18" },
-  { label: "Bermuda", value: "19" },
-  { label: "Bhutan", value: "20" },
-  { label: "Bolivia", value: "21" },
-  { label: "Bosnia and Herzegovina", value: "22" },
-  { label: "Botswana", value: "23" },
-  { label: "Brazil", value: "24" },
-  { label: "Brunei Darussalam", value: "25" },
-  { label: "Bulgaria", value: "26" },
-  { label: "Burkina Faso", value: "27" },
-  { label: "Burundi", value: "28" },
-  { label: "Cambodia", value: "29" },
-  { label: "Cameroon", value: "30" },
-  { label: "Canada", value: "31" },
-  { label: "Cape Verde", value: "32" },
-  { label: "Cayman Islands", value: "33" },
-  { label: "Central African Rep", value: "34" },
-  { label: "Chad", value: "35" },
-  { label: "Chile", value: "36" },
-  { label: "China (People's Rep)", value: "37" },
-  { label: "Colombia", value: "38" },
-  { label: "Congo(Rep)", value: "39" },
-  { label: "Cook Islands", value: "40" },
-  { label: "Costa Rica", value: "41" },
-  { label: "Cote d'Ivoire (Rep)", value: "42" },
-  { label: "Croatia", value: "43" },
-  { label: "Cyprus", value: "44" },
-  { label: "Czech (Rep)", value: "45" },
-  { label: "Luxembourg", value: "46" },
-  { label: "Macao", value: "47" },
-  { label: "Macedonia", value: "48" },
-  { label: "Madagascar", value: "49" },
-  { label: "Malawi", value: "50" },
-  { label: "Malaysia", value: "51" },
-  { label: "Maldives", value: "52" },
-  { label: "Mali", value: "53" },
-  { label: "Malta", value: "54" },
-  { label: "Mauritius", value: "55" },
-  { label: "Mauritania", value: "56" },
-  { label: "Mexico", value: "57" },
-  { label: "Moldova", value: "58" },
-  { label: "Mongolia", value: "59" },
-  { label: "Morocco", value: "60" },
-  { label: "Myanmar", value: "61" },
-  { label: "Namibia", value: "62" },
-  { label: "Nauru", value: "63" },
-  { label: "Nepal", value: "64" },
-  { label: "Netherlands", value: "65" },
-  { label: "New Caledonia", value: "66" },
-  { label: "New Zealand", value: "67" },
-  { label: "Niger", value: "68" },
-  { label: "Nigeria", value: "69" },
-  { label: "Norway", value: "70" },
-  { label: "Oman", value: "71" },
-  { label: "Pakistan", value: "72" },
-  { label: "Panama", value: "73" },
-  { label: "Papua New Guinea", value: "74" },
-  { label: "Paraguay", value: "75" },
-  { label: "Peru", value: "76" },
-  { label: "Philippines", value: "77" },
-  { label: "Poland", value: "78" },
-  { label: "Portugal", value: "79" },
-  { label: "Qatar", value: "80" },
-  { label: "Romania", value: "81" },
-  { label: "Russian Federation", value: "82" },
-  { label: "Rwanda", value: "83" },
-  { label: "Saint Christopher (St. Kitts) and Nevis", value: "84" },
-  { label: "Dem Rep of Congo", value: "85" },
-  { label: "Denmark", value: "86" },
-  { label: "Dominican Rep.", value: "87" },
-  { label: "Dominica (Commonwealth of)", value: "88" },
-  { label: "Ecuador", value: "89" },
-  { label: "Egypt", value: "90" },
-  { label: "El Salvador", value: "91" },
-  { label: "Eritrea", value: "92" },
-  { label: "Estonia", value: "93" },
-  { label: "Ethiopia", value: "94" },
-  { label: "Fiji", value: "95" },
-  { label: "Finland", value: "96" },
-  { label: "French Polynesia", value: "97" },
-  { label: "France", value: "98" },
-  { label: "Gabon", value: "99" },
-  { label: "Georgia", value: "100" },
-  { label: "Germany", value: "101" },
-  { label: "Ghana", value: "102" },
-  { label: "Gibraltar", value: "103" },
+  { label: 'Albania', value: '1' },
+  { label: 'Algeria', value: '2' },
+  { label: 'Angola', value: '3' },
+  { label: 'Anguilla', value: '4' },
+  { label: 'Argentina', value: '5' },
+  { label: 'Armenia', value: '6' },
+  { label: 'Aruba', value: '7' },
+  { label: 'Australia', value: '8' },
+  { label: 'Austria', value: '9' },
+  { label: 'Azerbaijan', value: '10' },
+  { label: 'Bahamas', value: '11' },
+  { label: 'Bahrain', value: '12' },
+  { label: 'Bangladesh', value: '13' },
+  { label: 'Barbados', value: '14' },
+  { label: 'Belarus', value: '15' },
+  { label: 'Belgium', value: '16' },
+  { label: 'Belize', value: '17' },
+  { label: 'Benin', value: '18' },
+  { label: 'Bermuda', value: '19' },
+  { label: 'Bhutan', value: '20' },
+  { label: 'Bolivia', value: '21' },
+  { label: 'Bosnia and Herzegovina', value: '22' },
+  { label: 'Botswana', value: '23' },
+  { label: 'Brazil', value: '24' },
+  { label: 'Brunei Darussalam', value: '25' },
+  { label: 'Bulgaria', value: '26' },
+  { label: 'Burkina Faso', value: '27' },
+  { label: 'Burundi', value: '28' },
+  { label: 'Cambodia', value: '29' },
+  { label: 'Cameroon', value: '30' },
+  { label: 'Canada', value: '31' },
+  { label: 'Cape Verde', value: '32' },
+  { label: 'Cayman Islands', value: '33' },
+  { label: 'Central African Rep', value: '34' },
+  { label: 'Chad', value: '35' },
+  { label: 'Chile', value: '36' },
+  { label: "China (People's Rep)", value: '37' },
+  { label: 'Colombia', value: '38' },
+  { label: 'Congo(Rep)', value: '39' },
+  { label: 'Cook Islands', value: '40' },
+  { label: 'Costa Rica', value: '41' },
+  { label: "Cote d'Ivoire (Rep)", value: '42' },
+  { label: 'Croatia', value: '43' },
+  { label: 'Cyprus', value: '44' },
+  { label: 'Czech (Rep)', value: '45' },
+  { label: 'Luxembourg', value: '46' },
+  { label: 'Macao', value: '47' },
+  { label: 'Macedonia', value: '48' },
+  { label: 'Madagascar', value: '49' },
+  { label: 'Malawi', value: '50' },
+  { label: 'Malaysia', value: '51' },
+  { label: 'Maldives', value: '52' },
+  { label: 'Mali', value: '53' },
+  { label: 'Malta', value: '54' },
+  { label: 'Mauritius', value: '55' },
+  { label: 'Mauritania', value: '56' },
+  { label: 'Mexico', value: '57' },
+  { label: 'Moldova', value: '58' },
+  { label: 'Mongolia', value: '59' },
+  { label: 'Morocco', value: '60' },
+  { label: 'Myanmar', value: '61' },
+  { label: 'Namibia', value: '62' },
+  { label: 'Nauru', value: '63' },
+  { label: 'Nepal', value: '64' },
+  { label: 'Netherlands', value: '65' },
+  { label: 'New Caledonia', value: '66' },
+  { label: 'New Zealand', value: '67' },
+  { label: 'Niger', value: '68' },
+  { label: 'Nigeria', value: '69' },
+  { label: 'Norway', value: '70' },
+  { label: 'Oman', value: '71' },
+  { label: 'Pakistan', value: '72' },
+  { label: 'Panama', value: '73' },
+  { label: 'Papua New Guinea', value: '74' },
+  { label: 'Paraguay', value: '75' },
+  { label: 'Peru', value: '76' },
+  { label: 'Philippines', value: '77' },
+  { label: 'Poland', value: '78' },
+  { label: 'Portugal', value: '79' },
+  { label: 'Qatar', value: '80' },
+  { label: 'Romania', value: '81' },
+  { label: 'Russian Federation', value: '82' },
+  { label: 'Rwanda', value: '83' },
+  { label: 'Saint Christopher (St. Kitts) and Nevis', value: '84' },
+  { label: 'Dem Rep of Congo', value: '85' },
+  { label: 'Denmark', value: '86' },
+  { label: 'Dominican Rep.', value: '87' },
+  { label: 'Dominica (Commonwealth of)', value: '88' },
+  { label: 'Ecuador', value: '89' },
+  { label: 'Egypt', value: '90' },
+  { label: 'El Salvador', value: '91' },
+  { label: 'Eritrea', value: '92' },
+  { label: 'Estonia', value: '93' },
+  { label: 'Ethiopia', value: '94' },
+  { label: 'Fiji', value: '95' },
+  { label: 'Finland', value: '96' },
+  { label: 'French Polynesia', value: '97' },
+  { label: 'France', value: '98' },
+  { label: 'Gabon', value: '99' },
+  { label: 'Georgia', value: '100' },
+  { label: 'Germany', value: '101' },
+  { label: 'Ghana', value: '102' },
+  { label: 'Gibraltar', value: '103' },
   {
-    label: "United Kingdom of Great Britain and Northern Ireland",
-    value: "104",
+    label: 'United Kingdom of Great Britain and Northern Ireland',
+    value: '104',
   },
-  { label: "Greece", value: "105" },
-  { label: "Grenada", value: "106" },
-  { label: "Guatemala", value: "107" },
-  { label: "Guinea", value: "108" },
-  { label: "Guyana", value: "109" },
-  { label: "Haiti", value: "110" },
-  { label: "Honduras", value: "111" },
-  { label: "Hong Kong", value: "112" },
-  { label: "Hungary", value: "113" },
-  { label: "Iceland", value: "114" },
-  { label: "India", value: "115" },
-  { label: "Indonesia", value: "116" },
-  { label: "Iran", value: "117" },
-  { label: "Iraq", value: "118" },
-  { label: "Ireland", value: "119" },
-  { label: "Israel", value: "120" },
-  { label: "Italy", value: "121" },
-  { label: "Jamaica", value: "122" },
-  { label: "Japan", value: "123" },
-  { label: "Jordan", value: "124" },
-  { label: "Kenya", value: "125" },
-  { label: "Korea (Rep)", value: "126" },
-  { label: "Kuwait", value: "127" },
-  { label: "Lao People's Dem Rep", value: "128" },
-  { label: "Latvia", value: "129" },
-  { label: "Lesotho", value: "130" },
-  { label: "Saint Lucia", value: "131" },
-  { label: "Saint Vincent and the Grenadines", value: "132" },
-  { label: "Sao Tome and Principe", value: "133" },
-  { label: "Saudi Arabia", value: "134" },
-  { label: "Senegal", value: "135" },
-  { label: "Seychelles", value: "136" },
-  { label: "Sierra Leone", value: "137" },
-  { label: "Singapore", value: "138" },
-  { label: "Slovakia", value: "139" },
-  { label: "Slovenia", value: "140" },
-  { label: "Solomon Islands", value: "141" },
-  { label: "Somalia", value: "142" },
-  { label: "South Africa", value: "143" },
-  { label: "Spain", value: "144" },
-  { label: "Sri Lanka", value: "145" },
-  { label: "Sudan", value: "146" },
-  { label: "Suriname", value: "147" },
-  { label: "Swaziland", value: "148" },
-  { label: "Sweden", value: "149" },
-  { label: "Switzerland", value: "150" },
-  { label: "Syrian Arab Rep", value: "151" },
-  { label: "Tanzania", value: "152" },
-  { label: "Thailand", value: "153" },
-  { label: "Togo", value: "154" },
-  { label: "Trinidad and Tobago", value: "155" },
-  { label: "Tunisia", value: "156" },
-  { label: "Turkey", value: "157" },
-  { label: "Uganda", value: "158" },
-  { label: "Ukraine", value: "159" },
-  { label: "United Arab Emirates", value: "160" },
-  { label: "United States of America", value: "161" },
-  { label: "Uruguay", value: "162" },
-  { label: "Venezuela", value: "163" },
-  { label: "Viet Nam", value: "164" },
-  { label: "Western Samoa", value: "165" },
-  { label: "Yemen", value: "166" },
-  { label: "Yugoslavia", value: "167" },
-  { label: "Zambia", value: "168" },
-  { label: "Zimbabwe", value: "169" },
+  { label: 'Greece', value: '105' },
+  { label: 'Grenada', value: '106' },
+  { label: 'Guatemala', value: '107' },
+  { label: 'Guinea', value: '108' },
+  { label: 'Guyana', value: '109' },
+  { label: 'Haiti', value: '110' },
+  { label: 'Honduras', value: '111' },
+  { label: 'Hong Kong', value: '112' },
+  { label: 'Hungary', value: '113' },
+  { label: 'Iceland', value: '114' },
+  { label: 'India', value: '115' },
+  { label: 'Indonesia', value: '116' },
+  { label: 'Iran', value: '117' },
+  { label: 'Iraq', value: '118' },
+  { label: 'Ireland', value: '119' },
+  { label: 'Israel', value: '120' },
+  { label: 'Italy', value: '121' },
+  { label: 'Jamaica', value: '122' },
+  { label: 'Japan', value: '123' },
+  { label: 'Jordan', value: '124' },
+  { label: 'Kenya', value: '125' },
+  { label: 'Korea (Rep)', value: '126' },
+  { label: 'Kuwait', value: '127' },
+  { label: "Lao People's Dem Rep", value: '128' },
+  { label: 'Latvia', value: '129' },
+  { label: 'Lesotho', value: '130' },
+  { label: 'Saint Lucia', value: '131' },
+  { label: 'Saint Vincent and the Grenadines', value: '132' },
+  { label: 'Sao Tome and Principe', value: '133' },
+  { label: 'Saudi Arabia', value: '134' },
+  { label: 'Senegal', value: '135' },
+  { label: 'Seychelles', value: '136' },
+  { label: 'Sierra Leone', value: '137' },
+  { label: 'Singapore', value: '138' },
+  { label: 'Slovakia', value: '139' },
+  { label: 'Slovenia', value: '140' },
+  { label: 'Solomon Islands', value: '141' },
+  { label: 'Somalia', value: '142' },
+  { label: 'South Africa', value: '143' },
+  { label: 'Spain', value: '144' },
+  { label: 'Sri Lanka', value: '145' },
+  { label: 'Sudan', value: '146' },
+  { label: 'Suriname', value: '147' },
+  { label: 'Swaziland', value: '148' },
+  { label: 'Sweden', value: '149' },
+  { label: 'Switzerland', value: '150' },
+  { label: 'Syrian Arab Rep', value: '151' },
+  { label: 'Tanzania', value: '152' },
+  { label: 'Thailand', value: '153' },
+  { label: 'Togo', value: '154' },
+  { label: 'Trinidad and Tobago', value: '155' },
+  { label: 'Tunisia', value: '156' },
+  { label: 'Turkey', value: '157' },
+  { label: 'Uganda', value: '158' },
+  { label: 'Ukraine', value: '159' },
+  { label: 'United Arab Emirates', value: '160' },
+  { label: 'United States of America', value: '161' },
+  { label: 'Uruguay', value: '162' },
+  { label: 'Venezuela', value: '163' },
+  { label: 'Viet Nam', value: '164' },
+  { label: 'Western Samoa', value: '165' },
+  { label: 'Yemen', value: '166' },
+  { label: 'Yugoslavia', value: '167' },
+  { label: 'Zambia', value: '168' },
+  { label: 'Zimbabwe', value: '169' },
 ];
 
 const interest = [
-  { value: 1, label: "Advisory Service" },
-  { value: 2, label: "Discretionary Account" },
-  { value: 3, label: "Investment Fund" },
+  { value: 1, label: 'Advisory Service' },
+  { value: 2, label: 'Discretionary Account' },
+  { value: 3, label: 'Investment Fund' },
 ];
 
 const describe = [
-  { value: 1, label: "Investment Advisor" },
-  { value: 2, label: "Asset Owner / Institutional Investor" },
-  { value: 3, label: "Individual / Corporate Investor" },
+  { value: 1, label: 'Investment Advisor' },
+  { value: 2, label: 'Asset Owner / Institutional Investor' },
+  { value: 3, label: 'Individual / Corporate Investor' },
 ];
 
 export default function ContactForm() {
   const theme = createTheme({
     typography: {
-      fontFamily: ["Inter", "sans-serif"].join(","),
+      fontFamily: ['Inter', 'sans-serif'].join(','),
     },
   });
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
+  const [isShown, setIsShown] = useState(false);
   const formRef = useRef();
 
-  const [isShown, setIsShown] = useState(false);
   const submitContact = async (e) => {
     e.preventDefault();
-    console.log(e);
+    console.table(e);
+    console.dir(e);
     const res = await sendContactForm({
       firstName: e.target[0].value,
       lastName: e.target[1].value,
@@ -217,143 +218,143 @@ export default function ContactForm() {
       message: e.target[7].value,
     });
     if (res == 0) {
-      setMessage("Thank you for your valuable comment!");
-      formRef.current.reset();
-    } else {
-      setMessage("Something went wrong! Please try again");
+      setMessage('Thank you for your valuable comment!');
+      formRef;
+      setMessage('Something went wrong! Please try again');
     }
   };
 
   const style = {
     control: (base, state) => ({
       ...base,
-      border: "1px solid #BFC6C3",
-      boxShadow: "none",
-      "&:hover": {
-        border: "1px solid #BFC6C3",
+      border: '1px solid #BFC6C3',
+      boxShadow: 'none',
+      '&:hover': {
+        border: '1px solid #BFC6C3',
       },
     }),
   };
 
-  
   return (
     //2882F6
-    <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
+    <div className='relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left'>
       <ThemeProvider theme={theme}>
-        <div className="max-w-[1440px] lg:pb-[97px] pb-[70px]">
-          <main className="pt-[5rem] border-grey border-t-4 mx-[10%]">
-            <header className="">
-              <div className="lg:mb-[56px] mb-[12px]">
-                <h1 className="font-normal lg:mt-[101px]	lg:text-[82px] lg:leading-[96px] mt-[86px] text-[46px] leading-[32px] text-[#001673]">
+        <div className='max-w-[1440px] lg:pb-[97px] pb-[70px]'>
+          <main className='pt-[5rem] border-grey border-t-4 mx-[10%]'>
+            <header className=''>
+              <div className='lg:mb-[56px] mb-[12px]'>
+                <h1 className='font-normal lg:mt-[101px]	lg:text-[82px] lg:leading-[96px] mt-[86px] text-[46px] leading-[32px] text-[#001673]'>
                   Contact Us
                 </h1>
-                <p className="font-normal lg:mt-[49px]	lg:text-[16px]  lg:leading-[28px] mt-[49px]	text-[15px]  leading-[25px]">
+                <p className='font-normal lg:mt-[49px]	lg:text-[16px]  lg:leading-[28px] mt-[49px]	text-[15px]  leading-[25px]'>
                   Thank you for your interest!
                   {message}
-                  <span onClick={() => setMessage("")}>&times; </span>
+                  <span onClick={() => setMessage('')}>&times; </span>
                 </p>
 
-                <p className="font-normal lg:mt-[20px]	lg:text-[16px]  lg:leading-[28px] mt-[20px]	text-[15px]  leading-[25px]">
+                <p className='font-normal lg:mt-[20px]	lg:text-[16px]  lg:leading-[28px] mt-[20px]	text-[15px]  leading-[25px]'>
                   Please complete the form below and we’ll be in touch as soon
                   as possible.
                 </p>
               </div>
-              <h1 className="font-normal text-[18px] mb-[24px] leading-[28px] text-[#E04403]">
+              <h1 className='font-normal text-[18px] mb-[24px] leading-[28px] text-[#E04403]'>
                 (*Mandatory data)
               </h1>
               <form
-                action=""
-                className="w-[90%]"
-                ref={formRef}
+                action=''
+                className='w-[90%]'
+                // ref={formRef}
                 onSubmit={submitContact}
               >
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <div className='flex flex-wrap -mx-3 mb-6'>
+                  <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                     <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-first-name"
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='grid-first-name'
                     >
-                      First Name <span className="text-[#CBC3BB]">*</span>
+                      First Name <span className='text-[#CBC3BB]'>*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-first-name"
-                      type="text"
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='grid-first-name'
+                      type='text'
                       required
                     />
                   </div>
-                  <div className="w-full md:w-1/2 px-3">
+                  <div className='w-full md:w-1/2 px-3'>
                     <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-last-name"
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='grid-last-name'
                     >
-                      Last Name <span className="text-[#CBC3BB]">*</span>
+                      Last Name <span className='text-[#CBC3BB]'>*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-last-name"
-                      type="text"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
-                    <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-company-title"
-                    >
-                      Company Title <span className="text-[#CBC3BB]">*</span>
-                    </label>
-                    <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-company-title"
-                      type="text"
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='grid-last-name'
+                      type='text'
                       required
                     />
                   </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
+                <div className='flex flex-wrap -mx-3 mb-6'>
+                  <div className='w-full px-3'>
                     <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="email"
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='grid-company-title'
                     >
-                      Company Email <span className="text-[#CBC3BB]">*</span>
+                      Company Title <span className='text-[#CBC3BB]'>*</span>
                     </label>
                     <input
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='grid-company-title'
+                      type='text'
                       required
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="email"
-                      type="email"
                     />
                   </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
+                <div className='flex flex-wrap -mx-3 mb-6'>
+                  <div className='w-full px-3'>
                     <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-company-Name"
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='email'
                     >
-                      Company Name <span className="text-[#CBC3BB]">*</span>
+                      Company Email <span className='text-[#CBC3BB]'>*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-company-Name"
-                      type="text"
+                      required
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='email'
+                      type='email'
+                    />
+                  </div>
+                </div>
+                <div className='flex flex-wrap -mx-3 mb-6'>
+                  <div className='w-full px-3'>
+                    <label
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='grid-company-Name'
+                    >
+                      Company Name <span className='text-[#CBC3BB]'>*</span>
+                    </label>
+                    <input
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='grid-company-Name'
+                      type='text'
                       required
                     />
                   </div>
                 </div>
 
-                <div className="w-full mb-6">
+                <div className='w-full mb-6'>
                   <label
-                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                    htmlFor="grid-describe"
+                    className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                    htmlFor='grid-describe'
                   >
-                    Country/Region <span className="text-[#CBC3BB]">*</span>
+                    Country/Region <span className='text-[#CBC3BB]'>*</span>
                   </label>
+                  {/* {Country.map((County) => ( */}
                   <Select
+                    // key={Country.values}
                     options={Country}
                     required
                     theme={(theme) => ({
@@ -363,21 +364,22 @@ export default function ContactForm() {
                         ...theme.colors,
                       },
                     })}
+                    {...Country.map((Country) => (
+                      <option value={Country.label}> {Country.label}</option>
+                    ))}
                     styles={style}
-                    id="grid-interested"
+                    id='grid-interested'
                     placeholder={<div>-- Please Select --</div>}
-                    
-                    />
-                  
+                  />
                 </div>
 
-                <div className="w-full mb-6">
+                <div className='w-full mb-6'>
                   <label
-                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                    htmlFor="grid-describe"
+                    className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                    htmlFor='grid-describe'
                   >
-                    How would you describe yourself?{" "}
-                    <span className="text-[#CBC3BB]">*</span>
+                    How would you describe yourself?{' '}
+                    <span className='text-[#CBC3BB]'>*</span>
                   </label>
                   <Select
                     options={describe}
@@ -389,50 +391,50 @@ export default function ContactForm() {
                       },
                     })}
                     styles={style}
-                    id="grid-interested"
+                    id='grid-interested'
                     placeholder={<div>-- Please Select --</div>}
                     required
                   />
                 </div>
 
-                <div className="w-full mb-6">
+                <div className='w-full mb-6'>
                   <label
-                    className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                    htmlFor="grid-describe"
+                    className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                    htmlFor='grid-describe'
                   >
-                    Which services are you interested in?{" "}
-                    <span className="text-[#CBC3BB]">*</span>
+                    Which services are you interested in?{' '}
+                    <span className='text-[#CBC3BB]'>*</span>
                   </label>
                   <Select
                     options={interest}
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
-                      boxShadow: "none",
-                      border: "10px solid lightgray",
+                      boxShadow: 'none',
+                      border: '10px solid lightgray',
                       colors: {
                         ...theme.colors,
                       },
                     })}
                     styles={style}
-                    id="grid-interested"
+                    id='grid-interested'
                     isMulti
                     placeholder={<div>-- Please Select --</div>}
                     required
                   />
                 </div>
 
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
+                <div className='flex flex-wrap -mx-3 mb-6'>
+                  <div className='w-full px-3'>
                     <label
-                      className="text-black-500 text-[16px] leading-[30px] font-normal dark:text-black"
-                      htmlFor="grid-Message"
+                      className='text-black-500 text-[16px] leading-[30px] font-normal dark:text-black'
+                      htmlFor='grid-Message'
                     >
-                      Message <span className="text-[#CBC3BB]">*</span>
+                      Message <span className='text-[#CBC3BB]'>*</span>
                     </label>
                     <textarea
-                      className="appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  "
-                      id="grid-Message"
+                      className='appearance-none block w-full bg-white text-gray-700 border border-[#BFC6C3] rounded-none py-2 px-4 leading-tight focus:outline-none  '
+                      id='grid-Message'
                       rows={4}
                       required
                     />
@@ -443,15 +445,15 @@ export default function ContactForm() {
                   <button
                     onMouseEnter={() => setIsShown(true)}
                     onMouseLeave={() => setIsShown(false)}
-                    className="lg:mt-[40px] mt-[10px] w-[170px] h-[58px] bg-[#001B71] text-white font-bold text-[14px] leading-[17px]"
+                    className='lg:mt-[40px] mt-[10px] w-[170px] h-[58px] bg-[#001B71] text-white font-bold text-[14px] leading-[17px]'
                   >
                     {!isShown && <p>Submit</p>}
                     {isShown && (
-                      <div className="flex justify-around mx-[31.5px]">
-                        <div className="self-center">
+                      <div className='flex justify-around mx-[31.5px]'>
+                        <div className='self-center'>
                           <p>Submit</p>
                         </div>
-                        <div className="pt-1">
+                        <div className='pt-1'>
                           <Image src={rightArrow} />
                         </div>
                       </div>
@@ -461,13 +463,13 @@ export default function ContactForm() {
               </form>
             </header>
             <div>
-              <div className="border-t-[1px] border-[#CBC3BB] lg:mt-[78px] mt-[36px]"></div>
-              <div className="lg:mt-[53px] mt-[23px]">
-                <span className="text-[#CBC3BB] font-medium text-[16px] leading-[28px]">
+              <div className='border-t-[1px] border-[#CBC3BB] lg:mt-[78px] mt-[36px]'></div>
+              <div className='lg:mt-[53px] mt-[23px]'>
+                <span className='text-[#CBC3BB] font-medium text-[16px] leading-[28px]'>
                   Address
                 </span>
                 <br />
-                <p className="font-medium lg:text-[18px] mt-[17px] lg:leading-[28px] text-[15px] leading-[25px]">
+                <p className='font-medium lg:text-[18px] mt-[17px] lg:leading-[28px] text-[15px] leading-[25px]'>
                   Rm 1904, Tung Che Commercial Centre, 246 Des Voeux Road West,
                   Hong Kong
                 </p>
