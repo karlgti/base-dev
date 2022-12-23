@@ -15,4 +15,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TAKUDA }}'
           projectId: takuda
 env:
-  NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY: ${{AIzaSyBu3IC8qYolAOq7J7klXWfBBrZCIIyBk8M}}
+  NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY: "AIzaSyBu3IC8qYolAOq7J7klXWfBBrZCIIyBk8M"
