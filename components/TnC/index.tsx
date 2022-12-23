@@ -1,7 +1,8 @@
 import { Dialog, Typography } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+import CookieConsentForm from "components/Cookie/ConsentForm";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -48,6 +49,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [showConsent, setShowConsent] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -73,13 +76,16 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
         aria-describedby="modal-modal-description"
         maxWidth={"lg"}
       >
-        <div className="h-[82vh] lg:p-12 p-5 pb-6 bg-white flex flex-col">
+        <div className="h-[82vh] lg:p-12 pt-4 p-1 pb-6 bg-white flex flex-col">
           <div className=" h-[20%]">
             <Tabs
               value={value}
               onChange={handleChange}
-              aria-label="basic tabs example"
-              textColor = "inherit"
+              variant="scrollable"
+              scrollButtons
+              allowScrollButtonsMobile
+              aria-label="scrollable force tabs example"
+              textColor="inherit"
               TabIndicatorProps={{
                 style: {
                   display: "none",
@@ -299,7 +305,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   other materials without our permission. Nothing on this
                   Website should be considered as granting any licence or right
                   under any trademark, copyright, or other intellectual property
-                  rights of us or any third party.
+                  rights of us or any third-party.
                 </p>
               </div>
 
@@ -417,7 +423,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   fees) that arise from or relate to: (a) your use of the
                   Website; (b) breaches of these terms by you; or (c) violation
                   of any applicable law, statute, ordinance, regulation or of
-                  any third party’s rights by you.
+                  any third-party’s rights by you.
                 </p>
               </div>
             </TabPanel>
@@ -447,8 +453,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We are responsible for how we collect and use personal data
                   about you. If you have questions related to this Privacy
-                  Notice or how we handle your personal data, please contact us
-                  at info@base-am.com.
+                  Notice, please contact us at info@base-am.com.
                 </p>
               </div>
 
@@ -489,11 +494,11 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                       your name, title, gender, nationality and age;
                     </li>
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      your image and likeness of you (for example if we are
+                      your image and likeness of you (for example, if we are
                       meeting you in person);
                     </li>
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      your signature (for example when signing a contract or
+                      your signature (for example, when signing a contract or
                       other document provided to us);
                     </li>
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
@@ -503,7 +508,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   </ul>
 
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    work related information, including:
+                    work-related information, including:
                   </li>
                   <ul className="list-[circle] ml-5">
                     <li className="text-justify font-normal text-[16px] leading-[26px]">
@@ -527,20 +532,20 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We also collect and share generalised data, such as
                   statistical or demographic information, for any purpose. This
-                  type of data is originated from your personal but cannot be
+                  type of data is originated from your account but cannot be
                   used to identify you specifically. For example, we may compute
-                  the percentage of our users who are interested in a certain
-                  product type by combining your browsing information with other
-                  data. However, if we combine or link aggregated data with your
-                  personal data so that it can be used to identify you, we
-                  consider the combined data to be personal data under this
-                  Privacy Notice and will use it in accordance with this notice.
+                  the percentage of our users who are interested in particular
+                  product types by combining your browsing information with
+                  other data. However, if we combine or link your data with the
+                  aggregated data which can be used to identify you, we consider
+                  the combined data to be personal data under this Privacy
+                  Notice and will use it in accordance with this notice.
                 </p>
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   If we are required by law to do so, or if we believe that it
                   is necessary to protect our rights and/or comply with judicial
                   or regulatory proceedings, a court order or other legal
-                  process, we may collect your personal data without your
+                  processes, we may collect your personal data without your
                   knowledge or consent.
                 </p>
               </div>
@@ -558,7 +563,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                     contact form;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    when you request literature or research information from us;
+                    when you request research information from us;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     when you visit and browse our Website;
@@ -577,8 +582,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   We may also collect certain information when you interact with
                   our Website, such as your device type and browsing actions and
-                  patterns. We collect this personal data through using cookies,
-                  server logs and other similar technologies. Please see our
+                  patterns. We collect this personal data using cookies and
+                  server logs with similar technologies. Please see our
                   <span
                     onClick={() => setValue(2)}
                     className="text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
@@ -589,23 +594,20 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
-                  Furthermore, we may receive your personal data from third
-                  parties and public sources, such as:
+                  Furthermore, we may receive your personal data from
+                  third-parties and public sources, such as:
                 </p>
                 <ul className="list-disc ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    the company we use to provide services to you, such as our
-                    webinar service provider;
+                    our webinar service provider;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    the companies contracted by us to offer or market our sales
-                    materials to you, such as our sales affiliates and external
-                    partners;
+                    our sales affiliates and external partners that offer/market
+                    our sales materials to you;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    our marketing service provider may combine the data provided
-                    on our Website by you with other publicly available data
-                    about you, such as your social media account information.
+                    our marketing service provider may combine your data on our
+                    Website with your social media account information.
                   </li>
                 </ul>
               </div>
@@ -615,15 +617,15 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   Whom Your Personal Data is Shared
                 </h6>
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
-                  We may share your personal data with third parties where
+                  We may share your personal data with third-parties where
                   required by law, where you have consented, or where we have
                   another legitimate interest in doing so, such as:
                 </p>
                 <ul className="list-disc ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     our service providers, including attorneys, IT service
-                    providers, webinar service provider and marketing service
-                    provider;
+                    providers, webinar service providers and marketing service
+                    providers;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     our sales affiliates and external partners;
@@ -644,8 +646,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                     a regulator or government entity if required by law, or if
                     we reasonably believe that disclosure is necessary to
                     protect our rights and/or to comply with judicial or
-                    regulatory proceedings, a court order, or other legal
-                    process.
+                    regulatory proceedings, court orders, or other legal
+                    processes.
                   </li>
                 </ul>
               </div>
@@ -662,18 +664,17 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   requirements. We assess the amount, type and sensitivity of
                   your personal data, as well as the potential risk of harm from
                   unauthorised use or disclosure of your personal data, whether
-                  we can fulfil the purposes goals through alternative methods
-                  and the applicable legal requirements when defining the
-                  appropriate retention period for personal data.
+                  we can fulfil the purposes and goals through alternative
+                  methods and the applicable legal requirements when defining
+                  the appropriate retention period for personal data.
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
-                  We may anonymise your personal data in some cases to prevent
-                  it from being linked to you, in which case it no longer
+                  We may sometimes anonymise your personal data to prevent it
+                  from being linked to you, in which case it no longer
                   constitutes personal data. We will securely erase your
                   personal data in line with applicable laws and regulations
-                  once we no longer require it for the purposes for which we
-                  collected it.
+                  once we no longer require it for the purposes we collect it.
                 </p>
               </div>
 
@@ -695,11 +696,10 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   In order to protect your information and ensure that only you
                   have access to it, we may request specific details from you.
-                  This is a security measure to guarantee that personal data is
-                  not given to anyone who isn't allowed to receive it. We strive
-                  to safeguard all information we collect from you, but we
-                  cannot guarantee the security of any information you submit to
-                  us.
+                  This security measure guarantees that personal data is not
+                  given to anyone who isn't allowed to receive it. We strive to
+                  safeguard all information we collect from you, but we cannot
+                  guarantee the security of any information you submit.
                 </p>
               </div>
 
@@ -746,7 +746,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Cookies are small text files containing small amounts of
                   information which are downloaded and may be stored on any of
-                  your internet enabled devices e.g. your computer, smartphone
+                  your internet-enabled devices, e.g. your computer, smartphone
                   or tablet - like a memory for a web page.
                 </p>
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
@@ -755,8 +755,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </p>
                 <ul className="list-disc ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    the internet domain and IP address from where you access the
-                    Website;
+                    the internet domain and the IP address from where you access
+                    the Website;
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     the type of browser software and operating system used to
@@ -808,10 +808,10 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   </li>
                   <p className="font-normal text-[16px] leading-[26px] text-justify">
                     These cookies allow us to recognise and count the number of
-                    visitors and to see how visitors move around our website
-                    when they are using it. This helps us to improve the way our
-                    website works, for example, by ensuring that users are
-                    finding what they are looking for easily.
+                    visitors and see how visitors move around our website when
+                    using it. This helps us improve how our website works, for
+                    example, by ensuring that users find what they are looking
+                    for easily.
                   </p>
                   <li className="font-semibold italic">
                     Functionality Cookies
@@ -826,21 +826,21 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   <p className="font-normal text-[16px] leading-[26px] text-justify">
                     These cookies record your visit to our website, the pages
                     you have visited and the links you have followed. We may
-                    also share this information with third parties for this
+                    also share this information with third-parties for this
                     purpose.
                   </p>
                 </ul>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Some cookies on the Website and other parts of the Services
-                  are controlled by third parties, such as social media APIs and
+                  are controlled by third-parties, such as social media APIs and
                   external website providers. These cookies are frequently
                   analytical/performance or targeting cookies. You should refer
-                  to the third parties’ own cookie and privacy policies to learn
-                  how they intend to use your data.
+                  to the third-parties’ cookie and privacy policies to learn how
+                  they intend to use your data.
                 </p>
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
-                  The third party cookies we use in our Services, include but
+                  The third-party cookies we use in our Services, include but
                   are not limited to:
                 </p>
                 <ul className="list-disc ml-5">
@@ -864,8 +864,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                       Twitter -{" "}
                     </span>
                     our Website and Services have embedded Twitter API for
-                    social media sharing purpose. For details of Twitter cookies
-                    usage, please click{" "}
+                    social media sharing purposes. For details of Twitter
+                    cookies usage, please click{" "}
                     <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies">
                       <span className="text-blue underline underline-offset-3">
                         here
@@ -878,8 +878,8 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                       LinkedIn -{" "}
                     </span>
                     our Website and Services have embedded Twitter API for
-                    social media sharing purpose. For details of Twitter cookies
-                    usage, please click{" "}
+                    social media sharing purposes. For details of Twitter
+                    cookies usage, please click{" "}
                     <a href="https://www.linkedin.com/legal/cookie-policy">
                       <span className="text-blue underline underline-offset-3">
                         here
@@ -901,21 +901,25 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   keep in mind that if you use your browser's settings to block
                   all cookies (including essential cookies), you may not be able
                   to access some or all of our Services. Click{" "}
-                  <a href="">
-                    <span className="text-blue underline underline-offset-3">
-                      here
-                    </span>
-                  </a>{" "}
+                  <span
+                    onClick={() => {
+                      setShowConsent(true);
+                      setShowPopup(false);
+                    }}
+                    className="text-blue cursor-pointer underline underline-offset-3"
+                  >
+                    here
+                  </span>{" "}
                   to view your cookie settings.
                 </p>
 
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   You can delete cookies that our Website sets on your browser
                   in the future if you want. The instructions for removing
-                  cookies from your device depend on which operating system and
-                  web browser you use. Please keep in mind, however, that
-                  ceasing agreement to the use of cookies on our website will
-                  reduce functionality of those same sites.
+                  cookies from your device depending on your operating system
+                  and web browser. Please keep in mind, however, that ceasing
+                  the agreement to use cookies on our website will reduce the
+                  functionality of those same sites.
                 </p>
               </div>
 
@@ -932,13 +936,17 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   info@base-am.com.
                 </p>
               </div>
+              <CookieConsentForm
+                showModal={showConsent}
+                setShowModal={setShowConsent}
+              />
             </TabPanel>
             <TabPanel value={value} index={3}>
               <h6 className="font-normal text-[26px] leading-[30px] my-3">
                 DEFINITION OF PROFESSIONAL INVESTOR
               </h6>
 
-              <h6 className="font-[600] italic text-[16px] leading-[26px] my-3">
+              <h6 className="font-[600] italic text-[16px] leading-[26px] my-5">
                 Securities of Futures Commissions Ordinance (Cap. 571) (the
                 “SFO”)
               </h6>
@@ -948,142 +956,206 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   “professional investor” means :—
                 </p>
 
-                <ul className="list-disc ml-5 list-[Lower-alpha]">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    Any recognized exchange company, recognized clearing house,
-                    recognized exchange controller or recognized investor
-                    compensation company, or any person authorized to provide
-                    automated trading services under section 95(2) of this
-                    Ordinance;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any intermediary, or any other person carrying on the
-                    business of the provision of investment services and
-                    regulated under the law of any place outside Hong Kong;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any authorized financial institution, or any bank which is
-                    not an authorized financial institution but is regulated
-                    under the law of any place outside Hong Kong;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any insurer authorized under the Insurance Ordinance (Cap.
-                    41), or any other person carrying on insurance business and
-                    regulated under the law of any place outside Hong Kong;
-                    (Amended 12 of 2015 s. 144)
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any scheme which—
-                  </li>
-                  <ul className="list-disc ml-5 list-[lower-roman]">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      is a collective investment scheme authorized under section
-                      104 of this Ordinance; or
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className=" alpha">
+                    <li>
+                      Any recognized exchange company, recognized clearing
+                      house, recognized exchange controller or recognized
+                      investor compensation company, or any person authorized to
+                      provide automated trading services under section 95(2) of
+                      this Ordinance;
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      is similarly constituted under the law of any place
-                      outside Hong Kong and, if it is regulated under the law of
-                      such place, is permitted to be operated under the law of
-                      such place,
+                    <li>
+                      any intermediary, or any other person carrying on the
+                      business of the provision of investment services and
+                      regulated under the law of any place outside Hong Kong;
+                    </li>
+                    <li>
+                      any authorized financial institution, or any bank which is
+                      not an authorized financial institution but is regulated
+                      under the law of any place outside Hong Kong;
+                    </li>
+                    <li>
+                      any insurer authorized under the Insurance Ordinance (Cap.
+                      41), or any other person carrying on insurance business
+                      and regulated under the law of any place outside Hong
+                      Kong; (Amended 12 of 2015 s. 144)
+                    </li>
+                    <li>any scheme which—</li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>
+                          is a collective investment scheme authorized under
+                          section 104 of this Ordinance; or
+                        </li>
+                        <li>
+                          is similarly constituted under the law of any place
+                          outside Hong Kong and, if it is regulated under the
+                          law of such place, is permitted to be operated under
+                          the law of such place,
+                        </li>
+                      </ul>
+                    </div>
+
+                    <h1 className="my-4">
+                      or any person by whom any such scheme is operated;
+                    </h1>
+
+                    <li>
+                      any registered scheme as defined in section 2(1) of the
+                      Mandatory Provident Fund Schemes Ordinance (Cap. 485), or
+                      its constituent fund as defined in section 2 of the
+                      Mandatory Provident Fund Schemes (General) Regulation
+                      (Cap. 485 sub. leg. A), or any person who, in relation to
+                      any such registered scheme, is an approved trustee or
+                      service provider as defined in section 2(1) of that
+                      Ordinance or who is an investment manager of any such
+                      registered scheme or constituent fund;
+                    </li>
+                    <li>any scheme which—</li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>
+                          is a registered scheme as defined in section 2(1) of
+                          the Occupational Retirement Schemes Ordinance (Cap.
+                          426); or
+                        </li>
+                        <li>
+                          is an offshore scheme as defined in section 2(1) of
+                          that Ordinance and, if it is regulated under the law
+                          of the place in which it is domiciled, is permitted to
+                          be operated under the law of such place, or any person
+                          who, in relation to any such scheme, is an
+                          administrator as defined in section 2(1) of that
+                          Ordinance;
+                        </li>
+                      </ul>
+                    </div>
+
+                    <h1 className="my-4">
+                      or any person who, in relation to any such scheme, is an
+                      administrator as defined in section 2(1) of that
+                      Ordinance;
+                    </h1>
+                    <li>
+                      any government (other than a municipal government
+                      authority), any institution which performs the functions
+                      of a central bank, or any multilateral agency;
+                    </li>
+                    <li>
+                      except for the purposes of Schedule 5 to this Ordinance,
+                      any corporation which is—
+                    </li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>a wholly owned subsidiary of—</li>
+                        <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                          <ul className="space-y-1 upalpha">
+                            <li>
+                              an intermediary, or any other person carrying on
+                              the business of the provision of investment
+                              services and regulated under the law of any place
+                              outside Hong Kong; or
+                            </li>
+                            <li>
+                              an authorized financial institution, or any bank
+                              which is not an authorized financial institution
+                              but is regulated under the law of any place
+                              outside Hong Kong;
+                            </li>
+                          </ul>
+                        </div>
+
+                        <li>
+                          a holding company which holds all the issued share
+                          capital of—
+                        </li>
+                        <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                          <ul className="space-y-1 roman">
+                            <li>
+                              an intermediary, or any other person carrying on
+                              the business of the provision of investment
+                              services and regulated under the law of any place
+                              outside Hong Kong; or
+                            </li>
+                            <li>
+                              an authorized financial institution, or any bank
+                              which is not an authorized financial institution
+                              but is regulated under the law of any place
+                              outside Hong Kong; or
+                            </li>
+                          </ul>
+                        </div>
+
+                        <li>
+                          any other wholly owned subsidiary of a holding company
+                          referred to in subparagraph (ii); or
+                        </li>
+                      </ul>
+                    </div>
+
+                    <li>
+                      any person of a class which is prescribed by rules made
+                      under section 397 of this Ordinance for the purposes of
+                      this paragraph as within the meaning of this definition
+                      for the purposes of the provisions of this Ordinance, or
+                      to the extent that it is prescribed by rules so made as
+                      within the meaning of this definition for the purposes of
+                      any provision of this Ordinance.
                     </li>
                   </ul>
-                  <h1 className="text-justify font-normal text-[16px] leading-[26px]">
-                    or any person by whom any such scheme is operated;
-                  </h1>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any registered scheme as defined in section 2(1) of the
-                    Mandatory Provident Fund Schemes Ordinance (Cap. 485), or
-                    its constituent fund as defined in section 2 of the
-                    Mandatory Provident Fund Schemes (General) Regulation (Cap.
-                    485 sub. leg. A), or any person who, in relation to any such
-                    registered scheme, is an approved trustee or service
-                    provider as defined in section 2(1) of that Ordinance or who
-                    is an investment manager of any such registered scheme or
-                    constituent fund;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any scheme which—
-                  </li>
-                  <ul className="list-disc ml-5 list-[lower-roman]">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      is a registered scheme as defined in section 2(1) of the
-                      Occupational Retirement Schemes Ordinance (Cap. 426); or
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      is an offshore scheme as defined in section 2(1) of that
-                      Ordinance and, if it is regulated under the law of the
-                      place in which it is domiciled, is permitted to be
-                      operated under the law of such place, or any person who,
-                      in relation to any such scheme, is an administrator as
-                      defined in section 2(1) of that Ordinance;
-                    </li>
-                  </ul>
-                  <h1 className="text-justify font-normal text-[16px] leading-[26px]">
-                    or any person who, in relation to any such scheme, is an
-                    administrator as defined in section 2(1) of that Ordinance;
-                  </h1>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any government (other than a municipal government
-                    authority), any institution which performs the functions of
-                    a central bank, or any multilateral agency;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    except for the purposes of Schedule 5 to this Ordinance, any
-                    corporation which is—
-                  </li>
-                  <ul className="list-disc ml-5 list-[lower-roman]">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a wholly owned subsidiary of—
-                    </li>
-                    <ul className="list-disc ml-5 list-[upper-alpha]">
-                      <li className="text-justify font-normal text-[16px] leading-[26px]">
-                        an intermediary, or any other person carrying on the
-                        business of the provision of investment services and
-                        regulated under the law of any place outside Hong Kong;
-                        or
-                      </li>
-                      <li className="text-justify font-normal text-[16px] leading-[26px]">
-                        an authorized financial institution, or any bank which
-                        is not an authorized financial institution but is
-                        regulated under the law of any place outside Hong Kong;
-                      </li>
-                    </ul>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a holding company which holds all the issued share capital
-                      of—
-                    </li>
-                    <ul className="list-disc ml-5 list-[upper-alpha]">
-                      <li className="text-justify font-normal text-[16px] leading-[26px]">
-                        an intermediary, or any other person carrying on the
-                        business of the provision of investment services and
-                        regulated under the law of any place outside Hong Kong;
-                        or
-                      </li>
-                      <li className="text-justify font-normal text-[16px] leading-[26px]">
-                        an authorized financial institution, or any bank which
-                        is not an authorized financial institution but is
-                        regulated under the law of any place outside Hong Kong;
-                        or
-                      </li>
-                    </ul>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      any other wholly owned subsidiary of a holding company
-                      referred to in subparagraph (ii); or
-                    </li>
-                  </ul>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    any person of a class which is prescribed by rules made
-                    under section 397 of this Ordinance for the purposes of this
-                    paragraph as within the meaning of this definition for the
-                    purposes of the provisions of this Ordinance, or to the
-                    extent that it is prescribed by rules so made as within the
-                    meaning of this definition for the purposes of any provision
-                    of this Ordinance.
-                  </li>
-                </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
               </div>
 
-              <h6 className="font-[600] italic text-[16px] leading-[26px] my-3">
+              <h6 className="font-[600] italic text-[16px] leading-[26px] my-5">
                 Securities and Futures (Professional Investor) Rules (Cap. 571D)
                 (the “PI Rules”)
               </h6>
@@ -1099,25 +1171,69 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   the meaning of that definition for the purposes of any
                   provision of the Ordinance other than Schedule 5—
                 </p>
-                <ul className="list-[lower-alpha] ml-5">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a trust corporation specified in section 4;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    an individual specified in section 5(1);
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a corporation (other than a trust corporation referred to in
-                    paragraph (a)) specified in section 6;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a partnership specified in section 7.
-                  </li>
-                </ul>
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className="space-y-1 alpha">
+                    <li>a trust corporation specified in section 4;</li>
+                    <li>an individual specified in section 5(1);</li>
+                    <li>
+                      a corporation (other than a trust corporation referred to
+                      in paragraph (a)) specified in section 6;
+                    </li>
+                    <li>a partnership specified in section 7.</li>
+                  </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
               </div>
 
               <div className="font-light ">
-                <p className="font-semibold py-3">
+                <p className="font-semibold py-5">
                   Section 4. Trust corporations
                 </p>
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
@@ -1130,124 +1246,268 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               </div>
 
               <div className="font-light ">
-                <p className="font-semibold py-3">Section 5. Individuals</p>
-                <ul className="list-[number] ml-5">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    An individual specified for the purposes of section 3(b) is
-                    an individual having a portfolio of not less than $8 million
-                    at the relevant date or as ascertained in accordance with
-                    section 8, when any one or more of the following are taken
-                    into account—
-                  </li>
-                  <ul className="list-[lower-alpha] ml-5">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a portfolio on the individual’s own account;
+                <p className="font-semibold py-5">Section 5. Individuals</p>
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className="space-y-1 number">
+                    <li>
+                      An individual specified for the purposes of section 3(b)
+                      is an individual having a portfolio of not less than $8
+                      million at the relevant date or as ascertained in
+                      accordance with section 8, when any one or more of the
+                      following are taken into account—
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a portfolio on a joint account with the individual’s
-                      associate;
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 alpha">
+                        <li>a portfolio on the individual’s own account;</li>
+                        <li>
+                          a portfolio on a joint account with the individual’s
+                          associate;
+                        </li>
+                        <li>
+                          the individual’s share of a portfolio on a joint
+                          account with one or more persons other than the
+                          individual’s associate;
+                        </li>
+                        <li>
+                          a portfolio of a corporation which, at the relevant
+                          date, has as its principal business the holding of
+                          investments and is wholly owned by the individual.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <li>
+                      For the purposes of subsection (1)(c), an individual’s
+                      share of a portfolio on a joint account with one or more
+                      persons other than the individual’s associate is—
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      the individual’s share of a portfolio on a joint account
-                      with one or more persons other than the individual’s
-                      associate;
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a portfolio of a corporation which, at the relevant date,
-                      has as its principal business the holding of investments
-                      and is wholly owned by the individual.
-                    </li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 alpha">
+                        <li>
+                          the individual’s share of the portfolio as specified
+                          in a written agreement among the account holders; or
+                        </li>
+                        <li>
+                          in the absence of an agreement referred to in
+                          paragraph (a), an equal share of the portfolio.
+                        </li>
+                      </ul>
+                    </div>
                   </ul>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    For the purposes of subsection (1)(c), an individual’s share
-                    of a portfolio on a joint account with one or more persons
-                    other than the individual’s associate is—
-                  </li>
-                  <ul className="list-[lower-alpha] ml-5">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      the individual’s share of the portfolio as specified in a
-                      written agreement among the account holders; or
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      in the absence of an agreement referred to in paragraph
-                      (a), an equal share of the portfolio.
-                    </li>
-                  </ul>
-                </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
               </div>
 
               <div className="font-light ">
-                <p className="font-semibold py-3">Section 6. Corporations</p>
+                <p className="font-semibold py-5">Section 6. Corporations</p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
                   A corporation specified for the purposes of section 3(c) is—
                 </p>
 
-                <ul className="list-[lower-alpha] ml-5">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a corporation having—
-                  </li>
-                  <ul className="list-[lower-roman] ml-5">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a portfolio of not less than $8 million; or
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className="space-y-1 alpha">
+                    <li>a corporation having—</li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>a portfolio of not less than $8 million; or</li>
+                        <li>
+                          total assets of not less than $40 million, at the
+                          relevant date or as ascertained in accordance with
+                        </li>
+                        <li>section 8;</li>
+                      </ul>
+                    </div>
+
+                    <li>
+                      a corporation which, at the relevant date, has as its
+                      principal business the holding of investments and is
+                      wholly owned by any one or more of the following persons—
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      total assets of not less than $40 million, at the relevant
-                      date or as ascertained in accordance with
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      section 8;
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>a trust corporation specified in section 4;</li>
+                        <li>an individual specified in section 5(1);</li>
+                        <li>
+                          a corporation specified in this paragraph or paragraph
+                          (a);
+                        </li>
+                        <li>a partnership specified in section 7;</li>
+                        <li>
+                          a professional investor within the meaning of
+                          paragraph (a), (d), (e), (f), (g) or (h) of the
+                          definition of professional investor in section 1 of
+                          Part 1 of Schedule 1 to the Ordinance; or
+                        </li>
+                      </ul>
+                    </div>
+
+                    <li>
+                      a corporation which, at the relevant date, wholly owns a
+                      corporation referred to in paragraph
                     </li>
                   </ul>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a corporation which, at the relevant date, has as its
-                    principal business the holding of investments and is wholly
-                    owned by any one or more of the following persons—
-                  </li>
-                  <ul className="list-[lower-roman] ml-5">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a trust corporation specified in section 4;
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      an individual specified in section 5(1);
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a corporation specified in this paragraph or paragraph
-                      (a);
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a partnership specified in section 7;
-                    </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a professional investor within the meaning of paragraph
-                      (a), (d), (e), (f), (g) or (h) of the definition of
-                      professional investor in section 1 of Part 1 of Schedule 1
-                      to the Ordinance; or
-                    </li>
-                  </ul>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a corporation which, at the relevant date, wholly owns a
-                    corporation referred to in paragraph
-                  </li>
-                </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
               </div>
 
               <div className="font-light ">
-                <p className="font-semibold py-3">Section 7. Partnerships</p>
+                <p className="font-semibold py-5">Section 7. Partnerships</p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
                   A partnership specified for the purposes of section 3(d) is a
                   partnership having—
                 </p>
 
-                <ul className="list-[lower-alpha] ml-5">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    a portfolio of not less than $8 million; or
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    total assets of not less than $40 million,
-                  </li>
-                </ul>
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className="space-y-1 alpha">
+                    <li>a portfolio of not less than $8 million; or</li>
+                    <li>total assets of not less than $40 million,</li>
+                  </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
+
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
                   at the relevant date or as ascertained in accordance with
                   section 8.
@@ -1255,7 +1515,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               </div>
 
               <div className="font-light ">
-                <p className="font-semibold py-3">
+                <p className="font-semibold py-5">
                   Section 8. Ascertaining total assets or portfolio
                 </p>
 
@@ -1267,37 +1527,90 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   or more of the following—
                 </p>
 
-                <ul className="list-[lower-alpha] ml-5">
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    for a trust corporation, corporation or partnership, the
-                    most recent audited financial statement prepared within 16
-                    months before the relevant date in respect of the trust
-                    corporation (or a trust of which it acts as a trustee),
-                    corporation or partnership;
-                  </li>
-                  <li className="text-justify font-normal text-[16px] leading-[26px]">
-                    for a trust corporation, individual, corporation or
-                    partnership, any one or more of the following documents
-                    issued or submitted within 12 months before the relevant
-                    date—
-                  </li>
-                  <ul className="list-[lower-roman] ml-5">
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a statement of account or a certificate issued by a
-                      custodian;
+                <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                  <ul className="space-y-1 alpha">
+                    <li>
+                      for a trust corporation, corporation or partnership, the
+                      most recent audited financial statement prepared within 16
+                      months before the relevant date in respect of the trust
+                      corporation (or a trust of which it acts as a trustee),
+                      corporation or partnership;
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a certificate issued by an auditor or a certified public
-                      accountant;
+                    <li>
+                      for a trust corporation, individual, corporation or
+                      partnership, any one or more of the following documents
+                      issued or submitted within 12 months before the relevant
+                      date—
                     </li>
-                    <li className="text-justify font-normal text-[16px] leading-[26px]">
-                      a public filing submitted by or on behalf of the trust
-                      corporation (whether on its own behalf or in respect of a
-                      trust of which it acts as a trustee), individual,
-                      corporation or partnership.
-                    </li>
+                    <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
+                      <ul className="space-y-1 roman">
+                        <li>
+                          a statement of account or a certificate issued by a
+                          custodian;
+                        </li>
+                        <li>
+                          a certificate issued by an auditor or a certified
+                          public accountant;
+                        </li>
+                        <li>
+                          a public filing submitted by or on behalf of the trust
+                          corporation (whether on its own behalf or in respect
+                          of a trust of which it acts as a trustee), individual,
+                          corporation or partnership.
+                        </li>
+                      </ul>
+                    </div>
                   </ul>
-                </ul>
+                  <style jsx>{`
+                    ul.roman {
+                      counter-reset: roman;
+                      margin: 0;
+                    }
+
+                    ul.number {
+                      counter-reset: number;
+                      margin: 0;
+                    }
+
+                    ul.alpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul.upalpha {
+                      counter-reset: alpha;
+                      margin: 0;
+                    }
+                    ul li {
+                      list-style: none;
+                      position: relative;
+                    }
+                    ul.number > li:before {
+                      counter-increment: number;
+                      content: "(" counter(number, number) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.roman > li:before {
+                      counter-increment: roman;
+                      content: "(" counter(roman, lower-roman) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.alpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, lower-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                    ul.upalpha > li:before {
+                      counter-increment: alpha;
+                      content: "(" counter(alpha, upper-alpha) ") ";
+                      position: absolute;
+                      left: -1.8em;
+                    }
+                  `}</style>
+                </div>
+
                 <p className="text-justify font-normal text-[16px] leading-[26px] my-5 mb-10">
                   *Under Section 2A of the PI Rules, “In these Rules, a
                   reference to an amount expressed in Hong Kong dollars includes

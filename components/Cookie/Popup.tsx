@@ -56,20 +56,7 @@ const CookiePopup = ({ agreedDisclaimer }: Props) => {
                   "text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
                 }
                 upper={
-                  "BASE respects the privacy of your personal data. We use cookies to analyse website traffic and to provide personalised content on our website. By clicking the “Accept All” button, you agree to the storing of cookies on your device or choose not to allow some types of cookies with the “Cookie Settings” button. For more information, please see our"
-                }
-                lower={undefined}
-              />
-            </p>
-            <p>
-              <TnC
-                nameprop={"Privacy Policy."}
-                idx={1}
-                css={
-                  "text-[#001B71] cursor-pointer underline underline-offset-3 mx-1"
-                }
-                upper={
-                  "By continuing to use our website, you agree to the storing of cookies on your device for these purposes. For more information, please see our"
+                  "BASE respects the privacy of your personal data. We use cookies to analyse website traffic and to provide personalised content on our website. By clicking the “Accept All” button, you agree to the storing of cookies on your device or choose not to allow some types of cookies with the “Cookie Settings” button. By continuing to use our website, you agree to the storing of cookies on your device for these purposes. For more information, please see our"
                 }
                 lower={undefined}
               />

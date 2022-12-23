@@ -96,25 +96,23 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-[#CBC3BB] md:flex-grow pb-10">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Chris has been responsible for portfolio management and
                   investment strategies since BASE’s inception in 2012. Chris
                   has over 27 years of investment experience specialising in
                   value investing.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Prior to founding BASE, Chris held senior portfolio manager
                   positions at several international investment management firms
-                  for over 14 years. During this time, he was a senior
-                  investment committee member in the acquisition of an asset
-                  management business.
+                  for over 14 years.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Chris received a Bachelor of Arts (Honours) in Finance from
                   the Idaho State University.
                 </p>
                 <span className="absolute font-[200] text-[20px] leading-[25px] italic bottom-[23px] lg:text-grey lg:text-sm">
-                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-justify">
+                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-left">
                     "Managing the potential downside always comes first, then
                     the calculated upside.”
                   </p>
@@ -154,24 +152,24 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-[#CBC3BB] md:flex-grow pb-10">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Askin manages the development of technical models and the
                   research in digital assets and investing processes at BASE.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Askin spent nearly two decades in the FinTech industry,
                   specialising in asset management business processes and
                   enterprise systems. Askin held General Manager and Manager
                   Director positions in the last 13 years, directing its APAC
                   business from front to back processes.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Askin received a Bachelor of Arts (Honours) in Computing from
                   the Hong Kong Polytechnic University and a Master in Finance
                   (major in Risk Management) from the University of Hong Kong.
                 </p>
                 <span className="absolute font-[200] text-[20px] leading-[25px] italic bottom-[23px] lg:text-grey lg:text-sm">
-                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-justify">
+                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-left">
                     "Once you know the starting point, the rest becomes much
                     more trivial.”
                   </p>
@@ -211,24 +209,24 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-[#CBC3BB] md:flex-grow pb-10">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Selina is responsible for BASE’s business operations, brand
                   strategy development and overall implementation.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Selina spent over a decade serving multi-billion dollar global
                   asset advisers and regional start-up fund houses as a senior
                   operation executive, managing the areas of corporate
                   development, business process optimisation and investment
                   administration.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Selina received a Bachelor of Commerce from the University of
                   Melbourne and a Master of Business Administration from the EU
                   Business School.
                 </p>
                 <span className="absolute font-[200] text-[20px] leading-[25px] italic bottom-[23px] lg:text-grey lg:text-sm">
-                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-justify">
+                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-left">
                     "Investors pay us to take investment risks, not operational
                     risks.”
                   </p>
@@ -268,25 +266,25 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-[#CBC3BB] md:flex-grow pb-10">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Pavina leads the risk monitoring and performance analysis
                   functions at BASE.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Pavina held portfolio management and investment research
                   positions, including portfolio manager, investment strategist
                   and performance analyst at multiple global investment firms,
                   specialising in investment strategy and quantitative analysis
                   in the last 22 years.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Pavina received a Bachelor of Arts in Applied Mathematics
                   (major in Physics) and a Master of Science in Applied
                   Mathematics and Engineering Sciences from the Northwestern
                   University.
                 </p>
                 <span className="absolute font-[200] text-[20px] leading-[25px] italic bottom-[23px] lg:text-grey lg:text-sm">
-                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-justify">
+                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-left">
                     “Peak or trough, opportunities are always there.”
                   </p>
                 </span>
@@ -325,23 +323,23 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-[#CBC3BB] md:flex-grow pb-10">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Joe leads the sales development and client relations processes
                   at BASE.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Joe has covered diverse functions, including bonds and
                   equities issuance, secondary market business development and
                   institutional sales in Asia, in the last 30 years. Joe also
                   provided property investment advisory and financial planning
                   services for professional and individual clients.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] mt-[16px] leading-[25px] lg:text-[16px] mb-20 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Joe received a Bachelor of Commerce and Management (major in
                   Macroeconomics) from the Hitotsubashi University, Tokyo.
                 </p>
                 <span className="absolute font-[200] text-[20px] leading-[25px] italic bottom-[23px] lg:text-grey lg:text-sm">
-                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-justify">
+                  <p className="font-extralight	lg:text-[24px] lg:leading-[28px] lg:text-left">
                     “I would hasten my escape from the windy storm and tempest.”
                   </p>
                 </span>
@@ -359,19 +357,19 @@ export default function Team() {
               </div>
 
               <div className="relative pt-[25px] lg:border-t-[6px] lg:border-b-[1px] border-b-[4px] border-[#CBC3BB] md:flex-grow lg:pb-[22px]">
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px]  lg:leading-[28px] lg:text-left">
                   Hill acts as an adviser to BASE with his broad investment
                   industry experience spans across research, portfolio
                   management and trade operations in the last 20 years.
                 </p>
-                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal font-[400] text-[15px] leading-[25px]	lg:text-[16px] mt-[16px] lg:leading-[28px] lg:text-left">
                   Hill co-founded BASE in 2011 and was the Head of Fundamental
-                  Research and co-fund manager to value investing portfolios
-                  since 2011. Hill was previously a senior research analyst at
-                  Triskele Capital Management and a research analyst at Daiwa SB
-                  Investments.
+                  Research and co-fund manager of value investing portfolios
+                  since 2011. Hill was previously a senior research analyst at a
+                  billion-dollar hedge fund and a research analyst at an
+                  international investment firm.
                 </p>
-                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mt-[16px] mb-[36px] lg:mb-0 lg:mt-[20px] lg:leading-[28px] lg:text-justify">
+                <p className="font-normal	font-[400] text-[15px] leading-[25px] lg:text-[16px] mt-[16px] mb-[36px] lg:mb-0 lg:mt-[20px] lg:leading-[28px] lg:text-left">
                   Hill received a Bachelor of Arts in Economics and Finance from
                   the University of Hong Kong and a Master of Arts in Economics
                   with distinction from the Hong Kong University of Science and

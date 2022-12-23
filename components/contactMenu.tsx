@@ -241,7 +241,7 @@ export default function contactHeader() {
                   />
                 </a>
               </div>
-              <div className="pl-[34px] pr-[46px] hidden lg:block">
+              <div className="pl-[31.5px] pr-[43.5px] hidden lg:block">
                 <LoginButton text={"#001673"} />
               </div>
             </Toolbar>
@@ -395,7 +395,7 @@ export default function contactHeader() {
           <div>
             <Dis
               nameprop={"Disclaimers"}
-              idx={3}
+              idx={0}
               css={
                 "absolute bottom-[0px] pl-[15px] leading-[76px] lg:text-[18px] text-[14px] cursor-pointer font-bold"
               }
