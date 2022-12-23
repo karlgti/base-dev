@@ -56,15 +56,17 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const agreed = sessionStorage.getItem("disclaimer");
       console.log("agree: ", agreed);
     }
   }, []);
+
   const goTop = useMemo(() => {
-    topAnchor.current&&topAnchor.current.scroll({top:0});
-  }, [value])
+    topAnchor.current && topAnchor.current.scroll({ top: 0 });
+  }, [value]);
 
   return (
     <div>
@@ -105,7 +107,10 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               />
             </Tabs>
           </div>
-          <div className="mt-7 mx-4 overflow-auto scrollbar-hide" ref={topAnchor}> 
+          <div
+            className="mt-7 mx-4 overflow-auto scrollbar-hide"
+            ref={topAnchor}
+          >
             <TabPanel value={value} index={0}>
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 TERMS OF USE
