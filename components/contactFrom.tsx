@@ -5,8 +5,23 @@ import Select from 'react-select';
 import rightArrow from '../public/img/Arrow1.png';
 import Image from 'next/image';
 import { sendContactForm } from '../components/Services';
+import { useEffect } from 'react';
 
-const Country = [
+type OptionType = {
+  value: string;
+  label: string;
+};
+
+// type interestType = {
+//   value: number;
+//   label: string;
+// };
+
+type describeType = {
+  value: number;
+  label: string;
+};
+const Country: OptionType[] = [
   { label: 'Albania', value: '1' },
   { label: 'Algeria', value: '2' },
   { label: 'Angola', value: '3' },
@@ -187,7 +202,7 @@ const interest = [
   { value: 3, label: 'Investment Fund' },
 ];
 
-const describe = [
+const describe: describeType[] = [
   { value: 1, label: 'Investment Advisor' },
   { value: 2, label: 'Asset Owner / Institutional Investor' },
   { value: 3, label: 'Individual / Corporate Investor' },
@@ -201,25 +216,56 @@ export default function ContactForm() {
   });
   const [message, setMessage] = useState('');
   const [isShown, setIsShown] = useState(false);
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [value, setValue] = useState<OptionType>(Country[0]);
+  const [interestOption, setInterestOption] = useState(interest[0]);
+  const [describeOption, setDescribleOption] = useState<describeType>(
+    describe[0]
+  );
+  const [remark, setRemark] = useState('');
+
+  useEffect(() => {
+    console.log(formRef.current);
+  }, [formRef]);
+
+  const onDropdownChange = (value) => {
+    setValue(value);
+    console.log(value.label);
+  };
+  const onInterestChange = (interestOption) => {
+    setInterestOption(interestOption);
+    console.log(interestOption);
+  };
+  const onDescribleChange = (describeOption) => {
+    setDescribleOption(describeOption.label);
+    console.log(describeOption);
+  };
+
+  const onTextChange = (e) => {
+    setRemark(e.target.value);
+    console.log(remark);
+  };
 
   const submitContact = async (e) => {
     e.preventDefault();
     console.table(e);
     console.dir(e);
+    console.log(e);
     const res = await sendContactForm({
       firstName: e.target[0].value,
       lastName: e.target[1].value,
       companyTitle: e.target[2].value,
       companyEmail: e.target[3].value,
-      country: e.target[4].value,
-      describe: e.target[5].value,
-      services: e.target[6].value,
-      message: e.target[7].value,
+      country: value.label,
+      describe: describeOption.label,
+      services: interestOption,
+      message: remark,
     });
     if (res == 0) {
       setMessage('Thank you for your valuable comment!');
-      formRef;
+      formRef.current;
+      console.log(formRef.current);
+    } else {
       setMessage('Something went wrong! Please try again');
     }
   };
@@ -263,7 +309,7 @@ export default function ContactForm() {
               <form
                 action=''
                 className='w-[90%]'
-                // ref={formRef}
+                ref={formRef}
                 onSubmit={submitContact}
               >
                 <div className='flex flex-wrap -mx-3 mb-6'>
@@ -355,6 +401,8 @@ export default function ContactForm() {
                   {/* {Country.map((County) => ( */}
                   <Select
                     // key={Country.values}
+                    value={value}
+                    onChange={onDropdownChange}
                     options={Country}
                     required
                     theme={(theme) => ({
@@ -364,9 +412,6 @@ export default function ContactForm() {
                         ...theme.colors,
                       },
                     })}
-                    {...Country.map((Country) => (
-                      <option value={Country.label}> {Country.label}</option>
-                    ))}
                     styles={style}
                     id='grid-interested'
                     placeholder={<div>-- Please Select --</div>}
@@ -382,6 +427,8 @@ export default function ContactForm() {
                     <span className='text-[#CBC3BB]'>*</span>
                   </label>
                   <Select
+                    value={describeOption}
+                    onChange={onDescribleChange}
                     options={describe}
                     theme={(theme) => ({
                       ...theme,
@@ -406,6 +453,8 @@ export default function ContactForm() {
                     <span className='text-[#CBC3BB]'>*</span>
                   </label>
                   <Select
+                    value={interestOption}
+                    onChange={onInterestChange}
                     options={interest}
                     theme={(theme) => ({
                       ...theme,
@@ -437,6 +486,8 @@ export default function ContactForm() {
                       id='grid-Message'
                       rows={4}
                       required
+                      value={remark}
+                      onChange={onTextChange}
                     />
                   </div>
                 </div>
