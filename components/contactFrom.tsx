@@ -6,6 +6,7 @@ import rightArrow from '../public/img/Arrow1.png';
 import Image from 'next/image';
 import { sendContactForm } from '../components/Services';
 import { useEffect } from 'react';
+import { useRouter } from "next/router";
 
 type OptionType = {
   value: string;
@@ -223,6 +224,7 @@ export default function ContactForm() {
     describe[0]
   );
   const [remark, setRemark] = useState('');
+    const router = useRouter()
 
   useEffect(() => {
     console.log(formRef.current);
@@ -265,6 +267,8 @@ export default function ContactForm() {
       setMessage('Thank you for your valuable comment!');
       formRef.current;
       console.log(formRef.current);
+              router.push("/")
+
     } else {
       setMessage('Something went wrong! Please try again');
     }
