@@ -234,7 +234,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
@@ -277,7 +277,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
@@ -327,7 +327,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
@@ -342,7 +342,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
@@ -383,17 +383,17 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                             {content.attributes.blog_theme} / {content.attributes.blog_topic}
                           </div>
 
-                          <div className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                          <div className="font-[800] lg:h-16 h-8 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
                             {content.attributes.blog_subject}
                           </div>
                         </div>
-                        <div className="relative flex lg:mt-[60px] mt-[30px] lg:hiddden justify-between">
+                        <div className="relative flex lg:mt-[60px] mt-[40px] lg:hiddden justify-between">
                           <div className="lg:hidden">
                             <a
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
@@ -408,7 +408,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
-                              <img
+                              <Image
                                 src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}

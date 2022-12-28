@@ -110,7 +110,7 @@ function Insight({ insights }) {
                           href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                           className="text-gray-600"
                         >
-                          <img
+                          <Image
                             src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                             width={31}
                             height={31}
@@ -145,7 +145,7 @@ function Insight({ insights }) {
                           href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                           className="text-gray-600"
                         >
-                          <img
+                          <Image
                             src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
                             width={31}
                             height={31}
