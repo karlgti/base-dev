@@ -22,8 +22,7 @@ type describeType = {
   value: number;
   label: string;
 };
-const Country: OptionType[] = [
-  { label: "-- Please Select --", value: "0" },
+const Countrys: OptionType[] = [
   { label: "Albania", value: "1" },
   { label: "Algeria", value: "2" },
   { label: "Angola", value: "3" },
@@ -198,13 +197,13 @@ const Country: OptionType[] = [
   { label: "Zimbabwe", value: "169" },
 ];
 
-const interest = [
+const interests: interestType[] = [
   { value: 1, label: "Advisory Service" },
   { value: 2, label: "Discretionary Account" },
   { value: 3, label: "Investment Fund" },
 ];
 
-const describe: describeType[] = [
+const describes: describeType[] = [
   { value: 1, label: "Investment Advisor" },
   { value: 2, label: "Asset Owner / Institutional Investor" },
   { value: 3, label: "Individual / Corporate Investor" },
@@ -219,11 +218,9 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [isShown, setIsShown] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [value, setValue] = useState<OptionType>(Country[0]);
-  const [interestOption, setInterestOption] = useState(interest[0]);
-  const [describeOption, setDescribleOption] = useState<describeType>(
-    describe[0]
-  );
+  const [value, setValue] = useState("");
+  const [describeOption, setDescribleOption] = useState();
+  const [interestOption, setInterestOption] = useState();
   const [remark, setRemark] = useState("");
   const router = useRouter();
 
@@ -231,19 +228,19 @@ export default function ContactForm() {
     console.log(formRef.current);
   }, [formRef]);
 
-  const onDropdownChange = (value) => {
-    setValue(value);
-    console.log(value.label);
+  const onDropdownChange = (e) => {
+    setValue(e.label);
+    console.log(e.label);
+  };
+
+  const onDescribleChange = (describeOption) => {
+    setDescribleOption(describeOption.label);
+    console.log(describeOption.label);
   };
   const onInterestChange = (interestOption) => {
     setInterestOption(interestOption);
     console.log(interestOption);
   };
-  const onDescribleChange = (describeOption) => {
-    setDescribleOption(describeOption);
-    console.log(describeOption.label);
-  };
-
   const onTextChange = (e) => {
     setRemark(e.target.value);
     console.log(remark);
@@ -251,17 +248,15 @@ export default function ContactForm() {
 
   const submitContact = async (e) => {
     e.preventDefault();
-    console.table(e);
-    console.dir(e);
     console.log(e);
     const res = await sendContactForm({
       firstName: e.target[0].value,
       lastName: e.target[1].value,
       companyTitle: e.target[2].value,
       companyEmail: e.target[3].value,
-      country: value.label,
-      describe: describeOption.label,
-      services: interestOption.label,
+      country: value,
+      describe: describeOption,
+      services: interestOption,
       message: remark,
     });
     if (res == 0) {
@@ -405,9 +400,11 @@ export default function ContactForm() {
                   {/* {Country.map((County) => ( */}
                   <Select
                     // key={Country.values}
-                    value={value}
+                    value={Countrys.find(function (Country) {
+                      return Country.value === value;
+                    })}
                     onChange={onDropdownChange}
-                    options={Country}
+                    options={Countrys}
                     required
                     theme={(theme) => ({
                       ...theme,
@@ -431,9 +428,11 @@ export default function ContactForm() {
                     <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
-                    value={describeOption}
+                    value={describes.find(function (describe) {
+                      return describe.label === describeOption;
+                    })}
                     onChange={onDescribleChange}
-                    options={describe}
+                    options={describes}
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
@@ -457,9 +456,11 @@ export default function ContactForm() {
                     <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
-                    value={interestOption}
+                    value={interests.find(function (interest) {
+                      return interest === interestOption;
+                    })}
                     onChange={onInterestChange}
-                    options={interest}
+                    options={interests}
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
