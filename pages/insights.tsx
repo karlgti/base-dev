@@ -128,6 +128,13 @@ interface IPropTypes {
 const Blog: NextPage<IPropTypes> = ({ insights }) => {
 
   const [animateHeader, setAnimateHeader] = useState(false);
+  const [visible, setVisible] = useState(12);
+
+
+  const showMore = () => {
+    setVisible((prevState) => prevState + 4)
+  }
+
   useEffect(() => {
     const listener = () => {
       if (window.scrollY > 140) {
@@ -189,12 +196,12 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                 }
               </div>
               <div className="lg:flex mt-[16px]">
-                {insights.items.slice(0, 1)?.map((content, i) => (
+                {insights.items.filter(x => x.id === 1)?.map((content, i) => (
                   <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
                     <div className="relative cursor-pointer lg:w-[65%] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
                       <div className="mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900 pb-[70px]">
                         <img
-                          src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`}
+                          src={`${content.attributes.blog_image.data.attributes.url}`}
                           width={760}
                           height={434}
                           className="cursor-pointer"
@@ -235,7 +242,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -252,11 +259,11 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                   </Link>))}
 
                 <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
-                  {insights.items.slice(1, 3)?.map((content, i) => (
+                  {insights.items.filter(x => x.id == 3 || x.id == 2).map((content, i) => (
                     <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
                       <div className="block mt-[13px] cursor-pointer border-b-[0.8px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                         <img
-                          src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`}
+                          src={`${content.attributes.blog_image.data.attributes.url}`}
                           width={430}
                           height={280}
                           className="cursor-pointer"
@@ -278,7 +285,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -299,7 +306,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
 
               <div className="container lg:hidden mt-[38px]">
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {insights.items.slice(1, 3)?.map((content, i) => (
+                  {insights.items.filter(x => x.id == 2 || x.id == 3).map((content, i) => (
                     <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
 
                       <div
@@ -308,7 +315,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                       >
                         <div >
                           <img
-                            src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`}
+                            src={`${content.attributes.blog_image.data.attributes.url}`}
                             className="w-[300px] h-[120px]"
                           />
                         </div>
@@ -328,7 +335,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -343,7 +350,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -365,8 +372,8 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
 
               <div className="container mt-[38px]">
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {insights.items.slice(3)?.map((content, i) => (
-                    <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
+                  {insights.items.filter((x) => x.id >= 4 && x.id < visible).map((content, i) => (
+                    <Link key={content.id} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
 
                       <div
                         key={i}
@@ -374,7 +381,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                       >
                         <div>
                           <img
-                            src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`}
+                            src={`${content.attributes.blog_image.data.attributes.url}`}
                             className="lg:w-[300px] lg:h-[180px]"
                           />
                         </div>
@@ -383,18 +390,18 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                             {content.attributes.blog_theme} / {content.attributes.blog_topic}
                           </div>
 
-                          <div className="font-[800] lg:h-16 h-8 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                          <div className="font-[800] lg:h-16 h-7 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
                             {content.attributes.blog_subject}
                           </div>
                         </div>
-                        <div className="relative flex lg:mt-[60px] mt-[40px] lg:hiddden justify-between">
+                        <div className="relative flex lg:mt-[60px] mt-[40px] lg:hiddden justify-between w-full">
                           <div className="lg:hidden">
                             <a
                               href={content.attributes.platform_link ? content.attributes.platform_link : "#"}
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -409,7 +416,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               className="text-gray-600"
                             >
                               <Image
-                                src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
                                 width={31}
                                 height={31}
                                 className="cursor-pointer"
@@ -428,21 +435,22 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                   ))}
                 </div>
 
-                <div className="cursor-pointer lg:hidden flex justify-center mt-[42px] lg:mt-[150px]">
+                {(visible - 1 <= insights.items.length) ? <><div onClick={showMore} className="cursor-pointer lg:hidden flex justify-center mt-[42px] lg:mt-[150px]">
                   <Image src={arrow} width={22} height={11} />
                 </div>
-                <div className="cursor-pointer hidden lg:flex flex justify-center mt-[42px] lg:mt-[150px]">
-                  <Image src={arrow} width={56} height={29} />
-                </div>
+                  <div onClick={showMore} className="cursor-pointer hidden lg:flex flex justify-center mt-[42px] lg:mt-[150px]">
+                    <Image src={arrow} width={56} height={29} />
+                  </div>
 
-                <div className="flex mb-[50px] lg:mb-[0px] mt-5 lg:mt-[23px] justify-center">
-                  <button
-                    type="button"
-                    className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
-                  >
-                    <p>Load more</p>
-                  </button>
-                </div>
+                  <div className="flex mb-[50px] lg:mb-[0px] mt-5 lg:mt-[23px] justify-center">
+                    <button onClick={showMore}
+                      type="button"
+                      className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
+                    >
+                      <p>Load more</p>
+                    </button>
+                  </div></> : <div className=" mt-[42px] lg:mt-[150px]" />}
+
               </div>
             </div>
           </div>

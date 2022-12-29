@@ -10,6 +10,7 @@ import Link from "next/link";
 import rightArrow from "../public/img/Arrow1.png";
 
 function Insight({ insights }) {
+
   const theme = createTheme({
     typography: {
       fontFamily: ["Inter", "sans-serif"].join(","),
@@ -91,11 +92,11 @@ function Insight({ insights }) {
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              {insights.items.slice(0, 1)?.map((content, i) => (
-                <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
+              {insights.items.filter(x => x.id === 1)?.map((content, i) => (
+                <Link key={content.id} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
                   <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
                     <div className="lg:w-[273px] lg:h-[180px] w-[182px]">
-                      <img src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`} alt="Base Asset Management" />
+                      <img src={`${content.attributes.blog_image.data.attributes.url}`} alt="Base Asset Management" />
                     </div>
                     <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
                       {content.attributes.blog_theme} / {content.attributes.blog_topic}
@@ -111,7 +112,7 @@ function Insight({ insights }) {
                           className="text-gray-600"
                         >
                           <Image
-                            src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                            src={`${content.attributes.blog_platform.data.attributes.url}`}
                             width={31}
                             height={31}
                             className="cursor-pointer"
@@ -126,11 +127,11 @@ function Insight({ insights }) {
                   </div>
                 </Link>))}
 
-              {insights.items.slice(1, 2)?.map((content, i) => (
-                <Link key={i} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
+              {insights.items.filter(x => x.id === 2)?.map((content, i) => (
+                <Link key={content.id} href={content.attributes.blog_link ? content.attributes.blog_link : "#"}>
                   <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
                     <div className="lg:w-[255px] lg:h-[180px] w-[170px]">
-                      <img src={`http://localhost:1337${content.attributes.blog_image.data.attributes.url}`} alt="Base Asset Management" />
+                      <img src={`${content.attributes.blog_image.data.attributes.url}`} alt="Base Asset Management" />
                     </div>
                     <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
                       {content.attributes.blog_theme} / {content.attributes.blog_topic}
@@ -146,7 +147,7 @@ function Insight({ insights }) {
                           className="text-gray-600"
                         >
                           <Image
-                            src={`http://localhost:1337${content.attributes.blog_platform.data.attributes.url}`}
+                            src={`${content.attributes.blog_platform.data.attributes.url}`}
                             width={31}
                             height={31}
                             className="cursor-pointer"
