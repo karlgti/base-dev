@@ -1,5 +1,5 @@
 import { Dialog, Typography } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import CookieConsentForm from "components/Cookie/ConsentForm";
@@ -51,16 +51,22 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
   const handleClose = () => setOpen(false);
   const [showConsent, setShowConsent] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const topAnchor = useRef<any>(null);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const agreed = sessionStorage.getItem("disclaimer");
       console.log("agree: ", agreed);
     }
   }, []);
+
+  const goTop = useMemo(() => {
+    topAnchor.current && topAnchor.current.scroll({ top: 0 });
+  }, [value]);
 
   return (
     <div>
@@ -101,12 +107,15 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               />
             </Tabs>
           </div>
-          <div className="mt-7 mx-4 overflow-auto scrollbar-hide">
+          <div
+            className="mt-7 mx-4 overflow-auto scrollbar-hide"
+            ref={topAnchor}
+          >
             <TabPanel value={value} index={0}>
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 TERMS OF USE
               </h1>
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   Please read these Terms of Use carefully as it contains legal
                   and regulatory information relevant to the content of this
@@ -431,7 +440,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 PRIVACY POLICY
               </h1>
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   This Privacy Notice covers the personal data we collect from
                   you, how we collect it, with whom we share it and how we
@@ -727,7 +736,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
               <h1 className="font-normal text-[26px] leading-[30px] my-3">
                 COOKIE POLICY
               </h1>
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-normal text-[16px] leading-[26px] my-2 text-justify">
                   When you visit this website https://www.base-am.com (the
                   “Website”), we collect and process information about your
@@ -846,7 +855,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 <ul className="list-disc ml-5">
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     <span className="font-semibold italic text-justify">
-                      Google -{" "}
+                      Google <span className="text-xl">-</span>{" "}
                     </span>
                     our Website and Services have embedded Google
                     services/tools, such as ‘Google Analytics’ for better user
@@ -861,7 +870,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     <span className="font-semibold italic text-justify">
-                      Twitter -{" "}
+                      Twitter <span className="text-xl">-</span>{" "}
                     </span>
                     our Website and Services have embedded Twitter API for
                     social media sharing purposes. For details of Twitter
@@ -875,7 +884,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                   </li>
                   <li className="text-justify font-normal text-[16px] leading-[26px]">
                     <span className="font-semibold italic text-justify">
-                      LinkedIn -{" "}
+                      LinkedIn <span className="text-xl">-</span>{" "}
                     </span>
                     our Website and Services have embedded Twitter API for
                     social media sharing purposes. For details of Twitter
@@ -950,16 +959,17 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 Securities of Futures Commissions Ordinance (Cap. 571) (the
                 “SFO”)
               </h6>
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-[400] text-justify">
                   Under Section 1 of Part I of Schedule 1 of the SFO,
-                  “professional investor” means :—
+                  “professional investor” means{" "}
+                  <span className="text-xl">-</span>
                 </p>
 
                 <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
                   <ul className=" alpha">
                     <li>
-                      Any recognized exchange company, recognized clearing
+                      any recognized exchange company, recognized clearing
                       house, recognized exchange controller or recognized
                       investor compensation company, or any person authorized to
                       provide automated trading services under section 95(2) of
@@ -1071,7 +1081,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                           capital of—
                         </li>
                         <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
-                          <ul className="space-y-1 roman">
+                          <ul className="space-y-1 upalpha">
                             <li>
                               an intermediary, or any other person carrying on
                               the business of the provision of investment
@@ -1159,7 +1169,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 Securities and Futures (Professional Investor) Rules (Cap. 571D)
                 (the “PI Rules”)
               </h6>
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-[400] pb-3">
                   Under Section 3 of the PI Rules, “Persons prescribed as
                   professional investors” means—
@@ -1232,7 +1242,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </div>
               </div>
 
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-semibold py-5">
                   Section 4. Trust corporations
                 </p>
@@ -1245,7 +1255,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </p>
               </div>
 
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-semibold py-5">Section 5. Individuals</p>
                 <div className="font-[400] text-[16px] leading-[26px] my-3 pl-[29px]">
                   <ul className="space-y-1 number">
@@ -1345,7 +1355,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </div>
               </div>
 
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-semibold py-5">Section 6. Corporations</p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
@@ -1445,7 +1455,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </div>
               </div>
 
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-semibold py-5">Section 7. Partnerships</p>
 
                 <p className="font-normal text-[16px] leading-[26px] text-justify">
@@ -1514,7 +1524,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </p>
               </div>
 
-              <div className="font-light ">
+              <div className="font-light my-5">
                 <p className="font-semibold py-5">
                   Section 8. Ascertaining total assets or portfolio
                 </p>
@@ -1612,9 +1622,12 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 </div>
 
                 <p className="text-justify font-normal text-[16px] leading-[26px] my-5 mb-10">
-                  *Under Section 2A of the PI Rules, “In these Rules, a
-                  reference to an amount expressed in Hong Kong dollars includes
-                  its equivalent in any foreign currency.”
+                  *Under Section 2A of the PI Rules,{" "}
+                  <span className="italic">
+                    “In these Rules, a reference to an amount expressed in Hong
+                    Kong dollars includes its equivalent in any foreign
+                    currency.”
+                  </span>
                 </p>
               </div>
             </TabPanel>

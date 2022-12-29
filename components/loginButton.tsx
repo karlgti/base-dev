@@ -97,9 +97,14 @@ export default function MaxWidthDialog({ text }) {
             }}
           >
             <FormControl sx={radius}>
-              <TextField id="demo-helper-text-aligned" label="Email address" />
+              <TextField
+                onClick={() => setIsShown1(false)}
+                id="demo-helper-text-aligned"
+                label="Email address"
+              />
               <br />
               <TextField
+                onClick={() => setIsShown1(false)}
                 id="demo-helper-text-aligned-no-helper"
                 label="Password"
               />
@@ -107,24 +112,28 @@ export default function MaxWidthDialog({ text }) {
             <br />
 
             <ThemeProvider theme={theme}>
-              <button
+              <div
                 onMouseEnter={() => setIsShown(true)}
                 onMouseLeave={() => setIsShown(false)}
-                className="w-full h-[50px] bg-[#021B71] text-white font-[700] text-[14px] leading-[17px]"
+                className="w-full  bg-[#021B71] text-white font-[700] text-[14px] leading-[17px]"
                 onClick={() => setIsShown1(true)}
               >
-                {!isShown && <p>Login</p>}
+                {!isShown && (
+                  <div className="flex justify-center py-[20px]">
+                    <p>Login</p>
+                  </div>
+                )}
                 {isShown && (
-                  <div className="flex justify-around mx-[31.5px]">
+                  <div className="flex justify-center py-[15.7px]">
                     <div className="self-center">
                       <p>Login</p>
                     </div>
-                    <div className="pt-1">
+                    <div className="pt-1 pl-5">
                       <Image src={rightArrow} />
                     </div>
                   </div>
                 )}
-              </button>
+              </div>
 
               {!isShown1 && <div className="h-2 mt-[10px]"> </div>}
               {isShown1 && (

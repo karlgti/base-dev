@@ -286,7 +286,7 @@ function investmentApproach() {
                   `}</style>
                 </div>
               </div>
-              <div className=" border-t-[3px] lg:border-t-[0px] lg:pt-[0px] pt-[19px] lg:border-l-[2px] border-[#CC9C4A]">
+              <div className=" border-t-[1px] lg:border-t-[0px] lg:pt-[0px] pt-[19px] lg:border-l-[2px] border-[#CC9C4A]">
                 <div className="lg:pr-[32px] lg:pl-[32px]">
                 <p className="font-[600] italic lg:text-[18px] text-[15px] leading-[25px] lg:leading-[28px]">
                     while our technical model’s <br /> objectives are to track

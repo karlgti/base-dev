@@ -5,8 +5,24 @@ import Select from "react-select";
 import rightArrow from "../public/img/Arrow1.png";
 import Image from "next/image";
 import { sendContactForm } from "../components/Services";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const Country = [
+type OptionType = {
+  value: string;
+  label: string;
+};
+
+type interestType = {
+  value: number;
+  label: string;
+};
+
+type describeType = {
+  value: number;
+  label: string;
+};
+const Countrys: OptionType[] = [
   { label: "Albania", value: "1" },
   { label: "Algeria", value: "2" },
   { label: "Angola", value: "3" },
@@ -181,13 +197,13 @@ const Country = [
   { label: "Zimbabwe", value: "169" },
 ];
 
-const interest = [
+const interests: interestType[] = [
   { value: 1, label: "Advisory Service" },
   { value: 2, label: "Discretionary Account" },
   { value: 3, label: "Investment Fund" },
 ];
 
-const describe = [
+const describes: describeType[] = [
   { value: 1, label: "Investment Advisor" },
   { value: 2, label: "Asset Owner / Institutional Investor" },
   { value: 3, label: "Individual / Corporate Investor" },
@@ -200,9 +216,36 @@ export default function ContactForm() {
     },
   });
   const [message, setMessage] = useState("");
-  const formRef = useRef();
-
   const [isShown, setIsShown] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [value, setValue] = useState("");
+  const [describeOption, setDescribleOption] = useState();
+  const [interestOption, setInterestOption] = useState();
+  const [remark, setRemark] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(formRef.current);
+  }, [formRef]);
+
+  const onDropdownChange = (e) => {
+    setValue(e.label);
+    console.log(e.label);
+  };
+
+  const onDescribleChange = (describeOption) => {
+    setDescribleOption(describeOption.label);
+    console.log(describeOption.label);
+  };
+  const onInterestChange = (interestOption) => {
+    setInterestOption(interestOption);
+    console.log(interestOption);
+  };
+  const onTextChange = (e) => {
+    setRemark(e.target.value);
+    console.log(remark);
+  };
+
   const submitContact = async (e) => {
     e.preventDefault();
     console.log(e);
@@ -211,14 +254,16 @@ export default function ContactForm() {
       lastName: e.target[1].value,
       companyTitle: e.target[2].value,
       companyEmail: e.target[3].value,
-      country: e.target[4].value,
-      describe: e.target[5].value,
-      services: e.target[6].value,
-      message: e.target[7].value,
+      country: value,
+      describe: describeOption,
+      services: interestOption,
+      message: remark,
     });
     if (res == 0) {
       setMessage("Thank you for your valuable comment!");
-      formRef.current.reset();
+      formRef.current;
+      console.log(formRef.current);
+      router.push("/");
     } else {
       setMessage("Something went wrong! Please try again");
     }
@@ -235,7 +280,6 @@ export default function ContactForm() {
     }),
   };
 
-  
   return (
     //2882F6
     <div className="relative w-full bg-[#F5F5F5] flex flex-col justify-left items-left">
@@ -353,8 +397,14 @@ export default function ContactForm() {
                   >
                     Country/Region <span className="text-[#CBC3BB]">*</span>
                   </label>
+                  {/* {Country.map((County) => ( */}
                   <Select
-                    options={Country}
+                    // key={Country.values}
+                    value={Countrys.find(function (Country) {
+                      return Country.value === value;
+                    })}
+                    onChange={onDropdownChange}
+                    options={Countrys}
                     required
                     theme={(theme) => ({
                       ...theme,
@@ -366,9 +416,7 @@ export default function ContactForm() {
                     styles={style}
                     id="grid-interested"
                     placeholder={<div>-- Please Select --</div>}
-                    
-                    />
-                  
+                  />
                 </div>
 
                 <div className="w-full mb-6">
@@ -380,7 +428,11 @@ export default function ContactForm() {
                     <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
-                    options={describe}
+                    value={describes.find(function (describe) {
+                      return describe.label === describeOption;
+                    })}
+                    onChange={onDescribleChange}
+                    options={describes}
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
@@ -404,7 +456,11 @@ export default function ContactForm() {
                     <span className="text-[#CBC3BB]">*</span>
                   </label>
                   <Select
-                    options={interest}
+                    value={interests.find(function (interest) {
+                      return interest === interestOption;
+                    })}
+                    onChange={onInterestChange}
+                    options={interests}
                     theme={(theme) => ({
                       ...theme,
                       borderRadius: 0,
@@ -435,6 +491,8 @@ export default function ContactForm() {
                       id="grid-Message"
                       rows={4}
                       required
+                      value={remark}
+                      onChange={onTextChange}
                     />
                   </div>
                 </div>
