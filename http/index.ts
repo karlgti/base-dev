@@ -9,4 +9,4 @@ const api = axios.create({
 
 //Insight Articles
 export const fetchArticles = async () =>
-    api.get(`/api/insights?populate=*`);
+    api.get(`/api/insights?populate=*&sort[0]=blog_id`);
