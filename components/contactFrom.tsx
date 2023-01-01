@@ -229,7 +229,9 @@ export default function ContactForm() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
-    router.push('/');
+    setTimeout(function () {
+      router.push('/');
+    }, 2000);
   };
   const handleClose = () => setOpen(false);
 
