@@ -7,46 +7,98 @@ import Header from "../components/Header";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import linkedin from "../public/img/linkedin.svg";
 import twitter from "../public/img/square-twitter.svg";
-import blogone from "../public/img/blogone.png";
-import one from "../public/img/1.png";
-import two from "../public/img/2.png";
+import blogone from "../public/img/11.jpg";
+import one from "../public/img/10.jpg";
+import two from "../public/img/12.jpg";
 import arrow from "../public/img/Arrow 2.png";
 
 import Link from "next/link";
 
 const data1 = [
   {
-    theme: "Investment",
-    topic: "Outlook Brief",
-    subject: "Tapping into November 2022",
-    date: "2022-11-04",
+    theme: "Company",
+    topic: "News",
+    subject: "Personnel Announcement - Mr. Askin Leung",
+    date: "2022-12-30",
     linktwt: linkedin,
-    link: "https://twitter.com/BASE_AssetMgmt/status/1592008449524928513",
-    src: "img/blogone.png",
+    link: "#",
+    src: "img/11.jpg",
   },
 
   {
-    theme: "Strategy",
-    topic: "U.S. Market",
-    subject: "Pattern Recognition, follow up.",
-    date: "2022-11-04",
-    linktwt: twitter,
-    link: "https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6/?utm_source=share&utm_medium=member_desktop",
-    src: "img/2.png",
+    theme: "Company",
+    topic: "News",
+    subject: "Personnel Announcement - Ms. Selina Sze",
+    date: "2022-12-30",
+    linktwt: linkedin,
+    link: "#",
+    src: "img/12.jpg",
   },
 ];
 
 const data = [
   {
+    id: 1,
+    theme: "Investment",
+    topic: "Outlook Brief",
+    subject: "マンスリービューポイント：2023年1月",
+    date: "2022-12-30",
+    linktwt: linkedin,
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7014603178327359488",
+    src: "img/13.jpg",
+  },
+  {
+    id: 2,
+    theme: "Investment",
+    topic: "Outlook Brief",
+    subject: "Tapping into December 2022",
+    date: "2022-12-08",
+    linktwt: linkedin,
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7006554952634425344/",
+    src: "img/3.png",
+  },
+  {
+    id: 3,
+    theme: "Investment",
+    topic: "Outlook Brief",
+    subject: "2022年12月へ邁進",
+    date: "2022-12-08",
+    linktwt: linkedin,
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7006555101397995520/",
+    src: "img/14.jpg",
+  },
+  {
+    id: 4,
+    theme: "Strategy",
+    topic: "Model Study",
+    subject: "Follow up.",
+    date: "2022-11-14",
+    linktwt: twitter,
+    link: "https://twitter.com/BASE_AssetMgmt/status/1592066537225351170",
+    src: "img/9.png",
+  },
+  {
+    id: 5,
+    theme: "Investment",
+    topic: "Outlook Brief",
+    subject: "Tapping into November 2022",
+    date: "2022-10-28",
+    linktwt: linkedin,
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:6991558083294490624",
+    src: "img/15.jpg",
+  },
+  {
+    id: 6,
     theme: "Strategy",
     topic: "U.S. Market",
     subject: "Pattern Recognition, follow up.",
     date: "2022-11-04",
     linktwt: twitter,
     link: "https://twitter.com/BASE_AssetMgmt/status/1588461046209335296",
-    src: "img/3.png",
+    src: "img/9.png",
   },
   {
+    id: 7,
     theme: "Strategy",
     topic: "U.S. Market",
     subject: "Pattern Recognition",
@@ -56,6 +108,7 @@ const data = [
     src: "img/4.png",
   },
   {
+    id: 8,
     theme: "Strategy",
     topic: "Commodity",
     subject: "Gold, follow up.",
@@ -65,15 +118,17 @@ const data = [
     src: "img/5.png",
   },
   {
+    id: 9,
     theme: "Investment",
     topic: "Outlook Brief",
     subject: "Tapping into October 2022",
     date: "2022-09-29",
     linktwt: linkedin,
-    link: "https://www.linkedin.com/posts/base-am_tapping-into-october-2022-activity-6981275494910492672-BcZz?utm_source=share&utm_medium=member_desktop",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:6981275494910492672",
     src: "img/6.png",
   },
   {
+    id: 10,
     theme: "Trend",
     topic: "Currency",
     subject: "What if DXY is bullish longer term than you expected?!",
@@ -83,6 +138,7 @@ const data = [
     src: "img/7.png",
   },
   {
+    id: 11,
     theme: "Strategy",
     topic: "Commodity",
     subject: "Important Time Upcoming for Gold!",
@@ -92,6 +148,7 @@ const data = [
     src: "img/8.png",
   },
   {
+    id: 12,
     theme: "Strategy",
     topic: "U.S. Market",
     subject:
@@ -102,6 +159,7 @@ const data = [
     src: "img/9.png",
   },
   {
+    id: 13,
     theme: "Trend",
     topic: "Cryptocurrency",
     subject: "Crypto Bottomed? Not yet, but soon!?!",
@@ -132,6 +190,11 @@ export default function Blog() {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
+  const [visible, setVisible] = useState(9);
+
+  const showMore = () => {
+    setVisible((prevState) => prevState + 4);
+  };
   return (
     <>
       <div className="w-full">
@@ -175,7 +238,7 @@ export default function Blog() {
                 }
               </div>
               <div className="lg:flex mt-[16px]">
-                <Link href="https://twitter.com/BASE_AssetMgmt/status/1592008843491692544">
+                <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7014603113642803200">
                   <div className="relative cursor-pointer lg:w-[65%] lg:mr-[16px] lg:border-t-[8px] border-t-[4px] border-b-[1px] border-[#4D008C]">
                     <div className="mt-[13px] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900 pb-[70px]">
                       <Image
@@ -187,35 +250,35 @@ export default function Blog() {
                       />
                       <div className="">
                         <div className="font-[600]	lg:text-[14px] text-[14px] lg:mt-[20px] mt-[px] leading-[30px] lg:leading-[30px]">
-                          Strategy / Model Study
+                          Investment / Outlook Brief
                         </div>
 
                         <div className="font-extrabold mt-[5px]	lg:text-[42px] lg:leading-[56px] text-[24px] leading-[32px] lg:no-underline underline group-hover:underline group-focus:underline">
-                          Follow up.
+                          Monthly Viewpoint - January 2023
                         </div>
 
-                        <div className="font-normal ml-[17px] lg:ml-0 mt-[15px] lg:mt-[32px] lg:text-[16px] text-[13px] leading-[21px] lg:leading-[28px]">
-                          <ol className="list-disc lg:list-inside">
+                        <div className="font-normal ml-[17px] lg:ml-0 mt-[15px] lg:mt-[32px] lg:text-[16px] text-[13px] leading-[21px] lg:leading-[30px]">
+                          <ol className="list-disc lg:list-inside ">
+                            In this monthly outlook brief, our Chief Investment Officer Chris Leung shared BASE’s view on:
                             <li>
-                              We were similar to the previous pattern {"->"}{" "}
-                              choppy then meaningful down leg - Checked!
-                            </li>
-                            <li>Bottom around end-Oct/early-Nov - Checked!</li>
+                              The overall market trend remains in line with our house view.</li>
+                            <li>The rally since November was not sustainable as investors are more emotional-driven or FOMO; we remain bearish in the medium term.</li>
+                            <li>We expect most countries to report worse-than-expected economic or earnings forecasts soon; this would be the beginning stage of the recession-led correction.</li>
+                            <li>2023 will be about Recession and Earnings.</li>
                           </ol>
                         </div>
 
                         <br />
                         <br className="hidden lg:block" />
                         <div className="font-normal	lg:text-[16px] text-[13px] leading-[21px] lg:leading-[28px]">
-                          Other markets (Dow/HSI/Crypto) behaved similarly but
-                          on different amplitude as expected too.
+
                         </div>
                       </div>
                     </div>
                     <div className="absolute bottom-0 w-full">
                       <div className="flex justify-between">
                         <div>
-                          <a
+                          <Link
                             href="https://www.linkedin.com/company/base-am/"
                             className="text-gray-600"
                           >
@@ -226,10 +289,10 @@ export default function Blog() {
                               className="cursor-pointer"
                               alt="Base Asset Management"
                             />
-                          </a>
+                          </Link>
                         </div>
                         <div className="font-medium text-[12px] pt-[14px] leading-[22px] text-[#000000]">
-                          2022-11-14
+                          2022-12-30
                         </div>
                       </div>
                     </div>
@@ -237,7 +300,7 @@ export default function Blog() {
                 </Link>
 
                 <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
-                  <Link href="https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6?utm_source=share&utm_medium=member_desktop">
+                  <Link href="#">
                     <div className="block mt-[13px] cursor-pointer border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                       <Image
                         src={blogone}
@@ -248,36 +311,36 @@ export default function Blog() {
                       />
                       <div className="">
                         <p className="font-semibold	text-[12px] mt-[16px] leading-[14px]">
-                          Investment / Outlook Brief
+                          Company / News
                         </p>
 
                         <p className="font-extrabold	mt-[5px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                          Tapping into November 2022
+                          Personnel Announcement - Mr. Askin Leung
                         </p>
                       </div>
-                      <div className="relative flex mt-[100px] justify-between">
+                      <div className="relative flex mt-[120px] justify-between">
                         <div className="absolute bottom-0 left-0">
-                          <a
+                          <Link
                             href="https://www.linkedin.com/company/base-am/"
                             className="text-gray-600"
                           >
                             <Image
-                              src={twitter}
+                              src={linkedin}
                               width={31}
                               height={31}
                               className="cursor-pointer"
                               alt="Base Asset Management"
                             />
-                          </a>
+                          </Link>
                         </div>
                         <div className="font-medium	text-[12px] pt-3 absolute bottom-0 right-0 leading-[22px] text-[#000000]">
-                          2022-10-28
+                          2022-12-30
                         </div>
                       </div>
                     </div>
                   </Link>
 
-                  <Link href="https://twitter.com/BASE_AssetMgmt/status/1588461046209335296">
+                  <Link href="#">
                     <div className="block mt-[27px] border-t-[8px] cursor-pointer border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                       <div className="mt-[13px]"></div>
                       <Image
@@ -289,16 +352,16 @@ export default function Blog() {
                       />
                       <div className="">
                         <p className="font-semibold	text-[12px] mt-[16px] leading-[14px]">
-                          Strategy / U.S. Market
+                          Company / News
                         </p>
 
                         <p className="font-extrabold mt-[5px] text-[20px] leading-[28px] group-hover:underline group-focus:underline">
-                          Pattern Recognition, follow up.
+                          Personnel Announcement - Ms. Selina Sze
                         </p>
                       </div>
-                      <div className="relative flex mt-[100px] justify-between">
+                      <div className="relative flex mt-[120px] justify-between">
                         <div className="absolute bottom-0 left-0">
-                          <a
+                          <Link
                             href="https://www.linkedin.com/company/base-am/"
                             className="text-gray-600"
                           >
@@ -309,10 +372,10 @@ export default function Blog() {
                               className="cursor-pointer"
                               alt="Base Asset Management"
                             />
-                          </a>
+                          </Link>
                         </div>
                         <div className="font-medium	text-[12px] absolute bottom-0 right-0 pt-3 leading-[22px] text-[#000000]">
-                          2022-11-04
+                          2022-12-30
                         </div>
                       </div>
                     </div>
@@ -321,7 +384,7 @@ export default function Blog() {
               </div>
 
               <div className="container lg:hidden mt-[38px]">
-                <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4 items-start">
                   {data1.map((content, i) => (
                     <Link href={content.link}>
                       <div
@@ -331,7 +394,7 @@ export default function Blog() {
                         <div>
                           <img
                             src={content.src}
-                            className="lg:w-[300px] lg:h-[180px]"
+                            className="w-[300px] h-[120px]"
                           />
                         </div>
                         <div className="">
@@ -343,9 +406,9 @@ export default function Blog() {
                             {content.subject}
                           </p>
                         </div>
-                        <div className="relative flex lg:mt-[60px] mt-[30px] lg:hiddden justify-between">
+                        <div className="relative flex lg:mt-[60px] mt-[40px] lg:hiddden justify-between">
                           <div className="lg:hidden">
-                            <a
+                            <Link
                               href="https://www.linkedin.com/company/base-am/"
                               className="text-gray-600"
                             >
@@ -356,11 +419,11 @@ export default function Blog() {
                                 className="cursor-pointer"
                                 alt="Base Asset Management"
                               />
-                            </a>
+                            </Link>
                           </div>
 
                           <div className="hidden lg:block absolute bottom-0 left-0">
-                            <a
+                            <Link
                               href="https://www.linkedin.com/company/base-am/"
                               className="text-gray-600"
                             >
@@ -371,7 +434,7 @@ export default function Blog() {
                                 className="cursor-pointer"
                                 alt="Base Asset Management"
                               />
-                            </a>
+                            </Link>
                           </div>
 
                           <div className="absolute bottom-0 right-0 font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
@@ -387,81 +450,101 @@ export default function Blog() {
               <div className="container mt-[38px]">
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                   {data.map((content, i) => (
-                    <Link href={content.link}>
-                      <div
-                        key={i}
-                        className="block cursor-pointer border-t-[4px] pt-[14px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
-                      >
-                        <div>
-                          <img
-                            src={content.src}
-                            className="lg:w-[300px] lg:h-[180px]"
-                          />
-                        </div>
-                        <div className="">
-                          <p className="font-[600]	text-[10px] lg:text-[13px]  mt-[5px] leading-[14px]">
-                            {content.theme} / {content.topic}
-                          </p>
-
-                          <p className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
-                            {content.subject}
-                          </p>
-                        </div>
-                        <div className="relative flex lg:mt-[60px] mt-[30px] lg:hiddden justify-between">
-                          <div className="lg:hidden">
-                            <a
-                              href="https://www.linkedin.com/company/base-am/"
-                              className="text-gray-600"
+                    <>
+                      {
+                        content.id < visible && (
+                          <Link href={content.link}>
+                            <div
+                              key={i}
+                              className="block cursor-pointer border-t-[4px] pt-[14px] lg:border-t-[8px] border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900"
                             >
-                              <Image
-                                src={content.linktwt}
-                                width={31}
-                                height={31}
-                                className="cursor-pointer"
-                                alt="Base Asset Management"
-                              />
-                            </a>
-                          </div>
+                              <div>
+                                <img
+                                  src={content.src}
+                                  className="lg:w-[300px] lg:h-[180px]"
+                                />
+                              </div>
+                              <div className="">
+                                <p className="font-[600]	text-[10px] lg:text-[13px]  mt-[5px] leading-[14px]">
+                                  {content.theme} / {content.topic}
+                                </p>
 
-                          <div className="hidden lg:block absolute bottom-0 left-0">
-                            <a
-                              href="https://www.linkedin.com/company/base-am/"
-                              className="text-gray-600"
-                            >
-                              <Image
-                                src={content.linktwt}
-                                width={31}
-                                height={31}
-                                className="cursor-pointer"
-                                alt="Base Asset Management"
-                              />
-                            </a>
-                          </div>
+                                <p className="font-[800] h-7 lg:h-16 lg:mt-[10px] mt-[5px] text-[14px] leading-[18px] lg:text-[21px] lg:leading-[28px] group-hover:underline group-focus:underline">
+                                  {content.subject}
+                                </p>
+                              </div>
+                              <div className="relative flex lg:mt-[60px] mt-[40px] lg:hiddden justify-between">
+                                <div className="lg:hidden">
+                                  <a
+                                    href="https://www.linkedin.com/company/base-am/"
+                                    className="text-gray-600"
+                                  >
+                                    <Image
+                                      src={content.linktwt}
+                                      width={31}
+                                      height={31}
+                                      className="cursor-pointer"
+                                      alt="Base Asset Management"
+                                    />
+                                  </a>
+                                </div>
 
-                          <div className="absolute bottom-0 right-0 font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
-                            {content.date}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                                <div className="hidden lg:block absolute bottom-0 left-0">
+                                  <Link
+                                    href="https://www.linkedin.com/company/base-am/"
+                                    className="text-gray-600"
+                                  >
+                                    <Image
+                                      src={content.linktwt}
+                                      width={31}
+                                      height={31}
+                                      className="cursor-pointer"
+                                      alt="Base Asset Management"
+                                    />
+                                  </Link>
+                                </div>
+
+                                <div className="absolute bottom-0 right-0 font-medium	text-[8px] pt-3 leading-[12px] lg:text-[12px] lg:leading-[22px] text-[#000000]">
+                                  {content.date}
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        )}
+                    </>
                   ))}
                 </div>
 
-                <div className="cursor-pointer lg:hidden flex justify-center mt-[42px] lg:mt-[150px]">
-                  <Image src={arrow} width={22} height={11} />
-                </div>
-                <div className="cursor-pointer hidden lg:flex flex justify-center mt-[42px] lg:mt-[150px]">
-                  <Image src={arrow} width={56} height={29} />
-                </div>
+                {visible - 1 <= data.length ? (
+                  <>
+                    <div
+                      onClick={showMore}
+                      className="cursor-pointer lg:hidden flex justify-center mt-[42px] lg:mt-[150px]"
+                    >
+                      <Image src={arrow} width={22} height={11} />
+                    </div>
+                    <div
+                      onClick={showMore}
+                      className="cursor-pointer hidden lg:flex flex justify-center mt-[42px] lg:mt-[150px]"
+                    >
+                      <Image src={arrow} width={56} height={29} />
+                    </div>
 
-                <div className="flex mb-[50px] lg:mb-[0px] mt-5 lg:mt-[23px] justify-center">
-                  <button
-                    type="button"
-                    className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
-                  >
-                    <p>Load more</p>
-                  </button>
-                </div>
+                    <div className="flex mb-[50px] lg:mb-[0px] mt-5 lg:mt-[23px] justify-center">
+                      <button
+                        onClick={showMore}
+                        type="button"
+                        className="hover:underline flex flex-col font-bold justify-center text-[18px] leading-[18px] lg:text-[24px] lg:leading-[28px]"
+                      >
+                        <p>Load more</p>
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <div className=" mt-[42px] lg:mt-[150px]" />
+                )}
+
+
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import blogone from "../public/img/blogone.png";
-import blogtwo from "../public/img/blogtwo.png";
+import blogone from "../public/img/10.jpg";
+import blogtwo from "../public/img/11.jpg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import linkedin from "../public/img/linkedin.svg";
 import twitter from "../public/img/square-twitter.svg";
@@ -22,7 +22,7 @@ function Insight() {
     const divOnShow1_100: any = divOnShow1.current;
     refValue
       ? (divOnShow1_100.className =
-          "lg:flex transition-opacity ease-in duration-1000 opacity-100")
+        "lg:flex transition-opacity ease-in duration-1000 opacity-100")
       : "";
   }, [refValue]);
 
@@ -91,54 +91,25 @@ function Insight() {
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              <Link href="https://twitter.com/BASE_AssetMgmt/status/1592008449524928513">
+              <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7014603113642803200">
                 <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
-                  <div className="">
-                    <Image src={blogtwo} alt="Base Asset Management" />
+
+                  <div className="lg:w-[273px] lg:h-[180px] w-[165px]">
+                    <Image src={blogone}
+                      alt="Base Asset Management"
+                    />
                   </div>
+
                   <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
-                    Strategy / Model Study
-                  </p>
-                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Follow up.
-                  </h3>
-
-                  <div className="flex justify-between">
-                    <div>
-                      <a
-                        href="https://www.linkedin.com/company/base-am/"
-                        className="text-gray-600"
-                      >
-                        <Image
-                          src={twitter}
-                          width={31}
-                          height={31}
-                          className="cursor-pointer"
-                          alt="Base Asset Management"
-                        />
-                      </a>
-                    </div>
-                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      2022-11-14
-                    </div>
-                  </div>
-                </div>
-              </Link>
-
-              <Link href="https://www.linkedin.com/posts/base-am_tapping-into-november-2022-activity-6991558083294490624-Khp6/?utm_source=share&utm_medium=member_desktop">
-                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
-                  <div>
-                    <Image src={blogone} alt="Base Asset Management" />
-                  </div>
-                  <p className="font-[600] mt-[7px] lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000]">
                     Investment / Outlook Brief
                   </p>
                   <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Tapping into November 2022
+                    Monthly Viewpoint - January 2023
                   </h3>
+
                   <div className="flex justify-between">
                     <div>
-                      <a
+                      <Link
                         href="https://www.linkedin.com/company/base-am/"
                         className="text-gray-600"
                       >
@@ -149,10 +120,43 @@ function Insight() {
                           className="cursor-pointer"
                           alt="Base Asset Management"
                         />
-                      </a>
+                      </Link>
                     </div>
                     <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      2022-10-28
+                      2022-12-30
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="#">
+                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
+                  <div className="lg:w-[253px] lg:h-[180px] w-[152px]">
+                    <Image src={blogtwo} alt="Base Asset Management" />
+                  </div>
+                  <p className="font-[600] mt-[7px] lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000]">
+                    Company / News
+                  </p>
+                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                    Personnel Announcement - Mr. Askin Leung
+                  </h3>
+                  <div className="flex justify-between">
+                    <div>
+                      <Link
+                        href="https://www.linkedin.com/company/base-am/"
+                        className="text-gray-600"
+                      >
+                        <Image
+                          src={linkedin}
+                          width={31}
+                          height={31}
+                          className="cursor-pointer"
+                          alt="Base Asset Management"
+                        />
+                      </Link>
+                    </div>
+                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
+                      2022-12-30
                     </div>
                   </div>
                 </div>
