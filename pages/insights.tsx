@@ -123,15 +123,15 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                                 {content.attributes.blog_subject}
                               </div>
 
-                              <div className="font-normal ml-[17px] lg:ml-0 mt-[15px] lg:mt-[32px] lg:text-[16px] text-[13px] leading-[21px] lg:leading-[28px]">
+                              <div className="font-normal ml-[17px] lg:ml-0 mt-[15px] lg:mt-[32px] lg:text-[16px] text-[13px] leading-[21px] lg:leading-[32px]">
                                 <ol className="list-disc lg:list-inside">
-                                  <li>
-                                    We were similar to the previous pattern{" "}
-                                    {"->"} choppy then meaningful down leg -
-                                    Checked!
-                                  </li>
-                                  <li>
-                                    Bottom around end-Oct/early-Nov - Checked!
+                                  In this monthly outlook brief, our Chief Investment Officer Chris Leung shared BASE’s view on:
+                                  <br /> <li>
+
+                                    The overall market trend remains in line with our house view.</li>
+                                  <li>The rally since November was not sustainable as investors are more emotional-driven or FOMO; we remain bearish in the medium term.</li>
+                                  <li>We expect most countries to report worse-than-expected economic or earnings forecasts soon; this would be the beginning stage of the recession-led correction.</li>
+                                  <li> 2023 will be about Recession and Earnings.
                                   </li>
                                 </ol>
                               </div>
@@ -139,8 +139,8 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               <br />
                               <br className="hidden lg:block" />
                               <div className="font-normal	lg:text-[16px] text-[13px] leading-[21px] lg:leading-[28px]">
-                                Other markets (Dow/HSI/Crypto) behaved similarly
-                                but on different amplitude as expected too.
+                                {/* Other markets (Dow/HSI/Crypto) behaved similarly
+                                but on different amplitude as expected too. */}
                               </div>
                             </div>
                           </div>
@@ -175,7 +175,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                   </>
                 ))}
 
-                <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
+                <div className="lg:w-[35%] ml-[16px] hidden lg:block  border-t-[8px] border-[#4D008C]">
                   {insights.items.map((content, i) => (
                     <>
                       {content.attributes.blog_id >= 2 &&
@@ -206,7 +206,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                                   {content.attributes.blog_subject}
                                 </p>
                               </div>
-                              <div className="relative flex mt-[100px] justify-between">
+                              <div className="relative flex mt-[120px] justify-between">
                                 <div className="absolute bottom-0 left-0">
                                   <Link
                                     href={
@@ -323,7 +323,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
               </div>
 
               <div className="container mt-[38px]">
-                <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid justify-center grid-cols-2 gap-6 lg:grid-cols-4">
                   {insights.items.map((content, i) => (
                     <>
                       {content.attributes.blog_id >= 4 &&
