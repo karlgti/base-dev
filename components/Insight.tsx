@@ -94,7 +94,7 @@ function Insight() {
               <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7014603113642803200">
                 <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
 
-                  <div className="lg:w-[273px] lg:h-[180px] w-[165px]">
+                  <div className="lg:w-[273px] lg:h-[180px] w-[174px]">
                     <Image src={blogone}
                       alt="Base Asset Management"
                     />
@@ -129,9 +129,9 @@ function Insight() {
                 </div>
               </Link>
 
-              <Link href="#">
+              <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7018456680975794176">
                 <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
-                  <div className="lg:w-[253px] lg:h-[180px] w-[152px]">
+                  <div className="lg:w-[253px] lg:h-[180px] w-[164px]">
                     <Image src={blogtwo} alt="Base Asset Management" />
                   </div>
                   <p className="font-[600] mt-[7px] lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000]">
@@ -156,7 +156,7 @@ function Insight() {
                       </Link>
                     </div>
                     <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      2022-12-30
+                      2023-01-10
                     </div>
                   </div>
                 </div>

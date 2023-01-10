@@ -19,9 +19,9 @@ const data1 = [
     theme: "Company",
     topic: "News",
     subject: "Personnel Announcement - Mr. Askin Leung",
-    date: "2022-12-30",
+    date: "2023-01-10",
     linktwt: linkedin,
-    link: "#",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7018456680975794176",
     src: "img/11.jpg",
   },
 
@@ -29,7 +29,7 @@ const data1 = [
     theme: "Company",
     topic: "News",
     subject: "Personnel Announcement - Ms. Selina Sze",
-    date: "2022-12-30",
+    date: "2023-01-10",
     linktwt: linkedin,
     link: "#",
     src: "img/12.jpg",
@@ -75,7 +75,7 @@ const data = [
     date: "2022-11-14",
     linktwt: twitter,
     link: "https://twitter.com/BASE_AssetMgmt/status/1592066537225351170",
-    src: "img/9.png",
+    src: "img/18.jpg",
   },
   {
     id: 5,
@@ -95,7 +95,7 @@ const data = [
     date: "2022-11-04",
     linktwt: twitter,
     link: "https://twitter.com/BASE_AssetMgmt/status/1588461046209335296",
-    src: "img/9.png",
+    src: "img/16.jpg",
   },
   {
     id: 7,
@@ -156,7 +156,7 @@ const data = [
     date: "2022-09-20",
     linktwt: twitter,
     link: "https://twitter.com/BASE_AssetMgmt/status/1572183810028208133",
-    src: "img/9.png",
+    src: "img/17.jpg",
   },
   {
     id: 13,
@@ -311,7 +311,7 @@ export default function Blog() {
                 </Link>
 
                 <div className="lg:w-[35%] ml-[16px] hidden lg:block border-b-[1px] border-t-[8px] border-[#4D008C]">
-                  <Link href="#">
+                  <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7018456680975794176">
                     <div className="block mt-[13px] cursor-pointer border-b-[1px] border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                       <Image
                         src={blogone}
@@ -345,7 +345,7 @@ export default function Blog() {
                           </Link>
                         </div>
                         <div className="font-medium	text-[12px] pt-3 absolute bottom-0 right-0 leading-[22px] text-[#000000]">
-                          2022-12-30
+                          2023-01-10
                         </div>
                       </div>
                     </div>
@@ -386,7 +386,7 @@ export default function Blog() {
                           </Link>
                         </div>
                         <div className="font-medium	text-[12px] absolute bottom-0 right-0 pt-3 leading-[22px] text-[#000000]">
-                          2022-12-30
+                          2023-01-10
                         </div>
                       </div>
                     </div>
