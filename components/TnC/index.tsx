@@ -1113,6 +1113,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                       within the meaning of this definition for the purposes of
                       any provision of this Ordinance.
                     </li>
+                    <br />
                   </ul>
                   <style jsx>{`
                     ul.roman {
@@ -1169,6 +1170,7 @@ const TermOfUse = ({ nameprop, idx, css, upper, lower }) => {
                 Securities and Futures (Professional Investor) Rules (Cap. 571D)
                 (the “PI Rules”)
               </h6>
+
               <div className="font-light my-5">
                 <p className="font-[400] pb-3">
                   Under Section 3 of the PI Rules, “Persons prescribed as
