@@ -29,9 +29,9 @@ const data1 = [
     theme: "Company",
     topic: "News",
     subject: "Personnel Announcement - Ms. Selina Sze",
-    date: "2023-01-10",
+    date: "2023-01-11",
     linktwt: linkedin,
-    link: "#",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7018865134529912832",
     src: "img/12.jpg",
   },
 ];
@@ -351,7 +351,7 @@ export default function Blog() {
                     </div>
                   </Link>
 
-                  <Link href="#">
+                  <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7018865134529912832">
                     <div className="block mt-[27px] border-t-[8px] cursor-pointer border-[#4D008C] sm:max-w-full group hover:no-underline focus:no-underline lg:grid bg-white-900">
                       <div className="mt-[13px]"></div>
                       <Image
@@ -386,7 +386,7 @@ export default function Blog() {
                           </Link>
                         </div>
                         <div className="font-medium	text-[12px] absolute bottom-0 right-0 pt-3 leading-[22px] text-[#000000]">
-                          2023-01-10
+                          2023-01-11
                         </div>
                       </div>
                     </div>
