@@ -47,11 +47,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
-  const [visible, setVisible] = useState(9);
 
-  const showMore = () => {
-    setVisible((prevState) => prevState + 4);
-  };
   return (
     <>
       <div className="w-full">
