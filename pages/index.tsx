@@ -10,8 +10,24 @@ import Disclaimer from "components/Disclaimer";
 import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Cookies from "components/Cookie/Popup";
+import { AxiosResponse } from 'axios';
+import type { GetServerSideProps } from 'next';
+import {
+  IArticle,
+  ICollectionResponse,
+  IPagination
+} from '../types';
+import { fetchArticles } from '../http';
+interface IPropTypes {
 
-const Home: NextPage = () => {
+  insights: {
+    items: IArticle[];
+    pagination: IPagination;
+  };
+}
+
+const Home: NextPage<IPropTypes> = ({ insights }) => {
+
   const [agreedDisclaimer, setAgreedDisclaimer] = useState<boolean>(false);
   const [agreedCookies, setAgreedCookies] = useState<boolean>(false);
 
@@ -87,7 +103,7 @@ const Home: NextPage = () => {
             <Banners />
           </div>
           <div className="relative pt-[68px]">
-            <Insight />
+            <Insight insights={insights} />
           </div>
         </div>
       </div>
@@ -104,5 +120,23 @@ const Home: NextPage = () => {
       <Button />
     </div>
   );
+};
+export const getServerSideProps: GetServerSideProps = async () => {
+
+
+
+  const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> =
+    await fetchArticles();
+
+
+  return {
+    props: {
+
+      insights: {
+        items: articles.data,
+        pagination: articles.meta.pagination,
+      },
+    },
+  };
 };
 export default Home;

@@ -1,15 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import blogone from "../public/img/10.jpg";
-import blogtwo from "../public/img/11.jpg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import linkedin from "../public/img/linkedin.svg";
-import twitter from "../public/img/square-twitter.svg";
+//import linkedin from "../public/img/linkedin.svg";
+//import twitter from "../public/img/square-twitter.svg";
 import useOnScreen from "hook/useOnScreen";
 import Link from "next/link";
 import rightArrow from "../public/img/Arrow1.png";
 
-function Insight() {
+function Insight({ insights }) {
   const theme = createTheme({
     typography: {
       fontFamily: ["Inter", "sans-serif"].join(","),
@@ -91,76 +89,117 @@ function Insight() {
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
-              <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7014603113642803200">
-                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
 
-                  <div className="lg:w-[273px] lg:h-[180px] w-[174px]">
-                    <Image src={blogone}
-                      alt="Base Asset Management"
-                    />
-                  </div>
+              {insights.items.map((content, i) => (
+                <>
+                  {content.attributes.blog_id == 1 && (
+                    <Link
+                      key={i}
+                      href={
+                        content.attributes.blog_link
+                          ? content.attributes.blog_link
+                          : "#"
+                      }
+                    >
+                      <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
+                        <div className="lg:w-[273px] lg:h-[180px] w-[182px]">
+                          <img
+                            src={`${content.attributes.blog_image.data.attributes.url}`}
+                            alt="Base Asset Management"
+                          />
+                        </div>
+                        <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
+                          {content.attributes.blog_theme} /{" "}
+                          {content.attributes.blog_topic}
+                        </p>
+                        <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                          {content.attributes.blog_subject}
+                        </h3>
 
-                  <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
-                    Investment / Outlook Brief
-                  </p>
-                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Monthly Viewpoint - January 2023
-                  </h3>
+                        <div className="flex justify-between">
+                          <div>
+                            <Link
+                              href={
+                                content.attributes.platform_link
+                                  ? content.attributes.platform_link
+                                  : "#"
+                              }
+                              className="text-gray-600"
+                            >
+                              <Image
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
+                                width={31}
+                                height={31}
+                                className="cursor-pointer"
+                                alt="Base Asset Management"
+                              />
+                            </Link>
+                          </div>
+                          <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
+                            {content.attributes.blog_date}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  )}
+                </>
+              ))}
 
-                  <div className="flex justify-between">
-                    <div>
-                      <Link
-                        href="https://www.linkedin.com/company/base-am/"
-                        className="text-gray-600"
-                      >
-                        <Image
-                          src={linkedin}
-                          width={31}
-                          height={31}
-                          className="cursor-pointer"
-                          alt="Base Asset Management"
-                        />
-                      </Link>
-                    </div>
-                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      2022-12-30
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              {insights.items.map((content, i) => (
+                <>
+                  {content.attributes.blog_id == 2 && (
+                    <Link
+                      key={content.id}
+                      href={
+                        content.attributes.blog_link
+                          ? content.attributes.blog_link
+                          : "#"
+                      }
+                    >
+                      <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] mr-[6px] lg:mr-[16px] border-b border-[#4D008C]">
+                        <div className="lg:w-[255px] lg:h-[180px] w-[170px]">
+                          <img
+                            src={`${content.attributes.blog_image.data.attributes.url}`}
+                            alt="Base Asset Management"
+                          />
+                        </div>
+                        <p className="font-[600] mt-[7px]	lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000] ">
+                          {content.attributes.blog_theme} /{" "}
+                          {content.attributes.blog_topic}
+                        </p>
+                        <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
+                          {content.attributes.blog_subject}
+                        </h3>
 
-              <Link href="https://www.linkedin.com/feed/update/urn:li:activity:7018456680975794176">
-                <div className="mx-auto cursor-pointer pt-[6px] lg:pt-[14px] lg:border-t-[8px] border-t-[3px] ml-[6px] lg:ml-[16px] border-b border-[#4D008C]">
-                  <div className="lg:w-[253px] lg:h-[180px] w-[164px]">
-                    <Image src={blogtwo} alt="Base Asset Management" />
-                  </div>
-                  <p className="font-[600] mt-[7px] lg:text-[14px] lg:leading-[14px] text-[11px] leading-[14px] text-[#000000]">
-                    Company / News
-                  </p>
-                  <h3 className="mt-[7px] font-[800] h-16 	hover:underline lg:text-[18px] lg:leading-[24px] lg:pb-[33px] text-[14px] leading-[15px] text-[#000000]">
-                    Personnel Announcement - Mr. Askin Leung
-                  </h3>
-                  <div className="flex justify-between">
-                    <div>
-                      <Link
-                        href="https://www.linkedin.com/company/base-am/"
-                        className="text-gray-600"
-                      >
-                        <Image
-                          src={linkedin}
-                          width={31}
-                          height={31}
-                          className="cursor-pointer"
-                          alt="Base Asset Management"
-                        />
-                      </Link>
-                    </div>
-                    <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
-                      2023-01-10
-                    </div>
-                  </div>
-                </div>
-              </Link>
+                        <div className="flex justify-between">
+                          <div>
+                            <Link
+                              href={
+                                content.attributes.platform_link
+                                  ? content.attributes.platform_link
+                                  : "#"
+                              }
+                              className="text-gray-600"
+                            >
+                              <Image
+                                src={`${content.attributes.blog_platform.data.attributes.url}`}
+                                width={31}
+                                height={31}
+                                className="cursor-pointer"
+                                alt="Base Asset Management"
+                              />
+                            </Link>
+                          </div>
+                          <div className="font-[500] pt-3 text-[12px] leading-[22px] text-[#000000]">
+                            {content.attributes.blog_date}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  )}
+                </>
+              ))}
+
             </div>
           </div>
           <div>
