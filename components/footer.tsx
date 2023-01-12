@@ -61,7 +61,7 @@ export default function footer() {
           <div className="lg:flex lg:py-[23px] lg:justify-between lg:px-[63px]">
             <div>
               <h6 className=" cursor-default cursor-pointer font-medium	lg:text-[13px] text-[12px] leading-[17px] text-[#001B71] ">
-                Copyright 2022 © BASE. All rights reserved.
+                Copyright 2023 © BASE. All rights reserved.
               </h6>
             </div>
 
@@ -69,14 +69,24 @@ export default function footer() {
               <TermOfUse
                 nameprop={"Terms of Use"}
                 idx={0}
-                css={"text-[#001B71] cursor-pointer font-medium  text-[13px] leading-[17px]"} upper={undefined} lower={undefined}              />
+                css={
+                  "text-[#001B71] cursor-pointer font-medium  text-[13px] leading-[17px]"
+                }
+                upper={undefined}
+                lower={undefined}
+              />
 
               <div className="border-r-[1px] h-[17px] mt-1 border-[#001B71] mx-2"></div>
 
               <TermOfUse
                 nameprop={"Privacy Policy"}
                 idx={1}
-                css={"text-[#001B71] cursor-pointer font-medium text-[13px] leading-[17px]"} upper={undefined} lower={undefined}              />
+                css={
+                  "text-[#001B71] cursor-pointer font-medium text-[13px] leading-[17px]"
+                }
+                upper={undefined}
+                lower={undefined}
+              />
             </div>
           </div>
         </div>

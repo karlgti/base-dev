@@ -1,7 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-//import blogone from "../public/img/blogone.png";
-//import blogtwo from "../public/img/blogtwo.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 //import linkedin from "../public/img/linkedin.svg";
 //import twitter from "../public/img/square-twitter.svg";
@@ -91,6 +89,7 @@ function Insight({ insights }) {
           </div>
           <div className="lg:w-[50%] mt-[45px] lg:mt-0">
             <div className="flex lg:justify-right">
+
               {insights.items.map((content, i) => (
                 <>
                   {content.attributes.blog_id == 1 && (
@@ -200,6 +199,7 @@ function Insight({ insights }) {
                   )}
                 </>
               ))}
+
             </div>
           </div>
           <div>

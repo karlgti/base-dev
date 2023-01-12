@@ -27,6 +27,7 @@ import TextField from "@mui/material/TextField";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import Dis from "components/TnC";
+import { useState } from "react";
 
 const drawerWidth = 330;
 
@@ -95,11 +96,20 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function contactHeader() {
+export default function contactHeader({ handleCh, handleEN }) {
   const theme = useTheme();
   const [open1, setOpen1] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [subOpen, subSetOpen] = React.useState(false);
+  const [isShown, setIsShown] = useState(true);
+
+  const handle = () => {
+    setIsShown(true);
+  };
+
+  const handle1 = () => {
+    setIsShown(false);
+  };
 
   const handleClickOpen1 = () => {
     setOpen1(true);
@@ -243,6 +253,40 @@ export default function contactHeader() {
               </div>
               <div className="pl-[31.5px] pr-[43.5px] hidden lg:block">
                 <LoginButton text={"#001673"} />
+              </div>
+
+              <div className="lg:border-l-[1px]  border-[#001B71]  absolute lg:relative  px-[13px]  lg:pt-[29.5px] lg:pb-[22.5px]">
+                {isShown ? (
+                  <div onClick={handle1}>
+                    <Button
+                      onClick={handleCh}
+                      sx={{
+                        fontStyle: "Inter",
+                        textTransform: "capitalize",
+                        fontSize: 16,
+                        fontWeight: 500,
+                        color: "#001B71",
+                      }}
+                    >
+                      中文
+                    </Button>
+                  </div>
+                ) : (
+                  <div onClick={handle}>
+                    <Button
+                      onClick={handleEN}
+                      sx={{
+                        fontStyle: "Inter",
+                        textTransform: "capitalize",
+                        fontSize: 16,
+                        fontWeight: 500,
+                        color: "#001B71",
+                      }}
+                    >
+                      EN
+                    </Button>
+                  </div>
+                )}
               </div>
             </Toolbar>
           </AppBar>

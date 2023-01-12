@@ -6,7 +6,6 @@ import Footer from "components/footer";
 function contactUs() {
   return (
     <div>
-      <Header />
       <div className="">
         <Form />
       </div>

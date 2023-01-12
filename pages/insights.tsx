@@ -5,17 +5,13 @@ import Button from "../components/backToTop";
 import Footer from "components/footer";
 import Header from "../components/Header";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-//import linkedin from "../public/img/linkedin.svg";
-//import twitter from "../public/img/square-twitter.svg";
-//import blogone from "../public/img/blogone.png";
-//import one from "../public/img/1.png";
-//import two from "../public/img/2.png";
 import arrow from "../public/img/Arrow 2.png";
 import { AxiosResponse } from "axios";
 import type { GetServerSideProps, NextPage } from "next";
 import { IArticle, ICollectionResponse, IPagination } from "../types";
 import Link from "next/link";
 import { fetchArticles } from "../http";
+
 
 interface IPropTypes {
   insights: {
@@ -31,6 +27,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
   const showMore = () => {
     setVisible((prevState) => prevState + 4);
   };
+
 
   useEffect(() => {
     const listener = () => {
@@ -50,6 +47,11 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
       fontFamily: ["Inter", "sans-serif"].join(","),
     },
   });
+  const [visible, setVisible] = useState(9);
+
+  const showMore = () => {
+    setVisible((prevState) => prevState + 4);
+  };
   return (
     <>
       <div className="w-full">
@@ -59,7 +61,8 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
             <div className="lg:max-w-[1200px] m-0 m-auto pt-[90px] lg:pt-[110px] flex justify-between">
               <div className="self-center">
                 <h1 className="lg:font-light lg:text-[48px] lg:leading-[60px] text-white font-[300] text-[26px] leading-[32px]">
-                  Trends. Views. Observations. <br />
+                  Views. Trends. Observations. <br />
+                  And more.
                 </h1>
               </div>
 
@@ -93,6 +96,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                 }
               </div>
               <div className="lg:flex mt-[16px]">
+
                 {insights.items.map((content, i) => (
                   <>
                     {content.attributes.blog_id == 1 && (
@@ -169,6 +173,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                               </div>
                             </div>
                           </div>
+
                         </div>
                       </Link>
                     )}
@@ -238,6 +243,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
               </div>
 
               <div className="container lg:hidden mt-[38px]">
+
                 <div className="grid justify-center grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                   {insights.items.map((content, i) => (
                     <>
@@ -291,6 +297,8 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                                   </Link>
                                 </div>
 
+
+
                                 <div className="hidden lg:block absolute bottom-0 left-0">
                                   <Link
                                     href={
@@ -323,6 +331,7 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
               </div>
 
               <div className="container mt-[38px]">
+
                 <div className="grid justify-center grid-cols-2 gap-6 lg:grid-cols-4">
                   {insights.items.map((content, i) => (
                     <>
@@ -402,11 +411,14 @@ const Blog: NextPage<IPropTypes> = ({ insights }) => {
                             </div>
                           </Link>
                         )}
+
                     </>
                   ))}
                 </div>
 
+
                 {visible - 1 <= insights.items.length ? (
+
                   <>
                     <div
                       onClick={showMore}
